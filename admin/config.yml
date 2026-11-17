@@ -12,44 +12,39 @@ site_url: "https://sonarsamaj.com"
 display_url: "https://sonarsamaj.com"
 
 collections:
-  - name: "events"
-    label: "📅 आगामी कार्यक्रम (Upcoming Events)"
-    label_singular: "कार्यक्रम (Event)"
-    folder: "content/events"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    format: "json"
-    fields:
-      - { label: "कार्यक्रम शीर्षक (Title)", name: "title", widget: "string" }
-      - { label: "तारीख (Day & Month)", name: "date_display", widget: "string", default: "20 सप्टेंबर 2026" }
-      - { label: "वेळ (Time)", name: "time", widget: "string", default: "दुपारी 4:00 ते 6:00 | महाआरती सायं. 6:30" }
-      - { label: "ठिकाण (Location)", name: "location", widget: "string", default: "लव-कुश आवास विहार, बंधन गार्डन समोर, इंदौर" }
-      - { label: "प्रकार (Category)", name: "category", widget: "select", options: ["महाआरती सोहळा", "संस्कार सोहळा", "आरोग्य सेवा", "युवा मार्गदर्शन", "वार्षिक सभा", "इतर"], default: "महाआरती सोहळा" }
-      - { label: "वर्णन (Description)", name: "description", widget: "text" }
-      - { label: "फोटो (Banner Image)", name: "image", widget: "image", required: false }
-
-  - name: "gallery"
+  - name: "gallery_collection"
     label: "📸 फोटो गॅलरी (Photo Gallery)"
-    label_singular: "फोटो (Photo)"
-    folder: "content/gallery"
-    create: true
-    slug: "{{slug}}"
-    format: "json"
-    fields:
-      - { label: "फोटो शीर्षक (Caption)", name: "title", widget: "string" }
-      - { label: "श्रेणी (Category)", name: "category", widget: "select", options: ["कार्यक्रम", "वृत्तपत्र", "उत्सव", "आरोग्य", "शिक्षण", "समाजसेवा"], default: "कार्यक्रम" }
-      - { label: "फोटो फाइल (Upload Image)", name: "image", widget: "image" }
-      - { label: "उपशीर्षक / तारीख (Subtitle or Date)", name: "subtitle", widget: "string", required: false }
+    files:
+      - file: "content/gallery.json"
+        name: "gallery_file"
+        label: "सर्व फोटो यादी (All Photos List)"
+        fields:
+          - label: "फोटो यादी (Photos)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "फोटो शीर्षक (Caption)", name: "title", widget: "string" }
+              - { label: "श्रेणी (Category)", name: "category", widget: "select", options: ["कार्यक्रम", "वृत्तपत्र", "उत्सव", "आरोग्य", "शिक्षण", "समाजसेवा"], default: "कार्यक्रम" }
+              - { label: "फोटो फाइल (Upload Image)", name: "image", widget: "image" }
+              - { label: "उपशीर्षक / तारीख (Subtitle or Date)", name: "subtitle", widget: "string", required: false }
 
-  - name: "news"
-    label: "📰 ताज्या बातम्या (Latest News)"
-    label_singular: "बातमी (News Item)"
-    folder: "content/news"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    format: "json"
-    fields:
-      - { label: "शीर्षक (Title)", name: "title", widget: "string" }
-      - { label: "दिनांक (Date Display)", name: "date_display", widget: "string", default: "12 सप्टेंबर" }
-      - { label: "संक्षिप्त बातमी (Summary)", name: "summary", widget: "text" }
-      - { label: "तपशील बातमी (Full Details)", name: "details", widget: "markdown", required: false }
+  - name: "events_collection"
+    label: "📅 आगामी कार्यक्रम (Upcoming Events)"
+    files:
+      - file: "content/events.json"
+        name: "events_file"
+        label: "सर्व कार्यक्रम यादी (All Events List)"
+        fields:
+          - label: "कार्यक्रम यादी (Events)"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.date_display}}"
+            fields:
+              - { label: "कार्यक्रम शीर्षक (Title)", name: "title", widget: "string" }
+              - { label: "तारीख (Day & Month)", name: "date_display", widget: "string", default: "20 सप्टेंबर 2026" }
+              - { label: "वेळ (Time)", name: "time", widget: "string", default: "दुपारी 4:00 ते 6:00 | महाआरती सायं. 6:30" }
+              - { label: "ठिकाण (Location)", name: "location", widget: "string", default: "लव-कुश आवास विहार, बंधन गार्डन समोर, इंदौर" }
+              - { label: "प्रकार (Category)", name: "category", widget: "select", options: ["महाआरती सोहळा", "संस्कार सोहळा", "आरोग्य सेवा", "युवा मार्गदर्शन", "वार्षिक सभा", "इतर"], default: "महाआरती सोहळा" }
+              - { label: "वर्णन (Description)", name: "description", widget: "text" }
+              - { label: "फोटो (Banner Image)", name: "image", widget: "image", required: false }
