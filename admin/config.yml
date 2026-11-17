@@ -10,41 +10,88 @@ public_folder: "./src/gallery"
 
 site_url: "https://sonarsamaj.com"
 display_url: "https://sonarsamaj.com"
+logo_url: "https://placehold.co/120x120/831843/ffffff?text=ॐ"
+
+# Publish Mode: Instant publishing
+publish_mode: simple
+show_preview_links: true
 
 collections:
-  - name: "gallery_collection"
-    label: "📸 फोटो गॅलरी (Photo Gallery)"
+  - name: "gallery"
+    label: "📸 Photo Gallery"
+    label_singular: "Photo"
+    description: "Upload and manage photos displayed in the live website gallery."
     files:
       - file: "content/gallery.json"
         name: "gallery_file"
-        label: "सर्व फोटो यादी (All Photos List)"
+        label: "Gallery Photo Collection"
         fields:
-          - label: "फोटो यादी (Photos)"
+          - label: "Photos List"
             name: "items"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.category}})"
+            summary: "{{fields.title}} [{{fields.category}}]"
             fields:
-              - { label: "फोटो शीर्षक (Caption)", name: "title", widget: "string" }
-              - { label: "श्रेणी (Category)", name: "category", widget: "select", options: ["कार्यक्रम", "वृत्तपत्र", "उत्सव", "आरोग्य", "शिक्षण", "समाजसेवा"], default: "कार्यक्रम" }
-              - { label: "फोटो फाइल (Upload Image)", name: "image", widget: "image" }
-              - { label: "उपशीर्षक / तारीख (Subtitle or Date)", name: "subtitle", widget: "string", required: false }
+              - { label: "Photo Title / Caption", name: "title", widget: "string", hint: "e.g. Annual Community Gathering, Indore" }
+              - { label: "Category", name: "category", widget: "select", options: ["Events", "Festivals", "Social Welfare", "Press Coverage", "Education", "Healthcare"], default: "Events" }
+              - { label: "Upload Image", name: "image", widget: "image" }
+              - { label: "Subtitle or Date (Optional)", name: "subtitle", widget: "string", required: false, hint: "e.g. September 2026" }
 
-  - name: "events_collection"
-    label: "📅 आगामी कार्यक्रम (Upcoming Events)"
+  - name: "events"
+    label: "📅 Upcoming Events"
+    label_singular: "Event"
+    description: "Manage upcoming community events, Maha Aartis, and meetings."
     files:
       - file: "content/events.json"
         name: "events_file"
-        label: "सर्व कार्यक्रम यादी (All Events List)"
+        label: "Upcoming Events Schedule"
         fields:
-          - label: "कार्यक्रम यादी (Events)"
+          - label: "Events List"
             name: "items"
             widget: "list"
             summary: "{{fields.title}} - {{fields.date_display}}"
             fields:
-              - { label: "कार्यक्रम शीर्षक (Title)", name: "title", widget: "string" }
-              - { label: "तारीख (Day & Month)", name: "date_display", widget: "string", default: "20 सप्टेंबर 2026" }
-              - { label: "वेळ (Time)", name: "time", widget: "string", default: "दुपारी 4:00 ते 6:00 | महाआरती सायं. 6:30" }
-              - { label: "ठिकाण (Location)", name: "location", widget: "string", default: "लव-कुश आवास विहार, बंधन गार्डन समोर, इंदौर" }
-              - { label: "प्रकार (Category)", name: "category", widget: "select", options: ["महाआरती सोहळा", "संस्कार सोहळा", "आरोग्य सेवा", "युवा मार्गदर्शन", "वार्षिक सभा", "इतर"], default: "महाआरती सोहळा" }
-              - { label: "वर्णन (Description)", name: "description", widget: "text" }
-              - { label: "फोटो (Banner Image)", name: "image", widget: "image", required: false }
+              - { label: "Event Title", name: "title", widget: "string", hint: "e.g. Samuhik Atharvashirsha & Ganpati Maha Aarti" }
+              - { label: "Date", name: "date_display", widget: "string", default: "20 September 2026", hint: "e.g. 20 September 2026" }
+              - { label: "Time", name: "time", widget: "string", default: "4:00 PM to 6:00 PM | Maha Aarti 6:30 PM", hint: "e.g. 4:00 PM to 6:00 PM" }
+              - { label: "Venue / Location", name: "location", widget: "string", default: "Luv-Kush Awas Vihar, Indore" }
+              - { label: "Category", name: "category", widget: "select", options: ["Maha Aarti", "Cultural Festival", "Healthcare Camp", "Youth Workshop", "Annual Meeting", "Other"], default: "Maha Aarti" }
+              - { label: "Description", name: "description", widget: "text", hint: "Brief summary of the program and schedule" }
+              - { label: "Banner Image (Optional)", name: "image", widget: "image", required: false }
+
+  - name: "news"
+    label: "📰 News & Announcements"
+    label_singular: "News Item"
+    description: "Publish news bulletins and trust announcements."
+    files:
+      - file: "content/news.json"
+        name: "news_file"
+        label: "Community News Bulletin"
+        fields:
+          - label: "News List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.date_display}})"
+            fields:
+              - { label: "Headline / Title", name: "title", widget: "string", hint: "e.g. New Executive Committee Announced" }
+              - { label: "Date Display", name: "date_display", widget: "string", default: "12 September" }
+              - { label: "Short Summary", name: "summary", widget: "text" }
+
+  - name: "settings"
+    label: "⚙️ Trust Contact & Banking"
+    label_singular: "Setting"
+    description: "Update official addresses, phone numbers, and donation bank details."
+    files:
+      - file: "content/settings.json"
+        name: "settings_file"
+        label: "Trust Information & Payment Details"
+        fields:
+          - { label: "Trust Full Name", name: "trust_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Primary Helpline Phone", name: "phone_primary", widget: "string" }
+          - { label: "Secondary Helpline Phone", name: "phone_secondary", widget: "string" }
+          - { label: "Official Email", name: "email", widget: "string" }
+          - { label: "Registered Office Address", name: "address", widget: "text" }
+          - { label: "Donation UPI ID", name: "upi_id", widget: "string" }
+          - { label: "Bank Account Number", name: "bank_account", widget: "string" }
+          - { label: "Bank IFSC Code", name: "bank_ifsc", widget: "string" }
+          - { label: "Bank Branch Name", name: "bank_branch", widget: "string" }

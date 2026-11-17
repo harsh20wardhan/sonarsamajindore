@@ -1,25 +1,192 @@
 <!doctype html>
-<html lang="mr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>सोनार समाज ट्रस्ट, इंदौर | व्यवस्थापन पोर्टल (Admin Portal)</title>
-  
+  <title>Sonar Samaj Trust, Indore | Content Management Portal</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Netlify Identity Widget for Authentication -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ॐ</text></svg>">
-  
+
   <style>
-    /* Styling for Decap CMS branding */
+    /* ══════════════════════════════════════════════
+       MODERN ADMIN PORTAL THEME OVERRIDES
+    ══════════════════════════════════════════════ */
     :root {
       --primary: #c2410c;
+      --primary-hover: #ea580c;
+      --maroon: #831843;
+      --dark: #0f172a;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      background-color: #f8fafc;
+    }
+
+    /* Custom Top Navigation Bar */
+    #admin-topbar {
+      background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #c2410c;
+      font-size: 13px;
+      position: sticky;
+      top: 0;
+      z-index: 99999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #831843, #c2410c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(194, 65, 12, 0.4);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #f8fafc;
+      letter-spacing: -0.2px;
+    }
+
+    .brand-sub {
+      color: #94a3b8;
+      font-size: 11px;
+      margin-left: 6px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .website-link {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .website-link:hover {
+      background: #c2410c;
+      border-color: #c2410c;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #a7f3d0;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Decap CMS UI Enhancements */
+    button[class*="Button"] {
+      border-radius: 8px !important;
+      font-family: inherit !important;
+      font-weight: 600 !important;
+    }
+
+    button[class*="button-primary"] {
+      background-color: var(--primary) !important;
+    }
+    button[class*="button-primary"]:hover {
+      background-color: var(--primary-hover) !important;
     }
   </style>
 </head>
 <body>
-  <!-- Decap CMS Script (formerly Netlify CMS) -->
+
+  <!-- Custom Branded Top Navigation Bar -->
+  <div id="admin-topbar">
+    <div class="brand-group">
+      <div class="brand-badge">ॐ</div>
+      <div>
+        <span class="brand-title">Sonar Samaj Trust, Indore</span>
+        <span class="brand-sub">• Content Management Portal</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="live-status">
+        <span class="live-dot"></span>
+        <span>Connected to GitHub</span>
+      </div>
+      <a href="/" target="_blank" class="website-link">
+        <span>View Live Website</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Decap CMS Script (v3.1.0) -->
   <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Custom Preview Styles
+    CMS.registerPreviewStyle(`
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        padding: 24px;
+        background: #fffbf5;
+      }
+      .card-preview {
+        max-width: 450px;
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid #f0e6d6;
+        padding: 16px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      }
+    `, { raw: true });
+  </script>
 </body>
 </html>
