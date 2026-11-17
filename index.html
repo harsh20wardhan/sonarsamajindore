@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
+        window.tailwind = window.tailwind || {};
         tailwind.config = {
             theme: {
                 extend: {
@@ -1580,10 +1581,13 @@
 
         // ── Copy UPI ID ──
         function copyUPI() {
-            const text = document.getElementById('upi-id-text').innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('UPI ID copied to clipboard: ' + text);
-            });
+            const el = document.getElementById('upi-id-text');
+            const text = (el ? el.textContent || el.innerText : '').trim();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('UPI ID copied to clipboard: ' + text);
+                });
+            }
         }
 
         // ── Membership Form Submission via WhatsApp ──
@@ -1596,17 +1600,17 @@
             const address = document.getElementById('member-address').value || 'नाही';
             const message = document.getElementById('member-message').value || 'नाही';
 
-            const waMsg = `*सोनार समाज ट्रस्ट, इंदौर - सदस्यता नोंदणी अर्ज*%0A%0A` +
-                          `👤 *नाव:* ${encodeURIComponent(name)}%0A` +
-                          `📱 *मोबाईल:* ${encodeURIComponent(phone)}%0A` +
-                          `📧 *ई-मेल:* ${encodeURIComponent(email)}%0A` +
-                          `🏷️ *सदस्य प्रकार:* ${encodeURIComponent(type)}%0A` +
-                          `📍 *पत्ता:* ${encodeURIComponent(address)}%0A` +
-                          `💬 *संदेश:* ${encodeURIComponent(message)}`;
+            const rawMsg = `*सोनार समाज ट्रस्ट, इंदौर - सदस्यता नोंदणी अर्ज*\n\n` +
+                           `👤 *नाव:* ${name}\n` +
+                           `📱 *मोबाईल:* ${phone}\n` +
+                           `📧 *ई-मेल:* ${email}\n` +
+                           `🏷️ *सदस्य प्रकार:* ${type}\n` +
+                           `📍 *पत्ता:* ${address}\n` +
+                           `💬 *संदेश:* ${message}`;
 
             showSuccessModal('सदस्यता अर्ज तयार झाला आहे. आता WhatsApp उघडत आहे...');
             setTimeout(() => {
-                window.open('https://wa.me/917314203099?text=' + waMsg, '_blank');
+                window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawMsg), '_blank');
             }, 800);
         }
 
