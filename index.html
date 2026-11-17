@@ -18,6 +18,9 @@
     <!-- FontAwesome 6 for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Netlify Identity Widget for Decap CMS Authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Google Fonts: Plus Jakarta Sans (Modern Merasamaj feel) + Noto Sans Devanagari -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1451,7 +1454,7 @@
 
             <!-- Bottom Copyright Bar -->
             <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 marathi">
-                <p>© 2026 सोनार समाज ट्रस्ट, इंदौर. सर्व हक्क राखीव.</p>
+                <p>© 2026 सोनार समाज ट्रस्ट, इंदौर. सर्व हक्क राखीव. | <a href="/admin/" class="hover:text-amber-300 transition-colors underline">व्यवस्थापन पोर्टल (Admin Login)</a></p>
                 <p class="text-slate-500">डिझाइन: डिजिटल वेब्स | Built for Sonar Samaj Community</p>
             </div>
         </div>
@@ -1634,6 +1637,17 @@
                 activeBtn.classList.add('bg-brand-600', 'text-white', 'font-bold');
             }
             document.documentElement.lang = lang;
+        }
+
+        // ── Netlify Identity Redirect to /admin/ ──
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
         }
     </script>
 </body>
