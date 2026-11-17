@@ -213,34 +213,34 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-extrabold text-xl text-slate-900 tracking-tight leading-tight marathi">सोनार समाज</span>
-                            <span class="bg-brand-50 text-brand-700 border border-brand-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">ट्रस्ट</span>
+                            <span data-i18n="brand_name" class="font-extrabold text-xl text-slate-900 tracking-tight leading-tight marathi">सोनार समाज</span>
+                            <span data-i18n="brand_trust" class="bg-brand-50 text-brand-700 border border-brand-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">ट्रस्ट</span>
                         </div>
                         <div class="text-xs font-semibold text-brand-600 marathi flex items-center gap-1.5 mt-0.5">
-                            <span>इंदौर, मध्य प्रदेश</span>
+                            <span data-i18n="brand_loc">इंदौर, मध्य प्रदेश</span>
                             <span class="text-slate-300">•</span>
-                            <span class="text-slate-500 font-medium">सेवा • संस्कार • समाज विकास</span>
+                            <span data-i18n="brand_tagline" class="text-slate-500 font-medium">सेवा • संस्कार • समाज विकास</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-slate-700 marathi">
-                    <a href="#home" class="nav-link hover:text-brand-600 transition-colors py-1">मुख्यपृष्ठ</a>
-                    <a href="#about" class="nav-link hover:text-brand-600 transition-colors py-1">परिचय</a>
-                    <a href="#good-deeds" class="nav-link hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
-                    <a href="#committee" class="nav-link hover:text-brand-600 transition-colors py-1">समिती</a>
-                    <a href="#events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
-                    <a href="#membership" class="nav-link hover:text-brand-600 transition-colors py-1">सदस्यता</a>
-                    <a href="#gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
-                    <a href="#contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
+                    <a href="#home" data-i18n="nav_home" class="nav-link hover:text-brand-600 transition-colors py-1">मुख्यपृष्ठ</a>
+                    <a href="#about" data-i18n="nav_about" class="nav-link hover:text-brand-600 transition-colors py-1">परिचय</a>
+                    <a href="#good-deeds" data-i18n="nav_deeds" class="nav-link hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
+                    <a href="#committee" data-i18n="nav_committee" class="nav-link hover:text-brand-600 transition-colors py-1">समिती</a>
+                    <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
+                    <a href="#membership" data-i18n="nav_membership" class="nav-link hover:text-brand-600 transition-colors py-1">सदस्यता</a>
+                    <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
+                    <a href="#contact" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
                 </nav>
 
                 <!-- Action CTAs (Merasamaj-style Pill Buttons) -->
                 <div class="hidden sm:flex items-center gap-3">
                     <button onclick="openDonateModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-md shadow-brand-600/25 transition-all hover:shadow-glow hover:-translate-y-0.5">
                         <i class="fas fa-heart text-amber-200 text-xs"></i>
-                        <span class="marathi">देणगी द्या</span>
+                        <span data-i18n="btn_donate" class="marathi">देणगी द्या</span>
                     </button>
                     <a href="https://wa.me/917314203099?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20mala%20mahiti%20havi%20ahe." target="_blank" class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-all hover:scale-105" title="WhatsApp वर संपर्क करा">
                         <i class="fab fa-whatsapp text-lg"></i>
@@ -258,15 +258,15 @@
 
         <!-- Mobile Drawer Navigation -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-surface-border px-4 pt-3 pb-6 space-y-2 shadow-xl marathi">
-            <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">मुख्यपृष्ठ</a>
-            <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">परिचय</a>
-            <a href="#good-deeds" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सेवा कार्य (Good Deeds)</a>
-            <a href="#committee" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">आमची समिती</a>
-            <a href="#events" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">कार्यक्रम व बातम्या</a>
-            <a href="#donate" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">देणगी / UPI QR</a>
-            <a href="#membership" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सदस्यता अर्ज</a>
-            <a href="#gallery" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">गॅलरी</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">संपर्क</a>
+            <a href="#home" onclick="closeMobileMenu()" data-i18n="nav_home" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">मुख्यपृष्ठ</a>
+            <a href="#about" onclick="closeMobileMenu()" data-i18n="nav_about" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">परिचय</a>
+            <a href="#good-deeds" onclick="closeMobileMenu()" data-i18n="nav_deeds" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सेवा कार्य (Good Deeds)</a>
+            <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors"><span data-i18n="committee_title">आमची समिती</span></a>
+            <a href="#events" onclick="closeMobileMenu()" data-i18n="nav_events" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">कार्यक्रम व बातम्या</a>
+            <a href="#donate" onclick="closeMobileMenu()" data-i18n="nav_donate" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">देणगी / UPI QR</a>
+            <a href="#membership" onclick="closeMobileMenu()" data-i18n="nav_membership" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सदस्यता अर्ज</a>
+            <a href="#gallery" onclick="closeMobileMenu()" data-i18n="nav_gallery" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">गॅलरी</a>
+            <a href="#contact" onclick="closeMobileMenu()" data-i18n="nav_contact" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">संपर्क</a>
             <div class="pt-3 border-t border-slate-100 flex gap-2">
                 <button onclick="openDonateModal(); closeMobileMenu();" class="flex-1 bg-brand-600 text-white font-bold py-3 rounded-xl text-center text-sm shadow-md">♥ देणगी द्या</button>
                 <a href="https://wa.me/917314203099" target="_blank" class="w-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md"><i class="fab fa-whatsapp"></i></a>
@@ -297,17 +297,15 @@
                         <!-- Devanagari Cultural Pill Badge -->
                         <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-amber-300 text-xs sm:text-sm font-semibold marathi">
                             <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                            <span>🚩 सेवा • संस्कार • समाज विकास</span>
+                            <span data-i18n="hero_badge">🚩 सेवा • संस्कार • समाज विकास</span>
                             <span class="text-white/40">|</span>
-                            <span class="text-slate-200">इंदूरचे अधिकृत व्यासपीठ</span>
+                            <span data-i18n="hero_official" class="text-slate-200">इंदूरचे अधिकृत व्यासपीठ</span>
                         </div>
 
                         <!-- Main H1 Title -->
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] marathi text-white">
-                            एकजुट समाज, <br>
-                            <span class="bg-gradient-to-r from-amber-300 via-brand-400 to-orange-500 bg-clip-text text-transparent">
-                                सशक्त समाज
-                            </span>
+                            <span data-i18n="hero_title_1">एकजुट समाज,</span><br>
+                            <span data-i18n="hero_title_2" class="bg-gradient-to-r from-amber-300 via-brand-400 to-orange-500 bg-clip-text text-transparent">सशक्त समाज</span>
                         </h1>
 
                         <!-- Subtitle with Indore Trust Purpose -->
@@ -319,11 +317,11 @@
                         <div class="flex flex-wrap items-center gap-3.5 pt-2">
                             <a href="#donate" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold px-7 py-3.5 rounded-full text-base shadow-lg shadow-brand-600/30 hover:shadow-glow transition-all hover:-translate-y-0.5 marathi">
                                 <i class="fas fa-heart text-amber-200"></i>
-                                <span>♥ देणगी द्या (Donate Now)</span>
+                                <span data-i18n="hero_btn_donate">♥ देणगी द्या (Donate Now)</span>
                             </a>
                             <a href="#membership" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-sm font-bold px-6 py-3.5 rounded-full text-base transition-all hover:-translate-y-0.5 marathi">
                                 <i class="fas fa-user-plus text-amber-300"></i>
-                                <span>👥 आमच्याशी जुडा</span>
+                                <span data-i18n="hero_btn_join">👥 आमच्याशी जुडा</span>
                             </a>
                             <a href="https://wa.me/917314203099?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20mala%20mahiti%20havi%20ahe." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600/90 hover:bg-emerald-600 text-white font-bold px-5 py-3.5 rounded-full text-base transition-all shadow-md">
                                 <i class="fab fa-whatsapp text-lg"></i>
@@ -423,25 +421,25 @@
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
                             <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-amber-300 tracking-tight font-sans">500+</div>
-                            <div class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">सक्रिय सदस्य</div>
+                            <div data-i18n="stat_members" class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">सक्रिय सदस्य</div>
                             <div class="text-[11px] text-slate-400 mt-0.5">इंदूर व परिसरातील बांधव</div>
                         </div>
 
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
                             <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-400 tracking-tight font-sans">70+</div>
-                            <div class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">पुरस्कार व सन्मान</div>
+                            <div data-i18n="stat_awards" class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">पुरस्कार व सन्मान</div>
                             <div class="text-[11px] text-slate-400 mt-0.5">सामाजिक योगदानाबद्दल</div>
                         </div>
 
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
                             <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-amber-300 tracking-tight font-sans">3,000+</div>
-                            <div class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">सामाजिक उपक्रम</div>
+                            <div data-i18n="stat_activities" class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">सामाजिक उपक्रम</div>
                             <div class="text-[11px] text-slate-400 mt-0.5">सेवा, शिबिरे व मेळावे</div>
                         </div>
 
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
                             <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-400 tracking-tight font-sans">7,000+</div>
-                            <div class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">जोडले गेलेले बांधव</div>
+                            <div data-i18n="stat_families" class="text-xs sm:text-sm font-semibold text-slate-300 mt-1.5 marathi">जोडले गेलेले बांधव</div>
                             <div class="text-[11px] text-slate-400 mt-0.5">कुटुंबे व व्यापारी नेटवर्क</div>
                         </div>
                     </div>
@@ -457,9 +455,7 @@
                     
                     <!-- Left: About Content -->
                     <div class="lg:col-span-7 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi">
-                            आमच्याबद्दल • परिचय
-                        </div>
+                        <div data-i18n="about_pill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi">आमच्याबद्दल • परिचय</div>
 
                         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight marathi">
                             सोनार समाज ट्रस्टचे <br>
@@ -534,7 +530,7 @@
                         सद्कार्य • Good Deeds & Community Service
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        आमचे प्रमुख सेवा कार्य
+                        <span data-i18n="deeds_title">आमचे प्रमुख सेवा कार्य</span>
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg marathi">
                         सोनार समाज ट्रस्ट समाजात सेवा, सहकार्य आणि संवेदनशीलता वाढवतो. योग्य वेळी गरजू लोकांपर्यंत मदत पोहोचवून समाज बळकट करणे हा आमचा उद्देश आहे.
@@ -785,7 +781,7 @@
                         अपडेट्स व घडामोडी
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        आगामी कार्यक्रम व नवीनतम बातम्या
+                        <span data-i18n="events_title">आगामी कार्यक्रम व नवीनतम बातम्या</span>
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg marathi">
                         समाजातील आगामी कार्यक्रम, संस्कार सोहळे, शिबिरे आणि महत्त्वाच्या बातम्यांची माहिती.
@@ -947,7 +943,7 @@
                         ♥ सामाजिक योगदान • Donation
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        समाजसेवेसाठी आपले बहुमूल्य योगदान
+                        <span data-i18n="donate_title">समाजसेवेसाठी आपले बहुमूल्य योगदान</span>
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg marathi">
                         आपल्या छोट्याशा योगदानाने समाजातील गरजू कुटुंबांना, आजारी बांधवांना व विद्यार्थ्यांना नवे जीवन व शिक्षण मिळू शकते.
@@ -1084,7 +1080,7 @@
                         सहभाग • सदस्यता नोंदणी
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        सदस्यता / आमच्याशी जुडा
+                        <span data-i18n="member_title">सदस्यता / आमच्याशी जुडा</span>
                     </h2>
                     <p class="text-slate-600 text-base marathi">
                         सोनार समाज ट्रस्टच्या उपक्रमांमध्ये सक्रिय सहभागी होण्यासाठी, सदस्यत्वासाठी किंवा स्वयंसेवक म्हणून जुडण्यासाठी आपली माहिती पाठवा.
@@ -1170,7 +1166,7 @@
                         छायाचित्रे • Photo Gallery
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        गॅलरी — समाज उपक्रमांच्या आठवणी
+                        <span data-i18n="gallery_title">गॅलरी — समाज उपक्रमांच्या आठवणी</span>
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg marathi">
                         आमच्या समाजातील विविध कार्यक्रम, गणेशोत्सव, रक्तदान शिबिरे व सामाजिक मेळाव्यांची झलक.
@@ -1268,7 +1264,7 @@
                         संपर्क • Contact Information
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        आमच्याशी थेट संपर्क साधा
+                        <span data-i18n="contact_title">आमच्याशी थेट संपर्क साधा</span>
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg marathi">
                         कोणत्याही सामाजिक कामासाठी, देणगी, सदस्य नोंदणी किंवा मदतीसाठी ट्रस्ट कार्यालयाशी संपर्क करा.
@@ -1625,8 +1621,114 @@
             showSuccessModal('संपर्क साधल्याबद्दल धन्यवाद! ट्रस्टचे प्रतिनिधी लवकरच आपल्याशी संपर्क साधतील.');
         }
 
-        // ── Multi-lingual Selector Simulation ──
+        // ── Comprehensive Multi-lingual Translation Engine ──
+        const i18n = {
+            mr: {
+                nav_home: "मुख्यपृष्ठ",
+                nav_about: "परिचय",
+                nav_deeds: "सेवा कार्य",
+                nav_committee: "समिती",
+                nav_events: "कार्यक्रम",
+                nav_membership: "सदस्यता",
+                nav_gallery: "गॅलरी",
+                nav_contact: "संपर्क",
+                nav_donate: "देणगी / UPI QR",
+                btn_donate: "देणगी द्या",
+                brand_name: "सोनार समाज",
+                brand_trust: "ट्रस्ट",
+                brand_loc: "इंदौर, मध्य प्रदेश",
+                brand_tagline: "सेवा • संस्कार • समाज विकास",
+                hero_badge: "🚩 सेवा • संस्कार • समाज विकास",
+                hero_official: "इंदूरचे अधिकृत व्यासपीठ",
+                hero_title_1: "एकजुट समाज,",
+                hero_title_2: "सशक्त समाज",
+                hero_btn_donate: "♥ देणगी द्या (Donate Now)",
+                hero_btn_join: "👥 आमच्याशी जुडा",
+                stat_members: "सक्रिय सदस्य",
+                stat_awards: "पुरस्कार व सन्मान",
+                stat_activities: "सामाजिक उपक्रम",
+                stat_families: "जोडले गेलेले बांधव",
+                about_pill: "आमच्याबद्दल • परिचय",
+                deeds_title: "आमचे प्रमुख सेवा कार्य",
+                committee_title: "आमची समिती",
+                events_title: "आगामी कार्यक्रम व नवीनतम बातम्या",
+                donate_title: "समाजसेवेसाठी आपले बहुमूल्य योगदान",
+                member_title: "सदस्यता / आमच्याशी जुडा",
+                gallery_title: "गॅलरी — समाज उपक्रमांच्या आठवणी",
+                contact_title: "आमच्याशी थेट संपर्क साधा"
+            },
+            hi: {
+                nav_home: "मुख्य पृष्ठ",
+                nav_about: "परिचय",
+                nav_deeds: "सेवा कार्य",
+                nav_committee: "समिति",
+                nav_events: "कार्यक्रम",
+                nav_membership: "सदस्यता",
+                nav_gallery: "गैलरी",
+                nav_contact: "संपर्क",
+                nav_donate: "दान / UPI QR",
+                btn_donate: "दान दें",
+                brand_name: "सोनार समाज",
+                brand_trust: "ट्रस्ट",
+                brand_loc: "इंदौर, मध्य प्रदेश",
+                brand_tagline: "सेवा • संस्कार • समाज विकास",
+                hero_badge: "🚩 सेवा • संस्कार • समाज विकास",
+                hero_official: "इंदौर का आधिकारिक मंच",
+                hero_title_1: "एकजुट समाज,",
+                hero_title_2: "सशक्त समाज",
+                hero_btn_donate: "♥ दान दें (Donate Now)",
+                hero_btn_join: "👥 हमसे जुड़ें",
+                stat_members: "सक्रिय सदस्य",
+                stat_awards: "पुरस्कार व सम्मान",
+                stat_activities: "सामाजिक उपक्रम",
+                stat_families: "जुड़े हुए परिवार",
+                about_pill: "हमारे बारे में • परिचय",
+                deeds_title: "हमारे प्रमुख सेवा कार्य",
+                committee_title: "हमारी समिति",
+                events_title: "आगामी कार्यक्रम एवं नवीनतम समाचार",
+                donate_title: "समाजसेवा के लिए आपका अमूल्य योगदान",
+                member_title: "सदस्यता / हमसे जुड़ें",
+                gallery_title: "गैलरी — समाज गतिविधियों की झलक",
+                contact_title: "हमसे सीधे संपर्क करें"
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_deeds: "Services",
+                nav_committee: "Committee",
+                nav_events: "Events",
+                nav_membership: "Membership",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                nav_donate: "Donate / UPI QR",
+                btn_donate: "Donate Now",
+                brand_name: "Sonar Samaj",
+                brand_trust: "Trust",
+                brand_loc: "Indore, Madhya Pradesh",
+                brand_tagline: "Service • Values • Community Development",
+                hero_badge: "🚩 Service • Values • Community Development",
+                hero_official: "Official Indore Community Portal",
+                hero_title_1: "United Community,",
+                hero_title_2: "Empowered Community",
+                hero_btn_donate: "♥ Donate Now",
+                hero_btn_join: "👥 Join Us",
+                stat_members: "Active Members",
+                stat_awards: "Awards & Honors",
+                stat_activities: "Community Initiatives",
+                stat_families: "Connected Families",
+                about_pill: "About Us • Overview",
+                deeds_title: "Our Core Pillars of Service",
+                committee_title: "Our Executive Committee",
+                events_title: "Upcoming Events & Latest News",
+                donate_title: "Your Valued Contribution for Community Welfare",
+                member_title: "Membership / Join Us",
+                gallery_title: "Gallery — Community Moments",
+                contact_title: "Contact Us Directly"
+            }
+        };
+
         function changeLang(lang) {
+            lang = lang || 'mr';
             document.querySelectorAll('[id^="lang-"]').forEach(btn => {
                 btn.classList.remove('bg-brand-600', 'text-white', 'font-bold');
                 btn.classList.add('font-medium', 'text-slate-300');
@@ -1637,7 +1739,27 @@
                 activeBtn.classList.add('bg-brand-600', 'text-white', 'font-bold');
             }
             document.documentElement.lang = lang;
+            try { localStorage.setItem('sonar_lang', lang); } catch(e){}
+
+            // Update text elements dynamically
+            const dict = i18n[lang] || i18n.mr;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerHTML = dict[key];
+                }
+            });
         }
+
+        // Initialize saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = (function() {
+                try { return localStorage.getItem('sonar_lang'); } catch(e){ return null; }
+            })() || 'mr';
+            if (savedLang !== 'mr') {
+                changeLang(savedLang);
+            }
+        });
 
         // ── Netlify Identity Redirect to /admin/ ──
         if (window.netlifyIdentity) {
