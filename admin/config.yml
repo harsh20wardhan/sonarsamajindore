@@ -109,23 +109,49 @@ collections:
                   - { label: "Caption (English)", name: "caption_en", widget: "string" }
 
   - name: "gallery"
-    label: "📸 Photo Gallery"
-    label_singular: "Photo"
-    description: "Upload and manage photos displayed in the live website gallery."
+    label: "📸 Photo Gallery (Year & Program wise)"
+    label_singular: "Year Archive"
+    description: "Upload and manage photos organized by year and individual programs/events."
     files:
       - file: "content/gallery.json"
         name: "gallery_file"
-        label: "Gallery Photo Collection"
+        label: "Year-wise Programs & Photo Gallery"
         fields:
-          - label: "Photos List"
-            name: "items"
+          - label: "Years Archive"
+            name: "years"
             widget: "list"
-            summary: "{{fields.title}} [{{fields.category}}]"
+            summary: "{{fields.year}}"
             fields:
-              - { label: "Photo Title / Caption", name: "title", widget: "string", hint: "e.g. Annual Community Gathering, Indore" }
-              - { label: "Category", name: "category", widget: "select", options: ["Events", "Festivals", "Social Welfare", "Press Coverage", "Education", "Healthcare"], default: "Events" }
-              - { label: "Upload Image", name: "image", widget: "image" }
-              - { label: "Subtitle or Date (Optional)", name: "subtitle", widget: "string", required: false, hint: "e.g. September 2026" }
+              - { label: "Year (e.g. 2026, 2023)", name: "year", widget: "string" }
+              - { label: "Year Label (Marathi)", name: "year_label_mr", widget: "string" }
+              - { label: "Year Label (Hindi)", name: "year_label_hi", widget: "string" }
+              - { label: "Year Label (English)", name: "year_label_en", widget: "string" }
+              - label: "Programs / Events in this Year"
+                name: "programs"
+                widget: "list"
+                summary: "{{fields.title_mr}} ({{fields.date_mr}})"
+                fields:
+                  - { label: "Program ID", name: "id", widget: "string" }
+                  - { label: "Program Title (Marathi)", name: "title_mr", widget: "string" }
+                  - { label: "Program Title (Hindi)", name: "title_hi", widget: "string" }
+                  - { label: "Program Title (English)", name: "title_en", widget: "string" }
+                  - { label: "Date (Marathi)", name: "date_mr", widget: "string" }
+                  - { label: "Date (Hindi)", name: "date_hi", widget: "string" }
+                  - { label: "Date (English)", name: "date_en", widget: "string" }
+                  - { label: "Venue (Marathi)", name: "venue_mr", widget: "string" }
+                  - { label: "Venue (Hindi)", name: "venue_hi", widget: "string" }
+                  - { label: "Venue (English)", name: "venue_en", widget: "string" }
+                  - { label: "Description (Marathi)", name: "description_mr", widget: "text" }
+                  - { label: "Description (Hindi)", name: "description_hi", widget: "text" }
+                  - { label: "Description (English)", name: "description_en", widget: "text" }
+                  - label: "Program Photos"
+                    name: "photos"
+                    widget: "list"
+                    fields:
+                      - { label: "Photo Image", name: "url", widget: "image" }
+                      - { label: "Caption (Marathi)", name: "caption_mr", widget: "string" }
+                      - { label: "Caption (Hindi)", name: "caption_hi", widget: "string" }
+                      - { label: "Caption (English)", name: "caption_en", widget: "string" }
 
   - name: "events"
     label: "📅 Upcoming Events"

@@ -1,16 +1,520 @@
 {
-  "items": [
+  "years": [
     {
-      "title": "समाज मेळावा व संमेलन, इंदूर",
-      "category": "कार्यक्रम",
-      "image": "./src/samaj-group-photo.jpeg",
-      "subtitle": "सामूहिक स्नेहसंमेलन व वार्षिक बैठक"
+      "year": "2026",
+      "year_label_mr": "वर्ष २०२६ (चालू वर्ष)",
+      "year_label_hi": "वर्ष २०२६ (वर्तमान वर्ष)",
+      "year_label_en": "Year 2026 (Current)",
+      "programs": [
+        {
+          "id": "2026-sankranti",
+          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२६",
+          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२६",
+          "title_en": "Makar Sankranti Celebration 2026",
+          "date_mr": "१४ जानेवारी २०२६",
+          "date_hi": "१४ जनवरी २०२६",
+          "date_en": "14 January 2026",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "पारंपारिक मकर संक्रांती सोहळा, हळदी-कुंकू कार्यक्रम व तीळगुळ वाटप सोहळा.",
+          "description_hi": "पारंपरिक मकर संक्रांति समारोह, हल्दी-कुमकुम कार्यक्रम एवं तिलगुड़ वितरण।",
+          "description_en": "Traditional Makar Sankranti gathering, Haldi-Kunku ceremony, and community celebration.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "मकर संक्रांती सोहळा २०२६ - समाज बांधवांची उत्साही उपस्थिती",
+              "caption_hi": "मकर संक्रांति समारोह २०२६ - समाज बंधुओं की उपस्थिति",
+              "caption_en": "Makar Sankranti 2026 - Community members gathering"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "संक्रांती सोहळ्याची वृत्तपत्रात विशेष प्रसिद्धी",
+              "caption_hi": "संक्रांति समारोह की समाचार पत्रों में कवरेज",
+              "caption_en": "Press coverage of Sankranti celebrations"
+            },
+            {
+              "url": "./src/samaj-logo.png",
+              "caption_mr": "संत नरहरी महाराज पूजन व मंगलाचरण",
+              "caption_hi": "संत नरहरि महाराज पूजन एवं मंगलाचरण",
+              "caption_en": "Sant Narhari Maharaj Pujan ceremony"
+            }
+          ]
+        },
+        {
+          "id": "2026-blood-donation",
+          "title_mr": "रक्तदान व मोफत आरोग्य शिबिर २०२६",
+          "title_hi": "रक्तदान एवं नि:शुल्क स्वास्थ्य शिविर २०२६",
+          "title_en": "Blood Donation & Health Camp 2026",
+          "date_mr": "१५ ऑगस्ट २०२६",
+          "date_hi": "१५ अगस्त २०२६",
+          "date_en": "15 August 2026",
+          "venue_mr": "सुखलिया परिसर, इंदूर",
+          "venue_hi": "सुखलिया परिसर, इंदौर",
+          "venue_en": "Sukhlia Area, Indore",
+          "description_mr": "स्वातंत्र्य दिनानिमित्त भव्य रक्तदान शिबिर, १२५+ रक्त बाटल्यांचे संकलन.",
+          "description_hi": "स्वतंत्रता दिवस पर रक्तदान शिविर, १२५+ यूनिट रक्त संकलन।",
+          "description_en": "Mega blood donation camp on Independence Day with 125+ units collected.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "रक्तदान शिबिर - दाते व डॉक्टर्स टीम",
+              "caption_hi": "रक्तदान शिविर - रक्तदाता एवं डॉक्टर्स",
+              "caption_en": "Blood donation camp - Donors and Medical Team"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "रक्तदान उपक्रमाचे वृत्तपत्र कव्हरेज",
+              "caption_hi": "रक्तदान शिविर की मीडिया रिपोर्ट",
+              "caption_en": "Media coverage of Blood Donation Drive"
+            }
+          ]
+        },
+        {
+          "id": "2026-ganesh-utsav",
+          "title_mr": "गणेशोत्सव व भव्य महाआरती २०२६",
+          "title_hi": "गणेशोत्सव एवं भव्य महाआरती २०२६",
+          "title_en": "Ganesh Utsav & Maha Aarti 2026",
+          "date_mr": "०७ सप्टेंबर २०२६",
+          "date_hi": "०७ सितंबर २०२६",
+          "date_en": "07 September 2026",
+          "venue_mr": "लवकुश आवास विहार, इंदूर",
+          "venue_hi": "लवकुश आवास विहार, इंदौर",
+          "venue_en": "Luvkush Awas Vihar, Indore",
+          "description_mr": "सामूहिक अथर्वशीर्ष पठण, ५००+ समाज बांधवांची उपस्थिती व महाप्रसाद वितरण.",
+          "description_hi": "सामूहिक अथर्वशीर्ष पाठ, ५००+ बंधुओं की उपस्थिति एवं महाप्रसाद।",
+          "description_en": "Community Atharvashirsha chanting and Maha Aarti with 500+ attendees.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "गणेशोत्सव महाआरती - भाविकांची अलोट गर्दी",
+              "caption_hi": "गणेशोत्सव महाआरती - श्रद्धालुओं की भीड़",
+              "caption_en": "Ganesh Utsav Maha Aarti - Devotees gathering"
+            },
+            {
+              "url": "./src/samaj-logo.png",
+              "caption_mr": "बाप्पाची मनोभावे पूजा व आरती",
+              "caption_hi": "गणपति बाप्पा की पूजा व आरती",
+              "caption_en": "Bappa's Worship and Aarti"
+            }
+          ]
+        },
+        {
+          "id": "2026-diwali-milan",
+          "title_mr": "दिवाळी मिलन समारोह २०२६",
+          "title_hi": "दीपावली मिलन समारोह २०२६",
+          "title_en": "Diwali Milan Samaroh 2026",
+          "date_mr": "२२ नोव्हेंबर २०२६",
+          "date_hi": "२२ नवंबर २०२६",
+          "date_en": "22 November 2026",
+          "venue_mr": "बंधन गार्डन, लवकुश, इंदूर (वेळ: ११:३० ते ३:३०)",
+          "venue_hi": "बंधन गार्डन, लवकुश, इंदौर (समय: ११:३० से ३:३०)",
+          "venue_en": "Bandhan garden, luv kush, Indore (11:30AM to 3:30PM)",
+          "description_mr": "वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम व स्नेहभोजन सोहळा.",
+          "description_hi": "वार्षिक भव्य स्नेह सम्मेलन, सांस्कृतिक कार्यक्रम एवं स्नेहभोज।",
+          "description_en": "Annual grand community gathering, cultural events and festive feast.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "दिवाळी मिलन स्नेहसंमेलन - वार्षिक कौटुंबिक भेट",
+              "caption_hi": "दीपावली मिलन - वार्षिक पारिवारिक मिलन",
+              "caption_en": "Diwali Milan - Annual Family Gathering"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "दिवाळी सोहळ्याची अधिकृत प्रसिद्धी",
+              "caption_hi": "दीपावली समारोह की आधिकारिक प्रेस विज्ञप्ति",
+              "caption_en": "Official Diwali Milan Press Coverage"
+            }
+          ]
+        }
+      ]
     },
     {
-      "title": "वृत्तपत्र प्रसिद्धी व सामाजिक ओळख",
-      "category": "वृत्तपत्र",
-      "image": "./src/newspaper-ss.jpeg",
-      "subtitle": "ट्रस्टचे कार्य व उपक्रमांची वृत्तपत्रात दखल"
+      "year": "2025",
+      "year_label_mr": "वर्ष २०२५",
+      "year_label_hi": "वर्ष २०२५",
+      "year_label_en": "Year 2025",
+      "programs": [
+        {
+          "id": "2025-sankranti",
+          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२५",
+          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२५",
+          "title_en": "Makar Sankranti Celebration 2025",
+          "date_mr": "१४ जानेवारी २०२५",
+          "date_hi": "१४ जनवरी २०२५",
+          "date_en": "14 January 2025",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "हळदी-कुंकू, पारंपारिक खेळ व महिला मंडळातर्फे विविध स्पर्धांचे आयोजन.",
+          "description_hi": "हल्दी-कुमकुम, पारंपरिक खेल एवं महिला मंडल द्वारा प्रतियोगिताओं का आयोजन।",
+          "description_en": "Haldi-Kunku festival, traditional games and women's wing activities.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "संक्रांती २०२५ - महिला व कुटुंबीयांचा सहभाग",
+              "caption_hi": "संक्रांति २०२५ - महिलाओं एवं परिवारों की सहभागिता",
+              "caption_en": "Sankranti 2025 - Family and women participation"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "कार्यक्रमाची वृत्तपत्रात बातमी",
+              "caption_hi": "कार्यक्रम का समाचार",
+              "caption_en": "Program news article"
+            }
+          ]
+        },
+        {
+          "id": "2025-career-guidance",
+          "title_mr": "युवा करिअर व शैक्षणिक मार्गदर्शन २०२५",
+          "title_hi": "युवा करियर एवं शैक्षणिक मार्गदर्शन २०२५",
+          "title_en": "Youth Career & Education Workshop 2025",
+          "date_mr": "२५ मे २०२५",
+          "date_hi": "२५ मई २०२५",
+          "date_en": "25 May 2025",
+          "venue_mr": "ज्वेलर्स असोसिएशन हॉल, इंदूर",
+          "venue_hi": "ज्वेलर्स एसोसिएशन हॉल, इंदौर",
+          "venue_en": "Jewellers Association Hall, Indore",
+          "description_mr": "१० वी व १२ वी नंतर करिअर दिशा, सुवर्ण व्यवसाय व तंत्रज्ञान विषयावर तज्ज्ञांचे मार्गदर्शन.",
+          "description_hi": "१०वीं व १२वीं के बाद करियर मार्गदर्शन, ज्वेलरी उद्योग एवं आधुनिक तकनीकी शिक्षा।",
+          "description_en": "Career guidance for 10th & 12th students and jewelry design technology.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "मार्गदर्शन कार्यशाळा - युवा विद्यार्थी व मार्गदर्शक",
+              "caption_hi": "कार्यशाला - युवा छात्र एवं सलाहकार",
+              "caption_en": "Workshop - Young students and mentors"
+            }
+          ]
+        },
+        {
+          "id": "2025-diwali",
+          "title_mr": "दिवाळी मिलन व गुणगौरव सोहळा २०२५",
+          "title_hi": "दीपावली मिलन एवं प्रतिभा सम्मान २०२५",
+          "title_en": "Diwali Milan & Merit Felicitation 2025",
+          "date_mr": "०२ नोव्हेंबर २०२५",
+          "date_hi": "०२ नवंबर २०२५",
+          "date_en": "02 November 2025",
+          "venue_mr": "राजेंद्र नगर क्लब, इंदूर",
+          "venue_hi": "राजेंद्र नगर क्लब, इंदौर",
+          "venue_en": "Rajendra Nagar Club, Indore",
+          "description_mr": "गुणवंत विद्यार्थ्यांचा सत्कार आणि समाजातील ज्येष्ठ नागरिकांचा सन्मान.",
+          "description_hi": "प्रतिभाशाली छात्रों का सम्मान एवं समाज के वरिष्ठ नागरिकों का वंदन।",
+          "description_en": "Felicitation of meritorious students and honoring community seniors.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "गुणवंत विद्यार्थी गौरव सोहळा २०२५",
+              "caption_hi": "मेधावी छात्र सम्मान समारोह २०२५",
+              "caption_en": "Merit Felicitation Ceremony 2025"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "सत्कार सोहळ्याचे वृत्तपत्र कात्रण",
+              "caption_hi": "सम्मान समारोह की प्रेस क्लिपिंग",
+              "caption_en": "Press clipping of Felicitation ceremony"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "year_label_mr": "वर्ष २०२४",
+      "year_label_hi": "वर्ष २०२४",
+      "year_label_en": "Year 2024",
+      "programs": [
+        {
+          "id": "2024-sankranti",
+          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२४",
+          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२४",
+          "title_en": "Makar Sankranti Celebration 2024",
+          "date_mr": "१५ जानेवारी २०२४",
+          "date_hi": "१५ जनवरी २०२४",
+          "date_en": "15 January 2024",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "पारंपारिक संक्रांती सोहळा, हळदी-कुंकू व सामाजिक संवाद बैठक.",
+          "description_hi": "पारंपरिक संक्रांति समारोह, हल्दी-कुमकुम एवं सामाजिक संवाद।",
+          "description_en": "Traditional Sankranti gathering with community dialogue.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "संक्रांती सोहळा २०२४ - समाज मेळावा",
+              "caption_hi": "संक्रांति समारोह २०२४ - समाज सम्मेलन",
+              "caption_en": "Sankranti 2024 - Community Gathering"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "संक्रांती सोहळ्याचे वृत्तपत्र कव्हरेज",
+              "caption_hi": "संक्रांति समारोह की समाचार रिपोर्ट",
+              "caption_en": "Sankranti 2024 Newspaper coverage"
+            }
+          ]
+        },
+        {
+          "id": "2024-narhari-jayanti",
+          "title_mr": "संत नरहरी महाराज पुण्यतिथी उत्सव २०२४",
+          "title_hi": "संत नरहरि महाराज पुण्यतिथि उत्सव २०२४",
+          "title_en": "Sant Narhari Maharaj Punya Tithi 2024",
+          "date_mr": "०६ फेब्रुवारी २०२४",
+          "date_hi": "०६ फरवरी २०२४",
+          "date_en": "06 February 2024",
+          "venue_mr": "संत नरहरी महाराज मंदिर, सराफा, इंदूर",
+          "venue_hi": "संत नरहरि महाराज मंदिर, सराफा, इंदौर",
+          "venue_en": "Sant Narhari Temple, Sarafa, Indore",
+          "description_mr": "संत नरहरी महाराज पालखी मिरवणूक, भजन संध्या व महाप्रसाद वाटप.",
+          "description_hi": "संत नरहरि महाराज पालकी शोभायात्रा, भजन संध्या एवं महाप्रसाद।",
+          "description_en": "Palkhi procession, devotional Bhajan evening, and Mahaprasad.",
+          "photos": [
+            {
+              "url": "./src/samaj-logo.png",
+              "caption_mr": "संत नरहरी महाराज बोधचिन्ह व पालखी पूजन",
+              "caption_hi": "संत नरहरि महाराज पालकी पूजन",
+              "caption_en": "Sant Narhari Maharaj Palkhi Pujan"
+            },
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "भजन संध्या - समाज बांधव व महिला मंडळ",
+              "caption_hi": "भजन संध्या - समाजजन एवं मातृशक्ति",
+              "caption_en": "Devotional Evening - Community Attendance"
+            }
+          ]
+        },
+        {
+          "id": "2024-agm-meeting",
+          "title_mr": "वार्षिक सर्वसाधारण सभा व संमेलन २०२४",
+          "title_hi": "वार्षिक साधारण सभा एवं सम्मेलन २०२४",
+          "title_en": "Annual General Meeting 2024",
+          "date_mr": "२२ सप्टेंबर २०२४",
+          "date_hi": "२२ सितंबर २०२४",
+          "date_en": "22 September 2024",
+          "venue_mr": "हॉटेल क्राऊन पॅलेस सभागृह, इंदूर",
+          "venue_hi": "होटल क्राउन पैलेस सभागृह, इंदौर",
+          "venue_en": "Hotel Crown Palace Hall, Indore",
+          "description_mr": "ट्रस्टचे वार्षिक लेखाजोखा सादरीकरण, नवीन कार्यकारिणी घोषणा व भावी योजना.",
+          "description_hi": "ट्रस्ट का वार्षिक लेखाजोखा, नई कार्यकारिणी की घोषणा एवं आगामी योजनाएं।",
+          "description_en": "Annual audited accounts presentation and future roadmap.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "वार्षिक सर्वसाधारण सभा २०२४ - पदाधिकारी व सदस्य",
+              "caption_hi": "वार्षिक साधारण सभा २०२४ - पदाधिकारी एवं सदस्य",
+              "caption_en": "AGM 2024 - Office Bearers and Members"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "वार्षिक सभेचे वृत्तपत्रात प्रसिद्ध वृत्त",
+              "caption_hi": "वार्षिक सभा की समाचार रिपोर्ट",
+              "caption_en": "AGM 2024 Press report"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2023",
+      "year_label_mr": "वर्ष २०२३",
+      "year_label_hi": "वर्ष २०२३",
+      "year_label_en": "Year 2023",
+      "programs": [
+        {
+          "id": "2023-sankranti",
+          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२३ (संक्रांती कार्यक्रम)",
+          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२३ (संक्रांति कार्यक्रम)",
+          "title_en": "Makar Sankranti Celebration 2023 (Sankranti Karyakram)",
+          "date_mr": "१५ जानेवारी २०२३",
+          "date_hi": "१५ जनवरी २०२३",
+          "date_en": "15 January 2023",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "सोनार समाजाचे ऐतिहासिक मकर संक्रांती स्नेहसंमेलन, पारंपारिक हळदी-कुंकू सोहळा, तिळगूळ वाटप आणि इंदूरमधील १००+ समाज बांधवांची उत्साही उपस्थिती.",
+          "description_hi": "सोनार समाज का ऐतिहासिक मकर संक्रांति स्नेह सम्मेलन, पारंपरिक हल्दी-कुमकुम कार्यक्रम, तिलगुड़ वितरण एवं इंदौर के १००+ समाज बंधुओं की उपस्थिति।",
+          "description_en": "Historic Makar Sankranti gathering, traditional Haldi-Kunku ceremony, Tilgul distribution and gathering of 100+ community members.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "संक्रांती कार्यक्रम २०२३ - सामूहिक संमेलन व समाजबांधवांचा सत्कार",
+              "caption_hi": "संक्रांति कार्यक्रम २०२३ - सामूहिक सम्मेलन एवं सम्मान",
+              "caption_en": "Sankranti Karyakram 2023 - Group community gathering"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "संक्रांती सोहळ्याची वृत्तपत्रात प्रसिद्ध बातमी व फोटो",
+              "caption_hi": "संक्रांति समारोह की समाचार पत्र में प्रकाशित खबर",
+              "caption_en": "Sankranti 2023 Newspaper Feature and Coverage"
+            },
+            {
+              "url": "./src/samaj-logo.png",
+              "caption_mr": "संत नरहरी महाराज पूजन व संक्रांती आशीर्वाद",
+              "caption_hi": "संत नरहरि महाराज पूजन एवं आशीर्वाद",
+              "caption_en": "Sant Narhari Maharaj Pujan ceremony"
+            },
+            {
+              "url": "./src/rajwada-logo.png",
+              "caption_mr": "राजवाडा इंदूर - ऐतिहासिक वारसा व समाज गौरव",
+              "caption_hi": "राजवाड़ा इंदौर - ऐतिहासिक विरासत एवं समाज गौरव",
+              "caption_en": "Historic Rajwada Indore heritage of Sonar Samaj"
+            }
+          ]
+        },
+        {
+          "id": "2023-gudhipadwa",
+          "title_mr": "गुढीपाडवा व चैत्र नववर्ष स्वागत सोहळा २०२३",
+          "title_hi": "गुड़ी पड़वा एवं नववर्ष स्वागत समारोह २०२३",
+          "title_en": "Gudhipadwa & New Year Welcome 2023",
+          "date_mr": "२२ मार्च २०२३",
+          "date_hi": "२२ मार्च २०२३",
+          "date_en": "22 March 2023",
+          "venue_mr": "सराफा बाजार परिसर, इंदूर",
+          "venue_hi": "सराफा बाजार परिसर, इंदौर",
+          "venue_en": "Sarafa Bazaar Complex, Indore",
+          "description_mr": "पारंपारिक वेशभूषेत गुढी उभारणी, शोभायात्रा व समाज बांधवांना नववर्ष शुभेच्छा.",
+          "description_hi": "पारंपरिक वेशभूषा में गुड़ी स्थापना, शोभायात्रा एवं नववर्ष की शुभकामनाएं।",
+          "description_en": "Traditional Gudhi installation, cultural rally, and Marathi New Year celebrations.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "गुढीपाडवा सोहळा २०२३ - पारंपारिक शोभायात्रा",
+              "caption_hi": "गुड़ी पड़वा समारोह २०२३ - शोभायात्रा",
+              "caption_en": "Gudhipadwa 2023 - Traditional Procession"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "गुढीपाडवा शोभायात्रेची वृत्तपत्रात दखल",
+              "caption_hi": "शोभायात्रा का समाचार पत्रों में विवरण",
+              "caption_en": "Media report of Gudhipadwa celebration"
+            }
+          ]
+        },
+        {
+          "id": "2023-ganesh-utsav",
+          "title_mr": "गणेशोत्सव व महाआरती सोहळा २०२३",
+          "title_hi": "गणेशोत्सव एवं महाआरती समारोह २०२३",
+          "title_en": "Ganesh Utsav & Maha Aarti 2023",
+          "date_mr": "१९ सप्टेंबर २०२३",
+          "date_hi": "१९ सितंबर २०२३",
+          "date_en": "19 September 2023",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "श्री गणपती बाप्पाची प्रतिष्ठापना, अथर्वशीर्ष पठण, सांस्कृतिक स्पर्धा व महाआरती.",
+          "description_hi": "श्री गणपति बाप्पा की स्थापना, अथर्वशीर्ष पाठ, सांस्कृतिक प्रतियोगिताएं एवं महाआरती।",
+          "description_en": "Lord Ganesha Sthapana, Atharvashirsha recitation, cultural events, and Aarti.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "गणेशोत्सव महाआरती २०२३ - भाविकांची उपस्थिती",
+              "caption_hi": "गणेशोत्सव महाआरती २०२३ - भक्तजन",
+              "caption_en": "Ganesh Utsav Maha Aarti 2023 - Attendees"
+            },
+            {
+              "url": "./src/samaj-logo.png",
+              "caption_mr": "श्री संत नरहरी महाराज व बाप्पाची दिव्य आरती",
+              "caption_hi": "श्री संत नरहरि महाराज व बाप्पा की दिव्य आरती",
+              "caption_en": "Divine Aarti of Sant Narhari Maharaj & Bappa"
+            }
+          ]
+        },
+        {
+          "id": "2023-diwali-milan",
+          "title_mr": "दिवाळी मिलन व गुणवंत विद्यार्थी सत्कार २०२३",
+          "title_hi": "दीपावली मिलन एवं मेधावी छात्र सम्मान २०२३",
+          "title_en": "Diwali Milan & Student Felicitation 2023",
+          "date_mr": "१६ नोव्हेंबर २०२३",
+          "date_hi": "१६ नवंबर २०२३",
+          "date_en": "16 November 2023",
+          "venue_mr": "अभय प्रशाल क्लब, इंदूर",
+          "venue_hi": "अभय प्रशाल क्लब, इंदौर",
+          "venue_en": "Abhay Prashal Club, Indore",
+          "description_mr": "दिवाळी सणानिमित्त समाजातील गुणवंत विद्यार्थ्यांचा सत्कार, स्मृतिचिन्ह वाटप व स्नेहभोजन.",
+          "description_hi": "दीपावली पर मेधावी छात्र सम्मान, स्मृतिचिह्न वितरण एवं स्नेहभोज।",
+          "description_en": "Diwali Milan festive gathering, student trophy distribution and community dinner.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "दिवाळी मिलन २०२३ - गुणवंत विद्यार्थ्यांसह संपूर्ण कार्यकारणी",
+              "caption_hi": "दीपावली मिलन २०२३ - मेधावी छात्रों के साथ कार्यकारिणी",
+              "caption_en": "Diwali Milan 2023 - Executive committee with students"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "सत्कार सोहळ्याची वृत्तपत्रात आलेली बातमी",
+              "caption_hi": "सम्मान समारोह का समाचार",
+              "caption_en": "Press coverage of Student Felicitation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "year_label_mr": "वर्ष २०२२ व पूर्वी",
+      "year_label_hi": "वर्ष २०२२ एवं पूर्व",
+      "year_label_en": "Year 2022 & Earlier",
+      "programs": [
+        {
+          "id": "2022-sankranti",
+          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२२",
+          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२२",
+          "title_en": "Makar Sankranti Celebration 2022",
+          "date_mr": "१४ जानेवारी २०२२",
+          "date_hi": "१४ जनवरी २०२२",
+          "date_en": "14 January 2022",
+          "venue_mr": "सोनार समाज भवन, इंदूर",
+          "venue_hi": "सोनार समाज भवन, इंदौर",
+          "venue_en": "Sonar Samaj Bhavan, Indore",
+          "description_mr": "पारंपारिक हळदी-कुंकू सोहळा व समाज बांधव स्नेहसंमेलन.",
+          "description_hi": "पारंपरिक हल्दी-कुमकुम कार्यक्रम एवं स्नेह सम्मेलन।",
+          "description_en": "Traditional Haldi-Kunku and community gathering.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "संक्रांती सोहळा २०२२ - उपस्थित समाजजन",
+              "caption_hi": "संक्रांति समारोह २०२२ - उपस्थित समाजजन",
+              "caption_en": "Sankranti 2022 - Attendees"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "संक्रांती स्नेहसंमेलन वृत्तपत्र बातमी",
+              "caption_hi": "संक्रांति स्नेह सम्मेलन समाचार",
+              "caption_en": "Sankranti 2022 News coverage"
+            }
+          ]
+        },
+        {
+          "id": "2022-samaj-samavesh",
+          "title_mr": "सोनार समाज महाअधिवेशन व एकत्रीकरण २०२२",
+          "title_hi": "सोनार समाज महाअधिवेशन एवं एकत्रीकरण २०२२",
+          "title_en": "Sonar Samaj Convention & Unity Gathering 2022",
+          "date_mr": "१८ डिसेंबर २०२२",
+          "date_hi": "१८ दिसंबर २०२२",
+          "date_en": "18 December 2022",
+          "venue_mr": "रवींद्र नाट्यगृह, इंदूर",
+          "venue_hi": "रवींद्र नाट्यगृह, इंदौर",
+          "venue_en": "Ravindra Natya Grah, Indore",
+          "description_mr": "मध्य प्रदेशातील सर्व सोनार समाजाचे महाअधिवेशन व ऐतिहासिक एकत्रीकरण सोहळा.",
+          "description_hi": "मध्य प्रदेश के समस्त सोनार समाज का महाअधिवेशन एवं ऐतिहासिक एकत्रीकरण।",
+          "description_en": "Grand State-level convention of Sonar Samaj community.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "महाअधिवेशन २०२२ - भव्य ऐतिहासिक उपस्थिती",
+              "caption_hi": "महाअधिवेशन २०२२ - भव्य ऐतिहासिक उपस्थिति",
+              "caption_en": "Grand Convention 2022 - Historic Attendance"
+            },
+            {
+              "url": "./src/newspaper-ss.jpeg",
+              "caption_mr": "महाअधिवेशनाची वृत्तपत्रांमध्ये ठळक बातमी",
+              "caption_hi": "महाअधिवेशन की समाचार पत्रों में प्रमुखता से खबर",
+              "caption_en": "Front-page newspaper report of Grand Convention"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
