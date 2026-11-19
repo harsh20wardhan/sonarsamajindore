@@ -234,6 +234,7 @@
                     <a href="#committee" data-i18n="nav_committee" class="nav-link hover:text-brand-600 transition-colors py-1">समिती</a>
                     <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
                     <a href="#celebrations" data-i18n="nav_celebrations" class="nav-link hover:text-brand-600 transition-colors py-1">वाढदिवस</a>
+                    <a href="#event-showcase" data-i18n="nav_event_showcase" class="nav-link hover:text-brand-600 transition-colors py-1">इव्हेंट फोटो</a>
                     <a href="#membership" data-i18n="nav_membership" class="nav-link hover:text-brand-600 transition-colors py-1">सदस्यता</a>
                     <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
                     <a href="#contact" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
@@ -272,6 +273,7 @@
             <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors"><span data-i18n="committee_title">आमची समिती</span></a>
             <a href="#events" onclick="closeMobileMenu()" data-i18n="nav_events" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">कार्यक्रम व बातम्या</a>
             <a href="#celebrations" onclick="closeMobileMenu()" data-i18n="nav_celebrations" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">वाढदिवस व लग्न वाढदिवस</a>
+            <a href="#event-showcase" onclick="closeMobileMenu()" data-i18n="nav_event_showcase" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">इव्हेंट वृत्तांत व फोटो</a>
             <a href="#donate" onclick="closeMobileMenu()" data-i18n="nav_donate" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">देणगी / UPI QR</a>
             <a href="#membership" onclick="closeMobileMenu()" data-i18n="nav_membership" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सदस्यता अर्ज</a>
             <a href="#gallery" onclick="closeMobileMenu()" data-i18n="nav_gallery" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">गॅलरी</a>
@@ -1671,6 +1673,704 @@
         </section>
 
 
+        
+        <!-- ═══════════════════ SECTION 5C: COMPREHENSIVE EVENT SHOWCASE & PHOTO ARCHIVE ═══════════════════ -->
+        <section id="event-showcase" class="py-20 bg-surface-pearl relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div data-i18n="showcase_pill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider marathi">
+                        📸 कार्यक्रम वृत्तांत व छायाचित्रे • Events & Photos
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
+                        <span data-i18n="showcase_heading_1">सोनार समाजाचे ऐतिहासिक उपक्रम</span><br>
+                        <span data-i18n="showcase_heading_2" class="text-brand-600">सविस्तर वृत्तांत व फोटो संग्रह</span>
+                    </h2>
+                    <p data-i18n="showcase_desc" class="text-slate-600 text-base sm:text-lg marathi">
+                        समाजातील धार्मिक सोहळे, महाआरती, रक्तदान शिबिरे, स्नेहसंमेलने व विद्यार्थी सत्कार उपक्रमांचे सचित्र वृत्त व आठवणी.
+                    </p>
+                </div>
+
+                <!-- Action Strip: Category Filter Tabs, Search Bar, and '+ Add Event & Photos' CTA -->
+                <div class="bg-white rounded-3xl p-4 sm:p-6 border border-amber-200/90 shadow-soft mb-10 flex flex-col lg:flex-row items-center justify-between gap-4">
+                    
+                    <!-- Category Filter Tabs -->
+                    <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto">
+                        <button onclick="filterEventCategory('all')" data-filter="all" class="ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-layer-group"></i>
+                            <span data-i18n="filter_all">सर्व कार्यक्रम (All)</span>
+                        </button>
+                        <button onclick="filterEventCategory('cultural')" data-filter="cultural" class="ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white border border-amber-200 text-slate-700 hover:bg-amber-50 hover:text-brand-600 shadow-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-om text-amber-600"></i>
+                            <span data-i18n="filter_cultural">धार्मिक व सांस्कृतिक</span>
+                        </button>
+                        <button onclick="filterEventCategory('gathering')" data-filter="gathering" class="ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white border border-amber-200 text-slate-700 hover:bg-amber-50 hover:text-brand-600 shadow-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-users text-blue-600"></i>
+                            <span data-i18n="filter_gathering">समाज मेळावे</span>
+                        </button>
+                        <button onclick="filterEventCategory('health')" data-filter="health" class="ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white border border-amber-200 text-slate-700 hover:bg-amber-50 hover:text-brand-600 shadow-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-heart-pulse text-rose-600"></i>
+                            <span data-i18n="filter_health">आरोग्य व समाजसेवा</span>
+                        </button>
+                        <button onclick="filterEventCategory('youth')" data-filter="youth" class="ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white border border-amber-200 text-slate-700 hover:bg-amber-50 hover:text-brand-600 shadow-sm transition-all flex items-center gap-1.5">
+                            <i class="fas fa-graduation-cap text-purple-600"></i>
+                            <span data-i18n="filter_youth">युवा व शिक्षण</span>
+                        </button>
+                    </div>
+
+                    <!-- Right Controls: Search & Add Event Button -->
+                    <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-end">
+                        <div class="relative flex-1 sm:w-60">
+                            <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                            <input type="text" id="ev-search-input" oninput="filterEventsBySearch(this.value)" placeholder="कार्यक्रम शोधा..." data-i18n-ph="ev_search_placeholder" class="w-full pl-9 pr-4 py-2 rounded-full border border-slate-200 text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 marathi">
+                        </div>
+                        <button onclick="openEventModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm shadow-md transition-all hover:scale-105 flex-shrink-0">
+                            <i class="fas fa-plus"></i>
+                            <span data-i18n="btn_add_event_cta">नवीन कार्यक्रम व फोटो जोडा</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Showcase Cards List Container -->
+                <div id="event-showcase-container" class="space-y-8">
+
+    <!-- Event Showcase Card 1 -->
+    <article class="event-card-item bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft hover:shadow-card transition-all" data-category="cultural">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-700 border border-brand-200 marathi">
+            धार्मिक व सांस्कृतिक
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 flex items-center gap-1.5 marathi">
+            <i class="far fa-calendar-alt text-brand-600"></i> 20 सप्टेंबर 2026
+          </span>
+          <span class="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 items-center gap-1.5 marathi">
+            <i class="far fa-clock text-amber-600"></i> दुपारी 4:00 ते सायं. 7:30
+          </span>
+        </div>
+        <div class="text-xs text-slate-500 flex items-center gap-1.5 marathi">
+          <i class="fas fa-map-marker-alt text-rose-500"></i>
+          <span>लव-कुश आवास विहार, बंधन गार्डन समोर, सुखलिया, इंदौर</span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight marathi hover:text-brand-600 transition-colors">
+          गणपती महाआरती व सामुहिक अथर्वशीर्ष पाठ सोहळा
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed marathi">
+          सोनार समाज ट्रस्ट व महिला मंडळातर्फे दरवर्षीप्रमाणे याही वर्षी गणेशोत्सवात भव्य सामुहिक अथर्वशीर्ष पाठ व महाआरतीचे आयोजन करण्यात आले. या सोहळ्यात इंदूर व परिसरातील शेकडो समाज बांधव, भगिनी आणि चिमुकले पारंपरिक पोशाखात उपस्थित राहिले. सामूहिक 11 आवर्तनांनंतर 108 दिव्यांची भव्य महाआरती करण्यात आली व मोदक महाप्रसाद वाटप करण्यात आले.
+        </p>
+
+        <!-- Highlights & Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+          <div class="md:col-span-7">
+            <ul class="space-y-2">
+              
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">500+ समाज बांधव, माता-भगिनी व बालकांची उत्साही उपस्थिती</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">महिला मंडळाकडून सामूहिक 11 आवर्तने अथर्वशीर्ष पाठ</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">108 मंगल दीप प्रज्वलित करून भव्य संगीतमय महाआरती</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">समस्त उपस्थितांसाठी मोदक व लाडू महाप्रसाद वितरण</span>
+    </li>
+  
+            </ul>
+          </div>
+          <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-start md:justify-end">
+            
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-users text-amber-600 text-xs"></i>
+      <span>500+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">भाविक उपस्थित</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-fire text-amber-600 text-xs"></i>
+      <span>108</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">मंगल दीप</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-hands-praying text-amber-600 text-xs"></i>
+      <span>11</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">अथर्वशीर्ष आवर्तने</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-bowl-food text-amber-600 text-xs"></i>
+      <span>750+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">प्रसाद वाटप</span>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Event Photo Showcase Gallery -->
+        <div class="pt-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-800 marathi">
+              <i class="fas fa-images text-brand-600"></i>
+              <span>कार्यक्रमाची छायाचित्रे (Event Photos)</span>
+            </div>
+            <span class="text-xs text-slate-500 marathi">2 फोटो उपलब्ध</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(0, 0)">
+      <img src="./src/samaj-group-photo.jpeg" alt="महाआरती व सोहळ्यात उपस्थित समाज बांधव, कार्यकारिणी व महिला मंडळ" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">महाआरती व सोहळ्यात उपस्थित समाज बांधव, कार्यकारिणी व महिला मंडळ</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(0, 1)">
+      <img src="./src/newspaper-ss.jpeg" alt="इंदूरच्या आघाडीच्या दैनिक वृत्तपत्रात कार्यक्रमाची सचित्र प्रसिद्धी" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">इंदूरच्या आघाडीच्या दैनिक वृत्तपत्रात कार्यक्रमाची सचित्र प्रसिद्धी</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 marathi flex items-center gap-2">
+            <i class="fas fa-shield-halved text-brand-600"></i>
+            <span>संयोजक: सोनार समाज सांस्कृतिक समिती व महिला मंडळ, इंदूर</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button onclick="openEventPhotoByIndex(0, 0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 transition-colors marathi">
+              <i class="fas fa-expand"></i> सर्व फोटो पहा
+            </button>
+            <button onclick="shareEventCardWhatsApp(0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors marathi">
+              <i class="fab fa-whatsapp text-emerald-600"></i> शेअर करा
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  
+
+    <!-- Event Showcase Card 2 -->
+    <article class="event-card-item bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft hover:shadow-card transition-all" data-category="gathering">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 marathi">
+            समाज मेळावे
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 flex items-center gap-1.5 marathi">
+            <i class="far fa-calendar-alt text-brand-600"></i> 12 ऑगस्ट 2026
+          </span>
+          <span class="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 items-center gap-1.5 marathi">
+            <i class="far fa-clock text-amber-600"></i> सकाळी 10:00 ते सायं. 5:00
+          </span>
+        </div>
+        <div class="text-xs text-slate-500 flex items-center gap-1.5 marathi">
+          <i class="fas fa-map-marker-alt text-rose-500"></i>
+          <span>समाज सांस्कृतिक सभागृह, तुलसी नगर / सुखलिया परिसर, इंदूर</span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight marathi hover:text-brand-600 transition-colors">
+          अखिल भारतीय सोनar समाज स्नेहसंमेलन व ज्येष्ठ नागरिक सत्कार
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed marathi">
+          इंदूर शहर आणि देशभरातील सोनार समाज बांधव, सराफा व्यापारी, उद्योजक व विविध क्षेत्रांतील मान्यवरांचे भव्य वार्षिक स्नेहसंमेलन संपन्न झाले. या प्रसंगी समाजातील 51 ज्येष्ठ नागरिकांचा शाल, श्रीफळ व मानपत्र देऊन गौरव करण्यात आला. ट्रस्टच्या भावी समाजभवन प्रकल्पाचा नकाशा सादर करण्यात आला व उपस्थितांनी उत्स्फूर्त सहकार्य जाहीर केले.
+        </p>
+
+        <!-- Highlights & Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+          <div class="md:col-span-7">
+            <ul class="space-y-2">
+              
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">मध्य प्रदेश व देशभरातून 650+ समाज प्रतिनिधींची उपस्थिती</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">समाजातील 51 ज्येष्ठ नागरिकांचा आदरपूर्वक सन्मान व आशीर्वाद सोहळा</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">नवीन कार्यकारिणी समिती व महिला आघाडी पदाधिकाऱ्यांची घोषणा</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">सामूहिक स्नेहभोजन व सांस्कृतिक कार्यक्रमांचे सादरीकरण</span>
+    </li>
+  
+            </ul>
+          </div>
+          <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-start md:justify-end">
+            
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-users text-amber-600 text-xs"></i>
+      <span>650+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">प्रतिनिधी उपस्थित</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-award text-amber-600 text-xs"></i>
+      <span>51</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">ज्येष्ठ सत्कार</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-building-columns text-amber-600 text-xs"></i>
+      <span>1</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">समाजभवन प्रकल्प</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-handshake text-amber-600 text-xs"></i>
+      <span>100%</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">एकमत ठराव</span>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Event Photo Showcase Gallery -->
+        <div class="pt-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-800 marathi">
+              <i class="fas fa-images text-brand-600"></i>
+              <span>कार्यक्रमाची छायाचित्रे (Event Photos)</span>
+            </div>
+            <span class="text-xs text-slate-500 marathi">2 फोटो उपलब्ध</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(1, 0)">
+      <img src="./src/samaj-group-photo.jpeg" alt="स्नेहसंमेलनात सहभागी समस्त बंधू-भगिनी व पदाधिकारी" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">स्नेहसंमेलनात सहभागी समस्त बंधू-भगिनी व पदाधिकारी</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(1, 1)">
+      <img src="./src/newspaper-ss.jpeg" alt="वृत्तपत्रात प्रसिद्ध झालेली संमेलनाची बातमी व छायाचित्रे" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">वृत्तपत्रात प्रसिद्ध झालेली संमेलनाची बातमी व छायाचित्रे</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 marathi flex items-center gap-2">
+            <i class="fas fa-shield-halved text-brand-600"></i>
+            <span>संयोजक: सोनार समाज ट्रस्ट कार्यकारिणी, इंदौर (फोन: +91 731 420 3099)</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button onclick="openEventPhotoByIndex(1, 0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 transition-colors marathi">
+              <i class="fas fa-expand"></i> सर्व फोटो पहा
+            </button>
+            <button onclick="shareEventCardWhatsApp(1)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors marathi">
+              <i class="fab fa-whatsapp text-emerald-600"></i> शेअर करा
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  
+
+    <!-- Event Showcase Card 3 -->
+    <article class="event-card-item bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft hover:shadow-card transition-all" data-category="health">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 marathi">
+            आरोग्य व समाजसेवा
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 flex items-center gap-1.5 marathi">
+            <i class="far fa-calendar-alt text-brand-600"></i> 15 ऑक्टोबर 2026
+          </span>
+          <span class="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 items-center gap-1.5 marathi">
+            <i class="far fa-clock text-amber-600"></i> सकाळी 9:00 ते दुपारी 3:00
+          </span>
+        </div>
+        <div class="text-xs text-slate-500 flex items-center gap-1.5 marathi">
+          <i class="fas fa-map-marker-alt text-rose-500"></i>
+          <span>सरस्वती व्हिला परिसर, 362-ए, तुलसी नगर, इंदूर</span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight marathi hover:text-brand-600 transition-colors">
+          भव्य रक्तदान शिबिर व मोफत सर्व रोग निदान आरोग्य शिबिर
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed marathi">
+          'रक्तदान हेच सर्वश्रेष्ठ जीवनदान' या ब्रीदवाक्याला अनुसरून सोनार समाज ट्रस्टच्या वतीने भव्य रक्तदान व आरोग्य शिबिर यशस्वीरीत्या पार पडले. इंदूरच्या शासकीय एम.वाय. हॉस्पिटल रक्तपेढी आणि तज्ज्ञ डॉक्टरांच्या पथकाने सेवा दिली. समाजातील तरुण आणि महिलांनी उत्साहाने 101 युनिट रक्तदान केले. सोबतच 220 हून अधिक नागरिकांची मोफत मधुमेह, रक्तदाब आणि ईसीजी तपासणी करण्यात आली.
+        </p>
+
+        <!-- Highlights & Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+          <div class="md:col-span-7">
+            <ul class="space-y-2">
+              
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">101 युनिट जीवनरक्षक रक्ताचे संकलन (एम.वाय. हॉस्पिटल सहकार्य)</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">220+ नागरिकांची मोफत बीपी, शुगर, ईसीजी व नेत्र तपासणी</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">प्रत्येक रक्तदात्यास ट्रस्टतर्फे सन्मानपत्र व आरोग्य किट वितरण</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">तज्ज्ञ डॉक्टरांचे मोफत आरोग्य व आहार मार्गदर्शन</span>
+    </li>
+  
+            </ul>
+          </div>
+          <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-start md:justify-end">
+            
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-droplet text-amber-600 text-xs"></i>
+      <span>101</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">युनिट रक्त संकलित</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-stethoscope text-amber-600 text-xs"></i>
+      <span>220+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">मोफत तपासण्या</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-user-doctor text-amber-600 text-xs"></i>
+      <span>15+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">तज्ज्ञ डॉक्टर</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-certificate text-amber-600 text-xs"></i>
+      <span>100%</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">प्रमाणपत्र वितरण</span>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Event Photo Showcase Gallery -->
+        <div class="pt-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-800 marathi">
+              <i class="fas fa-images text-brand-600"></i>
+              <span>कार्यक्रमाची छायाचित्रे (Event Photos)</span>
+            </div>
+            <span class="text-xs text-slate-500 marathi">2 फोटो उपलब्ध</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(2, 0)">
+      <img src="./src/samaj-group-photo.jpeg" alt="रक्तदान शिबिरात उपस्थित रक्तदाते, डॉक्टर पथक व ट्रस्टचे पदाधिकारी" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">रक्तदान शिबिरात उपस्थित रक्तदाते, डॉक्टर पथक व ट्रस्टचे पदाधिकारी</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(2, 1)">
+      <img src="./src/newspaper-ss.jpeg" alt="सामाजिक उपक्रमाची वर्तमानपत्रातील प्रसिद्धी व वृत्तांत" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">सामाजिक उपक्रमाची वर्तमानपत्रातील प्रसिद्धी व वृत्तांत</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 marathi flex items-center gap-2">
+            <i class="fas fa-shield-halved text-brand-600"></i>
+            <span>संयोजक: आरोग्य व सेवा कक्ष, सोनार समाज ट्रस्ट, इंदौर</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button onclick="openEventPhotoByIndex(2, 0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 transition-colors marathi">
+              <i class="fas fa-expand"></i> सर्व फोटो पहा
+            </button>
+            <button onclick="shareEventCardWhatsApp(2)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors marathi">
+              <i class="fab fa-whatsapp text-emerald-600"></i> शेअर करा
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  
+
+    <!-- Event Showcase Card 4 -->
+    <article class="event-card-item bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft hover:shadow-card transition-all" data-category="youth">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200 marathi">
+            युवा व शैक्षणिक
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 flex items-center gap-1.5 marathi">
+            <i class="far fa-calendar-alt text-brand-600"></i> 28 जुलै 2026
+          </span>
+          <span class="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 items-center gap-1.5 marathi">
+            <i class="far fa-clock text-amber-600"></i> दुपारी 2:00 ते सायं. 6:00
+          </span>
+        </div>
+        <div class="text-xs text-slate-500 flex items-center gap-1.5 marathi">
+          <i class="fas fa-map-marker-alt text-rose-500"></i>
+          <span>रवींद्र नाट्यगृह सभागृह परिसर / समाज केंद्र, इंदूर</span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight marathi hover:text-brand-600 transition-colors">
+          गुणवंत विद्यार्थी गुणगौरव सोहळा व युवा करिअर परिषद
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed marathi">
+          सोनार समाजातील 10वी, 12वी, पदवी, वैद्यकीय, अभियांत्रिकी व स्पर्धा परीक्षांमध्ये उज्ज्वल यश मिळवणाऱ्या 45 हून अधिक गुणवंत विद्यार्थ्यांचा मानपत्र, सुवर्णपदक व शैक्षणिक शिष्यवृत्ती देऊन सन्मान करण्यात आला. या वेळी सीए, यूपीएससी, आयटी व व्यवसाय क्षेत्रातील नामांकित तज्ज्ञांनी विद्यार्थ्यांना पुढील शिक्षणासाठी मार्गदर्शन केले.
+        </p>
+
+        <!-- Highlights & Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+          <div class="md:col-span-7">
+            <ul class="space-y-2">
+              
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">45+ गुणवंत विद्यार्थ्यांचा सुवर्णपदक व स्मृतीचिन्ह देऊन गौरव</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">आर्थिक दुर्बल विद्यार्थ्यांना ₹1,50,000/- शैक्षणिक शिष्यवृत्ती वितरण</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">आयएएस, सीए व आयटी क्षेत्रातील तज्ज्ञांचे करिअर समुपदेशन</span>
+    </li>
+  
+    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+      <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+      <span class="marathi">300+ पालक व विद्यार्थ्यांची प्रेरणादायी उपस्थिती</span>
+    </li>
+  
+            </ul>
+          </div>
+          <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-start md:justify-end">
+            
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-graduation-cap text-amber-600 text-xs"></i>
+      <span>45+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">विद्यार्थी सन्मानित</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-indian-rupee-sign text-amber-600 text-xs"></i>
+      <span>₹1.5L</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">शिष्यवृत्ती निधी</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-chalkboard-user text-amber-600 text-xs"></i>
+      <span>8</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">करिअर मार्गदर्शक</span>
+    </div>
+  
+    <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+      <i class="fas fa-user-group text-amber-600 text-xs"></i>
+      <span>300+</span>
+      <span class="font-normal text-slate-600 text-[11px] marathi">पालक उपस्थित</span>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Event Photo Showcase Gallery -->
+        <div class="pt-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-800 marathi">
+              <i class="fas fa-images text-brand-600"></i>
+              <span>कार्यक्रमाची छायाचित्रे (Event Photos)</span>
+            </div>
+            <span class="text-xs text-slate-500 marathi">2 फोटो उपलब्ध</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+            
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(3, 0)">
+      <img src="./src/samaj-group-photo.jpeg" alt="गुणगौरव सोहळ्यात पुरस्कारार्थी विद्यार्थी व मान्यवर" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">गुणगौरव सोहळ्यात पुरस्कारार्थी विद्यार्थी व मान्यवर</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+    <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(3, 1)">
+      <img src="./src/newspaper-ss.jpeg" alt="दैनिक वृत्तपत्रात प्रसिद्ध झालेली युवा गुणगौरव बातमी" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="fas fa-expand"></i>
+      </div>
+      <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+        <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">दैनिक वृत्तपत्रात प्रसिद्ध झालेली युवा गुणगौरव बातमी</p>
+        <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+          <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+        </span>
+      </div>
+    </div>
+  
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 marathi flex items-center gap-2">
+            <i class="fas fa-shield-halved text-brand-600"></i>
+            <span>संयोजक: शिक्षण व युवा विकास मंच, सोनार समाज ट्रस्ट, इंदौर</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button onclick="openEventPhotoByIndex(3, 0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 transition-colors marathi">
+              <i class="fas fa-expand"></i> सर्व फोटो पहा
+            </button>
+            <button onclick="shareEventCardWhatsApp(3)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors marathi">
+              <i class="fab fa-whatsapp text-emerald-600"></i> शेअर करा
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  
+                </div>
+
+                <!-- Empty state placeholder (hidden by default) -->
+                <div id="event-showcase-empty" class="hidden bg-white rounded-3xl p-12 text-center border border-amber-200/90 shadow-soft">
+                    <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fas fa-calendar-xmark"></i>
+                    </div>
+                    <h4 data-i18n="empty_events_title" class="text-lg font-bold text-slate-900 marathi">या श्रेणीत सध्या कोणताही कार्यक्रम सापडला नाही</h4>
+                    <p data-i18n="empty_events_desc" class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto marathi">
+                        आपल्या परिसरातील कार्यक्रमाची माहिती व फोटो जोडण्यासाठी खालील बटणावर क्लिक करा.
+                    </p>
+                    <button onclick="openEventModal()" class="mt-4 inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-full text-xs shadow-md transition-all">
+                        <i class="fas fa-plus"></i> कार्यक्रम जोडा
+                    </button>
+                </div>
+
+                <!-- Bottom Callout: Submit Event Photos from Your Area -->
+                <div class="mt-12 bg-gradient-to-r from-brand-900 via-brand-800 to-amber-900 text-white rounded-3xl p-8 sm:p-10 shadow-card relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 text-left relative z-10">
+                        <span data-i18n="showcase_callout_pill" class="inline-block px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold uppercase tracking-wider marathi">
+                            📸 समाज सहभाग • Community Photos
+                        </span>
+                        <h3 data-i18n="showcase_callout_title" class="text-2xl sm:text-3xl font-extrabold tracking-tight marathi">
+                            आपल्या कॉलनी किंवा परिसरातील कार्यक्रमाचे फोटो पाठवा!
+                        </h3>
+                        <p data-i18n="showcase_callout_desc" class="text-slate-200 text-sm max-w-2xl leading-relaxed marathi">
+                            आपल्या परिसरातील कौटुंबिक सोहळे, हळदी-कुंकू, पूजा, रक्तदान किंवा समाजोपयोगी उपक्रमांची माहिती व फोटो ट्रस्टला पाठवा. आम्ही ते अधिकृत वेबसाइटवर प्रकाशित करू.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3 relative z-10 flex-shrink-0">
+                        <button onclick="openEventModal()" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-6 py-3 rounded-full text-xs sm:text-sm shadow-lg transition-all hover:scale-105">
+                            <i class="fas fa-cloud-arrow-up"></i>
+                            <span data-i18n="btn_submit_event_bottom">फोटो व माहिती जोडा</span>
+                        </button>
+                        <a href="https://wa.me/919098491789?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20amchya%20parisaratil%20karyakramache%20photos%20pathvat%20ahe." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-lg transition-all hover:scale-105">
+                            <i class="fab fa-whatsapp text-base"></i>
+                            <span data-i18n="btn_wa_send_photos">WhatsApp वर पाठवा</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
         <!-- ═══════════════════ SECTION 6: DONATE & QR CODE (Featured from Attached File) ═══════════════════ -->
         <section id="donate" class="py-20 bg-gradient-to-b from-brand-50/50 via-surface-soft to-surface-pearl relative overflow-hidden">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2147,6 +2847,7 @@
                         <li><a href="#good-deeds" data-i18n="footer_link_deeds" class="hover:text-amber-300 transition-colors">प्रमुख सेवा कार्य (Good Deeds)</a></li>
                         <li><a href="#committee" data-i18n="footer_link_committee" class="hover:text-amber-300 transition-colors">आमची समिती</a></li>
                         <li><a href="#events" data-i18n="footer_link_events" class="hover:text-amber-300 transition-colors">आगामी कार्यक्रम</a></li>
+                        <li><a href="#event-showcase" data-i18n="footer_link_showcase" class="hover:text-amber-300 transition-colors">कार्यक्रम व फोटो संग्रह</a></li>
                         <li><a href="#gallery" data-i18n="footer_link_gallery" class="hover:text-amber-300 transition-colors">फोटो गॅलरी</a></li>
                     </ul>
                 </div>
@@ -2304,8 +3005,110 @@
     <!-- ═══════════════════ MODAL: GALLERY LIGHTBOX ═══════════════════ -->
     <div id="lightbox-modal" class="modal">
         <div class="max-w-4xl w-full p-2 relative flex flex-col items-center">
-            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-amber-300 text-3xl font-bold">&times;</button>
-            <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-amber-300 text-3xl font-bold z-50">&times;</button>
+            <div class="relative w-full flex items-center justify-center">
+                <button id="lightbox-prev-btn" onclick="prevLightboxPhoto()" class="absolute left-2 sm:left-4 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center text-lg transition-all shadow-lg hover:scale-110">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[75vh] max-w-full rounded-2xl shadow-2xl object-contain">
+                <button id="lightbox-next-btn" onclick="nextLightboxPhoto()" class="absolute right-2 sm:right-4 z-40 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center text-lg transition-all shadow-lg hover:scale-110">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div id="lightbox-caption-box" class="mt-3 text-center text-white bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/10 max-w-2xl w-full">
+                <h4 id="lightbox-title" class="font-bold text-sm sm:text-base text-amber-300 marathi"></h4>
+                <p id="lightbox-caption" class="text-xs sm:text-sm text-slate-200 mt-0.5 marathi"></p>
+                <span id="lightbox-counter" class="text-[11px] text-slate-400 mt-1 inline-block"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ MODAL: ADD EVENT DETAILS & PHOTOS ═══════════════════ -->
+    <div id="event-upload-modal" class="modal">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full border border-amber-200 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div>
+                        <h3 data-i18n="modal_event_title" class="text-lg sm:text-xl font-bold text-slate-900 marathi">नवीन कार्यक्रम व फोटो जोडा</h3>
+                        <p data-i18n="modal_event_sub" class="text-xs text-slate-500">समाजाच्या पोर्टलवर कार्यक्रमाचे सविस्तर वृत्त व छायाचित्रे प्रसिद्ध करा</p>
+                    </div>
+                </div>
+                <button onclick="closeEventModal()" class="text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+            </div>
+
+            <form id="event-upload-form" onsubmit="handleEventUploadSubmit(event)" class="space-y-4 mt-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                        <label data-i18n="lbl_ev_title" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाचे नाव (Event Title) *</label>
+                        <input type="text" id="ev-form-title" required placeholder="उदा. होळी मिलन सोहळा / गुणगौरव कार्यक्रम" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                    </div>
+
+                    <div>
+                        <label data-i18n="lbl_ev_cat" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाची श्रेणी (Category) *</label>
+                        <select id="ev-form-category" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi bg-white">
+                            <option value="cultural">धार्मिक व सांस्कृतिक (Religious & Cultural)</option>
+                            <option value="gathering">समाज मेळावे व स्नेहसंमेलन (Gathering)</option>
+                            <option value="health">आरोग्य व समाजसेवा (Health & Social)</option>
+                            <option value="youth">युवा व शैक्षणिक (Youth & Education)</option>
+                            <option value="social">इतर सामाजिक उपक्रम (Other Events)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label data-i18n="lbl_ev_date" class="block text-xs font-bold text-slate-700 uppercase mb-1">तारीख व वेळ (Date & Time) *</label>
+                        <input type="text" id="ev-form-date" required placeholder="उदा. 25 नोव्हेंबर 2026, सायं. 5:00" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                    </div>
+
+                    <div>
+                        <label data-i18n="lbl_ev_venue" class="block text-xs font-bold text-slate-700 uppercase mb-1">स्थान / ठिकाण (Venue) *</label>
+                        <input type="text" id="ev-form-venue" required placeholder="उदा. समाज भवन / सुखलिया, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                    </div>
+
+                    <div>
+                        <label data-i18n="lbl_ev_metric" class="block text-xs font-bold text-slate-700 uppercase mb-1">महत्त्वाची आकडेवारी (Key Stats / Attendance)</label>
+                        <input type="text" id="ev-form-metric" placeholder="उदा. 350+ समाज बांधव उपस्थित" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label data-i18n="lbl_ev_organizer" class="block text-xs font-bold text-slate-700 uppercase mb-1">संयोजक / संपर्क व्यक्ती व फोन (Organizer & Phone)</label>
+                        <input type="text" id="ev-form-organizer" placeholder="उदा. श्री राहुलजी सोनार (9098491789)" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        <label data-i18n="lbl_ev_summary" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाचा सविस्तर वृत्तांत (Details & Highlights) *</label>
+                        <textarea id="ev-form-summary" rows="3" required placeholder="कार्यक्रमात काय घडले, प्रमुख पाहुणे, ठळक वैशिष्ट्ये याबद्दल माहिती लिहा..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi"></textarea>
+                    </div>
+                </div>
+
+                <!-- Photo Upload Zone -->
+                <div class="border-2 border-dashed border-amber-300 rounded-2xl p-4 bg-amber-50/40 text-center">
+                    <input type="file" id="ev-form-photos" multiple accept="image/*" class="hidden" onchange="handleEventPhotoSelect(this)">
+                    <div class="flex flex-col items-center justify-center cursor-pointer" onclick="document.getElementById('ev-form-photos').click()">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-2">
+                            <i class="fas fa-cloud-arrow-up"></i>
+                        </div>
+                        <span data-i18n="lbl_ev_upload_title" class="font-bold text-slate-800 text-sm marathi">कार्यक्रमाचे फोटो निवडा (Upload Event Photos)</span>
+                        <span data-i18n="lbl_ev_upload_sub" class="text-xs text-slate-500 mt-1">एकापेक्षा जास्त फोटो निवडू शकता (.JPG, .PNG)</span>
+                    </div>
+
+                    <!-- Photo preview grid -->
+                    <div id="ev-photo-preview-grid" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 hidden"></div>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-check-circle"></i>
+                        <span data-i18n="btn_publish_event">पोर्टलवर प्रसिद्ध करा • Publish</span>
+                    </button>
+                    <button type="button" onclick="shareEventToAdminWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-5 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-base"></i>
+                        <span data-i18n="btn_wa_event">WhatsApp वर ट्रस्टला पाठवा</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -2348,15 +3151,792 @@
             document.getElementById('success-modal').classList.remove('active');
         }
 
-        function openLightbox(el) {
-            const img = el.querySelector('img');
-            if (img) {
-                document.getElementById('lightbox-img').src = img.src;
-                document.getElementById('lightbox-modal').classList.add('active');
+        let currentLang = "mr";
+        // ── Enhanced Photo Lightbox System ──
+        let currentShowcasePhotos = [];
+        let currentPhotoIndex = 0;
+
+        function openLightbox(el, title, caption) {
+            let src = '';
+            if (typeof el === 'string') {
+                src = el;
+            } else if (el && el.querySelector) {
+                const img = el.querySelector('img');
+                if (img) src = img.src;
+            }
+            if (!src) return;
+
+            currentShowcasePhotos = [{
+                url: src,
+                title: title || (el && el.getAttribute && el.getAttribute('data-title')) || 'सोनार समाज इंदूर',
+                caption: caption || (el && el.getAttribute && el.getAttribute('data-caption')) || 'कार्यक्रम छायाचित्र'
+            }];
+            currentPhotoIndex = 0;
+            renderLightboxCurrent();
+            const m = document.getElementById('lightbox-modal');
+            if (m) m.classList.add('active');
+        }
+
+        function openEventPhotoByIndex(eventIdx, photoIdx) {
+            const ev = eventShowcaseList[eventIdx];
+            if (!ev || !ev.photos || !ev.photos.length) return;
+            const lang = currentLang || 'mr';
+            currentShowcasePhotos = ev.photos.map(p => ({
+                url: p.url,
+                title: ev['title_' + lang] || ev.title_mr || ev.title || 'कार्यक्रम',
+                caption: p['caption_' + lang] || p.caption_mr || p.caption || ''
+            }));
+            currentPhotoIndex = photoIdx || 0;
+            renderLightboxCurrent();
+            const m = document.getElementById('lightbox-modal');
+            if (m) m.classList.add('active');
+        }
+
+        function renderLightboxCurrent() {
+            if (!currentShowcasePhotos.length) return;
+            const item = currentShowcasePhotos[currentPhotoIndex];
+            const imgEl = document.getElementById('lightbox-img');
+            const titleEl = document.getElementById('lightbox-title');
+            const capEl = document.getElementById('lightbox-caption');
+            const countEl = document.getElementById('lightbox-counter');
+            const prevBtn = document.getElementById('lightbox-prev-btn');
+            const nextBtn = document.getElementById('lightbox-next-btn');
+
+            if (imgEl) imgEl.src = item.url;
+            if (titleEl) titleEl.textContent = item.title;
+            if (capEl) capEl.textContent = item.caption;
+            if (countEl) countEl.textContent = `फोटो ${currentPhotoIndex + 1} / ${currentShowcasePhotos.length}`;
+
+            if (prevBtn) prevBtn.style.display = currentShowcasePhotos.length > 1 ? 'flex' : 'none';
+            if (nextBtn) nextBtn.style.display = currentShowcasePhotos.length > 1 ? 'flex' : 'none';
+        }
+
+        function prevLightboxPhoto() {
+            if (currentShowcasePhotos.length <= 1) return;
+            currentPhotoIndex = (currentPhotoIndex - 1 + currentShowcasePhotos.length) % currentShowcasePhotos.length;
+            renderLightboxCurrent();
+        }
+
+        function nextLightboxPhoto() {
+            if (currentShowcasePhotos.length <= 1) return;
+            currentPhotoIndex = (currentPhotoIndex + 1) % currentShowcasePhotos.length;
+            renderLightboxCurrent();
+        }
+
+        function closeLightbox() {
+            const m = document.getElementById('lightbox-modal');
+            if (m) m.classList.remove('active');
+        }
+
+        // ── Event Showcase Management & User Uploads ──
+        const defaultEventShowcase = [
+  {
+    "id": "ev-ganpati-aarti",
+    "category_key": "cultural",
+    "category_mr": "धार्मिक व सांस्कृतिक",
+    "category_hi": "धार्मिक एवं सांस्कृतिक",
+    "category_en": "Religious & Cultural",
+    "category_color": "brand",
+    "title_mr": "गणपती महाआरती व सामुहिक अथर्वशीर्ष पाठ सोहळा",
+    "title_hi": "गणपति महाआरती एवं सामूहिक अथर्वशीर्ष पाठ समारोह",
+    "title_en": "Ganpati Maha Aarti & Community Atharvashirsha Recitation",
+    "date_mr": "20 सप्टेंबर 2026",
+    "date_hi": "20 सितंबर 2026",
+    "date_en": "20 September 2026",
+    "time_mr": "दुपारी 4:00 ते सायं. 7:30",
+    "time_hi": "दोपहर 4:00 से शाम 7:30",
+    "time_en": "4:00 PM to 7:30 PM",
+    "venue_mr": "लव-कुश आवास विहार, बंधन गार्डन समोर, सुखलिया, इंदौर",
+    "venue_hi": "लव-कुश आवास विहार, बंधन गार्डन के सामने, सुखलिया, इंदौर",
+    "venue_en": "Luv-Kush Awas Vihar, Opp. Bandhan Garden, Sukhlia, Indore",
+    "summary_mr": "सोनार समाज ट्रस्ट व महिला मंडळातर्फे दरवर्षीप्रमाणे याही वर्षी गणेशोत्सवात भव्य सामुहिक अथर्वशीर्ष पाठ व महाआरतीचे आयोजन करण्यात आले. या सोहळ्यात इंदूर व परिसरातील शेकडो समाज बांधव, भगिनी आणि चिमुकले पारंपरिक पोशाखात उपस्थित राहिले. सामूहिक 11 आवर्तनांनंतर 108 दिव्यांची भव्य महाआरती करण्यात आली व मोदक महाप्रसाद वाटप करण्यात आले.",
+    "summary_hi": "सोनार समाज ट्रस्ट एवं महिला मंडल के तत्वावधान में गणेशोत्सव के पावन अवसर पर भव्य सामूहिक अथर्वशीर्ष पाठ एवं महाआरती का आयोजन किया गया। इंदौर एवं आसपास के सैकड़ों समाज बंधु-भगिनी पारंपरिक परिधान में सम्मिलित हुए। 11 आवर्तनों के पश्चात 108 दीपों की महाआरती व मोदक महाप्रसाद वितरण हुआ।",
+    "summary_en": "Under the aegis of Sonar Samaj Trust and Mahila Mandal, a grand community Atharvashirsha recitation and Maha Aarti was organized during Ganeshotsav. Hundreds of community families attended in traditional attire. Following 11 group recitations, a magnificent 108-diya Maha Aarti was performed along with Modak Mahaprasad distribution.",
+    "highlights_mr": [
+      "500+ समाज बांधव, माता-भगिनी व बालकांची उत्साही उपस्थिती",
+      "महिला मंडळाकडून सामूहिक 11 आवर्तने अथर्वशीर्ष पाठ",
+      "108 मंगल दीप प्रज्वलित करून भव्य संगीतमय महाआरती",
+      "समस्त उपस्थितांसाठी मोदक व लाडू महाप्रसाद वितरण"
+    ],
+    "highlights_hi": [
+      "500+ समाज बंधुओं व माताओं-बहनों की उपस्थिति",
+      "महिला मंडल द्वारा सामूहिक 11 आवर्तन अथर्वशीर्ष पाठ",
+      "108 मंगल दीपों से भव्य संगीतमय महाआरती",
+      "सभी उपस्थितजनों हेतु मोदक व मिष्ठान महाप्रसाद वितरण"
+    ],
+    "highlights_en": [
+      "500+ community members, women, and youth attended",
+      "Group recitation of 11 cycles of Atharvashirsha by Mahila Mandal",
+      "108 devotional lamps illuminated for the grand musical Maha Aarti",
+      "Distribution of traditional Modak and Mahaprasad to all attendees"
+    ],
+    "metrics": [
+      {
+        "icon": "fa-users",
+        "value": "500+",
+        "label_mr": "भाविक उपस्थित",
+        "label_hi": "श्रद्धालु उपस्थित",
+        "label_en": "Devotees Attended"
+      },
+      {
+        "icon": "fa-fire",
+        "value": "108",
+        "label_mr": "मंगल दीप",
+        "label_hi": "मंगल दीप",
+        "label_en": "Sacred Lamps"
+      },
+      {
+        "icon": "fa-hands-praying",
+        "value": "11",
+        "label_mr": "अथर्वशीर्ष आवर्तने",
+        "label_hi": "अथर्वशीर्ष आवर्तन",
+        "label_en": "Recitation Cycles"
+      },
+      {
+        "icon": "fa-bowl-food",
+        "value": "750+",
+        "label_mr": "प्रसाद वाटप",
+        "label_hi": "प्रसाद वितरण",
+        "label_en": "Prasad Servings"
+      }
+    ],
+    "organizer_mr": "संयोजक: सोनार समाज सांस्कृतिक समिती व महिला मंडळ, इंदूर",
+    "organizer_hi": "संयोजक: सोनार समाज सांस्कृतिक समिति एवं महिला मंडल, इंदौर",
+    "organizer_en": "Organized by: Cultural Committee & Mahila Mandal, Sonar Samaj Indore",
+    "photos": [
+      {
+        "url": "./src/samaj-group-photo.jpeg",
+        "caption_mr": "महाआरती व सोहळ्यात उपस्थित समाज बांधव, कार्यकारिणी व महिला मंडळ",
+        "caption_hi": "महाआरती समारोह में उपस्थित समाज बंधु, कार्यकारिणी एवं महिला मंडल",
+        "caption_en": "Community leaders, executive committee and members at the Maha Aarti"
+      },
+      {
+        "url": "./src/newspaper-ss.jpeg",
+        "caption_mr": "इंदूरच्या आघाडीच्या दैनिक वृत्तपत्रात कार्यक्रमाची सचित्र प्रसिद्धी",
+        "caption_hi": "इंदौर के प्रमुख दैनिक समाचार पत्र में समारोह की सचित्र कवरेज",
+        "caption_en": "Press coverage in Indore leading daily newspaper"
+      }
+    ]
+  },
+  {
+    "id": "ev-sneh-sammelan",
+    "category_key": "gathering",
+    "category_mr": "समाज मेळावे",
+    "category_hi": "समाज सम्मेलन",
+    "category_en": "Community Gathering",
+    "category_color": "amber",
+    "title_mr": "अखिल भारतीय सोनar समाज स्नेहसंमेलन व ज्येष्ठ नागरिक सत्कार",
+    "title_hi": "अखिल भारतीय सोनार समाज स्नेह सम्मेलन एवं वरिष्ठ नागरिक सम्मान",
+    "title_en": "All India Sonar Samaj Annual Gathering & Senior Citizens Felicitation",
+    "date_mr": "12 ऑगस्ट 2026",
+    "date_hi": "12 अगस्त 2026",
+    "date_en": "12 August 2026",
+    "time_mr": "सकाळी 10:00 ते सायं. 5:00",
+    "time_hi": "सुबह 10:00 से शाम 5:00",
+    "time_en": "10:00 AM to 5:00 PM",
+    "venue_mr": "समाज सांस्कृतिक सभागृह, तुलसी नगर / सुखलिया परिसर, इंदूर",
+    "venue_hi": "समाज सांस्कृतिक सभागार, तुलसी नगर / सुखलिया परिसर, इंदौर",
+    "venue_en": "Samaj Cultural Hall, Tulsi Nagar / Sukhlia Area, Indore",
+    "summary_mr": "इंदूर शहर आणि देशभरातील सोनार समाज बांधव, सराफा व्यापारी, उद्योजक व विविध क्षेत्रांतील मान्यवरांचे भव्य वार्षिक स्नेहसंमेलन संपन्न झाले. या प्रसंगी समाजातील 51 ज्येष्ठ नागरिकांचा शाल, श्रीफळ व मानपत्र देऊन गौरव करण्यात आला. ट्रस्टच्या भावी समाजभवन प्रकल्पाचा नकाशा सादर करण्यात आला व उपस्थितांनी उत्स्फूर्त सहकार्य जाहीर केले.",
+    "summary_hi": "इंदौर शहर व देशभर के सोनार समाज बंधुओं, सर्राफा व्यापारियों व विभिन्न क्षेत्रों के गणमान्य बंधुओं का भव्य वार्षिक स्नेह सम्मेलन संपन्न हुआ। समाज के 51 वरिष्ठ नागरिकों का शॉल, श्रीफल व प्रशस्ति पत्र देकर सम्मान किया गया। समाज भवन परियोजना का प्रस्ताव प्रस्तुत किया गया।",
+    "summary_en": "A grand annual gathering of Sonar Samaj jewellers, entrepreneurs, and families from Indore and across the nation was hosted. 51 esteemed senior citizens were felicitated with traditional shawls and mementos. The roadmap for the upcoming Community Hall (Samaj Bhavan) was enthusiastically unveiled.",
+    "highlights_mr": [
+      "मध्य प्रदेश व देशभरातून 650+ समाज प्रतिनिधींची उपस्थिती",
+      "समाजातील 51 ज्येष्ठ नागरिकांचा आदरपूर्वक सन्मान व आशीर्वाद सोहळा",
+      "नवीन कार्यकारिणी समिती व महिला आघाडी पदाधिकाऱ्यांची घोषणा",
+      "सामूहिक स्नेहभोजन व सांस्कृतिक कार्यक्रमांचे सादरीकरण"
+    ],
+    "highlights_hi": [
+      "मध्य प्रदेश व देश भर से 650+ समाज प्रतिनिधियों की गरिमामयी उपस्थिति",
+      "51 वरिष्ठ नागरिकों का शॉल, श्रीफल व स्मृतिचिह्न भेंटकर सम्मान",
+      "नवीन कार्यकारिणी एवं महिला मंडल की घोषणा",
+      "पारंपरिक सामूहिक स्नेहभोज व सांस्कृतिक प्रस्तुतियां"
+    ],
+    "highlights_en": [
+      "650+ delegates attended from Madhya Pradesh and across India",
+      "51 revered senior citizens felicitated for their lifetime contributions",
+      "Formal announcement of the newly appointed Executive Committee",
+      "Grand community feast and youth cultural performances"
+    ],
+    "metrics": [
+      {
+        "icon": "fa-users",
+        "value": "650+",
+        "label_mr": "प्रतिनिधी उपस्थित",
+        "label_hi": "प्रतिनिधि उपस्थित",
+        "label_en": "Delegates Present"
+      },
+      {
+        "icon": "fa-award",
+        "value": "51",
+        "label_mr": "ज्येष्ठ सत्कार",
+        "label_hi": "वरिष्ठ नागरिक सम्मानित",
+        "label_en": "Elders Honored"
+      },
+      {
+        "icon": "fa-building-columns",
+        "value": "1",
+        "label_mr": "समाजभवन प्रकल्प",
+        "label_hi": "समाजभवन संकल्प",
+        "label_en": "Hall Roadmap"
+      },
+      {
+        "icon": "fa-handshake",
+        "value": "100%",
+        "label_mr": "एकमत ठराव",
+        "label_hi": "सर्वसम्मत प्रस्ताव",
+        "label_en": "Consensus Vote"
+      }
+    ],
+    "organizer_mr": "संयोजक: सोनार समाज ट्रस्ट कार्यकारिणी, इंदौर (फोन: +91 731 420 3099)",
+    "organizer_hi": "संयोजक: सोनार समाज ट्रस्ट कार्यकारिणी, इंदौर (फोन: +91 731 420 3099)",
+    "organizer_en": "Organized by: Sonar Samaj Trust Executive Board (Ph: +91 731 420 3099)",
+    "photos": [
+      {
+        "url": "./src/samaj-group-photo.jpeg",
+        "caption_mr": "स्नेहसंमेलनात सहभागी समस्त बंधू-भगिनी व पदाधिकारी",
+        "caption_hi": "स्नेह सम्मेलन में उपस्थित समाज जन व पदाधिकारी",
+        "caption_en": "Community members and dignitaries during the annual get-together"
+      },
+      {
+        "url": "./src/newspaper-ss.jpeg",
+        "caption_mr": "वृत्तपत्रात प्रसिद्ध झालेली संमेलनाची बातमी व छायाचित्रे",
+        "caption_hi": "अखबार में प्रकाशित स्नेह सम्मेलन का विस्तृत समाचार",
+        "caption_en": "Regional news media coverage of the annual conference"
+      }
+    ]
+  },
+  {
+    "id": "ev-blood-donation-camp",
+    "category_key": "health",
+    "category_mr": "आरोग्य व समाजसेवा",
+    "category_hi": "स्वास्थ्य एवं समाजसेवा",
+    "category_en": "Health & Social Welfare",
+    "category_color": "rose",
+    "title_mr": "भव्य रक्तदान शिबिर व मोफत सर्व रोग निदान आरोग्य शिबिर",
+    "title_hi": "भव्य रक्तदान शिविर एवं निःशुल्क सर्व रोग निदान स्वास्थ्य शिविर",
+    "title_en": "Mega Blood Donation Drive & Free Multi-Speciality Health Camp",
+    "date_mr": "15 ऑक्टोबर 2026",
+    "date_hi": "15 अक्टूबर 2026",
+    "date_en": "15 October 2026",
+    "time_mr": "सकाळी 9:00 ते दुपारी 3:00",
+    "time_hi": "सुबह 9:00 से दोपहर 3:00",
+    "time_en": "9:00 AM to 3:00 PM",
+    "venue_mr": "सरस्वती व्हिला परिसर, 362-ए, तुलसी नगर, इंदूर",
+    "venue_hi": "सरस्वती विला परिसर, 362-ए, तुलसी नगर, इंदौर",
+    "venue_en": "Saraswati Villa Campus, 362-A, Tulsi Nagar, Indore",
+    "summary_mr": "'रक्तदान हेच सर्वश्रेष्ठ जीवनदान' या ब्रीदवाक्याला अनुसरून सोनार समाज ट्रस्टच्या वतीने भव्य रक्तदान व आरोग्य शिबिर यशस्वीरीत्या पार पडले. इंदूरच्या शासकीय एम.वाय. हॉस्पिटल रक्तपेढी आणि तज्ज्ञ डॉक्टरांच्या पथकाने सेवा दिली. समाजातील तरुण आणि महिलांनी उत्साहाने 101 युनिट रक्तदान केले. सोबतच 220 हून अधिक नागरिकांची मोफत मधुमेह, रक्तदाब आणि ईसीजी तपासणी करण्यात आली.",
+    "summary_hi": "'रक्तदान जीवनदान' के पावन संकल्प के साथ सोनार समाज ट्रस्ट द्वारा विशाल रक्तदान व स्वास्थ्य जांच शिविर आयोजित हुआ। एम.वाय. हॉस्पिटल ब्लड बैंक एवं विशेषज्ञ डॉक्टरों की टीम ने सेवाएं दीं। युवाओं एवं मातृशक्ति ने 101 यूनिट रक्तदान किया और 220+ नागरिकों की निःशुल्क जांच हुई।",
+    "summary_en": "Embodying the motto 'Blood Donation is the Greatest Gift of Life', Sonar Samaj Trust successfully conducted a mega blood donation and health screening drive. In partnership with M.Y. Hospital Blood Bank and renowned physicians, 101 units of blood were collected, and over 220 citizens received comprehensive free health checks.",
+    "highlights_mr": [
+      "101 युनिट जीवनरक्षक रक्ताचे संकलन (एम.वाय. हॉस्पिटल सहकार्य)",
+      "220+ नागरिकांची मोफत बीपी, शुगर, ईसीजी व नेत्र तपासणी",
+      "प्रत्येक रक्तदात्यास ट्रस्टतर्फे सन्मानपत्र व आरोग्य किट वितरण",
+      "तज्ज्ञ डॉक्टरांचे मोफत आरोग्य व आहार मार्गदर्शन"
+    ],
+    "highlights_hi": [
+      "101 यूनिट जीवनरक्षक रक्त संग्रह (एम.वाय. अस्पताल सहयोग)",
+      "220+ नागरिकों की निःशुल्क बीपी, शुगर, ईसीजी एवं नेत्र जांच",
+      "प्रत्येक रक्तदाता को प्रशस्ति पत्र व स्वास्थ्य किट",
+      "वरिष्ठ चिकित्सकों द्वारा निःशुल्क स्वास्थ्य परामर्श"
+    ],
+    "highlights_en": [
+      "101 units of life-saving blood collected for regional blood banks",
+      "Free BP, Sugar, ECG, and eye consultations for 220+ attendees",
+      "Certificate of honor and donor wellness kit for all blood donors",
+      "Preventive lifestyle guidance by specialist medical consultants"
+    ],
+    "metrics": [
+      {
+        "icon": "fa-droplet",
+        "value": "101",
+        "label_mr": "युनिट रक्त संकलित",
+        "label_hi": "यूनिट रक्त संकलित",
+        "label_en": "Blood Units"
+      },
+      {
+        "icon": "fa-stethoscope",
+        "value": "220+",
+        "label_mr": "मोफत तपासण्या",
+        "label_hi": "निःशुल्क जांचें",
+        "label_en": "Health Checkups"
+      },
+      {
+        "icon": "fa-user-doctor",
+        "value": "15+",
+        "label_mr": "तज्ज्ञ डॉक्टर",
+        "label_hi": "विशेषज्ञ डॉक्टर",
+        "label_en": "Doctors & Nurses"
+      },
+      {
+        "icon": "fa-certificate",
+        "value": "100%",
+        "label_mr": "प्रमाणपत्र वितरण",
+        "label_hi": "प्रमाण पत्र वितरण",
+        "label_en": "Donor Certificates"
+      }
+    ],
+    "organizer_mr": "संयोजक: आरोग्य व सेवा कक्ष, सोनार समाज ट्रस्ट, इंदौर",
+    "organizer_hi": "संयोजक: स्वास्थ्य एवं सेवा प्रकोष्ठ, सोनार समाज ट्रस्ट, इंदौर",
+    "organizer_en": "Organized by: Health & Social Wing, Sonar Samaj Trust, Indore",
+    "photos": [
+      {
+        "url": "./src/samaj-group-photo.jpeg",
+        "caption_mr": "रक्तदान शिबिरात उपस्थित रक्तदाते, डॉक्टर पथक व ट्रस्टचे पदाधिकारी",
+        "caption_hi": "रक्तदान शिविर में उपस्थित रक्तदाता, चिकित्सक टीम व ट्रस्ट पदाधिकारी",
+        "caption_en": "Blood donors, medical team, and trust executives at the camp"
+      },
+      {
+        "url": "./src/newspaper-ss.jpeg",
+        "caption_mr": "सामाजिक उपक्रमाची वर्तमानपत्रातील प्रसिद्धी व वृत्तांत",
+        "caption_hi": "शिविर की समाचार पत्रों में उत्साहवर्धक कवरेज",
+        "caption_en": "Press coverage praising the community healthcare initiative"
+      }
+    ]
+  },
+  {
+    "id": "ev-student-felicitation",
+    "category_key": "youth",
+    "category_mr": "युवा व शैक्षणिक",
+    "category_hi": "युवा एवं शैक्षणिक",
+    "category_en": "Youth & Education",
+    "category_color": "purple",
+    "title_mr": "गुणवंत विद्यार्थी गुणगौरव सोहळा व युवा करिअर परिषद",
+    "title_hi": "प्रतिभाशाली विद्यार्थी सम्मान समारोह एवं युवा करियर मार्गदर्शन",
+    "title_en": "Merit Student Felicitation Ceremony & Youth Career Guidance Conclave",
+    "date_mr": "28 जुलै 2026",
+    "date_hi": "28 जुलाई 2026",
+    "date_en": "28 July 2026",
+    "time_mr": "दुपारी 2:00 ते सायं. 6:00",
+    "time_hi": "दोपहर 2:00 से शाम 6:00",
+    "time_en": "2:00 PM to 6:00 PM",
+    "venue_mr": "रवींद्र नाट्यगृह सभागृह परिसर / समाज केंद्र, इंदूर",
+    "venue_hi": "रवींद्र नाट्यगृह सभागार परिसर / समाज केंद्र, इंदौर",
+    "venue_en": "Ravindra Natya Grah Campus / Samaj Centre, Indore",
+    "summary_mr": "सोनार समाजातील 10वी, 12वी, पदवी, वैद्यकीय, अभियांत्रिकी व स्पर्धा परीक्षांमध्ये उज्ज्वल यश मिळवणाऱ्या 45 हून अधिक गुणवंत विद्यार्थ्यांचा मानपत्र, सुवर्णपदक व शैक्षणिक शिष्यवृत्ती देऊन सन्मान करण्यात आला. या वेळी सीए, यूपीएससी, आयटी व व्यवसाय क्षेत्रातील नामांकित तज्ज्ञांनी विद्यार्थ्यांना पुढील शिक्षणासाठी मार्गदर्शन केले.",
+    "summary_hi": "10वीं, 12वीं, कॉलेज एवं प्रतियोगी परीक्षाओं में उत्कृष्ट अंक प्राप्त करने वाले 45+ होनहार विद्यार्थियों को मेडल, प्रशस्ति पत्र एवं छात्रवृत्ति देकर सम्मानित किया गया। सीए, यूपीएससी एवं तकनीकी क्षेत्र के विशेषज्ञों ने युवाओं को करियर संबंधी मार्गदर्शन दिया।",
+    "summary_en": "Over 45 exceptional students of Sonar Samaj who scored top honors in 10th, 12th, graduation, engineering, medical, and competitive exams were honored with merit plaques, medals, and scholarships. Industry leaders in CA, civil services, and IT delivered actionable career mentoring.",
+    "highlights_mr": [
+      "45+ गुणवंत विद्यार्थ्यांचा सुवर्णपदक व स्मृतीचिन्ह देऊन गौरव",
+      "आर्थिक दुर्बल विद्यार्थ्यांना ₹1,50,000/- शैक्षणिक शिष्यवृत्ती वितरण",
+      "आयएएस, सीए व आयटी क्षेत्रातील तज्ज्ञांचे करिअर समुपदेशन",
+      "300+ पालक व विद्यार्थ्यांची प्रेरणादायी उपस्थिती"
+    ],
+    "highlights_hi": [
+      "45+ मेधावी छात्र-छात्राओं का पदक व प्रशस्ति पत्र से सम्मान",
+      "ज़रूरतमंद विद्यार्थियों हेतु ₹1.5 लाख की छात्रवृत्ति वितरित",
+      "सीए, यूपीएससी व तकनीकी विशेषज्ञों का करियर सत्र",
+      "300+ अभिभावकों एवं विद्यार्थियों की गरिमामयी सहभागिता"
+    ],
+    "highlights_en": [
+      "45+ brilliant achievers awarded certificates and merit medals",
+      "₹150,000 distributed in educational scholarships to deserving scholars",
+      "Interactive career masterclasses by chartered accountants and civil servants",
+      "Over 300 proud parents and students attended"
+    ],
+    "metrics": [
+      {
+        "icon": "fa-graduation-cap",
+        "value": "45+",
+        "label_mr": "विद्यार्थी सन्मानित",
+        "label_hi": "विद्यार्थी सम्मानित",
+        "label_en": "Scholars Honored"
+      },
+      {
+        "icon": "fa-indian-rupee-sign",
+        "value": "₹1.5L",
+        "label_mr": "शिष्यवृत्ती निधी",
+        "label_hi": "छात्रवृत्ति राशि",
+        "label_en": "Scholarship Fund"
+      },
+      {
+        "icon": "fa-chalkboard-user",
+        "value": "8",
+        "label_mr": "करिअर मार्गदर्शक",
+        "label_hi": "करियर मेंटर्स",
+        "label_en": "Career Mentors"
+      },
+      {
+        "icon": "fa-user-group",
+        "value": "300+",
+        "label_mr": "पालक उपस्थित",
+        "label_hi": "अभिभावक उपस्थित",
+        "label_en": "Parents Attended"
+      }
+    ],
+    "organizer_mr": "संयोजक: शिक्षण व युवा विकास मंच, सोनार समाज ट्रस्ट, इंदौर",
+    "organizer_hi": "संयोजक: शिक्षा एवं युवा विकास मंच, सोनार समाज ट्रस्ट, इंदौर",
+    "organizer_en": "Organized by: Education & Youth Forum, Sonar Samaj Trust, Indore",
+    "photos": [
+      {
+        "url": "./src/samaj-group-photo.jpeg",
+        "caption_mr": "गुणगौरव सोहळ्यात पुरस्कारार्थी विद्यार्थी व मान्यवर",
+        "caption_hi": "समारोह में सम्मानित मेधावी विद्यार्थी एवं अतिथिगण",
+        "caption_en": "Merit award winners and guest dignitaries at the ceremony"
+      },
+      {
+        "url": "./src/newspaper-ss.jpeg",
+        "caption_mr": "दैनिक वृत्तपत्रात प्रसिद्ध झालेली युवा गुणगौरव बातमी",
+        "caption_hi": "दैनिक समाचार पत्र में प्रतिभा सम्मान की समाचार कवरेज",
+        "caption_en": "Press coverage of the student felicitation and scholarship conclave"
+      }
+    ]
+  }
+];
+        let userEventShowcase = [];
+        try {
+            const saved = localStorage.getItem('sonar_user_events');
+            if (saved) userEventShowcase = JSON.parse(saved);
+        } catch(e) {}
+
+        let eventShowcaseList = [...userEventShowcase, ...defaultEventShowcase];
+        let currentEventFilter = 'all';
+        let stagedEventPhotos = [];
+
+        function openEventModal() {
+            const m = document.getElementById('event-upload-modal');
+            if (m) m.classList.add('active');
+        }
+        function closeEventModal() {
+            const m = document.getElementById('event-upload-modal');
+            if (m) m.classList.remove('active');
+        }
+
+        function handleEventPhotoSelect(input) {
+            const files = input.files;
+            if (!files || !files.length) return;
+            const previewGrid = document.getElementById('ev-photo-preview-grid');
+            if (previewGrid) previewGrid.classList.remove('hidden');
+
+            Array.from(files).forEach((file) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const dataUrl = e.target.result;
+                    stagedEventPhotos.push({
+                        url: dataUrl,
+                        caption_mr: file.name.replace(/\.[^/.]+$/, ""),
+                        caption_hi: file.name.replace(/\.[^/.]+$/, ""),
+                        caption_en: file.name.replace(/\.[^/.]+$/, "")
+                    });
+                    renderPhotoPreviews();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function renderPhotoPreviews() {
+            const container = document.getElementById('ev-photo-preview-grid');
+            if (!container) return;
+            container.innerHTML = stagedEventPhotos.map((p, idx) => `
+                <div class="relative group rounded-xl overflow-hidden border border-amber-300 bg-white p-1">
+                    <img src="${p.url}" class="w-full h-20 object-cover rounded-lg">
+                    <button type="button" onclick="removeStagedPhoto(${idx})" class="absolute top-1 right-1 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs shadow">&times;</button>
+                    <input type="text" value="${p.caption_mr}" onchange="updateStagedPhotoCaption(${idx}, this.value)" placeholder="फोटो कॅप्शन" class="w-full mt-1 px-1.5 py-0.5 text-[11px] border border-slate-200 rounded">
+                </div>
+            `).join('');
+        }
+
+        function removeStagedPhoto(idx) {
+            stagedEventPhotos.splice(idx, 1);
+            renderPhotoPreviews();
+            if (!stagedEventPhotos.length) {
+                const previewGrid = document.getElementById('ev-photo-preview-grid');
+                if (previewGrid) previewGrid.classList.add('hidden');
             }
         }
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.remove('active');
+
+        function updateStagedPhotoCaption(idx, val) {
+            if (stagedEventPhotos[idx]) {
+                stagedEventPhotos[idx].caption_mr = val;
+                stagedEventPhotos[idx].caption_hi = val;
+                stagedEventPhotos[idx].caption_en = val;
+            }
+        }
+
+        function handleEventUploadSubmit(event) {
+            event.preventDefault();
+            const title = document.getElementById('ev-form-title').value.trim();
+            const category = document.getElementById('ev-form-category').value;
+            const date = document.getElementById('ev-form-date').value.trim();
+            const venue = document.getElementById('ev-form-venue').value.trim();
+            const metric = document.getElementById('ev-form-metric').value.trim();
+            const organizer = document.getElementById('ev-form-organizer').value.trim();
+            const summary = document.getElementById('ev-form-summary').value.trim();
+
+            const catMap = {
+                cultural: { mr: "धार्मिक व सांस्कृतिक", hi: "धार्मिक एवं सांस्कृतिक", en: "Religious & Cultural", color: "brand" },
+                gathering: { mr: "समाज मेळावे", hi: "समाज सम्मेलन", en: "Community Gathering", color: "amber" },
+                health: { mr: "आरोग्य व समाजसेवा", hi: "स्वास्थ्य एवं समाजसेवा", en: "Health & Social Welfare", color: "rose" },
+                youth: { mr: "युवा व शैक्षणिक", hi: "युवा एवं शैक्षणिक", en: "Youth & Education", color: "purple" },
+                social: { mr: "सामाजिक उपक्रम", hi: "सामाजिक उपक्रम", en: "Social Initiative", color: "emerald" }
+            };
+
+            const catInfo = catMap[category] || catMap.cultural;
+
+            const newEvent = {
+                id: 'ev-user-' + Date.now(),
+                category_key: category,
+                category_mr: catInfo.mr,
+                category_hi: catInfo.hi,
+                category_en: catInfo.en,
+                category_color: catInfo.color,
+                title_mr: title,
+                title_hi: title,
+                title_en: title,
+                date_mr: date,
+                date_hi: date,
+                date_en: date,
+                time_mr: '',
+                time_hi: '',
+                time_en: '',
+                venue_mr: venue,
+                venue_hi: venue,
+                venue_en: venue,
+                summary_mr: summary,
+                summary_hi: summary,
+                summary_en: summary,
+                highlights_mr: [metric || "सोनार समाज बांधवांची उत्साही उपस्थिती", venue, date],
+                highlights_hi: [metric || "सोनार समाज बंधुओं की उत्साही उपस्थिति", venue, date],
+                highlights_en: [metric || "Enthusiastic community attendance", venue, date],
+                metrics: metric ? [{ icon: "fa-users", value: metric, label_mr: "नोंद", label_hi: "रिकॉर्ड", label_en: "Metric" }] : [],
+                organizer_mr: organizer ? "संयोजक: " + organizer : "संयोजक: सोनार समाज इंदूर",
+                organizer_hi: organizer ? "संयोजक: " + organizer : "संयोजक: सोनार समाज इंदौर",
+                organizer_en: organizer ? "Organized by: " + organizer : "Organized by: Sonar Samaj Indore",
+                photos: stagedEventPhotos.length ? [...stagedEventPhotos] : [
+                    {
+                        url: "./src/samaj-group-photo.jpeg",
+                        caption_mr: title,
+                        caption_hi: title,
+                        caption_en: title
+                    }
+                ]
+            };
+
+            userEventShowcase.unshift(newEvent);
+            try {
+                localStorage.setItem('sonar_user_events', JSON.stringify(userEventShowcase));
+            } catch(e) {}
+
+            eventShowcaseList = [...userEventShowcase, ...defaultEventShowcase];
+            renderEventShowcaseDOM();
+            closeEventModal();
+            document.getElementById('event-upload-form').reset();
+            stagedEventPhotos = [];
+            const previewGrid = document.getElementById('ev-photo-preview-grid');
+            if (previewGrid) {
+                previewGrid.innerHTML = '';
+                previewGrid.classList.add('hidden');
+            }
+
+            showSuccessModal('कार्यक्रमाचे सविस्तर वृत्त व फोटो पोर्टलवर यशस्वीरित्या जोडले गेले आहेत!');
+            
+            const sec = document.getElementById('event-showcase');
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function shareEventToAdminWhatsApp() {
+            const title = document.getElementById('ev-form-title').value.trim() || 'नवीन कार्यक्रम';
+            const cat = document.getElementById('ev-form-category').value;
+            const date = document.getElementById('ev-form-date').value.trim();
+            const venue = document.getElementById('ev-form-venue').value.trim();
+            const summary = document.getElementById('ev-form-summary').value.trim();
+            const org = document.getElementById('ev-form-organizer').value.trim();
+            const photoCount = stagedEventPhotos.length;
+
+            const text = `*सोनार समाज ट्रस्ट, इंदौर - नवीन कार्यक्रम व फोटो तपशील*\n\n` +
+                         `📌 *कार्यक्रमाचे नाव:* ${title}\n` +
+                         `🏷️ *श्रेणी:* ${cat}\n` +
+                         `📅 *तारीख व वेळ:* ${date || 'सांगितलेली नाही'}\n` +
+                         `📍 *स्थान:* ${venue || 'इंदूर'}\n` +
+                         `👤 *संयोजक / संपर्क:* ${org || 'नाही'}\n` +
+                         `📸 *फोटो संख्या:* ${photoCount} फोटो\n\n` +
+                         `📝 *सविस्तर वृत्तांत:*\n${summary || 'नाही'}\n\n` +
+                         `कृपया हा कार्यक्रम ट्रस्टच्या अधिकृत रेकॉर्डमध्ये व पोर्टलवर समाविष्ट करावा. फोटो या मेसेजसोबत जोडत आहे.`;
+
+            window.open('https://wa.me/919098491789?text=' + encodeURIComponent(text), '_blank');
+        }
+
+        function shareEventCardWhatsApp(idx) {
+            const ev = eventShowcaseList[idx];
+            if (!ev) return;
+            const lang = currentLang || 'mr';
+            const title = ev['title_' + lang] || ev.title_mr;
+            const date = ev['date_' + lang] || ev.date_mr;
+            const venue = ev['venue_' + lang] || ev.venue_mr;
+            const summary = ev['summary_' + lang] || ev.summary_mr;
+
+            const text = `*सोनार समाज ट्रस्ट, इंदौर - कार्यक्रम वृत्तांत व छायाचित्रे*\n\n` +
+                         `🎉 *${title}*\n` +
+                         `📅 *तारीख:* ${date}\n` +
+                         `📍 *स्थान:* ${venue}\n\n` +
+                         `📖 *वृत्तांत:* ${summary.substring(0, 250)}...\n\n` +
+                         `सविस्तर माहिती व सर्व फोटो पाहण्यासाठी भेट द्या:\nhttps://sonarsamaj.com/#event-showcase`;
+
+            window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank');
+        }
+
+        function filterEventCategory(catKey) {
+            currentEventFilter = catKey;
+            const btns = document.querySelectorAll('.ev-filter-pill');
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === catKey) {
+                    btn.className = 'ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition-all flex items-center gap-1.5';
+                } else {
+                    btn.className = 'ev-filter-pill px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white border border-amber-200 text-slate-700 hover:bg-amber-50 hover:text-brand-600 shadow-sm transition-all flex items-center gap-1.5';
+                }
+            });
+            renderEventShowcaseDOM();
+        }
+
+        function filterEventsBySearch(keyword) {
+            renderEventShowcaseDOM(keyword.toLowerCase().trim());
+        }
+
+        function renderEventShowcaseDOM(keyword = '') {
+            const container = document.getElementById('event-showcase-container');
+            const emptyEl = document.getElementById('event-showcase-empty');
+            if (!container) return;
+
+            const lang = currentLang || 'mr';
+            let filtered = eventShowcaseList.filter(ev => {
+                const matchCat = currentEventFilter === 'all' || ev.category_key === currentEventFilter;
+                if (!matchCat) return false;
+                if (!keyword) return true;
+                const title = (ev['title_' + lang] || ev.title_mr || '').toLowerCase();
+                const venue = (ev['venue_' + lang] || ev.venue_mr || '').toLowerCase();
+                const sum = (ev['summary_' + lang] || ev.summary_mr || '').toLowerCase();
+                return title.includes(keyword) || venue.includes(keyword) || sum.includes(keyword);
+            });
+
+            if (!filtered.length) {
+                container.innerHTML = '';
+                if (emptyEl) emptyEl.classList.remove('hidden');
+                return;
+            }
+
+            if (emptyEl) emptyEl.classList.add('hidden');
+
+            container.innerHTML = filtered.map((ev, fIdx) => {
+                const originalIdx = eventShowcaseList.indexOf(ev);
+                const title = ev['title_' + lang] || ev.title_mr;
+                const cat = ev['category_' + lang] || ev.category_mr;
+                const date = ev['date_' + lang] || ev.date_mr;
+                const time = ev['time_' + lang] || ev.time_mr;
+                const venue = ev['venue_' + lang] || ev.venue_mr;
+                const summary = ev['summary_' + lang] || ev.summary_mr;
+                const organizer = ev['organizer_' + lang] || ev.organizer_mr;
+                const highlights = ev['highlights_' + lang] || ev.highlights_mr || [];
+
+                const hHTML = highlights.map(h => `
+                    <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                        <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
+                        <span class="marathi">${h}</span>
+                    </li>
+                `).join('');
+
+                const mHTML = (ev.metrics || []).map(m => {
+                    const lbl = m['label_' + lang] || m.label_mr;
+                    return `
+                        <div class="px-3 py-1.5 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-900 flex items-center gap-2 text-xs font-bold">
+                            <i class="fas ${m.icon} text-amber-600 text-xs"></i>
+                            <span>${m.value}</span>
+                            <span class="font-normal text-slate-600 text-[11px] marathi">${lbl}</span>
+                        </div>
+                    `;
+                }).join('');
+
+                const pHTML = (ev.photos || []).map((p, pIdx) => {
+                    const caption = p['caption_' + lang] || p.caption_mr || '';
+                    return `
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer border border-amber-200/80 shadow-sm hover:shadow-md transition-all bg-slate-900" onclick="openEventPhotoByIndex(${originalIdx}, ${pIdx})">
+                            <img src="${p.url}" alt="${caption}" class="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <div class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                            <div class="absolute bottom-2.5 left-2.5 right-2.5 text-white">
+                                <p class="text-xs font-medium text-slate-100 line-clamp-1 marathi">${caption}</p>
+                                <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider flex items-center gap-1 mt-0.5">
+                                    <i class="fas fa-camera text-[9px]"></i> फोटो झूम करा
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <article class="event-card-item bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft hover:shadow-card transition-all" data-category="${ev.category_key}">
+                        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-${ev.category_color}-50 text-${ev.category_color}-700 border border-${ev.category_color}-200 marathi">
+                                    ${cat}
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 flex items-center gap-1.5 marathi">
+                                    <i class="far fa-calendar-alt text-brand-600"></i> ${date}
+                                </span>
+                                ${time ? `
+                                <span class="hidden sm:inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 items-center gap-1.5 marathi">
+                                    <i class="far fa-clock text-amber-600"></i> ${time}
+                                </span>` : ''}
+                            </div>
+                            <div class="text-xs text-slate-500 flex items-center gap-1.5 marathi">
+                                <i class="fas fa-map-marker-alt text-rose-500"></i>
+                                <span>${venue}</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight marathi hover:text-brand-600 transition-colors">
+                                ${title}
+                            </h3>
+
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed marathi">
+                                ${summary}
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+                                <div class="md:col-span-7">
+                                    <ul class="space-y-2">
+                                        ${hHTML}
+                                    </ul>
+                                </div>
+                                <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-start md:justify-end">
+                                    ${mHTML}
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-slate-800 marathi">
+                                        <i class="fas fa-images text-brand-600"></i>
+                                        <span>कार्यक्रमाची छायाचित्रे (Event Photos)</span>
+                                    </div>
+                                    <span class="text-xs text-slate-500 marathi">${ev.photos.length} फोटो उपलब्ध</span>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(ev.photos.length, 3)} gap-4">
+                                    ${pHTML}
+                                </div>
+                            </div>
+
+                            <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                                <div class="text-xs text-slate-500 marathi flex items-center gap-2">
+                                    <i class="fas fa-shield-halved text-brand-600"></i>
+                                    <span>${organizer}</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <button onclick="openEventPhotoByIndex(${originalIdx}, 0)" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 transition-colors marathi">
+                                        <i class="fas fa-expand"></i> सर्व फोटो पहा
+                                    </button>
+                                    <button onclick="shareEventCardWhatsApp(${originalIdx})" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors marathi">
+                                        <i class="fab fa-whatsapp text-emerald-600"></i> शेअर करा
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
         }
 
         
@@ -2496,6 +4076,39 @@
         // ── Comprehensive Multi-lingual Translation Engine ──
         const i18n = {
         "mr": {
+        "nav_event_showcase": "इव्हेंट फोटो",
+        "footer_link_showcase": "कार्यक्रम व फोटो संग्रह",
+        "showcase_pill": "📸 कार्यक्रम वृत्तांत व छायाचित्रे • Events & Photos",
+        "showcase_heading_1": "सोनार समाजाचे ऐतिहासिक उपक्रम",
+        "showcase_heading_2": "सविस्तर वृत्तांत व फोटो संग्रह",
+        "showcase_desc": "समाजातील धार्मिक सोहळे, महाआरती, रक्तदान शिबिरे, स्नेहसंमेलने व विद्यार्थी सत्कार उपक्रमांचे सचित्र वृत्त व आठवणी.",
+        "filter_all": "सर्व कार्यक्रम (All)",
+        "filter_cultural": "धार्मिक व सांस्कृतिक",
+        "filter_gathering": "समाज मेळावे",
+        "filter_health": "आरोग्य व समाजसेवा",
+        "filter_youth": "युवा व शिक्षण",
+        "btn_add_event_cta": "नवीन कार्यक्रम व फोटो जोडा",
+        "ev_search_placeholder": "कार्यक्रम शोधा...",
+        "modal_event_title": "नवीन कार्यक्रम व फोटो जोडा",
+        "modal_event_sub": "समाजाच्या पोर्टलवर कार्यक्रमाचे सविस्तर वृत्त व छायाचित्रे प्रसिद्ध करा",
+        "lbl_ev_title": "कार्यक्रमाचे नाव (Event Title) *",
+        "lbl_ev_cat": "कार्यक्रमाची श्रेणी (Category) *",
+        "lbl_ev_date": "तारीख व वेळ (Date & Time) *",
+        "lbl_ev_venue": "स्थान / ठिकाण (Venue) *",
+        "lbl_ev_metric": "महत्त्वाची आकडेवारी (Key Stats / Attendance)",
+        "lbl_ev_organizer": "संयोजक / संपर्क व्यक्ती व फोन (Organizer & Phone)",
+        "lbl_ev_summary": "कार्यक्रमाचा सविस्तर वृत्तांत (Details & Highlights) *",
+        "lbl_ev_upload_title": "कार्यक्रमाचे फोटो निवडा (Upload Event Photos)",
+        "lbl_ev_upload_sub": "एकापेक्षा जास्त फोटो निवडू शकता (.JPG, .PNG)",
+        "btn_publish_event": "पोर्टलवर प्रसिद्ध करा • Publish",
+        "btn_wa_event": "WhatsApp वर ट्रस्टला पाठवा",
+        "showcase_callout_pill": "📸 समाज सहभाग • Community Photos",
+        "showcase_callout_title": "आपल्या कॉलनी किंवा परिसरातील कार्यक्रमाचे फोटो पाठवा!",
+        "showcase_callout_desc": "आपल्या परिसरातील कौटुंबिक सोहळे, हळदी-कुंकू, पूजा, रक्तदान किंवा समाजोपयोगी उपक्रमांची माहिती व फोटो ट्रस्टला पाठवा. आम्ही ते अधिकृत वेबसाइटवर प्रकाशित करू.",
+        "btn_submit_event_bottom": "फोटो व माहिती जोडा",
+        "btn_wa_send_photos": "WhatsApp वर पाठवा",
+        "empty_events_title": "या श्रेणीत सध्या कोणताही कार्यक्रम सापडला नाही",
+        "empty_events_desc": "आपल्या परिसरातील कार्यक्रमाची माहिती व फोटो जोडण्यासाठी खालील बटणावर क्लिक करा.",
                 "top_addr": "Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore",
                 "nav_home": "मुख्यपृष्ठ",
                 "nav_about": "परिचय",
@@ -2812,6 +4425,39 @@
                 "btn_submit_celeb": "नोंदणी पूर्ण करा • Save & Wish"
         },
         "hi": {
+        "nav_event_showcase": "इवेंट्स फोटो",
+        "footer_link_showcase": "कार्यक्रम एवं फोटो संग्रह",
+        "showcase_pill": "📸 कार्यक्रम वृत्तांत एवं छायाचित्र • Events & Photos",
+        "showcase_heading_1": "सोनार समाज के ऐतिहासिक उपक्रम",
+        "showcase_heading_2": "विस्तृत विवरण एवं फोटो गैलरी",
+        "showcase_desc": "समाज के धार्मिक अनुष्ठान, महाआरती, रक्तदान शिविर, स्नेह सम्मेलन एवं मेधावी छात्र सम्मान समारोह का सचित्र विवरण।",
+        "filter_all": "सभी कार्यक्रम (All)",
+        "filter_cultural": "धार्मिक एवं सांस्कृतिक",
+        "filter_gathering": "समाज सम्मेलन",
+        "filter_health": "स्वास्थ्य एवं समाजसेवा",
+        "filter_youth": "युवा एवं शिक्षा",
+        "btn_add_event_cta": "नवीन कार्यक्रम एवं फोटो जोड़ें",
+        "ev_search_placeholder": "कार्यक्रम खोजें...",
+        "modal_event_title": "नया कार्यक्रम एवं फोटो जोड़ें",
+        "modal_event_sub": "समाज पोर्टल पर कार्यक्रम का विस्तृत विवरण एवं तस्वीरें प्रकाशित करें",
+        "lbl_ev_title": "कार्यक्रम का नाम (Event Title) *",
+        "lbl_ev_cat": "कार्यक्रम श्रेणी (Category) *",
+        "lbl_ev_date": "तिथि एवं समय (Date & Time) *",
+        "lbl_ev_venue": "स्थान / वेन्यू (Venue) *",
+        "lbl_ev_metric": "प्रमुख आंकड़े (Key Stats / Attendance)",
+        "lbl_ev_organizer": "संयोजक / संपर्क व्यक्ति एवं फोन (Organizer & Phone)",
+        "lbl_ev_summary": "कार्यक्रम का विस्तृत वृत्तांत (Details & Highlights) *",
+        "lbl_ev_upload_title": "कार्यक्रम की तस्वीरें चुनें (Upload Event Photos)",
+        "lbl_ev_upload_sub": "एक से अधिक तस्वीरें चुन सकते हैं (.JPG, .PNG)",
+        "btn_publish_event": "पोर्टल पर प्रकाशित करें • Publish",
+        "btn_wa_event": "WhatsApp पर ट्रस्ट को भेजें",
+        "showcase_callout_pill": "📸 समाज सहभागिता • Community Photos",
+        "showcase_callout_title": "अपने क्षेत्र अथवा कॉलोनी के कार्यक्रमों की तस्वीरें भेजें!",
+        "showcase_callout_desc": "अपने क्षेत्र में आयोजित पारिवारिक उत्सव, पूजा, रक्तदान या सामाजिक आयोजनों की जानकारी व तस्वीरें ट्रस्ट को भेजें। हम उन्हें आधिकारिक वेबसाइट पर प्रकाशित करेंगे।",
+        "btn_submit_event_bottom": "फोटो व विवरण जोड़ें",
+        "btn_wa_send_photos": "WhatsApp पर भेजें",
+        "empty_events_title": "इस श्रेणी में फिलहाल कोई कार्यक्रम उपलब्ध नहीं है",
+        "empty_events_desc": "अपने क्षेत्र के कार्यक्रम की जानकारी व तस्वीरें जोड़ने के लिए नीचे दिए गए बटन पर क्लिक करें।",
                 "top_addr": "फ्लैट नं. 201, सरस्वती विला, 362-ए, तुलसी नगर, इंदौर",
                 "nav_home": "मुख्य पृष्ठ",
                 "nav_about": "परिचय",
@@ -3128,6 +4774,39 @@
                 "btn_submit_celeb": "पंजीकरण पूर्ण करें • Save & Wish"
         },
         "en": {
+        "nav_event_showcase": "Event Photos",
+        "footer_link_showcase": "Events & Photo Archive",
+        "showcase_pill": "📸 Event Reports & Gallery • Events & Photos",
+        "showcase_heading_1": "Historic Community Initiatives",
+        "showcase_heading_2": "Event Reports & Photo Showcase",
+        "showcase_desc": "Detailed chronicles, photo memories, and achievements of Sonar Samaj religious celebrations, health camps, and annual gatherings.",
+        "filter_all": "All Events",
+        "filter_cultural": "Religious & Cultural",
+        "filter_gathering": "Gatherings",
+        "filter_health": "Health & Social",
+        "filter_youth": "Youth & Education",
+        "btn_add_event_cta": "+ Add Event & Photos",
+        "ev_search_placeholder": "Search events...",
+        "modal_event_title": "Add Event Details & Photos",
+        "modal_event_sub": "Publish community event highlights, attendance stats, and photo sets",
+        "lbl_ev_title": "Event Title *",
+        "lbl_ev_cat": "Event Category *",
+        "lbl_ev_date": "Date & Time *",
+        "lbl_ev_venue": "Venue / Location *",
+        "lbl_ev_metric": "Key Metric / Attendance",
+        "lbl_ev_organizer": "Organizer & Contact Phone",
+        "lbl_ev_summary": "Event Story & Highlights *",
+        "lbl_ev_upload_title": "Choose Event Photos",
+        "lbl_ev_upload_sub": "You can select multiple photos (.JPG, .PNG)",
+        "btn_publish_event": "Publish to Showcase",
+        "btn_wa_event": "Share to Admin on WhatsApp",
+        "showcase_callout_pill": "📸 Community Participation • Photos",
+        "showcase_callout_title": "Share Event Photos From Your Neighborhood!",
+        "showcase_callout_desc": "Send photos and news of local pujas, family get-togethers, blood donation camps, or community achievements. We will feature them on the official portal.",
+        "btn_submit_event_bottom": "Submit Photos & Details",
+        "btn_wa_send_photos": "Send via WhatsApp",
+        "empty_events_title": "No events found in this category",
+        "empty_events_desc": "Click the button below to add details and photos of an event from your locality.",
                 "top_addr": "Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore",
                 "nav_home": "Home",
                 "nav_about": "About Us",
@@ -3456,8 +5135,12 @@
                 activeBtn.classList.remove('font-medium', 'text-slate-300');
                 activeBtn.classList.add('bg-brand-600', 'text-white', 'font-bold');
             }
+            currentLang = lang;
             document.documentElement.lang = lang;
             try { localStorage.setItem('sonar_lang', lang); } catch(e){}
+            if (typeof renderEventShowcaseDOM === 'function') {
+                renderEventShowcaseDOM();
+            }
 
             // Update text elements dynamically
             const dict = i18n[lang] || i18n.mr;

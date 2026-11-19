@@ -17,6 +17,49 @@ publish_mode: simple
 show_preview_links: true
 
 collections:
+  - name: "event_showcase"
+    label: "📸 Events & Photos Showcase"
+    label_singular: "Showcase Event"
+    description: "Publish comprehensive community event stories with photo sets, attendee counts, and highlights."
+    files:
+      - file: "content/event_showcase.json"
+        name: "event_showcase_file"
+        label: "Events Showcase Collection"
+        fields:
+          - label: "Showcase Events List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_mr}} [{{fields.category_mr}}]"
+            fields:
+              - { label: "Event ID", name: "id", widget: "string" }
+              - { label: "Category Key", name: "category_key", widget: "select", options: ["cultural", "gathering", "health", "youth", "social"], default: "cultural" }
+              - { label: "Category (Marathi)", name: "category_mr", widget: "string", default: "धार्मिक व सांस्कृतिक" }
+              - { label: "Category (Hindi)", name: "category_hi", widget: "string", default: "धार्मिक एवं सांस्कृतिक" }
+              - { label: "Category (English)", name: "category_en", widget: "string", default: "Religious & Cultural" }
+              - { label: "Event Title (Marathi)", name: "title_mr", widget: "string" }
+              - { label: "Event Title (Hindi)", name: "title_hi", widget: "string" }
+              - { label: "Event Title (English)", name: "title_en", widget: "string" }
+              - { label: "Date (Marathi)", name: "date_mr", widget: "string" }
+              - { label: "Date (Hindi)", name: "date_hi", widget: "string" }
+              - { label: "Date (English)", name: "date_en", widget: "string" }
+              - { label: "Venue (Marathi)", name: "venue_mr", widget: "string" }
+              - { label: "Venue (Hindi)", name: "venue_hi", widget: "string" }
+              - { label: "Venue (English)", name: "venue_en", widget: "string" }
+              - { label: "Summary / Story (Marathi)", name: "summary_mr", widget: "text" }
+              - { label: "Summary / Story (Hindi)", name: "summary_hi", widget: "text" }
+              - { label: "Summary / Story (English)", name: "summary_en", widget: "text" }
+              - { label: "Organizer (Marathi)", name: "organizer_mr", widget: "string" }
+              - { label: "Organizer (Hindi)", name: "organizer_hi", widget: "string" }
+              - { label: "Organizer (English)", name: "organizer_en", widget: "string" }
+              - label: "Event Photo Gallery"
+                name: "photos"
+                widget: "list"
+                fields:
+                  - { label: "Photo", name: "url", widget: "image" }
+                  - { label: "Caption (Marathi)", name: "caption_mr", widget: "string" }
+                  - { label: "Caption (Hindi)", name: "caption_hi", widget: "string" }
+                  - { label: "Caption (English)", name: "caption_en", widget: "string" }
+
   - name: "gallery"
     label: "📸 Photo Gallery"
     label_singular: "Photo"
