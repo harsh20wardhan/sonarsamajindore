@@ -1442,11 +1442,8 @@
                     </div>
                     <h4 data-i18n="empty_events_title" class="text-lg font-bold text-slate-900 marathi">या श्रेणीत सध्या कोणताही कार्यक्रम सापडला नाही</h4>
                     <p data-i18n="empty_events_desc" class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto marathi">
-                        आपल्या परिसरातील कार्यक्रमाची माहिती व फोटो जोडण्यासाठी खालील बटणावर क्लिक करा.
+                        नवीन कार्यक्रम लवकरच ॲडमिन पॅनेलद्वारे अपडेट केले जातील.
                     </p>
-                    <button onclick="openEventModal()" class="mt-4 inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-full text-xs shadow-md transition-all">
-                        <i class="fas fa-plus"></i> कार्यक्रम जोडा
-                    </button>
                 </div>
 
                 </div>
@@ -2602,48 +2599,6 @@
         </div>
     </div>
 
-    
-    
-
-            <form onsubmit="handleCelebRegister(event)" class="space-y-4">
-                <div>
-                    <label data-i18n="lbl_celeb_name" class="block text-xs font-bold text-slate-700 uppercase mb-1">नाव / दांपत्याचे नाव *</label>
-                    <input type="text" id="celeb-reg-name" required placeholder="उदा. श्री राहुलजी सोनार" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label data-i18n="lbl_celeb_type" class="block text-xs font-bold text-slate-700 uppercase mb-1">प्रकार *</label>
-                        <select id="celeb-reg-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                            <option value="वाढदिवस">🎂 वाढदिवस (Birthday)</option>
-                            <option value="लग्न वाढदिवस">💍 लग्न वाढदिवस (Anniversary)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label data-i18n="lbl_celeb_date" class="block text-xs font-bold text-slate-700 uppercase mb-1">तारीख व महिना *</label>
-                        <input type="text" id="celeb-reg-date" required placeholder="उदा. 22 नोव्हेंबर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label data-i18n="lbl_celeb_phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">मोबाईल / WhatsApp *</label>
-                        <input type="tel" id="celeb-reg-phone" required placeholder="+91 XXXXXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    </div>
-                    <div>
-                        <label data-i18n="lbl_celeb_area" class="block text-xs font-bold text-slate-700 uppercase mb-1">परिसर / कॉलनी *</label>
-                        <input type="text" id="celeb-reg-area" required placeholder="उदा. सुखलिया / विजय नगर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                    </div>
-                </div>
-
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md transition-all">
-                        <span data-i18n="btn_submit_celeb">नोंदणी पूर्ण करा • Save & Wish</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    
     <!-- ═══════════════════ MODAL: COMPLETE EVENT DETAILS & PHOTOS ═══════════════════ -->
     <div id="event-detail-modal" class="modal">
         <div class="bg-white rounded-3xl max-w-4xl w-full border-2 border-amber-200 shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
@@ -2730,83 +2685,6 @@
                 <p id="lightbox-caption" class="text-xs sm:text-sm text-slate-200 mt-0.5 marathi"></p>
                 <span id="lightbox-counter" class="text-[11px] text-slate-400 mt-1 inline-block"></span>
             </div>
-        </div>
-    </div>
-
-    
-                <button onclick="closeEventModal()" class="text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
-            </div>
-
-            <form id="event-upload-form" onsubmit="handleEventUploadSubmit(event)" class="space-y-4 mt-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="sm:col-span-2">
-                        <label data-i18n="lbl_ev_title" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाचे नाव (Event Title) *</label>
-                        <input type="text" id="ev-form-title" required placeholder="उदा. होळी मिलन सोहळा / गुणगौरव कार्यक्रम" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
-                    </div>
-
-                    <div>
-                        <label data-i18n="lbl_ev_cat" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाची श्रेणी (Category) *</label>
-                        <select id="ev-form-category" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi bg-white">
-                            <option value="cultural">धार्मिक व सांस्कृतिक (Religious & Cultural)</option>
-                            <option value="gathering">समाज मेळावे व स्नेहसंमेलन (Gathering)</option>
-                            <option value="health">आरोग्य व समाजसेवा (Health & Social)</option>
-                            <option value="youth">युवा व शैक्षणिक (Youth & Education)</option>
-                            <option value="social">इतर सामाजिक उपक्रम (Other Events)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label data-i18n="lbl_ev_date" class="block text-xs font-bold text-slate-700 uppercase mb-1">तारीख व वेळ (Date & Time) *</label>
-                        <input type="text" id="ev-form-date" required placeholder="उदा. 25 नोव्हेंबर 2026, सायं. 5:00" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
-                    </div>
-
-                    <div>
-                        <label data-i18n="lbl_ev_venue" class="block text-xs font-bold text-slate-700 uppercase mb-1">स्थान / ठिकाण (Venue) *</label>
-                        <input type="text" id="ev-form-venue" required placeholder="उदा. समाज भवन / सुखलिया, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
-                    </div>
-
-                    <div>
-                        <label data-i18n="lbl_ev_metric" class="block text-xs font-bold text-slate-700 uppercase mb-1">महत्त्वाची आकडेवारी (Key Stats / Attendance)</label>
-                        <input type="text" id="ev-form-metric" placeholder="उदा. 350+ समाज बांधव उपस्थित" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
-                    </div>
-
-                    <div class="sm:col-span-2">
-                        <label data-i18n="lbl_ev_organizer" class="block text-xs font-bold text-slate-700 uppercase mb-1">संयोजक / संपर्क व्यक्ती व फोन (Organizer & Phone)</label>
-                        <input type="text" id="ev-form-organizer" placeholder="उदा. श्री राहुलजी सोनार (9098491789)" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
-                    </div>
-
-                    <div class="sm:col-span-2">
-                        <label data-i18n="lbl_ev_summary" class="block text-xs font-bold text-slate-700 uppercase mb-1">कार्यक्रमाचा सविस्तर वृत्तांत (Details & Highlights) *</label>
-                        <textarea id="ev-form-summary" rows="3" required placeholder="कार्यक्रमात काय घडले, प्रमुख पाहुणे, ठळक वैशिष्ट्ये याबद्दल माहिती लिहा..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi"></textarea>
-                    </div>
-                </div>
-
-                <!-- Photo Upload Zone -->
-                <div class="border-2 border-dashed border-amber-300 rounded-2xl p-4 bg-amber-50/40 text-center">
-                    <input type="file" id="ev-form-photos" multiple accept="image/*" class="hidden" onchange="handleEventPhotoSelect(this)">
-                    <div class="flex flex-col items-center justify-center cursor-pointer" onclick="document.getElementById('ev-form-photos').click()">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-2">
-                            <i class="fas fa-cloud-arrow-up"></i>
-                        </div>
-                        <span data-i18n="lbl_ev_upload_title" class="font-bold text-slate-800 text-sm marathi">कार्यक्रमाचे फोटो निवडा (Upload Event Photos)</span>
-                        <span data-i18n="lbl_ev_upload_sub" class="text-xs text-slate-500 mt-1">एकापेक्षा जास्त फोटो निवडू शकता (.JPG, .PNG)</span>
-                    </div>
-
-                    <!-- Photo preview grid -->
-                    <div id="ev-photo-preview-grid" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 hidden"></div>
-                </div>
-
-                <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-i18n="btn_publish_event">पोर्टलवर प्रसिद्ध करा • Publish</span>
-                    </button>
-                    <button type="button" onclick="shareEventToAdminWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-5 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-base"></i>
-                        <span data-i18n="btn_wa_event">WhatsApp वर ट्रस्टला पाठवा</span>
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
 
@@ -3883,7 +3761,7 @@
         "btn_submit_event_bottom": "फोटो व माहिती जोडा",
         "btn_wa_send_photos": "WhatsApp वर पाठवा",
         "empty_events_title": "या श्रेणीत सध्या कोणताही कार्यक्रम सापडला नाही",
-        "empty_events_desc": "आपल्या परिसरातील कार्यक्रमाची माहिती व फोटो जोडण्यासाठी खालील बटणावर क्लिक करा.",
+        "empty_events_desc": "नवीन कार्यक्रम लवकरच ॲडमिन पॅनेलद्वारे अपडेट केले जातील.",
                 "top_addr": "Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore",
                 "nav_home": "मुख्यपृष्ठ",
                 "nav_about": "परिचय",
@@ -4234,7 +4112,7 @@
         "btn_submit_event_bottom": "फोटो व विवरण जोड़ें",
         "btn_wa_send_photos": "WhatsApp पर भेजें",
         "empty_events_title": "इस श्रेणी में फिलहाल कोई कार्यक्रम उपलब्ध नहीं है",
-        "empty_events_desc": "अपने क्षेत्र के कार्यक्रम की जानकारी व तस्वीरें जोड़ने के लिए नीचे दिए गए बटन पर क्लिक करें।",
+        "empty_events_desc": "नए कार्यक्रम जल्द ही एडमिन पैनल द्वारा अपडेट किए जाएंगे।",
                 "top_addr": "फ्लैट नं. 201, सरस्वती विला, 362-ए, तुलसी नगर, इंदौर",
                 "nav_home": "मुख्य पृष्ठ",
                 "nav_about": "परिचय",
@@ -4585,7 +4463,7 @@
         "btn_submit_event_bottom": "Submit Photos & Details",
         "btn_wa_send_photos": "Send via WhatsApp",
         "empty_events_title": "No events found in this category",
-        "empty_events_desc": "Click the button below to add details and photos of an event from your locality.",
+        "empty_events_desc": "New events and photo coverage will be published shortly via the Admin Portal.",
                 "top_addr": "Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore",
                 "nav_home": "Home",
                 "nav_about": "About Us",
