@@ -193,6 +193,42 @@ collections:
               - { label: "Date Display", name: "date_display", widget: "string", default: "12 September" }
               - { label: "Short Summary", name: "summary", widget: "text" }
 
+  - name: "business_directory"
+    label: "💼 Business Directory (व्यावसायिक निर्देशिका)"
+    label_singular: "Business"
+    description: "Manage member businesses, shops, and services in Sonar Samaj Directory."
+    files:
+      - file: "content/business_directory.json"
+        name: "business_file"
+        label: "Member Business Listings"
+        fields:
+          - label: "Businesses List"
+            name: "businesses"
+            widget: "list"
+            summary: "{{fields.name_mr}} ({{fields.owner_mr}})"
+            fields:
+              - { label: "Business ID", name: "id", widget: "string" }
+              - { label: "Business Name (Marathi)", name: "name_mr", widget: "string" }
+              - { label: "Business Name (Hindi)", name: "name_hi", widget: "string" }
+              - { label: "Business Name (English)", name: "name_en", widget: "string" }
+              - { label: "Owner / Proprietor (Marathi)", name: "owner_mr", widget: "string" }
+              - { label: "Owner / Proprietor (Hindi)", name: "owner_hi", widget: "string" }
+              - { label: "Owner / Proprietor (English)", name: "owner_en", widget: "string" }
+              - { label: "Category Key", name: "category_key", widget: "select", options: ["jewellery", "manufacturing", "services", "other"], default: "jewellery" }
+              - { label: "Category Label (Marathi)", name: "category_mr", widget: "string", default: "सराफा व सुवर्णकार" }
+              - { label: "Category Label (Hindi)", name: "category_hi", widget: "string", default: "सराफा एवं स्वर्णकार" }
+              - { label: "Category Label (English)", name: "category_en", widget: "string", default: "Jewellery & Bullion" }
+              - { label: "Contact Phone", name: "phone", widget: "string" }
+              - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+              - { label: "Address / Area (Marathi)", name: "address_mr", widget: "string" }
+              - { label: "Address / Area (Hindi)", name: "address_hi", widget: "string" }
+              - { label: "Address / Area (English)", name: "address_en", widget: "string" }
+              - { label: "Description (Marathi)", name: "description_mr", widget: "text" }
+              - { label: "Description (Hindi)", name: "description_hi", widget: "text" }
+              - { label: "Description (English)", name: "description_en", widget: "text" }
+              - { label: "Established Year", name: "established", widget: "string", default: "2000" }
+              - { label: "Verified Samaj Member", name: "verified", widget: "boolean", default: true }
+
   - name: "settings"
     label: "⚙️ Trust Contact & Banking"
     label_singular: "Setting"

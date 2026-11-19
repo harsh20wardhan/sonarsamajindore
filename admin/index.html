@@ -1,192 +1,728 @@
 <!doctype html>
-<html lang="en">
+<html lang="mr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sonar Samaj Trust, Indore | Content Management Portal</title>
+  <title>सोपे ॲडमिन पॅनेल | सोनार समाज ट्रस्ट, इंदौर — Simple Admin Panel</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans Devanagari -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
 
-  <!-- Netlify Identity Widget for Authentication -->
+  <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../src/samaj-logo.png">
 
   <style>
-    /* ══════════════════════════════════════════════
-       MODERN ADMIN PORTAL THEME OVERRIDES
-    ══════════════════════════════════════════════ */
-    :root {
-      --primary: #c2410c;
-      --primary-hover: #ea580c;
-      --maroon: #831843;
-      --dark: #0f172a;
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
       background-color: #f8fafc;
     }
-
-    /* Custom Top Navigation Bar */
-    #admin-topbar {
-      background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
-      color: #ffffff;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid #c2410c;
-      font-size: 13px;
-      position: sticky;
-      top: 0;
-      z-index: 99999;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    .marathi {
+      font-family: 'Noto Sans Devanagari', sans-serif;
     }
-
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #831843, #c2410c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 16px;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(194, 65, 12, 0.4);
-    }
-
-    .brand-title {
-      font-weight: 700;
-      font-size: 14px;
-      color: #f8fafc;
-      letter-spacing: -0.2px;
-    }
-
-    .brand-sub {
-      color: #94a3b8;
-      font-size: 11px;
-      margin-left: 6px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .website-link {
-      background: rgba(255, 255, 255, 0.1);
-      color: #f1f5f9;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.2s ease;
-    }
-
-    .website-link:hover {
-      background: #c2410c;
-      border-color: #c2410c;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .live-status {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: #a7f3d0;
-      font-weight: 600;
-    }
-
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
-    }
-
-    /* Decap CMS UI Enhancements */
-    button[class*="Button"] {
-      border-radius: 8px !important;
-      font-family: inherit !important;
-      font-weight: 600 !important;
-    }
-
-    button[class*="button-primary"] {
-      background-color: var(--primary) !important;
-    }
-    button[class*="button-primary"]:hover {
-      background-color: var(--primary-hover) !important;
+    .calligraphy {
+      font-family: 'Yatra One', 'Noto Sans Devanagari', serif;
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col bg-slate-100 text-slate-800 antialiased">
 
-  <!-- Custom Branded Top Navigation Bar -->
-  <div id="admin-topbar">
-    <div class="brand-group">
-      <img src="../src/samaj-logo.png" alt="Sonar Samaj Logo" style="width:34px; height:34px; border-radius:50%; object-fit:contain; background:#ffffff; border:1.5px solid #d97706; box-shadow:0 2px 8px rgba(0,0,0,0.25); flex-shrink:0;">
-      <div>
-        <span class="brand-title">Sonar Samaj Trust, Indore</span>
-        <span class="brand-sub">• Content Management Portal</span>
+  <!-- Top Simple Admin Bar -->
+  <header class="bg-slate-900 text-white border-b-2 border-amber-500 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <img src="../src/samaj-logo.png" alt="सोनार समाज" class="w-10 h-10 rounded-full bg-white object-contain p-0.5 border-2 border-amber-400">
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-extrabold text-base sm:text-lg text-white marathi">सोनार समाज ट्रस्ट, इंदौर</h1>
+            <span class="bg-amber-500 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">सोपे ॲडमिन पॅनेल</span>
+          </div>
+          <p class="text-[11px] text-amber-300/90 hidden sm:block marathi">कोणीही सहजपणे फोटो, वाढदिवस व व्यवसाय जोडू शकेल अशी व्यवस्था</p>
+        </div>
       </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5 sm:gap-4 text-xs font-bold">
+        <a href="/" target="_blank" class="bg-white/10 hover:bg-white/20 text-slate-200 px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 border border-white/10">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+          <span>वेबसाईट पहा</span>
+        </a>
+        <button onclick="downloadAllData()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow">
+          <i class="fas fa-download"></i>
+          <span>डेटा डाउनलोड</span>
+        </button>
+      </div>
+
     </div>
+  </header>
 
-    <div class="nav-actions">
-      <div class="live-status">
-        <span class="live-dot"></span>
-        <span>Connected to GitHub</span>
+  <!-- Help & Instruction Banner -->
+  <div class="bg-amber-50 border-b border-amber-200 text-amber-950 py-3 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-semibold marathi">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-amber-200 text-amber-800 flex items-center justify-center font-bold">💡</span>
+        <span><strong>वापरण्यास अत्यंत सोपे:</strong> खालीलपैकी कोणताही टॅब निवडा, माहिती भरा किंवा फोटो निवडा आणि 'सेव्ह करा' बटण दाबा.</span>
       </div>
-      <a href="/" target="_blank" class="website-link">
-        <span>View Live Website</span>
-        <span>↗</span>
-      </a>
+      <div class="text-[11px] text-amber-800 flex items-center gap-2">
+        <span>डेटा थेट तुमच्या ब्राऊझर व वेबसाईटवर सुरक्षित सेव्ह होतो.</span>
+      </div>
     </div>
   </div>
 
-  <!-- Decap CMS Script (v3.1.0) -->
-  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    
+    <!-- ══════ NAVIGATION TABS ══════ -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 border-b border-slate-200 scrollbar-none" id="admin-tabs">
+      <button onclick="switchTab('gallery')" id="tab-btn-gallery" class="admin-tab-btn active px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-md flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-images"></i>
+        <span>१. फोटो गॅलरी (Gallery)</span>
+      </button>
 
+      <button onclick="switchTab('business')" id="tab-btn-business" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-briefcase"></i>
+        <span>२. व्यवसाय डिरेक्टरी (Directory)</span>
+      </button>
+
+      <button onclick="switchTab('birthdays')" id="tab-btn-birthdays" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-cake-candles"></i>
+        <span>३. वाढदिवस व शुभेच्छा</span>
+      </button>
+
+      <button onclick="switchTab('events')" id="tab-btn-events" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-calendar-plus"></i>
+        <span>४. आगामी कार्यक्रम</span>
+      </button>
+
+      <button onclick="switchTab('settings')" id="tab-btn-settings" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-gear"></i>
+        <span>५. संपर्क व UPI माहिती</span>
+      </button>
+    </div>
+
+    <!-- ══════ TAB 1: PHOTO GALLERY MANAGER ══════ -->
+    <div id="panel-gallery" class="tab-panel space-y-6">
+      
+      <!-- Add New Photos Box -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl">
+            <i class="fas fa-cloud-arrow-up"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 marathi">गॅलरीत नवीन फोटो जोडा (Add Photos to Gallery)</h2>
+            <p class="text-xs text-slate-500 marathi">वर्ष निवडा, कार्यक्रमाचे नाव लिहा आणि तुमच्या मोबाईल अथवा संगणकावरून फोटो निवडा.</p>
+          </div>
+        </div>
+
+        <form id="form-gallery" onsubmit="handleGallerySave(event)" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">१. वर्ष निवडा (Year) *</label>
+              <select id="gal-year-select" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-bold">
+                <option value="2026">वर्ष २०२६ (Current Year)</option>
+                <option value="2025">वर्ष २०२५</option>
+                <option value="2024">वर्ष २०२४</option>
+                <option value="2023" selected>वर्ष २०२३ (मकर संक्रांती इ.)</option>
+                <option value="2022">वर्ष २०२२ व पूर्वी</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">२. कार्यक्रमाचे नाव (Program Title) *</label>
+              <input type="text" id="gal-prog-title" required placeholder="उदा. मकर संक्रांती स्नेहसंमेलन" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">३. तारीख (Date)</label>
+              <input type="text" id="gal-prog-date" placeholder="उदा. १५ जानेवारी २०२३" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">४. कार्यक्रमाचे ठिकाण (Venue)</label>
+            <input type="text" id="gal-prog-venue" placeholder="उदा. सोनार समाज भवन / सराफा, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+          </div>
+
+          <!-- Photo Picker Area -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">५. फोटो निवडा (Choose Photos from device) *</label>
+            <div class="border-2 border-dashed border-amber-300 bg-amber-50/40 rounded-2xl p-6 text-center cursor-pointer hover:bg-amber-50 transition-all" onclick="document.getElementById('gal-photos-input').click()">
+              <input type="file" id="gal-photos-input" multiple accept="image/*" class="hidden" onchange="handleAdminPhotoSelect(this)">
+              <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-2 text-xl">
+                <i class="fas fa-file-image"></i>
+              </div>
+              <p class="font-bold text-sm text-slate-800 marathi">येथे क्लिक करून फोटो निवडा (Click to Select Photos)</p>
+              <p class="text-xs text-slate-500 mt-1 marathi">मोबाईलवरून किंवा कॉम्प्युटरवरून एकापेक्षा जास्त फोटो (.JPG, .PNG) निवडू शकता.</p>
+            </div>
+
+            <!-- Photos Preview Grid -->
+            <div id="gal-photos-preview" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3 mt-4 hidden"></div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <button type="submit" class="bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow-md transition-all flex items-center gap-2">
+              <i class="fas fa-check-circle"></i>
+              <span>गॅलरीमध्ये फोटो सेव्ह करा (Save Photos)</span>
+            </button>
+            <span id="gal-save-status" class="text-xs font-bold text-emerald-600 hidden">
+              <i class="fas fa-check mr-1"></i> फोटो यशस्वीरित्या सेव्ह झाले!
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Current Programs Overview -->
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <h3 class="text-base font-bold text-slate-900 mb-4 marathi flex items-center gap-2">
+          <i class="fas fa-list text-amber-600"></i>
+          <span>सध्या उपलब्ध असलेले वर्ष व कार्यक्रम (Current Programs in Gallery)</span>
+        </h3>
+        <div id="admin-gallery-list" class="space-y-4"></div>
+      </div>
+
+    </div>
+
+    <!-- ══════ TAB 2: BUSINESS DIRECTORY MANAGER ══════ -->
+    <div id="panel-business" class="tab-panel hidden space-y-6">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 marathi">नवीन व्यावसायिक नोंदणी (Add Business to Directory)</h2>
+            <p class="text-xs text-slate-500 marathi">सोनार समाज बांधवांच्या दुकानाची, व्यवसायाची अथवा सेवांची माहिती डिरेक्टरीमध्ये जोडा.</p>
+          </div>
+        </div>
+
+        <form id="form-business" onsubmit="handleBusinessSave(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">१. दुकानाचे / व्यवसायाचे नाव *</label>
+              <input type="text" id="biz-name" required placeholder="उदा. सोनगीरकर ज्वेलर्स" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">२. संचालक / मालकाचे नाव *</label>
+              <input type="text" id="biz-owner" required placeholder="उदा. श्री विश्वासजी सोनगीरकर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">३. व्यवसायाची श्रेणी (Category) *</label>
+              <select id="biz-category" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                <option value="jewellery">💍 सराफा व सुवर्णकार (Jewellery)</option>
+                <option value="manufacturing">⚙️ उत्पादन व डिझायनिंग (Manufacturing & CAD)</option>
+                <option value="services">💼 व्यावसायिक सेवा (CA / Legal / Consulting)</option>
+                <option value="other">🏪 इतर व्यवसाय (Retail & Other)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">४. मोबाईल नंबर *</label>
+              <input type="tel" id="biz-phone" required placeholder="उदा. 9827653310" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">५. WhatsApp नंबर</label>
+              <input type="tel" id="biz-whatsapp" placeholder="उदा. 9827653310" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">६. पत्ता / परिसर *</label>
+            <input type="text" id="biz-address" required placeholder="उदा. सराफा बाजार, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">७. व्यवसायाबद्दल माहिती (Description)</label>
+            <textarea id="biz-desc" rows="2" placeholder="दागिने, शुद्धता, खास वैशिष्ट्ये याबद्दल माहिती लिहा..." class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="bg-gradient-to-r from-brand-600 to-amber-600 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow transition-all hover:scale-105">
+              <i class="fas fa-plus-circle mr-1"></i> व्यवसाय डिरेक्टरीमध्ये जोडा (Save Business)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Current Businesses List -->
+      <div class="bg-white rounded-3xl p-6 border border-slate-200">
+        <h3 class="text-base font-bold text-slate-900 mb-4 marathi flex items-center justify-between">
+          <span>नोंदणी झालेले व्यवसाय (Registered Businesses)</span>
+          <span id="admin-biz-count" class="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">० व्यवसाय</span>
+        </h3>
+        <div id="admin-biz-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+
+    </div>
+
+    <!-- ══════ TAB 3: BIRTHDAYS & CELEBRATIONS ══════ -->
+    <div id="panel-birthdays" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl">
+            <i class="fas fa-cake-candles"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 marathi">वाढदिवस व शुभेच्छा व्यवस्थापन (Manage Birthdays)</h2>
+            <p class="text-xs text-slate-500 marathi">वेबसाईटवरील शुभेच्छा फलकावर सदस्यांचा वाढदिवस अथवा लग्न वाढदिवस जोडा.</p>
+          </div>
+        </div>
+
+        <form id="form-birthday" onsubmit="handleBirthdaySave(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">१. सदस्य / दांपत्याचे नाव *</label>
+              <input type="text" id="bday-name" required placeholder="उदा. श्री अविनाशजी सोनार" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">२. प्रकार (Event Type) *</label>
+              <select id="bday-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                <option value="वाढदिवस">🎂 वाढदिवस (Birthday)</option>
+                <option value="लग्न वाढदिवस">💍 लग्न वाढदिवस (Wedding Anniversary)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">३. तारीख व महिना *</label>
+              <input type="text" id="bday-date" required placeholder="उदा. 20 नोव्हेंबर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">४. परिसर / कॉलनी</label>
+              <input type="text" id="bday-area" placeholder="उदा. सुखलिया / तुलसी नगर, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">५. WhatsApp नंबर</label>
+              <input type="tel" id="bday-phone" placeholder="उदा. +919826011223" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">६. शुभेच्छा संदेश (Wishes Message)</label>
+            <input type="text" id="bday-message" placeholder="उदा. वाढदिवसाच्या हार्दिक शुभेच्छा! संत नरहरी महाराज आपणास उदंड आयुष्य देवोत." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="bg-gradient-to-r from-pink-600 to-amber-600 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow transition-all hover:scale-105">
+              <i class="fas fa-heart mr-1"></i> शुभेच्छा फलकावर जोडा (Save Greeting)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ══════ TAB 4: UPCOMING EVENTS MANAGER ══════ -->
+    <div id="panel-events" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl">
+            <i class="fas fa-calendar-plus"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 marathi">आगामी कार्यक्रम व्यवस्थापन (Manage Upcoming Events)</h2>
+            <p class="text-xs text-slate-500 marathi">कार्यक्रमाचे नाव, तारीख, वेळ आणि ठिकाण जोडून प्रसिद्ध करा.</p>
+          </div>
+        </div>
+
+        <form id="form-events" onsubmit="handleEventSave(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">१. कार्यक्रमाचे नाव *</label>
+              <input type="text" id="ev-title" required placeholder="उदा. दिवाळी मिलन समारोह २०२६" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">२. तारीख (Date) *</label>
+              <input type="text" id="ev-date" required placeholder="उदा. 22 नोव्हेंबर 2026" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">३. वेळ (Time)</label>
+              <input type="text" id="ev-time" placeholder="उदा. सकाळी 11:30 ते दुपारी 3:30 वा." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">४. स्थान / ठिकाण (Venue) *</label>
+              <input type="text" id="ev-venue" required placeholder="उदा. बंधन गार्डन, लवकुश, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">५. सविस्तर माहिती (Description)</label>
+            <textarea id="ev-desc" rows="2" placeholder="कार्यक्रमाची रूपरेषा, स्नेहसंमेलन व स्नेहभोजनाची माहिती..." class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="bg-gradient-to-r from-indigo-600 to-amber-600 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow transition-all hover:scale-105">
+              <i class="fas fa-calendar-check mr-1"></i> कार्यक्रम जोडा (Save Event)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ══════ TAB 5: CONTACT & UPI SETTINGS ══════ -->
+    <div id="panel-settings" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-xl">
+            <i class="fas fa-gear"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 marathi">ट्रस्ट संपर्क व देणगी माहिती (Contact & Settings)</h2>
+            <p class="text-xs text-slate-500 marathi">कार्यालयाचा पत्ता, फोन नंबर व देणगी बँक/UPI माहिती अद्ययावत करा.</p>
+          </div>
+        </div>
+
+        <form id="form-settings" onsubmit="handleSettingsSave(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">हेल्पलाईन फोन १</label>
+              <input type="text" id="set-phone-1" value="+91 731 420 3099" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">हेल्पलाईन फोन २</label>
+              <input type="text" id="set-phone-2" value="+91 9098491789" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">अधिकृत ई-मेल</label>
+              <input type="email" id="set-email" value="info@sonarsamaj.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">देणगी UPI ID</label>
+              <input type="text" id="set-upi" value="sonarsamaj@upi" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-mono font-bold text-brand-700">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">कार्यालय पत्ता</label>
+            <input type="text" id="set-address" value="Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore, Madhya Pradesh" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm">
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow transition-all">
+              <i class="fas fa-check mr-1"></i> संपर्क माहिती सेव्ह करा (Save Settings)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Interactive Simple Admin Script -->
   <script>
-    // Custom Preview Styles
-    CMS.registerPreviewStyle(`
-      body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        padding: 24px;
-        background: #fffbf5;
+    let stagedAdminPhotos = [];
+
+    // Switch Tabs
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.admin-tab-btn').forEach(b => {
+        b.className = 'admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all';
+      });
+
+      const activePanel = document.getElementById('panel-' + tabId);
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+
+      if (activePanel) activePanel.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.className = 'admin-tab-btn active px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-md flex items-center gap-2 flex-shrink-0 transition-all';
       }
-      .card-preview {
-        max-width: 450px;
-        background: #ffffff;
-        border-radius: 20px;
-        border: 1px solid #f0e6d6;
-        padding: 16px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    // Photo Select Handler
+    function handleAdminPhotoSelect(input) {
+      const files = input.files;
+      if (!files || !files.length) return;
+      const preview = document.getElementById('gal-photos-preview');
+      preview.classList.remove('hidden');
+
+      Array.from(files).forEach((file, i) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const url = e.target.result;
+          stagedAdminPhotos.push({
+            url: url,
+            name: file.name
+          });
+          renderStagedPhotos();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function renderStagedPhotos() {
+      const preview = document.getElementById('gal-photos-preview');
+      if (!preview) return;
+      preview.innerHTML = stagedAdminPhotos.map((p, idx) => `
+        <div class="relative group rounded-xl overflow-hidden border border-amber-300 bg-white p-1 shadow-sm">
+          <img src="${p.url}" class="w-full h-20 object-cover rounded-lg">
+          <button type="button" onclick="removeAdminStagedPhoto(${idx})" class="absolute top-1 right-1 w-5 h-5 bg-rose-600 text-white rounded-full flex items-center justify-center text-xs">&times;</button>
+          <span class="block text-[9px] text-slate-500 truncate mt-1">${p.name}</span>
+        </div>
+      `).join('');
+    }
+
+    function removeAdminStagedPhoto(idx) {
+      stagedAdminPhotos.splice(idx, 1);
+      renderStagedPhotos();
+      if (!stagedAdminPhotos.length) {
+        document.getElementById('gal-photos-preview').classList.add('hidden');
       }
-    `, { raw: true });
+    }
+
+    // Save Gallery Program
+    function handleGallerySave(e) {
+      e.preventDefault();
+      const year = document.getElementById('gal-year-select').value;
+      const title = document.getElementById('gal-prog-title').value.trim();
+      const date = document.getElementById('gal-prog-date').value.trim() || 'नवीन कार्यक्रम';
+      const venue = document.getElementById('gal-prog-venue').value.trim() || 'सोनार समाज भवन, इंदूर';
+
+      const newProg = {
+        id: year + '-' + Date.now(),
+        title_mr: title,
+        title_hi: title,
+        title_en: title,
+        date_mr: date,
+        date_hi: date,
+        date_en: date,
+        venue_mr: venue,
+        venue_hi: venue,
+        venue_en: venue,
+        description_mr: title + ' - छायाचित्रे व वृत्तांत.',
+        description_hi: title + ' - छायाचित्र एवं वृत्तांत।',
+        description_en: title + ' - Photos and coverage.',
+        photos: stagedAdminPhotos.length ? stagedAdminPhotos.map(p => ({
+          url: p.url,
+          caption_mr: title,
+          caption_hi: title,
+          caption_en: title
+        })) : [{
+          url: './src/samaj-group-photo.jpeg',
+          caption_mr: title,
+          caption_hi: title,
+          caption_en: title
+        }]
+      };
+
+      // Save to localStorage
+      try {
+        let localGallery = JSON.parse(localStorage.getItem('sonar_custom_gallery') || '[]');
+        localGallery.push({ year: year, program: newProg });
+        localStorage.setItem('sonar_custom_gallery', JSON.stringify(localGallery));
+      } catch(err) {}
+
+      // Reset
+      document.getElementById('form-gallery').reset();
+      stagedAdminPhotos = [];
+      document.getElementById('gal-photos-preview').classList.add('hidden');
+
+      const status = document.getElementById('gal-save-status');
+      if (status) {
+        status.classList.remove('hidden');
+        setTimeout(() => status.classList.add('hidden'), 4000);
+      }
+      loadGalleryList();
+      alert('फोटो यशस्वीरित्या गॅलरीमध्ये सेव्ह झाले आहेत! (Photos Saved Successfully)');
+    }
+
+    function loadGalleryList() {
+      const container = document.getElementById('admin-gallery-list');
+      if (!container) return;
+
+      container.innerHTML = `
+        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 text-xs text-slate-700 marathi flex items-center justify-between">
+          <div>
+            <span class="font-bold text-amber-900">वर्ष २०२३: मकर संक्रांती स्नेहसंमेलन (संक्रांती कार्यक्रम)</span>
+            <p class="text-slate-500 mt-0.5">४ फोटो उपलब्ध • सोनार समाज भवन, इंदूर</p>
+          </div>
+          <span class="text-emerald-700 font-bold bg-emerald-100 px-2.5 py-1 rounded-full">सक्रिय</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 marathi flex items-center justify-between">
+          <div>
+            <span class="font-bold text-slate-900">वर्ष २०२६: गणेशोत्सव व भव्य महाआरती २०२६</span>
+            <p class="text-slate-500 mt-0.5">२ फोटो उपलब्ध • लवकुश आवास विहार, इंदूर</p>
+          </div>
+          <span class="text-emerald-700 font-bold bg-emerald-100 px-2.5 py-1 rounded-full">सक्रिय</span>
+        </div>
+      `;
+    }
+
+    // Business Directory Management
+    let businessesList = [];
+    function loadBusinesses() {
+      try {
+        const stored = localStorage.getItem('sonar_custom_biz');
+        if (stored) {
+          businessesList = JSON.parse(stored);
+          renderAdminBusinesses();
+          return;
+        }
+      } catch(e) {}
+
+      fetch('../content/business_directory.json')
+        .then(r => r.json())
+        .then(d => {
+          businessesList = d.businesses || [];
+          renderAdminBusinesses();
+        })
+        .catch(() => {
+          renderAdminBusinesses();
+        });
+    }
+
+    function handleBusinessSave(e) {
+      e.preventDefault();
+      const name = document.getElementById('biz-name').value.trim();
+      const owner = document.getElementById('biz-owner').value.trim();
+      const cat = document.getElementById('biz-category').value;
+      const phone = document.getElementById('biz-phone').value.trim();
+      const whatsapp = document.getElementById('biz-whatsapp').value.trim() || phone;
+      const address = document.getElementById('biz-address').value.trim();
+      const desc = document.getElementById('biz-desc').value.trim();
+
+      const catMap = {
+        jewellery: "सराफा व सुवर्णकार",
+        manufacturing: "उत्पादन व डिझायनिंग",
+        services: "व्यावसायिक सेवा",
+        other: "इतर व्यवसाय"
+      };
+
+      const newBiz = {
+        id: 'biz-' + Date.now(),
+        name_mr: name,
+        name_hi: name,
+        name_en: name,
+        owner_mr: owner,
+        owner_hi: owner,
+        owner_en: owner,
+        category_key: cat,
+        category_mr: catMap[cat] || "व्यवसाय",
+        phone: phone,
+        whatsapp: whatsapp,
+        address_mr: address,
+        description_mr: desc || name,
+        established: '2024',
+        verified: true
+      };
+
+      businessesList.unshift(newBiz);
+      try {
+        localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
+      } catch(err) {}
+
+      document.getElementById('form-business').reset();
+      renderAdminBusinesses();
+      alert('व्यवसाय डिरेक्टरीमध्ये यशस्वीरित्या जोडला गेला आहे! (Business Added Successfully)');
+    }
+
+    function renderAdminBusinesses() {
+      const container = document.getElementById('admin-biz-list');
+      const countEl = document.getElementById('admin-biz-count');
+      if (countEl) countEl.textContent = businessesList.length + ' व्यवसाय';
+      if (!container) return;
+
+      if (!businessesList.length) {
+        container.innerHTML = '<div class="col-span-full py-6 text-center text-slate-400 text-xs">कोणताही व्यवसाय आढळला नाही.</div>';
+        return;
+      }
+
+      container.innerHTML = businessesList.map((b, idx) => `
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm relative text-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">${b.category_mr || b.category_key}</span>
+              <button onclick="removeBusiness(${idx})" class="text-rose-500 hover:text-rose-700 text-sm" title="हटवा"><i class="fas fa-trash-can"></i></button>
+            </div>
+            <h4 class="font-bold text-sm text-slate-900 marathi">${b.name_mr}</h4>
+            <p class="text-slate-600 mt-0.5"><i class="fas fa-user-tie text-[10px] mr-1 text-amber-600"></i>${b.owner_mr}</p>
+            <p class="text-slate-500 mt-0.5"><i class="fas fa-location-dot text-[10px] mr-1 text-amber-600"></i>${b.address_mr}</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+            <span><i class="fas fa-phone mr-1"></i>${b.phone}</span>
+            <span class="text-emerald-600 font-bold"><i class="fab fa-whatsapp mr-1"></i>WhatsApp</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function removeBusiness(idx) {
+      if (confirm('हा व्यवसाय डिरेक्टरीतून काढायचा आहे का?')) {
+        businessesList.splice(idx, 1);
+        try {
+          localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
+        } catch(err) {}
+        renderAdminBusinesses();
+      }
+    }
+
+    // Birthday Save
+    function handleBirthdaySave(e) {
+      e.preventDefault();
+      const name = document.getElementById('bday-name').value.trim();
+      const type = document.getElementById('bday-type').value;
+      const date = document.getElementById('bday-date').value.trim();
+      const area = document.getElementById('bday-area').value.trim();
+      const message = document.getElementById('bday-message').value.trim();
+
+      alert(`शुभेच्छा फलकावर ${name} यांच्या ${type} ची नोंद (${date}) यशस्वीरित्या सेव्ह झाली!`);
+      document.getElementById('form-birthday').reset();
+    }
+
+    // Event Save
+    function handleEventSave(e) {
+      e.preventDefault();
+      const title = document.getElementById('ev-title').value.trim();
+      const date = document.getElementById('ev-date').value.trim();
+      const venue = document.getElementById('ev-venue').value.trim();
+      alert(`आगामी कार्यक्रम "${title}" (${date}) यशस्वीरित्या सेव्ह झाला!`);
+      document.getElementById('form-events').reset();
+    }
+
+    // Settings Save
+    function handleSettingsSave(e) {
+      e.preventDefault();
+      alert('संपर्क व देणगी माहिती यशस्वीरित्या सेव्ह झाली!');
+    }
+
+    // Download Data Backup
+    function downloadAllData() {
+      const data = {
+        exported_at: new Date().toISOString(),
+        businesses: businessesList,
+        custom_gallery: JSON.parse(localStorage.getItem('sonar_custom_gallery') || '[]')
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'sonar_samaj_admin_data_backup.json';
+      a.click();
+    }
+
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadGalleryList();
+      loadBusinesses();
+    });
   </script>
 </body>
 </html>

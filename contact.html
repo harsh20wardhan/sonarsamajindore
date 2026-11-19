@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपर्क साधा | सोनार समाज ट्रस्ट, इंदौर — Contact Us</title>
+    
+    <!-- Meta SEO & OpenGraph -->
+    <meta name="description" content="सोनार समाज ट्रस्ट, इंदूर कार्यालय पत्ता, हेल्पलाईन फोन, WhatsApp आणि समन्वयकांशी थेट संपर्क साधा.">
+    <meta property="og:title" content="संपर्क साधा | सोनार समाज ट्रस्ट, इंदौर">
+    <meta property="og:description" content="सोनार समाज ट्रस्ट, इंदूर कार्यालय पत्ता, हेल्पलाईन फोन, WhatsApp थेट संपर्क.">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome 6 for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <script>
+        window.tailwind = window.tailwind || {};
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                            800: '#7c2d12',
+                            900: '#431407',
+                            maroon: '#831843',
+                            gold: '#d97706'
+                        },
+                        surface: {
+                            pearl: '#f8fafc',
+                            card: '#ffffff',
+                            border: '#e2e8f0',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans Devanagari', 'sans-serif'],
+                        devanagari: ['Noto Sans Devanagari', 'sans-serif'],
+                        calligraphy: ['Yatra One', 'Rozha One', 'Noto Sans Devanagari', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        .marathi-calligraphy {
+            font-family: 'Yatra One', 'Rozha One', 'Noto Sans Devanagari', serif;
+        }
+        .marathi {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="./src/samaj-logo.png">
+</head>
+<body class="flex flex-col min-h-screen bg-slate-50 antialiased">
+
+    <!-- ══════ TOP CULTURAL STRIP ══════ -->
+    <div class="bg-gradient-to-r from-brand-maroon via-brand-700 to-amber-700 text-white text-xs py-2 px-4 shadow-sm relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-center sm:text-left">
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white/20 text-[10px] font-bold">ॐ</span>
+                <span data-i18n="top_motto" class="font-bold tracking-wide">श्री संत नरहरी महाराज प्रसन्न • सोनार समाज ट्रस्ट, इंदौर</span>
+            </div>
+            <div class="flex items-center gap-4 text-[11px]">
+                <a href="tel:+917314203099" class="hover:text-amber-200 transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-phone-alt text-amber-300"></i>
+                    <span>+91 731 420 3099</span>
+                </a>
+                <span class="text-white/40">|</span>
+                <!-- Language Selector -->
+                <div class="flex items-center gap-1 bg-black/20 rounded-full p-0.5 border border-white/20">
+                    <button id="lang-mr" onclick="changeLang('mr')" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-600 text-white">मराठी</button>
+                    <button id="lang-hi" onclick="changeLang('hi')" class="px-2 py-0.5 rounded-full text-[10px] font-medium text-slate-300 hover:text-white">हिंदी</button>
+                    <button id="lang-en" onclick="changeLang('en')" class="px-2 py-0.5 rounded-full text-[10px] font-medium text-slate-300 hover:text-white">EN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════ STREAMLINED HEADER ══════ -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-surface-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Identity -->
+                <a href="index.html#home" class="flex items-center gap-3 group">
+                    <img src="./src/samaj-logo.png" alt="सोनार समाज बोधचिन्ह" class="w-12 h-12 rounded-full object-contain bg-white shadow-md ring-2 ring-brand-gold/60 group-hover:scale-105 transition-transform flex-shrink-0">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span data-i18n="brand_name" class="font-black text-xl text-slate-900 tracking-tight marathi">सोनार समाज</span>
+                            <span data-i18n="brand_trust" class="bg-brand-50 text-brand-700 border border-brand-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ट्रस्ट</span>
+                        </div>
+                        <div class="text-xs font-semibold text-brand-600 marathi flex items-center gap-1.5 mt-0.5">
+                            <span data-i18n="brand_loc">इंदौर (म.प्र.)</span>
+                            <span class="text-slate-300">•</span>
+                            <span data-i18n="brand_tagline" class="text-slate-500 font-medium">अधिकृत संपर्क केंद्र</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-[14px] font-bold text-slate-700 marathi">
+                    <a href="index.html#home" data-i18n="nav_home" class="hover:text-brand-600 transition-colors py-1">मुख्यपृष्ठ</a>
+                    <a href="index.html#about" data-i18n="nav_about" class="hover:text-brand-600 transition-colors py-1">परिचय</a>
+                    <a href="index.html#good-deeds" data-i18n="nav_deeds" class="hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
+                    <a href="index.html#events" data-i18n="nav_events" class="hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
+                    <a href="index.html#business-directory" data-i18n="nav_business" class="hover:text-brand-600 transition-colors py-1">व्यवसाय डिरेक्टरी</a>
+                    <a href="index.html#gallery" data-i18n="nav_gallery" class="hover:text-brand-600 transition-colors py-1">गॅलरी</a>
+                    <a href="contact.html" data-i18n="nav_contact" class="text-brand-600 border-b-2 border-brand-600 py-1">संपर्क</a>
+                </nav>
+
+                <!-- Action CTAs -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="index.html#donate" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-amber-600 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md shadow-brand-600/20 hover:scale-105 transition-all">
+                        <i class="fas fa-heart text-amber-200"></i>
+                        <span data-i18n="btn_donate" class="marathi">देणगी द्या</span>
+                    </a>
+                    <a href="https://wa.me/917314203099?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20sampark%20karaycha%20ahe." target="_blank" class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-all shadow-sm" title="WhatsApp वर बोला">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </a>
+                    <img src="./src/rajwada-logo.png" alt="राजवाडा इंदूर" class="w-11 h-11 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60 flex-shrink-0" title="राजवाडा, इंदूर">
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <a href="https://wa.me/917314203099" target="_blank" class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm shadow">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <button onclick="toggleContactMobileMenu()" class="p-2 rounded-xl text-slate-700 hover:bg-slate-100">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="contact-mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-xl marathi text-sm font-bold">
+            <a href="index.html#home" class="block px-3 py-2 rounded-xl hover:bg-amber-50">🏠 मुख्यपृष्ठ</a>
+            <a href="index.html#about" class="block px-3 py-2 rounded-xl hover:bg-amber-50">ℹ️ परिचय</a>
+            <a href="index.html#good-deeds" class="block px-3 py-2 rounded-xl hover:bg-amber-50">🤝 सेवा कार्य</a>
+            <a href="index.html#events" class="block px-3 py-2 rounded-xl hover:bg-amber-50">📅 आगामी कार्यक्रम</a>
+            <a href="index.html#business-directory" class="block px-3 py-2 rounded-xl hover:bg-amber-50">💼 व्यवसाय डिरेक्टरी</a>
+            <a href="index.html#gallery" class="block px-3 py-2 rounded-xl hover:bg-amber-50">🖼️ फोटो गॅलरी</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-xl bg-brand-50 text-brand-700">📞 थेट संपर्क केंद्र</a>
+            <a href="index.html#donate" class="block px-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-amber-600 text-white text-center mt-2">♥ देणगी द्या (Donate)</a>
+        </div>
+    </header>
+
+    <!-- ══════ HERO SECTION ══════ -->
+    <section class="bg-gradient-to-b from-amber-50/80 via-white to-slate-50 py-12 sm:py-16 border-b border-amber-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4 marathi">
+                <i class="fas fa-location-dot text-amber-600"></i>
+                <span data-i18n="contact_hero_badge">थेट संपर्क व मार्गदर्शन केंद्र • Official Contact Desk</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight marathi-calligraphy leading-tight">
+                <span data-i18n="contact_hero_title">आमच्याशी थेट संपर्क साधा</span>
+            </h1>
+            <p data-i18n="contact_hero_subtitle" class="text-slate-600 text-sm sm:text-base mt-3 max-w-2xl mx-auto marathi leading-relaxed">
+                सोनार समाज ट्रस्ट इंदूरच्या उपक्रमांमध्ये सहभाग, देणगी, सदस्य नोंदणी, विवाह परिचय अथवा आपत्कालीन मदतीसाठी आम्ही सदैव आपल्या सेवेत तत्पर आहोत.
+            </p>
+        </div>
+    </section>
+
+    <!-- ══════ MAIN CONTACT CONTENT ══════ -->
+    <main class="flex-1 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Quick Assistance Cards Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+                
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-100 shadow-soft hover:border-rose-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm marathi">रक्तदान व आरोग्य मदत</h3>
+                    <p class="text-xs text-slate-500 mt-1 marathi">तातडीच्या रक्ताच्या गरजेसाठी २४ तास संपर्क साधा.</p>
+                    <a href="tel:+917314203099" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-rose-700">
+                        <span>कॉल करा</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-amber-100 shadow-soft hover:border-amber-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm marathi">विवाह परिचय व माहिती</h3>
+                    <p class="text-xs text-slate-500 mt-1 marathi">समाजातील उपवर-उपवधू माहिती व मेळाव्याची माहिती.</p>
+                    <a href="https://wa.me/917314203099?text=Namaskar%20Vivah%20parichay%20mahiti%20havi%20ahe." target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 hover:text-amber-700">
+                        <span>WhatsApp करा</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-blue-100 shadow-soft hover:border-blue-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm marathi">शैक्षणिक शिष्यवृत्ती</h3>
+                    <p class="text-xs text-slate-500 mt-1 marathi">गुणवंत व गरजू विद्यार्थ्यांना शालेय व उच्चशिक्षण मदत.</p>
+                    <a href="tel:+919827653310" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700">
+                        <span>तपशील मागा</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-100 shadow-soft hover:border-emerald-300 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg mb-3">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm marathi">देणगी व पावती</h3>
+                    <p class="text-xs text-slate-500 mt-1 marathi">ट्रस्टला देणगी व अधिकृत कर सवलत पावती मिळवा.</p>
+                    <a href="index.html#donate" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700">
+                        <span>UPI QR कोड पहा</span> <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- Left Column (8 cols): Office Locations & Leadership Directory -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <!-- Official Address Callout Box -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-brand-gold/40 shadow-soft relative overflow-hidden">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-5">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-100 animate-pulse"></span>
+                            <h2 data-i18n="c_reg_office_heading" class="text-lg sm:text-xl font-bold text-slate-900 marathi">नोंदणीकृत मुख्य कार्यालय</h2>
+                        </div>
+                        
+                        <div class="space-y-4 text-sm text-slate-700 marathi">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-amber-50 text-brand-600 flex items-center justify-center flex-shrink-0 text-base">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">पत्ता (Official Address):</h4>
+                                    <p class="text-slate-600 mt-0.5 leading-relaxed font-sans">
+                                        Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore, Madhya Pradesh - 452010
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        (लँडमार्क: तुलसी नगर मेन रोड / सुखलिया लगत)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-amber-50 text-brand-600 flex items-center justify-center flex-shrink-0 text-base">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">सराफा संपर्क केंद्र (Sarafa Liaison Desk):</h4>
+                                    <p class="text-slate-600 mt-0.5 leading-relaxed font-sans">
+                                        छोटा सराफा व बडा सराफा बाजार, इंदूर (Sarafa Bazaar Liaison, Indore)
+                                    </p>
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        (सोनगीरकर ज्वेलर्स / सराफा असोसिएशन संपर्क)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-amber-50 text-brand-600 flex items-center justify-center flex-shrink-0 text-base">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">कार्यालयीन वेळ (Office Hours):</h4>
+                                    <p class="text-slate-600 mt-0.5">सोमवार ते शनिवार: सकाळी १०:०० ते सायं. ७:०० वा.</p>
+                                    <p class="text-xs text-slate-500">रविवार: पूर्व नियोजित सभा व बैठकीनुसार</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-amber-50 text-brand-600 flex items-center justify-center flex-shrink-0 text-base">
+                                    <i class="fas fa-phone-volume"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">अधिकृत संपर्क क्रमांक:</h4>
+                                    <p class="font-sans font-bold text-brand-700 mt-0.5">
+                                        +91 731 420 3099 | +91 90984 91789
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-amber-50 text-brand-600 flex items-center justify-center flex-shrink-0 text-base">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900">ई-मेल पत्ता (Email):</h4>
+                                    <p class="font-sans text-slate-700 mt-0.5">
+                                        info@sonarsamaj.com | support@sonarsamaj.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Directions / Google Maps button -->
+                        <div class="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3">
+                            <a href="https://maps.google.com/?q=Tulsi+Nagar+Indore" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-sm">
+                                <i class="fas fa-map-location-dot text-amber-400"></i>
+                                <span>Google Maps वर दिशा पहा</span>
+                            </a>
+                            <a href="https://wa.me/917314203099" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all shadow-sm">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp लोकेशन मागा</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key Office Bearers Direct Directory -->
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 marathi flex items-center gap-2">
+                            <i class="fas fa-users-gear text-brand-600"></i>
+                            <span>प्रमुख समन्वयकांशी थेट संपर्क (Key Contacts)</span>
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            
+                            <!-- President -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-50 text-brand-700 border border-brand-200 px-2 py-0.5 rounded-full marathi">अध्यक्ष</span>
+                                    <h4 class="font-bold text-base text-slate-900 mt-2 marathi">श्री विश्वास सोनगीरकर</h4>
+                                    <p class="text-xs text-slate-500 marathi">सोनार समाज मंडळ, इंदौर</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+                                    <a href="tel:+919827653310" class="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fas fa-phone text-[10px]"></i> कॉल
+                                    </a>
+                                    <a href="https://wa.me/919827653310?text=Namaskar%20Vishwasji%2C%20Sonar%20Samaj%20sandarbhat%20sampark." target="_blank" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fab fa-whatsapp text-xs"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Working President -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full marathi">कार्याध्यक्ष</span>
+                                    <h4 class="font-bold text-base text-slate-900 mt-2 marathi">श्री मुकेश सोनगीरकर</h4>
+                                    <p class="text-xs text-slate-500 marathi">सोनार समाज मंडळ, इंदौर</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+                                    <a href="tel:+917879833999" class="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fas fa-phone text-[10px]"></i> कॉल
+                                    </a>
+                                    <a href="https://wa.me/917879833999?text=Namaskar%20Mukeshji%2C%20Sonar%20Samaj%20sandarbhat%20sampark." target="_blank" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fab fa-whatsapp text-xs"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Secretary -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 border border-rose-200 px-2 py-0.5 rounded-full marathi">सचिव</span>
+                                    <h4 class="font-bold text-base text-slate-900 mt-2 marathi">सौ. निता सोनगीरकर</h4>
+                                    <p class="text-xs text-slate-500 marathi">सोनार समाज मंडळ, इंदौर</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+                                    <a href="tel:+919425055667" class="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fas fa-phone text-[10px]"></i> कॉल
+                                    </a>
+                                    <a href="https://wa.me/919425055667" target="_blank" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fab fa-whatsapp text-xs"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Joint Treasurer -->
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full marathi">सह-खजिनदार</span>
+                                    <h4 class="font-bold text-base text-slate-900 mt-2 marathi">सौ. प्रिती श्रवणे</h4>
+                                    <p class="text-xs text-slate-500 marathi">सोनार समाज मंडळ, इंदौर</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+                                    <a href="tel:+919009797090" class="flex-1 bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fas fa-phone text-[10px]"></i> कॉल
+                                    </a>
+                                    <a href="https://wa.me/919009797090" target="_blank" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs py-2 px-3 rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors">
+                                        <i class="fab fa-whatsapp text-xs"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column (5 cols): Interactive Inquiry & Message Form -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-soft sticky top-28">
+                        <div class="flex items-center gap-2.5 mb-2">
+                            <span class="w-8 h-8 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                            <h3 data-i18n="contact_form_title" class="text-xl font-bold text-slate-900 marathi">संदेश पाठवा</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6 marathi">
+                            खालील माहिती भरून आपला संदेश थेट ट्रस्टच्या समन्वयकांना पाठवा:
+                        </p>
+
+                        <form id="contact-form" onsubmit="handleContactPageSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">आपले नाव *</label>
+                                <input type="text" id="cp-name" required placeholder="उदा. सुधीर सोनगीरकर" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">मोबाईल क्रमांक *</label>
+                                    <input type="tel" id="cp-phone" required placeholder="10 अंकी मोबाईल" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">परिसर / शहर</label>
+                                    <input type="text" id="cp-city" placeholder="उदा. इंदूर / सुखलिया" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">संपर्काचा विषय *</label>
+                                <select id="cp-subject" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi bg-white">
+                                    <option value="सामान्य चौकशी">सामान्य चौकशी (General Query)</option>
+                                    <option value="सदस्यता नोंदणी">सदस्यता नोंदणी (Membership)</option>
+                                    <option value="देणगी व पावती">देणगी व पावती (Donation & Receipt)</option>
+                                    <option value="विवाह परिचय">विवाह परिचय सहाय्य (Matrimonial)</option>
+                                    <option value="शैक्षणिक मदत">शैक्षणिक / वैद्यकीय मदत (Aid)</option>
+                                    <option value="व्यवसाय डिरेक्टरी नोंदणी">व्यवसाय डिरेक्टरी नोंदणी (Business)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">आपला संदेश *</label>
+                                <textarea id="cp-message" rows="4" required placeholder="आपला संदेश अथवा विचार येथे लिहा..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none marathi"></textarea>
+                            </div>
+
+                            <div class="pt-2 flex flex-col gap-2.5">
+                                <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                    <i class="fab fa-whatsapp text-lg"></i>
+                                    <span>WhatsApp वर थेट पाठवा (Fast Response)</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer class="bg-surface-dark text-slate-300 pt-12 pb-8 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10 text-xs">
+                <div class="flex items-center gap-3">
+                    <img src="./src/samaj-logo.png" alt="सोनार समाज" class="w-10 h-10 rounded-full bg-white object-contain p-0.5">
+                    <div>
+                        <h4 class="font-bold text-white text-sm marathi">सोनार समाज ट्रस्ट, इंदौर</h4>
+                        <p class="text-slate-400">Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300">
+                    <a href="index.html#home" class="hover:text-amber-300">मुख्यपृष्ठ</a>
+                    <a href="index.html#business-directory" class="hover:text-amber-300">व्यवसाय डिरेक्टरी</a>
+                    <a href="index.html#gallery" class="hover:text-amber-300">गॅलरी</a>
+                    <a href="contact.html" class="text-amber-400 font-bold">संपर्क</a>
+                    <a href="/admin/" class="hover:text-amber-300 underline">Admin Portal</a>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+                <p>© 2026 सोनार समाज ट्रस्ट, इंदौर. सर्व हक्क राखीव.</p>
+                <p>Designed for Sonar Samaj Community, Indore</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function toggleContactMobileMenu() {
+            const m = document.getElementById('contact-mobile-menu');
+            if (m) m.classList.toggle('hidden');
+        }
+
+        function handleContactPageSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cp-name').value.trim();
+            const phone = document.getElementById('cp-phone').value.trim();
+            const city = document.getElementById('cp-city').value.trim() || 'इंदूर';
+            const subject = document.getElementById('cp-subject').value;
+            const message = document.getElementById('cp-message').value.trim();
+
+            const rawText = `*सोनार समाज ट्रस्ट, इंदौर — संपर्क पोर्टल संदेश*\n\n` +
+                            `👤 *नाव:* ${name}\n` +
+                            `📱 *फोन:* ${phone}\n` +
+                            `📍 *परिसर:* ${city}\n` +
+                            `🏷️ *विषय:* ${subject}\n\n` +
+                            `💬 *संदेश:*\n${message}`;
+
+            window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawText), '_blank');
+        }
+        window.sendToWhatsApp = handleContactPageSubmit;
+
+        let currentLang = 'mr';
+        const contactI18n = {
+            mr: {
+                top_motto: "श्री संत नरहरी महाराज प्रसन्न • सोनार समाज ट्रस्ट, इंदौर",
+                brand_name: "सोनार समाज",
+                brand_trust: "ट्रस्ट",
+                brand_loc: "इंदौर (म.प्र.)",
+                brand_tagline: "अधिकृत संपर्क केंद्र",
+                nav_home: "मुख्यपृष्ठ",
+                nav_about: "परिचय",
+                nav_deeds: "सेवा कार्य",
+                nav_events: "कार्यक्रम",
+                nav_business: "व्यवसाय डिरेक्टरी",
+                nav_gallery: "गॅलरी",
+                nav_contact: "संपर्क",
+                btn_donate: "देणगी द्या",
+                contact_hero_badge: "थेट संपर्क व मार्गदर्शन केंद्र • Official Contact Desk",
+                contact_hero_title: "आमच्याशी थेट संपर्क साधा",
+                contact_hero_subtitle: "सोनार समाज ट्रस्ट इंदूरच्या उपक्रमांमध्ये सहभाग, देणगी, सदस्य नोंदणी अथवा आपत्कालीन मदतीसाठी आम्ही सदैव तत्पर आहोत."
+            },
+            hi: {
+                top_motto: "श्री संत नरहरि महाराज प्रसन्न • सोनार समाज ट्रस्ट, इंदौर",
+                brand_name: "सोनार समाज",
+                brand_trust: "ट्रस्ट",
+                brand_loc: "इंदौर (म.प्र.)",
+                brand_tagline: "आधिकारिक संपर्क केंद्र",
+                nav_home: "मुख्य पृष्ठ",
+                nav_about: "परिचय",
+                nav_deeds: "सेवा कार्य",
+                nav_events: "कार्यक्रम",
+                nav_business: "व्यवसाय डायरेक्टरी",
+                nav_gallery: "गैलरी",
+                nav_contact: "संपर्क",
+                btn_donate: "दान दें",
+                contact_hero_badge: "सीधा संपर्क व मार्गदर्शन केंद्र • Official Contact Desk",
+                contact_hero_title: "हमसे सीधा संपर्क करें",
+                contact_hero_subtitle: "सोनार समाज ट्रस्ट इंदौर की गतिविधियों, दान, सदस्यता अथवा आपातकालीन सहायता हेतु हम सदैव तत्पर हैं।"
+            },
+            en: {
+                top_motto: "Shri Sant Narhari Maharaj • Sonar Samaj Trust, Indore",
+                brand_name: "Sonar Samaj",
+                brand_trust: "Trust",
+                brand_loc: "Indore (M.P.)",
+                brand_tagline: "Official Contact Center",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_deeds: "Services",
+                nav_events: "Events",
+                nav_business: "Business Directory",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                btn_donate: "Donate Now",
+                contact_hero_badge: "Official Contact Desk & Directory",
+                contact_hero_title: "Contact Sonar Samaj Trust, Indore",
+                contact_hero_subtitle: "Reach out to Sonar Samaj Trust office bearers for community support, donations, membership, and assistance."
+            }
+        };
+
+        function changeLang(lang) {
+            currentLang = lang || 'mr';
+            document.documentElement.lang = currentLang;
+            ['mr', 'hi', 'en'].forEach(l => {
+                const b = document.getElementById('lang-' + l);
+                if (b) {
+                    if (l === currentLang) {
+                        b.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-600 text-white";
+                    } else {
+                        b.className = "px-2 py-0.5 rounded-full text-[10px] font-medium text-slate-300 hover:text-white";
+                    }
+                }
+            });
+
+            const dict = contactI18n[currentLang] || contactI18n.mr;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (dict[k]) el.textContent = dict[k];
+            });
+        }
+    </script>
+</body>
+</html>

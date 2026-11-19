@@ -252,23 +252,38 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-slate-700 marathi">
+                <!-- Desktop Navigation Links (Clean & Streamlined) -->
+                <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-[14px] xl:text-[15px] font-bold text-slate-700 marathi">
                     <a href="#home" data-i18n="nav_home" class="nav-link hover:text-brand-600 transition-colors py-1">मुख्यपृष्ठ</a>
                     <a href="#about" data-i18n="nav_about" class="nav-link hover:text-brand-600 transition-colors py-1">परिचय</a>
                     <a href="#good-deeds" data-i18n="nav_deeds" class="nav-link hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
                     <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
-                    <a href="#celebrations" data-i18n="nav_celebrations" class="nav-link hover:text-brand-600 transition-colors py-1">वाढदिवस</a>
-                    <a href="#event-showcase" data-i18n="nav_event_showcase" class="nav-link hover:text-brand-600 transition-colors py-1">इव्हेंट फोटो</a>
-                    <a href="#committee" data-i18n="nav_committee" class="nav-link hover:text-brand-600 transition-colors py-1">समिती</a>
-                    <a href="#membership" data-i18n="nav_membership" class="nav-link hover:text-brand-600 transition-colors py-1">सदस्यता</a>
+                    <a href="#business-directory" data-i18n="nav_business" class="nav-link text-amber-800 hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-extrabold bg-amber-50/90 border border-amber-200/90 px-3 py-1 rounded-full shadow-xs">
+                        <i class="fas fa-briefcase text-xs text-amber-600"></i>
+                        <span>व्यवसाय डिरेक्टरी</span>
+                    </a>
                     <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
-                    <a href="#contact" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
+                    <a href="contact.html" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
+
+                    <!-- More Dropdown Menu (Organized & Clutter-Free) -->
+                    <div class="relative group/dropdown py-1">
+                        <button class="inline-flex items-center gap-1 text-slate-700 hover:text-brand-600 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-slate-50">
+                            <span data-i18n="nav_more">अधिक</span>
+                            <i class="fas fa-chevron-down text-[10px] transition-transform group-hover/dropdown:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-slate-200 py-2.5 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 z-50">
+                            <a href="#committee" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-brand-600 transition-colors">👥 <span data-i18n="committee_title">आमची समिती</span></a>
+                            <a href="#celebrations" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-brand-600 transition-colors">🎂 <span data-i18n="nav_celebrations">वाढदिवस व शुभेच्छा</span></a>
+                            <a href="#event-showcase" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-brand-600 transition-colors">📸 <span data-i18n="nav_event_showcase">इव्हेंट फोटो वृत्तांत</span></a>
+                            <a href="#membership" class="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-brand-600 transition-colors">📝 <span data-i18n="nav_membership">सदस्यता अर्ज</span></a>
+                            <a href="contact.html" class="block px-4 py-2 text-xs font-bold text-brand-600 hover:bg-brand-50 transition-colors border-t border-slate-100 mt-1 pt-2">📍 थेट संपर्क केंद्र (Contact Us) ↗</a>
+                        </div>
+                    </div>
                 </nav>
 
                 <!-- Action CTAs (Merasamaj-style Pill Buttons) -->
                 <div class="hidden sm:flex items-center gap-3">
-                    <button onclick="openDonateModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-md shadow-brand-600/25 transition-all hover:shadow-glow hover:-translate-y-0.5">
+                    <button onclick="openDonateModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-md shadow-brand-600/25 transition-all hover:scale-105">
                         <i class="fas fa-heart text-amber-200 text-xs"></i>
                         <span data-i18n="btn_donate" class="marathi">देणगी द्या</span>
                     </button>
@@ -277,13 +292,16 @@
                     </a>
                     <!-- Right Official Letterhead Seal (Rajwada, Indore) -->
                     <a href="#about" class="hidden sm:flex items-center group/rajwada flex-shrink-0 ml-1" title="सोनार समाज मंडळ, इंदूर (ऐतिहासिक राजवाडा बोधचिन्ह)">
-                        <img src="./src/rajwada-logo.png" alt="सोनार समाज मंडळ इंदूर राजवाडा बोधचिन्ह" class="w-13 h-13 w-12 h-12 rounded-full object-contain bg-white shadow-md shadow-brand-900/15 ring-2 ring-brand-gold/60 group-hover/rajwada:scale-105 transition-transform flex-shrink-0">
+                        <img src="./src/rajwada-logo.png" alt="सोनार समाज मंडळ इंदूर राजवाडा बोधचिन्ह" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-contain bg-white shadow-md shadow-brand-900/15 ring-2 ring-brand-gold/60 group-hover/rajwada:scale-105 transition-transform flex-shrink-0">
                     </a>
                 </div>
 
-                <!-- Mobile Menu Hamburger -->
+                <!-- Mobile Menu Hamburger & Quick Contact -->
                 <div class="flex items-center gap-2 lg:hidden">
-                    <img src="./src/rajwada-logo.png" alt="सोनार समाज इंदूर" class="w-10 h-10 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60">
+                    <a href="https://wa.me/917314203099" target="_blank" class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm shadow">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <img src="./src/rajwada-logo.png" alt="सोनार समाज इंदूर" class="w-9 h-9 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl text-slate-700 hover:bg-surface-soft hover:text-brand-600 focus:outline-none transition-colors" aria-label="Toggle navigation">
                         <i id="menu-icon" class="fas fa-bars text-xl"></i>
                     </button>
@@ -291,22 +309,72 @@
             </div>
         </div>
 
-        <!-- Mobile Drawer Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-surface-border px-4 pt-3 pb-6 space-y-2 shadow-xl marathi">
-            <a href="#home" onclick="closeMobileMenu()" data-i18n="nav_home" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">मुख्यपृष्ठ</a>
-            <a href="#about" onclick="closeMobileMenu()" data-i18n="nav_about" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">परिचय</a>
-            <a href="#good-deeds" onclick="closeMobileMenu()" data-i18n="nav_deeds" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सेवा कार्य (Good Deeds)</a>
-            <a href="#events" onclick="closeMobileMenu()" data-i18n="nav_events" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">कार्यक्रम व बातम्या</a>
-            <a href="#celebrations" onclick="closeMobileMenu()" data-i18n="nav_celebrations" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">वाढदिवस व लग्न वाढदिवस</a>
-            <a href="#event-showcase" onclick="closeMobileMenu()" data-i18n="nav_event_showcase" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">इव्हेंट वृत्तांत व फोटो</a>
-            <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors"><span data-i18n="committee_title">आमची समिती</span></a>
-            <a href="#donate" onclick="closeMobileMenu()" data-i18n="nav_donate" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">देणगी / UPI QR</a>
-            <a href="#membership" onclick="closeMobileMenu()" data-i18n="nav_membership" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सदस्यता अर्ज</a>
-            <a href="#gallery" onclick="closeMobileMenu()" data-i18n="nav_gallery" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">गॅलरी</a>
-            <a href="#contact" onclick="closeMobileMenu()" data-i18n="nav_contact" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">संपर्क</a>
+        <!-- Mobile Drawer Navigation (Touch-Optimized & Spacious) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-surface-border px-4 pt-3 pb-6 space-y-1.5 shadow-xl marathi">
+            
+            <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">मेनू (Navigation)</span>
+                <!-- Language Switcher in Mobile Drawer -->
+                <div class="flex items-center gap-1 bg-slate-100 rounded-full p-0.5 border border-slate-200">
+                    <button onclick="changeLang('mr')" class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-600 text-white">मराठी</button>
+                    <button onclick="changeLang('hi')" class="px-2.5 py-1 rounded-full text-xs font-medium text-slate-700">हिंदी</button>
+                    <button onclick="changeLang('en')" class="px-2.5 py-1 rounded-full text-xs font-medium text-slate-700">EN</button>
+                </div>
+            </div>
+
+            <a href="#home" onclick="closeMobileMenu()" data-i18n="nav_home" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-home text-brand-500 w-5 text-center"></i>
+                <span>मुख्यपृष्ठ</span>
+            </a>
+            <a href="#about" onclick="closeMobileMenu()" data-i18n="nav_about" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-info-circle text-brand-500 w-5 text-center"></i>
+                <span>परिचय</span>
+            </a>
+            <a href="#good-deeds" onclick="closeMobileMenu()" data-i18n="nav_deeds" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-hand-holding-heart text-brand-500 w-5 text-center"></i>
+                <span>सेवा कार्य (Good Deeds)</span>
+            </a>
+            <a href="#events" onclick="closeMobileMenu()" data-i18n="nav_events" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-calendar-alt text-brand-500 w-5 text-center"></i>
+                <span>आगामी कार्यक्रम व दिवाळी मिलन</span>
+            </a>
+            <a href="#business-directory" onclick="closeMobileMenu()" data-i18n="nav_business" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 transition-colors border border-amber-200">
+                <i class="fas fa-briefcase text-amber-600 w-5 text-center"></i>
+                <span>💼 व्यवसाय डिरेक्टरी (Business Directory)</span>
+            </a>
+            <a href="#gallery" onclick="closeMobileMenu()" data-i18n="nav_gallery" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-images text-brand-500 w-5 text-center"></i>
+                <span>वर्षनिहाय फोटो गॅलरी</span>
+            </a>
+            <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-users text-brand-500 w-5 text-center"></i>
+                <span>आमची समिती (Leadership)</span>
+            </a>
+            <a href="#celebrations" onclick="closeMobileMenu()" data-i18n="nav_celebrations" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-cake-candles text-brand-500 w-5 text-center"></i>
+                <span>वाढदिवस व शुभेच्छा</span>
+            </a>
+            <a href="#event-showcase" onclick="closeMobileMenu()" data-i18n="nav_event_showcase" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-camera-retro text-brand-500 w-5 text-center"></i>
+                <span>इव्हेंट फोटो वृत्तांत</span>
+            </a>
+            <a href="#membership" onclick="closeMobileMenu()" data-i18n="nav_membership" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                <i class="fas fa-user-plus text-brand-500 w-5 text-center"></i>
+                <span>सदस्यता अर्ज</span>
+            </a>
+            <a href="contact.html" onclick="closeMobileMenu()" data-i18n="nav_contact" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">
+                <i class="fas fa-phone-volume text-brand-600 w-5 text-center"></i>
+                <span>थेट संपर्क केंद्र (Contact Us Page) ↗</span>
+            </a>
+
             <div class="pt-3 border-t border-slate-100 flex gap-2">
-                <button onclick="openDonateModal(); closeMobileMenu();" class="flex-1 bg-brand-600 text-white font-bold py-3 rounded-xl text-center text-sm shadow-md"><span data-i18n="btn_donate">♥ देणगी द्या</span></button>
-                <a href="https://wa.me/917314203099" target="_blank" class="w-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md"><i class="fab fa-whatsapp"></i></a>
+                <button onclick="openDonateModal(); closeMobileMenu();" class="flex-1 bg-gradient-to-r from-brand-600 to-amber-600 text-white font-bold py-3.5 rounded-xl text-center text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fas fa-heart text-amber-200"></i>
+                    <span data-i18n="btn_donate">देणगी द्या</span>
+                </button>
+                <a href="https://wa.me/917314203099" target="_blank" class="w-14 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl shadow-md">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
         </div>
     </header>
@@ -1447,6 +1515,98 @@
                 </div>
 
                 </div>
+        </section>
+
+
+        
+        <!-- ═══════════════════ SECTION: BUSINESS DIRECTORY (समाज व्यावसायिक निर्देशिका) ═══════════════════ -->
+        <section id="business-directory" class="py-20 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/30 border-t border-amber-200/60 relative overflow-hidden">
+            <!-- Decorative Subtle Background Pattern -->
+            <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#b45309_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div data-i18n="biz_pill" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider marathi shadow-xs">
+                        <i class="fas fa-briefcase text-amber-600"></i>
+                        <span>सोनार व्यावसायिक मंच • Business Directory</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-3 tracking-tight marathi">
+                        <span data-i18n="biz_title">समाज बांधवांचे व्यवसाय व उद्योग</span>
+                    </h2>
+                    <p data-i18n="biz_desc" class="text-slate-600 text-sm sm:text-base marathi max-w-2xl mx-auto">
+                        इंदूर व परिसरातील सोनार समाज बांधवांच्या प्रतिष्ठानांशी थेट संपर्क साधा. आपल्या बांधवांना प्राधान्य देऊन समाजाच्या अर्थकारणाला बळ देऊया.
+                    </p>
+                </div>
+
+                <!-- Search & Category Filters Bar -->
+                <div class="max-w-4xl mx-auto mb-10 space-y-4">
+                    <!-- Search Input -->
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-amber-600">
+                            <i class="fas fa-search text-base"></i>
+                        </div>
+                        <input type="text" id="business-search-input" oninput="filterBusinessBySearch(this.value)" placeholder="व्यवसायाचे नाव, मालक किंवा क्षेत्र शोधा..." data-i18n-ph="biz_search_ph" class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white border border-amber-200 shadow-sm text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all marathi font-medium">
+                        <button type="button" id="business-clear-search" onclick="clearBusinessSearch()" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600">
+                            <i class="fas fa-times-circle"></i>
+                        </button>
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1" id="business-category-pills">
+                        <button onclick="filterBusinessCategory('all')" data-cat="all" class="biz-cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-sm transition-all marathi flex items-center gap-1.5">
+                            <span data-i18n="biz_cat_all">सर्व व्यवसाय</span>
+                            <span id="biz-count-all" class="ml-1 px-1.5 py-0.5 text-[10px] bg-white/20 rounded-full">0</span>
+                        </button>
+                        <button onclick="filterBusinessCategory('jewellery')" data-cat="jewellery" class="biz-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 transition-all marathi flex items-center gap-1.5">
+                            <span data-i18n="biz_cat_jewellery">💍 सराफा व सुवर्णकार</span>
+                        </button>
+                        <button onclick="filterBusinessCategory('manufacturing')" data-cat="manufacturing" class="biz-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 transition-all marathi flex items-center gap-1.5">
+                            <span data-i18n="biz_cat_manufacturing">⚙️ उत्पादन व डिझायनिंग</span>
+                        </button>
+                        <button onclick="filterBusinessCategory('services')" data-cat="services" class="biz-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 transition-all marathi flex items-center gap-1.5">
+                            <span data-i18n="biz_cat_services">📊 व्यावसायिक सेवा</span>
+                        </button>
+                        <button onclick="filterBusinessCategory('other')" data-cat="other" class="biz-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 transition-all marathi flex items-center gap-1.5">
+                            <span data-i18n="biz_cat_other">✨ इतर उद्योग</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Businesses Grid Container -->
+                <div id="business-directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic business cards inserted via JS -->
+                </div>
+
+                <!-- Empty State (Hidden by default) -->
+                <div id="business-directory-empty" class="hidden bg-white rounded-3xl p-12 text-center border border-amber-200/90 shadow-soft max-w-lg mx-auto">
+                    <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fas fa-store-slash"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 marathi">या शोधामध्ये कोणतेही व्यवसाय आढळले नाहीत</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1 marathi">कृपया इतर कीवर्ड वापरून शोधा किंवा सर्व श्रेणी निवडा.</p>
+                </div>
+
+                <!-- Add Your Business Callout Banner -->
+                <div class="mt-14 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-amber-600 via-brand-600 to-amber-700 p-6 sm:p-8 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-1 text-center sm:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-semibold backdrop-blur-xs">
+                            <i class="fas fa-bullhorn text-amber-200"></i>
+                            <span>मोफत नोंदणी • Free Listing</span>
+                        </div>
+                        <h3 data-i18n="biz_add_cta_title" class="text-xl sm:text-2xl font-bold marathi">आपला व्यवसाय डिरेक्टरीमध्ये नोंदवू इच्छिता?</h3>
+                        <p data-i18n="biz_add_cta_desc" class="text-xs sm:text-sm text-amber-100 max-w-xl marathi">
+                            सोनार समाजाच्या व्यावसायिकांसाठी मोफत डिजिटल ओळख. ॲडमिन पॅनेल किंवा व्हॉट्सॲपद्वारे संपर्क करा.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <a href="https://wa.me/917314203099?text=Hello%20Sonar%20Samaj%20Indore,%20I%20want%20to%20register%20my%20business%20in%20the%20community%20directory" target="_blank" class="px-5 py-3 rounded-xl bg-white text-brand-700 font-bold text-sm shadow hover:bg-amber-50 transition-all flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-emerald-600 text-lg"></i>
+                            <span data-i18n="biz_add_btn">नोंदणीसाठी संपर्क करा</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -4255,6 +4415,24 @@
         // ── Comprehensive Multi-lingual Translation Engine ──
         const i18n = {
         "mr": {
+        "nav_business": "व्यवसाय डिरेक्टरी",
+        "nav_more": "अधिक",
+        "biz_pill": "सोनार व्यावसायिक मंच • Business Directory",
+        "biz_title": "समाज बांधवांचे व्यवसाय व उद्योग",
+        "biz_desc": "इंदूर व परिसरातील सोनार समाज बांधवांच्या प्रतिष्ठानांशी थेट संपर्क साधा. आपल्या बांधवांना प्राधान्य देऊन समाजाच्या अर्थकारणाला बळ देऊया.",
+        "biz_cat_all": "सर्व व्यवसाय",
+        "biz_cat_jewellery": "💍 सराफा व सुवर्णकार",
+        "biz_cat_manufacturing": "⚙️ उत्पादन व डिझायनिंग",
+        "biz_cat_services": "📊 व्यावसायिक सेवा",
+        "biz_cat_other": "✨ इतर उद्योग",
+        "biz_search_ph": "व्यवसायाचे नाव, मालक किंवा क्षेत्र शोधा...",
+        "biz_btn_call": "कॉल करा",
+        "biz_btn_wa": "व्हॉट्सॲप",
+        "biz_verified": "सत्यापित समाज सदस्य",
+        "biz_est": "स्थापना",
+        "biz_add_cta_title": "आपला व्यवसाय डिरेक्टरीमध्ये नोंदवू इच्छिता?",
+        "biz_add_cta_desc": "सोनार समाजाच्या व्यावसायिकांसाठी मोफत डिजिटल ओळख. ॲडमिन पॅनेल किंवा व्हॉट्सॲपद्वारे संपर्क करा.",
+        "biz_add_btn": "नोंदणीसाठी संपर्क करा",
         "btn_toggle_committee_show": "इतर सर्व समिती सदस्य व मार्गदर्शक मंडळ पहा (२२ सदस्य) • View Full Committee",
         "btn_toggle_committee_hide": "कमी दाखवा (Show Less)",
         "nav_event_showcase": "इव्हेंट फोटो",
@@ -4607,6 +4785,24 @@
                 "btn_submit_celeb": "नोंदणी पूर्ण करा • Save & Wish"
         },
         "hi": {
+        "nav_business": "व्यापार निर्देशिका",
+        "nav_more": "अधिक",
+        "biz_pill": "सोनार व्यापार मंच • Business Directory",
+        "biz_title": "समाज बंधुओं के व्यापार व उद्योग",
+        "biz_desc": "इंदौर एवं आसपास के सोनार समाज बंधुओं के प्रतिष्ठानों से सीधा संपर्क करें। अपने समाज बंधुओं को प्राथमिकता देकर समाज के अर्थतंत्र को सशक्त बनाएं।",
+        "biz_cat_all": "सभी व्यवसाय",
+        "biz_cat_jewellery": "💍 सराफा एवं स्वर्णकार",
+        "biz_cat_manufacturing": "⚙️ उत्पादन एवं डिजाइनिंग",
+        "biz_cat_services": "📊 व्यावसायिक सेवाएं",
+        "biz_cat_other": "✨ अन्य उद्योग",
+        "biz_search_ph": "व्यापार का नाम, संचालक या क्षेत्र खोजें...",
+        "biz_btn_call": "कॉल करें",
+        "biz_btn_wa": "व्हाट्सएप",
+        "biz_verified": "सत्यापित समाज सदस्य",
+        "biz_est": "स्थापना",
+        "biz_add_cta_title": "क्या आप अपना व्यवसाय निर्देशिका में जोड़ना चाहते हैं?",
+        "biz_add_cta_desc": "सोनार समाज के व्यापारियों हेतु निःशुल्क डिजिटल मंच। एडमिन पैनल अथवा व्हाट्सएप से संपर्क करें।",
+        "biz_add_btn": "पंजीकरण हेतु संपर्क",
         "btn_toggle_committee_show": "अन्य सभी समिति सदस्य एवं मार्गदर्शक मंडल देखें (२२ सदस्य) • View Full Committee",
         "btn_toggle_committee_hide": "कम दिखाएं (Show Less)",
         "nav_event_showcase": "इवेंट्स फोटो",
@@ -4959,6 +5155,24 @@
                 "btn_submit_celeb": "पंजीकरण पूर्ण करें • Save & Wish"
         },
         "en": {
+        "nav_business": "Business Directory",
+        "nav_more": "More",
+        "biz_pill": "Community Commerce • Business Directory",
+        "biz_title": "Sonar Samaj Member Businesses & Services",
+        "biz_desc": "Connect directly with verified businesses owned and managed by Sonar community members across Indore. Support and empower our community entrepreneurs.",
+        "biz_cat_all": "All Businesses",
+        "biz_cat_jewellery": "💍 Jewellery & Bullion",
+        "biz_cat_manufacturing": "⚙️ Manufacturing & CAD",
+        "biz_cat_services": "📊 Professional Services",
+        "biz_cat_other": "✨ Other Ventures",
+        "biz_search_ph": "Search by business name, owner, or area...",
+        "biz_btn_call": "Call Now",
+        "biz_btn_wa": "WhatsApp",
+        "biz_verified": "Verified Member",
+        "biz_est": "Est.",
+        "biz_add_cta_title": "Want to list your business in this directory?",
+        "biz_add_cta_desc": "Free digital directory listing for all registered Sonar Samaj community entrepreneurs. Connect via Admin Panel or WhatsApp.",
+        "biz_add_btn": "Contact to Register",
         "btn_toggle_committee_show": "View Full Committee & Mentors (22 Members)",
         "btn_toggle_committee_hide": "Show Less",
         "nav_event_showcase": "Event Photos",
@@ -5312,6 +5526,381 @@
         }
 };
 
+        
+        // ═══════════════════ COMMUNITY BUSINESS DIRECTORY LOGIC ═══════════════════
+        const defaultBusinessesData = [
+            {
+                id: "biz-songirkar-jewellers",
+                name_mr: "सोनगीरकर ज्वेलर्स",
+                name_hi: "सोनगीरकर ज्वेलर्स",
+                name_en: "Songirkar Jewellers",
+                owner_mr: "श्री विश्वासजी सोनगीरकर",
+                owner_hi: "श्री विश्वासजी सोनगीरकर",
+                owner_en: "Shri Vishwas Songirkar",
+                category_key: "jewellery",
+                category_mr: "सराफा व सुवर्णकार",
+                category_hi: "सराफा एवं स्वर्णकार",
+                category_en: "Jewellery & Bullion",
+                phone: "+919827653310",
+                whatsapp: "+919827653310",
+                address_mr: "सराफा बाजार, इंदूर",
+                address_hi: "सराफा बाजार, इंदौर",
+                address_en: "Sarafa Bazaar, Indore",
+                description_mr: "शुद्ध ९१६ हॉलमार्क सोन्याचे दागिने, हिरेजडित आभूषणे व पारंपारिक महाराष्ट्रीयन डिझाईन्सचे विश्वसनीय दालन.",
+                description_hi: "शुद्ध ९१६ हॉलमार्क सोने के आभूषण, हीरे के गहने एवं पारंपरिक महाराष्ट्रीयन डिजाइन्स।",
+                description_en: "Pure 916 Hallmarked gold ornaments, diamond jewelry and authentic Maharashtrian designs.",
+                established: "1992",
+                verified: true
+            },
+            {
+                id: "biz-mukesh-ornaments",
+                name_mr: "मुकेश ज्वेलर्स व सराफा",
+                name_hi: "मुकेश ज्वेलर्स एवं सराफा",
+                name_en: "Mukesh Jewellers & Sarafa",
+                owner_mr: "श्री मुकेशजी सोनगीरकर",
+                owner_hi: "श्री मुकेशजी सोनगीरकर",
+                owner_en: "Shri Mukesh Songirkar",
+                category_key: "jewellery",
+                category_mr: "सराफा व सुवर्णकार",
+                category_hi: "सराफा एवं स्वर्णकार",
+                category_en: "Jewellery & Bullion",
+                phone: "+917879833999",
+                whatsapp: "+917879833999",
+                address_mr: "छोटा सराफा, राजवाडा जवळ, इंदूर",
+                address_hi: "छोटा सराफा, राजवाड़ा के पास, इंदौर",
+                address_en: "Chhota Sarafa, Near Rajwada, Indore",
+                description_mr: "लग्नकार्यासाठी खास ब्रायडल दागिने, चांदीची भांडी व पुजेचे साहित्य.",
+                description_hi: "विवाह हेतु विशेष ब्राइडल ज्वेलरी, चांदी के बर्तन एवं पूजन सामग्री।",
+                description_en: "Exclusive bridal jewelry collections, pure silver articles, and pooja items.",
+                established: "1998",
+                verified: true
+            },
+            {
+                id: "biz-narhari-cad-cam",
+                name_mr: "श्री नरहरी ३डी ज्वेलरी डिझायनिंग व सीएडी",
+                name_hi: "श्री नरहरि ३डी ज्वेलरी डिजाइनिंग एवं सीएडी",
+                name_en: "Shri Narhari 3D Jewellery CAD/CAM",
+                owner_mr: "श्री राहुलजी सोनार",
+                owner_hi: "श्री राहुलजी सोनार",
+                owner_en: "Shri Rahul Sonar",
+                category_key: "manufacturing",
+                category_mr: "उत्पादन व डिझायनिंग",
+                category_hi: "उत्पादन एवं डिजाइनिंग",
+                category_en: "Manufacturing & CAD",
+                phone: "+919098491789",
+                whatsapp: "+919098491789",
+                address_mr: "सुखलिया मेन रोड, इंदूर",
+                address_hi: "सुखलिया मेन रोड, इंदौर",
+                address_en: "Sukhlia Main Road, Indore",
+                description_mr: "आधुनिक मॅट्रिक्स व राइनो तंत्रज्ञानाद्वारे दागिन्यांचे ३डी मॉडेलिंग, रेंडरिंग व सीएडी/सीएएम सेवा.",
+                description_hi: "आधुनिक मैट्रिक्स व राइनो तकनीक द्वारा ३डी मॉडलिंग, रेंडरिंग व सीएडी सेवाएं।",
+                description_en: "Modern Matrix & Rhino 3D jewelry designing, rendering and CAM die casting services.",
+                established: "2015",
+                verified: true
+            },
+            {
+                id: "biz-sonar-tax-consultancy",
+                name_mr: "सोनार असोसिएट्स — कर व वित्तीय सल्लागार",
+                name_hi: "सोनार एसोसिएट्स — टैक्स व वित्तीय सलाहकार",
+                name_en: "Sonar Associates — Tax & Financial Advisory",
+                owner_mr: "सीए दीपकजी सोनार",
+                owner_hi: "सीए दीपकजी सोनार",
+                owner_en: "CA Deepak Sonar",
+                category_key: "services",
+                category_mr: "व्यावसायिक सेवा",
+                category_hi: "व्यावसायिक सेवाएं",
+                category_en: "Professional Services",
+                phone: "+919425022334",
+                whatsapp: "+919425022334",
+                address_mr: "तुलसी नगर, इंदूर",
+                address_hi: "तुलसी नगर, इंदौर",
+                address_en: "Tulsi Nagar, Indore",
+                description_mr: "जीएसटी नोंदणी, इन्कम टॅक्स रिटर्न, सुवर्ण व्यवसाय ऑडिट व फायनान्स सल्लागार सेवा.",
+                description_hi: "जीएसटी, आयकर रिटर्न, ज्वैलरी उद्योग ऑडिट एवं वित्तीय परामर्श सेवाएं।",
+                description_en: "GST registration, Income Tax audits, jewellery business finance and compliance.",
+                established: "2008",
+                verified: true
+            },
+            {
+                id: "biz-royal-gems-testing",
+                name_mr: "रॉयल जेम्स व रत्न चाचणी प्रयोगशाळा",
+                name_hi: "रॉयल जेम्स एवं रत्न परीक्षण प्रयोगशाला",
+                name_en: "Royal Gemological Testing Lab",
+                owner_mr: "श्री अविनाशजी सोनार",
+                owner_hi: "श्री अविनाशजी सोनार",
+                owner_en: "Shri Avinash Sonar",
+                category_key: "services",
+                category_mr: "व्यावसायिक सेवा",
+                category_hi: "व्यावसायिक सेवाएं",
+                category_en: "Professional Services",
+                phone: "+919826011223",
+                whatsapp: "+919826011223",
+                address_mr: "बडा सराफा, इंदूर",
+                address_hi: "बड़ा सराफा, इंदौर",
+                address_en: "Bada Sarafa, Indore",
+                description_mr: "सर्व प्रकारच्या मौल्यवान रत्नांची शास्त्रीय तपासणी व अधिकृत प्रमाणपत्र.",
+                description_hi: "सभी प्रकार के बहुमूल्य रत्नों की वैज्ञानिक जांच एवं प्रामाणिक सर्टिफिकेशन।",
+                description_en: "Scientific testing and certified grading of precious gemstones and diamonds.",
+                established: "2012",
+                verified: true
+            },
+            {
+                id: "biz-khandekar-molds",
+                name_mr: "खांडेकर डाईज व मोल्ड्स मॅन्युफॅक्चरिंग",
+                name_hi: "खांडेकर डाइज एवं मोल्ड्स मैन्युफैक्चरिंग",
+                name_en: "Khandekar Dies & Molds Manufacturing",
+                owner_mr: "श्री तरुणजी खांडेकर",
+                owner_hi: "श्री तरुणजी खांडेकर",
+                owner_en: "Shri Tarun Khandekar",
+                category_key: "manufacturing",
+                category_mr: "उत्पादन व डिझायनिंग",
+                category_hi: "उत्पादन एवं डिजाइनिंग",
+                category_en: "Manufacturing & CAD",
+                phone: "+919827011445",
+                whatsapp: "+919827011445",
+                address_mr: "सांवेर रोड इंडस्ट्रियल एरिया, इंदूर",
+                address_hi: "सांवेर रोड इंडस्ट्रियल एरिया, इंदौर",
+                address_en: "Sanwer Road Industrial Area, Indore",
+                description_mr: "सुवर्ण व चांदीच्या दागिन्यांसाठी प्रिसीजन डाईज, मास्टर मॉडेल्स व मोल्डिंग सोल्यूशन्स.",
+                description_hi: "स्वर्ण व रजत आभूषणों हेतु प्रिसीजन डाइज एवं मास्टर मॉडेल्स।",
+                description_en: "Precision dies, master molds and casting tools for gold and silver jewelers.",
+                established: "2005",
+                verified: true
+            },
+            {
+                id: "biz-shree-shakti-refining",
+                name_mr: "श्री शक्ती गोल्ड टेस्टिंग व रिफायनिंग",
+                name_hi: "श्री शक्ति गोल्ड टेस्टिंग एवं रिफाइनिंग",
+                name_en: "Shree Shakti Gold Testing & Refining",
+                owner_mr: "श्री गिरीशजी सोनगीरकर",
+                owner_hi: "श्री गिरीशजी सोनगीरकर",
+                owner_en: "Shri Girish Songirkar",
+                category_key: "jewellery",
+                category_mr: "सराफा व सुवर्णकार",
+                category_hi: "सराफा एवं स्वर्णकार",
+                category_en: "Jewellery & Bullion",
+                phone: "+919300055442",
+                whatsapp: "+919300055442",
+                address_mr: "छोटा सराफा, इंदूर",
+                address_hi: "छोटा सराफा, इंदौर",
+                address_en: "Chhota Sarafa, Indore",
+                description_mr: "अत्याधुनिक एक्सआरएफ (XRF) कम्प्युटराइज्ड गोल्ड टेस्टिंग व पर्यावरणपूरक रिफायनिंग सेवा.",
+                description_hi: "आधुनिक एक्सआरएफ कंप्यूटरीकृत गोल्ड टेस्टिंग एवं रिफाइनिंग सेवाएं।",
+                description_en: "Modern computerized XRF gold purity testing and eco-friendly refining.",
+                established: "2010",
+                verified: true
+            },
+            {
+                id: "biz-alok-digital-studio",
+                name_mr: "आलोक डिजिटल फोटोग्राफी व सिनेमॅटोग्राफी",
+                name_hi: "आलोक डिजिटल फोटोग्राफी एवं सिनेमैटोग्राफी",
+                name_en: "Alok Digital Photography & Cinematography",
+                owner_mr: "श्री अक्षयजी गोटीवाले",
+                owner_hi: "श्री अक्षयजी गोटीवाले",
+                owner_en: "Shri Akshay Gotiwale",
+                category_key: "other",
+                category_mr: "इतर उद्योग",
+                category_hi: "अन्य उद्योग",
+                category_en: "Other Ventures",
+                phone: "+919755512345",
+                whatsapp: "+919755512345",
+                address_mr: "विजय नगर, इंदूर",
+                address_hi: "विजय नगर, इंदौर",
+                address_en: "Vijay Nagar, Indore",
+                description_mr: "लग्नसोहळे, ज्वेलरी प्रॉडक्ट फोटोशूट व समाज कार्यक्रमांसाठी विशेष फोटोग्राफी सेवा.",
+                description_hi: "विवाह, आभूषण प्रोडक्ट शूट एवं समाज कार्यक्रमों हेतु पेशेवर फोटोग्राफी।",
+                description_en: "Wedding cinematography, jewelry catalog product shoots and event coverage.",
+                established: "2018",
+                verified: true
+            }
+        ];
+
+        let allBusinessesList = [];
+        let currentBizCategory = 'all';
+        let currentBizSearch = '';
+
+        function initBusinessDirectory() {
+            // Check if stored in localStorage (from admin panel updates)
+            let localData = null;
+            try {
+                const stored = localStorage.getItem('sonar_custom_biz') || localStorage.getItem('sonar_cms_businesses');
+                if (stored) localData = JSON.parse(stored);
+            } catch(e) {}
+
+            if (localData && Array.isArray(localData) && localData.length > 0) {
+                allBusinessesList = localData;
+                renderBusinessDirectoryDOM();
+                return;
+            }
+
+            // Fetch from content/business_directory.json
+            fetch('./content/business_directory.json')
+                .then(r => r.json())
+                .then(data => {
+                    if (data && Array.isArray(data.businesses) && data.businesses.length > 0) {
+                        allBusinessesList = data.businesses;
+                    } else {
+                        allBusinessesList = defaultBusinessesData;
+                    }
+                    renderBusinessDirectoryDOM();
+                })
+                .catch(() => {
+                    allBusinessesList = defaultBusinessesData;
+                    renderBusinessDirectoryDOM();
+                });
+        }
+
+        function filterBusinessCategory(catKey) {
+            currentBizCategory = catKey || 'all';
+            document.querySelectorAll('.biz-cat-btn').forEach(btn => {
+                const isSelected = btn.getAttribute('data-cat') === currentBizCategory;
+                if (isSelected) {
+                    btn.className = 'biz-cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-sm transition-all marathi flex items-center gap-1.5';
+                } else {
+                    btn.className = 'biz-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 transition-all marathi flex items-center gap-1.5';
+                }
+            });
+            renderBusinessDirectoryDOM();
+        }
+
+        function filterBusinessBySearch(query) {
+            currentBizSearch = (query || '').trim().toLowerCase();
+            const clearBtn = document.getElementById('business-clear-search');
+            if (clearBtn) {
+                if (currentBizSearch) {
+                    clearBtn.classList.remove('hidden');
+                } else {
+                    clearBtn.classList.add('hidden');
+                }
+            }
+            renderBusinessDirectoryDOM();
+        }
+
+        function clearBusinessSearch() {
+            const input = document.getElementById('business-search-input');
+            if (input) input.value = '';
+            filterBusinessBySearch('');
+        }
+
+        function renderBusinessDirectoryDOM() {
+            const grid = document.getElementById('business-directory-grid');
+            const emptyEl = document.getElementById('business-directory-empty');
+            const totalCountBadge = document.getElementById('biz-count-all');
+            if (!grid) return;
+
+            const lang = currentLang || 'mr';
+            const dict = (typeof i18n !== 'undefined' && i18n[lang]) ? i18n[lang] : {};
+
+            if (totalCountBadge) {
+                totalCountBadge.textContent = allBusinessesList.length;
+            }
+
+            // Filter by category and search
+            const filtered = allBusinessesList.filter(item => {
+                if (currentBizCategory !== 'all' && item.category_key !== currentBizCategory) {
+                    return false;
+                }
+                if (currentBizSearch) {
+                    const name = (item['name_' + lang] || item.name_mr || '').toLowerCase();
+                    const owner = (item['owner_' + lang] || item.owner_mr || '').toLowerCase();
+                    const addr = (item['address_' + lang] || item.address_mr || '').toLowerCase();
+                    const desc = (item['description_' + lang] || item.description_mr || '').toLowerCase();
+                    const cat = (item['category_' + lang] || item.category_mr || '').toLowerCase();
+                    return name.includes(currentBizSearch) || owner.includes(currentBizSearch) || addr.includes(currentBizSearch) || desc.includes(currentBizSearch) || cat.includes(currentBizSearch);
+                }
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                if (emptyEl) emptyEl.classList.remove('hidden');
+                return;
+            }
+
+            if (emptyEl) emptyEl.classList.add('hidden');
+
+            const categoryIcons = {
+                'jewellery': '💍',
+                'manufacturing': '⚙️',
+                'services': '📊',
+                'other': '✨'
+            };
+
+            const callText = dict.biz_btn_call || 'कॉल करा';
+            const waText = dict.biz_btn_wa || 'व्हॉट्सॲप';
+            const verifiedText = dict.biz_verified || 'सत्यापित समाज सदस्य';
+            const estText = dict.biz_est || 'स्थापना';
+
+            grid.innerHTML = filtered.map(item => {
+                const name = item['name_' + lang] || item.name_mr || item.name_en || '';
+                const owner = item['owner_' + lang] || item.owner_mr || item.owner_en || '';
+                const addr = item['address_' + lang] || item.address_mr || item.address_en || '';
+                const desc = item['description_' + lang] || item.description_mr || item.description_en || '';
+                const cat = item['category_' + lang] || item.category_mr || item.category_en || 'व्यापार';
+                const catIcon = categoryIcons[item.category_key] || '💼';
+                const cleanPhone = (item.phone || '').replace(/[^0-9+]/g, '');
+                const cleanWA = (item.whatsapp || item.phone || '').replace(/[^0-9]/g, '');
+                const waMessage = encodeURIComponent(`सोनार समाज इंदूर डिरेक्टरीतून आपला नंबर मिळाला. - ${name}`);
+
+                return `
+                <div class="bg-white rounded-3xl p-6 border border-amber-200/80 shadow-xs hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Header with Category and Verification -->
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200/70 marathi">
+                                <span>${catIcon}</span>
+                                <span>${cat}</span>
+                            </span>
+                            ${item.verified ? `
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded-full" title="${verifiedText}">
+                                <i class="fas fa-check-circle text-emerald-600"></i>
+                                <span>${verifiedText}</span>
+                            </span>` : ''}
+                        </div>
+
+                        <!-- Business Title -->
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors marathi tracking-tight">
+                            ${name}
+                        </h3>
+
+                        <!-- Owner Name -->
+                        <p class="text-xs sm:text-sm font-semibold text-brand-700 mt-1 flex items-center gap-1.5 marathi">
+                            <i class="fas fa-user-tie text-amber-600"></i>
+                            <span>${owner}</span>
+                        </p>
+
+                        <!-- Address / Locality -->
+                        <p class="text-xs text-slate-500 mt-1.5 flex items-center gap-1.5 marathi">
+                            <i class="fas fa-map-marker-alt text-slate-400"></i>
+                            <span>${addr}</span>
+                            ${item.established ? `<span class="text-slate-300">•</span><span class="text-[11px] text-slate-400">${estText} ${item.established}</span>` : ''}
+                        </p>
+
+                        <!-- Description -->
+                        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed marathi line-clamp-3">
+                            ${desc}
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-5 mt-5 border-t border-slate-100 flex items-center gap-2">
+                        ${item.phone ? `
+                        <a href="tel:${cleanPhone}" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs text-center transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+                            <i class="fas fa-phone-alt text-[11px]"></i>
+                            <span>${callText}</span>
+                        </a>` : ''}
+                        ${item.whatsapp ? `
+                        <a href="https://wa.me/${cleanWA}?text=${waMessage}" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs text-center transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+                            <i class="fab fa-whatsapp text-sm"></i>
+                            <span>${waText}</span>
+                        </a>` : ''}
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+
         function changeLang(lang) {
             lang = lang || 'mr';
             document.querySelectorAll('[id^="lang-"]').forEach(btn => {
@@ -5328,6 +5917,9 @@
             try { localStorage.setItem('sonar_lang', lang); } catch(e){}
             if (typeof renderEventShowcaseDOM === 'function') {
                 renderEventShowcaseDOM();
+            }
+            if (typeof renderBusinessDirectoryDOM === 'function') {
+                renderBusinessDirectoryDOM();
             }
             if (typeof renderGalleryDOM === 'function') {
                 renderGalleryDOM();
@@ -5353,6 +5945,9 @@
 
         // Initialize Gallery Archive and saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initBusinessDirectory === 'function') {
+                initBusinessDirectory();
+            }
             if (typeof initGalleryArchive === 'function') {
                 initGalleryArchive();
             }
