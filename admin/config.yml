@@ -17,6 +17,54 @@ publish_mode: simple
 show_preview_links: true
 
 collections:
+  - name: "celebrations"
+    label: "🎂 Member Birthdays & Anniversaries"
+    label_singular: "Celebration Greeting"
+    description: "Manage member birthdays and wedding anniversaries displayed on the celebration banner."
+    files:
+      - file: "content/celebrations.json"
+        name: "celebrations_file"
+        label: "Celebrations & Greetings"
+        fields:
+          - label: "Today Celebrations"
+            name: "today"
+            widget: "object"
+            fields:
+              - { label: "Today Date Display", name: "date_display", widget: "string", default: "19 नोव्हेंबर" }
+              - label: "Today Birthdays"
+                name: "birthdays"
+                widget: "list"
+                summary: "{{fields.name}} ({{fields.relation}})"
+                fields:
+                  - { label: "Member ID", name: "id", widget: "string" }
+                  - { label: "Member Full Name", name: "name", widget: "string", hint: "e.g. श्री अविनाशजी सोनार" }
+                  - { label: "Member Photo (Optional)", name: "photo", widget: "image", required: false }
+                  - { label: "Area / Colony", name: "relation", widget: "string", hint: "e.g. सुखलिया, इंदूर" }
+                  - { label: "Birthday Wishes Message", name: "message", widget: "text" }
+                  - { label: "WhatsApp Phone Number", name: "phone", widget: "string", hint: "e.g. +919826011223" }
+              - label: "Today Wedding Anniversaries"
+                name: "anniversaries"
+                widget: "list"
+                summary: "{{fields.couple_names}} ({{fields.milestone}})"
+                fields:
+                  - { label: "Anniversary ID", name: "id", widget: "string" }
+                  - { label: "Couple Full Names", name: "couple_names", widget: "string", hint: "e.g. सौ. सुचित्रा व श्री दीपकजी सोनार" }
+                  - { label: "Couple Photo (Optional)", name: "photo", widget: "image", required: false }
+                  - { label: "Milestone / Year", name: "milestone", widget: "string", hint: "e.g. 25 वी वैवाहिक वर्षगांठ (रौप्य महोत्सव)" }
+                  - { label: "Area / Colony", name: "relation", widget: "string", hint: "e.g. लवकुश विहार, सुखलिया, इंदूर" }
+                  - { label: "Anniversary Wishes Message", name: "message", widget: "text" }
+                  - { label: "WhatsApp Phone Number", name: "phone", widget: "string", hint: "e.g. +919425022334" }
+          - label: "Upcoming Celebrations This Week"
+            name: "upcoming"
+            widget: "list"
+            summary: "{{fields.date}} - {{fields.type}}: {{fields.name}}"
+            fields:
+              - { label: "Date Display", name: "date", widget: "string" }
+              - { label: "Celebration Type", name: "type", widget: "select", options: ["वाढदिवस", "लग्न वाढदिवस"] }
+              - { label: "Member / Couple Name", name: "name", widget: "string" }
+              - { label: "Area / Colony", name: "locality", widget: "string" }
+              - { label: "Photo (Optional)", name: "photo", widget: "image", required: false }
+
   - name: "event_showcase"
     label: "📸 Events & Photos Showcase"
     label_singular: "Showcase Event"
