@@ -1745,7 +1745,17 @@
 
                 </div>
 
-                <!-- ══════ SUB-SECTION 2: समन्वय समिती (Coordination Committee - 4 Members) ══════ -->
+                <!-- Toggle Expand/Collapse Button for Other Committee Members -->
+                <div class="text-center my-10">
+                    <button id="btn-toggle-committee" onclick="toggleOtherCommitteeMembers()" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-brand-600 via-amber-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold px-7 py-3.5 rounded-full text-sm sm:text-base shadow-lg shadow-brand-600/25 transition-all hover:scale-105">
+                        <i id="committee-toggle-icon" class="fas fa-chevron-down transition-transform"></i>
+                        <span id="committee-toggle-text" data-i18n="btn_toggle_committee_show">इतर सर्व समिती सदस्य व मार्गदर्शक मंडळ पहा (२२ सदस्य) • View Full Committee</span>
+                    </button>
+                </div>
+
+                <!-- Collapsible Drawer for Other Committee Members (Coordination, Mentors, Executive Members) -->
+                <div id="other-committee-members" class="hidden transition-all duration-500 space-y-12 mb-10">
+                    <!-- ══════ SUB-SECTION 2: समन्वय समिती (Coordination Committee - 4 Members) ══════ -->
                 <div class="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-surface-border pb-4">
                     <div class="flex items-center gap-3">
                         <span data-i18n="comm_group_2_pill" class="text-xs font-bold uppercase tracking-wider bg-amber-500 text-white px-3 py-1 rounded-full shadow-sm">समन्वय</span>
@@ -1972,6 +1982,16 @@
                 </div>
 
                 <!-- ══════ LETTERHEAD OFFICIAL ADDRESS CALLOUT ══════ -->
+
+                    <!-- Close button at bottom of expanded section -->
+                    <div class="text-center pt-4 pb-2">
+                        <button onclick="toggleOtherCommitteeMembers()" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-6 py-2.5 rounded-full text-xs transition-colors">
+                            <i class="fas fa-chevron-up"></i>
+                            <span data-i18n="btn_toggle_committee_hide">कमी दाखवा (Show Less)</span>
+                        </button>
+                    </div>
+                </div>
+
                 <div class="bg-gradient-to-r from-amber-50/60 via-white to-orange-50/60 p-6 sm:p-8 rounded-3xl border-2 border-brand-gold/30 shadow-card flex flex-col lg:flex-row items-center justify-between gap-6">
                     <div class="flex items-center gap-4 text-left w-full lg:w-auto">
                         <img src="./src/samaj-logo.png" alt="संत नरहरी महाराज बोधचिन्ह" class="w-16 h-16 rounded-full object-contain bg-white shadow-md ring-2 ring-brand-gold/70 flex-shrink-0">
@@ -2792,6 +2812,34 @@
 
     <!-- ═══════════════════ INTERACTIVE CLIENT SCRIPTS ═══════════════════ -->
     <script>
+        
+        // ── Toggle Collapsible Committee Members (Coordination, Mentors, Executive) ──
+        function toggleOtherCommitteeMembers() {
+            const drawer = document.getElementById('other-committee-members');
+            const btnText = document.getElementById('committee-toggle-text');
+            const icon = document.getElementById('committee-toggle-icon');
+            if (!drawer) return;
+
+            const isHidden = drawer.classList.contains('hidden');
+            const lang = currentLang || 'mr';
+
+            if (isHidden) {
+                drawer.classList.remove('hidden');
+                if (btnText) {
+                    btnText.textContent = (lang === 'en' ? 'Show Less' : (lang === 'hi' ? 'कम दिखाएं • Show Less' : 'कमी दाखवा • Show Less'));
+                }
+                if (icon) icon.className = 'fas fa-chevron-up transition-transform';
+            } else {
+                drawer.classList.add('hidden');
+                if (btnText) {
+                    btnText.textContent = (lang === 'en' ? 'View Full Committee & Mentors (22 Members)' : (lang === 'hi' ? 'अन्य सभी समिति सदस्य एवं मार्गदर्शक मंडल देखें (२२ सदस्य)' : 'इतर सर्व समिती सदस्य व मार्गदर्शक मंडळ पहा (२२ सदस्य) • View Full Committee'));
+                }
+                if (icon) icon.className = 'fas fa-chevron-down transition-transform';
+                const sec = document.getElementById('committee');
+                if (sec && typeof sec.scrollIntoView === 'function') sec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+  
         // ── Mobile Menu Toggle ──
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -3801,6 +3849,8 @@
         // ── Comprehensive Multi-lingual Translation Engine ──
         const i18n = {
         "mr": {
+        "btn_toggle_committee_show": "इतर सर्व समिती सदस्य व मार्गदर्शक मंडळ पहा (२२ सदस्य) • View Full Committee",
+        "btn_toggle_committee_hide": "कमी दाखवा (Show Less)",
         "nav_event_showcase": "इव्हेंट फोटो",
         "footer_link_showcase": "कार्यक्रम व फोटो संग्रह",
         "showcase_pill": "📸 कार्यक्रम वृत्तांत व छायाचित्रे • Events & Photos",
@@ -4150,6 +4200,8 @@
                 "btn_submit_celeb": "नोंदणी पूर्ण करा • Save & Wish"
         },
         "hi": {
+        "btn_toggle_committee_show": "अन्य सभी समिति सदस्य एवं मार्गदर्शक मंडल देखें (२२ सदस्य) • View Full Committee",
+        "btn_toggle_committee_hide": "कम दिखाएं (Show Less)",
         "nav_event_showcase": "इवेंट्स फोटो",
         "footer_link_showcase": "कार्यक्रम एवं फोटो संग्रह",
         "showcase_pill": "📸 कार्यक्रम वृत्तांत एवं छायाचित्र • Events & Photos",
@@ -4499,6 +4551,8 @@
                 "btn_submit_celeb": "पंजीकरण पूर्ण करें • Save & Wish"
         },
         "en": {
+        "btn_toggle_committee_show": "View Full Committee & Mentors (22 Members)",
+        "btn_toggle_committee_hide": "Show Less",
         "nav_event_showcase": "Event Photos",
         "footer_link_showcase": "Events & Photo Archive",
         "showcase_pill": "📸 Event Reports & Gallery • Events & Photos",
