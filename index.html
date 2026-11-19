@@ -233,6 +233,7 @@
                     <a href="#good-deeds" data-i18n="nav_deeds" class="nav-link hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
                     <a href="#committee" data-i18n="nav_committee" class="nav-link hover:text-brand-600 transition-colors py-1">समिती</a>
                     <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
+                    <a href="#celebrations" data-i18n="nav_celebrations" class="nav-link hover:text-brand-600 transition-colors py-1">वाढदिवस</a>
                     <a href="#membership" data-i18n="nav_membership" class="nav-link hover:text-brand-600 transition-colors py-1">सदस्यता</a>
                     <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
                     <a href="#contact" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
@@ -247,10 +248,15 @@
                     <a href="https://wa.me/917314203099?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20mala%20mahiti%20havi%20ahe." target="_blank" class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-all hover:scale-105" title="WhatsApp वर संपर्क करा">
                         <i class="fab fa-whatsapp text-lg"></i>
                     </a>
+                    <!-- Right Official Letterhead Seal (Rajwada, Indore) -->
+                    <a href="#about" class="hidden sm:flex items-center group/rajwada flex-shrink-0 ml-1" title="सोनार समाज मंडळ, इंदूर (ऐतिहासिक राजवाडा बोधचिन्ह)">
+                        <img src="./src/rajwada-logo.png" alt="सोनार समाज मंडळ इंदूर राजवाडा बोधचिन्ह" class="w-13 h-13 w-12 h-12 rounded-full object-contain bg-white shadow-md shadow-brand-900/15 ring-2 ring-brand-gold/60 group-hover/rajwada:scale-105 transition-transform flex-shrink-0">
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Hamburger -->
-                <div class="flex items-center lg:hidden">
+                <div class="flex items-center gap-2 lg:hidden">
+                    <img src="./src/rajwada-logo.png" alt="सोनार समाज इंदूर" class="w-10 h-10 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl text-slate-700 hover:bg-surface-soft hover:text-brand-600 focus:outline-none transition-colors" aria-label="Toggle navigation">
                         <i id="menu-icon" class="fas fa-bars text-xl"></i>
                     </button>
@@ -265,6 +271,7 @@
             <a href="#good-deeds" onclick="closeMobileMenu()" data-i18n="nav_deeds" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सेवा कार्य (Good Deeds)</a>
             <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors"><span data-i18n="committee_title">आमची समिती</span></a>
             <a href="#events" onclick="closeMobileMenu()" data-i18n="nav_events" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">कार्यक्रम व बातम्या</a>
+            <a href="#celebrations" onclick="closeMobileMenu()" data-i18n="nav_celebrations" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">वाढदिवस व लग्न वाढदिवस</a>
             <a href="#donate" onclick="closeMobileMenu()" data-i18n="nav_donate" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 transition-colors">देणगी / UPI QR</a>
             <a href="#membership" onclick="closeMobileMenu()" data-i18n="nav_membership" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">सदस्यता अर्ज</a>
             <a href="#gallery" onclick="closeMobileMenu()" data-i18n="nav_gallery" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">गॅलरी</a>
@@ -634,7 +641,7 @@
         </section>
 
                 <!-- ═══════════════════ SECTION 4: COMMITTEE / AAMCHI SAMITI (Updated from Official Letterhead) ═══════════════════ -->
-        <section id="committee" class="py-20 bg-surface-pearl">
+        <section id="committee" class="py-20 bg-white border-y border-slate-200/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Section Header -->
@@ -1152,25 +1159,29 @@
                 </div>
 
                 <!-- ══════ LETTERHEAD OFFICIAL ADDRESS CALLOUT ══════ -->
-                <div class="bg-white p-6 sm:p-7 rounded-3xl border border-surface-border shadow-soft flex flex-col md:flex-row items-center justify-between gap-5">
-                    <div class="flex items-center gap-4 text-left">
-                        <img src="./src/samaj-logo.png" alt="सोनार समाज मंडळ, इंदूर अधिकृत बोधचिन्ह" class="w-14 h-14 rounded-full object-contain bg-white shadow-md ring-2 ring-brand-gold/60 flex-shrink-0">
+                <div class="bg-gradient-to-r from-amber-50/60 via-white to-orange-50/60 p-6 sm:p-8 rounded-3xl border-2 border-brand-gold/30 shadow-card flex flex-col lg:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4 text-left w-full lg:w-auto">
+                        <img src="./src/samaj-logo.png" alt="संत नरहरी महाराज बोधचिन्ह" class="w-16 h-16 rounded-full object-contain bg-white shadow-md ring-2 ring-brand-gold/70 flex-shrink-0">
                         <div>
-                            <div class="flex items-center gap-2">
-                                <h4 class="font-bold text-slate-900 text-base marathi">सोनार समाज मंडळ, इन्दौर</h4>
-                                <span class="text-[10px] bg-brand-50 text-brand-700 font-bold px-2 py-0.5 rounded border border-brand-200 uppercase">अधिकृत पत्रव्यवहार</span>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h4 class="font-extrabold text-slate-900 text-lg marathi">सोनार समाज मंडळ, इन्दौर</h4>
+                                <span class="text-[10px] bg-amber-100 text-amber-900 font-bold px-2.5 py-0.5 rounded-full border border-amber-300 uppercase tracking-wider">अधिकृत पत्रव्यवहार</span>
                             </div>
-                            <p class="text-xs text-slate-600 mt-0.5 marathi">
+                            <p class="text-xs sm:text-sm text-slate-700 mt-1 marathi">
                                 <strong>नोंदणीकृत कार्यालय पत्ता:</strong> E-84 3", लवकुश विहार सुखलिया, इन्दौर (म.प्र.) - 452010
                             </p>
+                            <p class="text-xs text-brand-700 font-semibold mt-0.5 marathi">
+                                <i class="fas fa-certificate text-brand-gold mr-1"></i> संत नरहरी महाराज व ऐतिहासिक राजवाडा इंदूरची गौरवशाली परंपरा
+                            </p>
                         </div>
+                        <img src="./src/rajwada-logo.png" alt="राजवाडा इंदूर बोधचिन्ह" class="hidden sm:block w-16 h-16 rounded-full object-contain bg-white shadow-md ring-2 ring-brand-gold/70 flex-shrink-0 ml-auto lg:ml-2">
                     </div>
-                    <div class="flex items-center gap-3 flex-shrink-0">
-                        <a href="tel:+919827653310" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-full text-xs shadow-md transition-all marathi">
+                    <div class="flex flex-wrap items-center gap-3 flex-shrink-0 w-full lg:w-auto justify-start lg:justify-end">
+                        <a href="tel:+919827653310" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold px-5 py-3 rounded-full text-xs shadow-md hover:shadow-glow transition-all marathi">
                             <i class="fas fa-phone-alt"></i>
                             <span>अध्यक्षांशी संपर्क (+91 98276 53310)</span>
                         </a>
-                        <a href="https://wa.me/918103646800" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-full text-xs shadow-md transition-all marathi">
+                        <a href="https://wa.me/918103646800" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold px-5 py-3 rounded-full text-xs shadow-md hover:shadow-glow transition-all marathi">
                             <i class="fab fa-whatsapp text-sm"></i>
                             <span>सचिवांशी WhatsApp</span>
                         </a>
@@ -1196,6 +1207,87 @@
                     </p>
                 </div>
 
+                
+                <!-- ══════ FEATURED EVENT & LIVE COUNTDOWN: DIWALI MILAN SAMAROH ══════ -->
+                <div class="mb-14 rounded-3xl bg-gradient-to-br from-brand-maroon via-brand-800 to-amber-950 text-white p-7 sm:p-9 lg:p-12 shadow-2xl border-2 border-amber-400/40 relative overflow-hidden">
+                    <!-- Decorative background Diwali glows -->
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute right-10 bottom-6 opacity-10 text-9xl font-bold select-none pointer-events-none">🪔</div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Left Column: Event Details (7 Cols) -->
+                        <div class="lg:col-span-7 space-y-4 text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                                <i class="fas fa-fire text-amber-300"></i>
+                                <span data-i18n="diwali_badge">विशेष आगामी सोहळा • Featured Celebration</span>
+                            </div>
+                            <h3 data-i18n="diwali_title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight marathi">
+                                भव्य दीपावली मिलन समारोह व स्नेहसंमेलन 2026
+                            </h3>
+                            <p data-i18n="diwali_desc" class="text-amber-100/90 text-sm sm:text-base leading-relaxed marathi">
+                                दीपावलीच्या मंगल व पावन पर्वावर समस्त सोनार समाज बांधव व भगिनींचा वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम, गुणवंत विद्यार्थी सत्कार व स्नेहभोजन सोहळा. सर्व समाजबांधवांनी सहकुटुंब उपस्थित राहावे.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-amber-200/90 font-medium">
+                                <div class="flex items-center gap-2.5 bg-white/10 px-3.5 py-2.5 rounded-xl backdrop-blur-sm border border-white/10">
+                                    <i class="fas fa-calendar-day text-amber-400 text-base flex-shrink-0"></i>
+                                    <span data-i18n="diwali_date">रविवार, 22 नोव्हेंबर 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 bg-white/10 px-3.5 py-2.5 rounded-xl backdrop-blur-sm border border-white/10">
+                                    <i class="fas fa-clock text-amber-400 text-base flex-shrink-0"></i>
+                                    <span data-i18n="diwali_time">सायंकाळी 5:00 ते रात्री 9:00 वा.</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 bg-white/10 px-3.5 py-2.5 rounded-xl backdrop-blur-sm border border-white/10 sm:col-span-2">
+                                    <i class="fas fa-map-marked-alt text-amber-400 text-base flex-shrink-0"></i>
+                                    <span data-i18n="diwali_venue">शुभम गार्डन / समाज संकुल, सुखलिया, इंदूर (म.प्र.)</span>
+                                </div>
+                            </div>
+                            <div class="pt-3 flex flex-wrap items-center gap-3">
+                                <a href="https://wa.me/917314203099?text=Namaskar%2C%20Diwali%20Milan%20Samaroh%20(22%20Nov%202026)%20madhe%20aamhi%20sahkutumb%20upasthit%20rahanar%20ahot." target="_blank" class="inline-flex items-center gap-2.5 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black px-6 py-3.5 rounded-full text-sm shadow-xl shadow-amber-500/25 transition-all hover:scale-105">
+                                    <i class="fab fa-whatsapp text-lg text-emerald-800"></i>
+                                    <span data-i18n="diwali_rsvp_btn">उपस्थिती नोंदवा (RSVP WhatsApp)</span>
+                                </a>
+                                <a href="#contact" class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-5 py-3.5 rounded-full text-sm backdrop-blur-sm border border-white/20 transition-all">
+                                    <i class="fas fa-info-circle text-amber-300"></i>
+                                    <span data-i18n="diwali_contact_btn">अधिक माहिती</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Interactive Live Countdown (5 Cols) -->
+                        <div class="lg:col-span-5 bg-black/40 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-amber-400/40 text-center shadow-xl">
+                            <div class="text-xs font-bold text-amber-300 uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
+                                <i class="fas fa-hourglass-half animate-spin text-amber-400" style="animation-duration: 4s;"></i>
+                                <span data-i18n="cd_label">सोहळा सुरू होण्यास उर्वरित वेळ</span>
+                            </div>
+                            <div id="countdown-container" class="grid grid-cols-4 gap-2 sm:gap-3 my-4">
+                                <div class="bg-gradient-to-b from-white/15 to-white/5 rounded-2xl p-3 border border-amber-300/30 shadow-inner">
+                                    <div id="cd-days" class="text-2xl sm:text-3xl font-black text-amber-300 font-mono">03</div>
+                                    <div data-i18n="cd_days" class="text-[10px] sm:text-xs text-amber-100 font-bold mt-1 uppercase">दिवस</div>
+                                </div>
+                                <div class="bg-gradient-to-b from-white/15 to-white/5 rounded-2xl p-3 border border-amber-300/30 shadow-inner">
+                                    <div id="cd-hours" class="text-2xl sm:text-3xl font-black text-amber-300 font-mono">01</div>
+                                    <div data-i18n="cd_hours" class="text-[10px] sm:text-xs text-amber-100 font-bold mt-1 uppercase">तास</div>
+                                </div>
+                                <div class="bg-gradient-to-b from-white/15 to-white/5 rounded-2xl p-3 border border-amber-300/30 shadow-inner">
+                                    <div id="cd-mins" class="text-2xl sm:text-3xl font-black text-amber-300 font-mono">35</div>
+                                    <div data-i18n="cd_mins" class="text-[10px] sm:text-xs text-amber-100 font-bold mt-1 uppercase">मिनिटे</div>
+                                </div>
+                                <div class="bg-gradient-to-b from-white/15 to-white/5 rounded-2xl p-3 border border-amber-300/30 shadow-inner">
+                                    <div id="cd-secs" class="text-2xl sm:text-3xl font-black text-amber-300 font-mono animate-pulse">20</div>
+                                    <div data-i18n="cd_secs" class="text-[10px] sm:text-xs text-amber-100 font-bold mt-1 uppercase">सेकंद</div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-amber-200/90 mt-4 flex items-center justify-center gap-1.5 font-medium">
+                                <span>🪔</span>
+                                <span data-i18n="cd_tagline">सोनार समाज बंधू-भगिनींचे भव्य स्नेहसंमेलन</span>
+                                <span>🪔</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     
                     <!-- Left: Upcoming Events Panel (From Attached Reference) -->
@@ -1209,6 +1301,33 @@
                         </div>
 
                         <div id="events-container" class="space-y-5">
+
+                            <!-- Featured Event: Diwali Milan Samaroh (22 Nov 2026) -->
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-amber-50/80 border-2 border-amber-300 hover:shadow-md transition-shadow relative overflow-hidden">
+                                <div class="absolute top-0 right-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-bl-lg uppercase tracking-wider">
+                                    विशेष आगामी पर्व
+                                </div>
+                                <div class="w-18 h-18 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-maroon to-amber-700 text-white flex flex-col items-center justify-center flex-shrink-0 text-center font-bold shadow-sm">
+                                    <span class="text-xl leading-none font-bold">22</span>
+                                    <span data-i18n="ev_diwali_month" class="text-[11px] leading-tight marathi">नोव्हेंबर</span>
+                                    <span class="text-[10px] text-amber-200">2026</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span data-i18n="badge_diwali" class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-amber-200 text-amber-900 marathi">दीपावली मिलन सोहळा</span>
+                                    </div>
+                                    <h4 data-i18n="ev_diwali_title" class="font-bold text-slate-900 text-base marathi">भव्य दीपावली मिलन समारोह व स्नेहसंमेलन 2026</h4>
+                                    <p class="text-xs text-slate-600 mt-1 flex items-center gap-1.5 marathi">
+                                        <i class="fas fa-map-marker-alt text-brand-500"></i>
+                                        <span data-i18n="ev_diwali_loc">शुभम गार्डन / समाज संकुल, सुखलिया, इंदूर</span>
+                                    </p>
+                                    <p class="text-xs text-brand-700 font-semibold mt-1 flex items-center gap-1.5 font-sans">
+                                        <i class="far fa-clock"></i>
+                                        <span data-i18n="ev_diwali_time">रविवार • सायं. 5:00 ते रात्री 9:00 वा.</span>
+                                    </p>
+                                </div>
+                            </div>
+
                             
                             <!-- Event 1 (Real details from attached file) -->
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-surface-border hover:shadow-md transition-shadow">
@@ -1341,6 +1460,216 @@
                 </div>
             </div>
         </section>
+
+        
+        <!-- ═══════════════════ SECTION: BIRTHDAY & ANNIVERSARY CELEBRATIONS ═══════════════════ -->
+        <section id="celebrations" class="py-20 bg-gradient-to-b from-amber-50/50 via-white to-orange-50/40 border-y border-amber-200/60 relative overflow-hidden">
+            <!-- Decorative ambient elements -->
+            <div class="ambient-glow bg-amber-400/10 top-0 right-10"></div>
+            <div class="ambient-glow bg-brand-500/10 bottom-0 left-10"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div data-i18n="celeb_pill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider marathi">
+                        🎉 आनंद सोहळा • Celebrations
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
+                        <span data-i18n="celeb_title_1">आजचे अभीष्टचिंतन — </span>
+                        <span data-i18n="celeb_title_2" class="bg-gradient-to-r from-brand-600 via-amber-600 to-orange-600 bg-clip-text text-transparent">वाढदिवस व लग्न वाढदिवस</span>
+                    </h2>
+                    <p data-i18n="celeb_desc" class="text-slate-600 text-base sm:text-lg marathi">
+                        सोनार समाज ट्रस्ट, इंदूर परिवारातर्फे समाजातील सर्व सन्माननीय सदस्यांना त्यांच्या विशेष दिवशी हार्दिक मंगलमय शुभेच्छा!
+                    </p>
+                </div>
+
+                <!-- Celebrations Interactive Tabs -->
+                <div class="flex justify-center mb-8">
+                    <div class="inline-flex flex-wrap p-1.5 rounded-2xl bg-white border border-amber-200 shadow-soft gap-2">
+                        <button onclick="switchCelebTab('today')" id="tab-celeb-today" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-600 to-amber-600 text-white shadow-sm transition-all flex items-center gap-2">
+                            <i class="fas fa-gift"></i>
+                            <span data-i18n="tab_celeb_today">आजचे अभीष्टचिंतन (Today)</span>
+                        </button>
+                        <button onclick="switchCelebTab('upcoming')" id="tab-celeb-upcoming" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-amber-50/60 transition-all flex items-center gap-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span data-i18n="tab_celeb_upcoming">या आठवड्यातील आगामी</span>
+                        </button>
+                        <button onclick="openCelebRegisterModal()" class="px-5 py-2.5 rounded-xl text-sm font-bold text-amber-900 bg-gradient-to-r from-amber-200 to-amber-300 hover:from-amber-300 hover:to-amber-400 transition-all flex items-center gap-2 shadow-sm">
+                            <i class="fas fa-plus-circle"></i>
+                            <span data-i18n="btn_register_celeb">तुमचा वाढदिवस नोंदवा</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── TAB 1: TODAY'S CELEBRANTS (Active) ── -->
+                <div id="celeb-panel-today" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    
+                    <!-- Card 1: Today's Birthday Banner -->
+                    <div class="bg-gradient-to-br from-amber-50 via-white to-orange-50/50 rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-card hover:shadow-xl transition-all relative overflow-hidden group">
+                        <div class="absolute -right-8 -top-8 w-28 h-28 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between pb-4 border-b border-amber-200/60 mb-5">
+                            <span data-i18n="bday_card_badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-xs uppercase tracking-wider">
+                                🎂 वाढदिवस अभीष्टचिंतन
+                            </span>
+                            <span class="text-xs bg-white border border-amber-200 text-amber-800 px-3 py-1 rounded-full font-bold shadow-sm">
+                                आज • Today
+                            </span>
+                        </div>
+
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 via-orange-500 to-brand-maroon text-white flex items-center justify-center text-2xl sm:text-3xl shadow-md ring-4 ring-amber-100 flex-shrink-0">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 data-i18n="bday_name" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight marathi">
+                                    श्री अविनाशजी सोनार
+                                </h3>
+                                <p data-i18n="bday_loc" class="text-xs sm:text-sm text-brand-700 font-semibold mt-0.5 marathi">
+                                    <i class="fas fa-map-marker-alt text-brand-500 mr-1"></i> सुखलिया, इंदूर (मध्य प्रदेश)
+                                </p>
+                                <p data-i18n="bday_wish_msg" class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed marathi italic">
+                                    "वाढदिवसाच्या हार्दिक मंगलमय शुभेच्छा! आपले पुढील आयुष्य आरोग्यसंपन्न, दीर्घायुषी व सुख-समृद्धीचे जावो हीच संत नरहरी महाराज चरणी प्रार्थना."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-amber-100 flex flex-wrap items-center justify-between gap-3">
+                            <span class="text-xs text-amber-800 font-medium marathi">
+                                <i class="fas fa-heart text-rose-500 mr-1"></i> सोनार समाज ट्रस्ट परिवार
+                            </span>
+                            <a href="https://wa.me/919826011223?text=%E0%A4%B8%E0%A5%8B%E0%A4%A8%E0%A4%BE%E0%A4%B0%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%9C%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%9F%20%E0%A4%87%E0%A4%82%E0%A4%A6%E0%A5%82%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%A4%E0%A4%B0%E0%A5%8D%E0%A4%AB%E0%A5%87%20%E0%A4%B5%E0%A4%BE%E0%A4%A2%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%20%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A6%E0%A4%BF%E0%A4%95%20%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A5%87%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%BE!" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-full text-xs shadow-md transition-all hover:scale-105">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                                <span data-i18n="bday_btn_wish">शुभेच्छा पाठवा (WhatsApp)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Today's Wedding Anniversary Banner -->
+                    <div class="bg-gradient-to-br from-rose-50 via-white to-amber-50/50 rounded-3xl p-6 sm:p-8 border-2 border-rose-300 shadow-card hover:shadow-xl transition-all relative overflow-hidden group">
+                        <div class="absolute -right-8 -top-8 w-28 h-28 bg-rose-400/20 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between pb-4 border-b border-rose-200/60 mb-5">
+                            <span data-i18n="anni_card_badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-900 font-extrabold text-xs uppercase tracking-wider">
+                                💍 वैवाहिक वर्षगांठ (रौप्य महोत्सव)
+                            </span>
+                            <span class="text-xs bg-white border border-rose-200 text-rose-800 px-3 py-1 rounded-full font-bold shadow-sm">
+                                आज • Today
+                            </span>
+                        </div>
+
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-rose-500 via-pink-600 to-brand-maroon text-white flex items-center justify-center text-2xl sm:text-3xl shadow-md ring-4 ring-rose-100 flex-shrink-0">
+                                <i class="fas fa-rings-wedding"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 data-i18n="anni_name" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight marathi">
+                                    सौ. सुचित्रा व श्री दीपकजी सोनार
+                                </h3>
+                                <p data-i18n="anni_loc" class="text-xs sm:text-sm text-brand-700 font-semibold mt-0.5 marathi">
+                                    <i class="fas fa-map-marker-alt text-brand-500 mr-1"></i> लवकुश विहार, सुखलिया, इंदूर
+                                </p>
+                                <p data-i18n="anni_wish_msg" class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed marathi italic">
+                                    "वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा! 25 वर्षांचे आपले प्रेमळ सहजीवन सुख, समाधान, उत्तम आरोग्य व भरभराटीने सदैव उजळत राहो हीच सदिच्छा."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-rose-100 flex flex-wrap items-center justify-between gap-3">
+                            <span class="text-xs text-rose-800 font-medium marathi">
+                                <i class="fas fa-glass-cheers text-amber-500 mr-1"></i> रौप्य महोत्सव 25 वे वर्ष
+                            </span>
+                            <a href="https://wa.me/919425022334?text=%E0%A4%B8%E0%A5%8B%E0%A4%A8%E0%A4%BE%E0%A4%B0%20%E0%A4%B8%E0%A4%AE%E0%A4%BE%E0%A4%9C%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%9F%20%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%A4%E0%A4%B0%E0%A5%8D%E0%A4%AB%E0%A5%87%20%E0%A4%B2%E0%A4%97%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%20%E0%A4%B5%E0%A4%BE%E0%A4%A2%E0%A4%A6%E0%A4%BF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%20%E0%A4%85%E0%A4%A8%E0%A4%82%E0%A4%A4%20%E0%A4%B6%E0%A5%81%E0%A4%AD%E0%A5%87%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%BE!" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-full text-xs shadow-md transition-all hover:scale-105">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                                <span data-i18n="anni_btn_wish">शुभेच्छा पाठवा (WhatsApp)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ── TAB 2: UPCOMING CELEBRANTS (This Week) ── -->
+                <div id="celeb-panel-upcoming" class="hidden mb-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                        
+                        <!-- Upcoming 1 -->
+                        <div class="bg-white p-5 rounded-2xl border border-amber-200 shadow-soft hover:shadow-card transition-all">
+                            <div class="flex items-center justify-between text-xs font-bold mb-2">
+                                <span class="bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">20 नोव्हेंबर</span>
+                                <span class="text-brand-600 font-extrabold">वाढदिवस</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-base marathi">श्री मंगेशजी सोनार</h4>
+                            <p class="text-xs text-slate-500 mt-1">तिलक नगर, इंदूर</p>
+                            <div class="mt-3 text-[11px] text-amber-800 bg-amber-50 p-2 rounded-lg">
+                                आगामी वाढदिवस अभीष्टचिंतन
+                            </div>
+                        </div>
+
+                        <!-- Upcoming 2 -->
+                        <div class="bg-white p-5 rounded-2xl border border-rose-200 shadow-soft hover:shadow-card transition-all">
+                            <div class="flex items-center justify-between text-xs font-bold mb-2">
+                                <span class="bg-rose-100 text-rose-900 px-2.5 py-0.5 rounded-full">21 नोव्हेंबर</span>
+                                <span class="text-rose-600 font-extrabold">लग्न वाढदिवस</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-base marathi">सौ. रश्मी व श्री योगेशजी पोद्दार</h4>
+                            <p class="text-xs text-slate-500 mt-1">विजय नगर, इंदूर</p>
+                            <div class="mt-3 text-[11px] text-rose-800 bg-rose-50 p-2 rounded-lg">
+                                आगामी वैवाहिक वर्षगांठ
+                            </div>
+                        </div>
+
+                        <!-- Upcoming 3 (Diwali Day) -->
+                        <div class="bg-gradient-to-b from-amber-50 to-white p-5 rounded-2xl border-2 border-amber-300 shadow-soft hover:shadow-card transition-all">
+                            <div class="flex items-center justify-between text-xs font-bold mb-2">
+                                <span class="bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded-full">22 नोव्हेंबर</span>
+                                <span class="text-amber-700 font-extrabold">🪔 दिवाळी मिलन</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-base marathi">कु. मानसी सोनार</h4>
+                            <p class="text-xs text-slate-500 mt-1">सुखलिया, इंदूर</p>
+                            <div class="mt-3 text-[11px] text-amber-800 bg-amber-100/60 p-2 rounded-lg">
+                                वाढदिवस • दिवाळी मिलन सोहळा
+                            </div>
+                        </div>
+
+                        <!-- Upcoming 4 (Diwali Day) -->
+                        <div class="bg-gradient-to-b from-rose-50 to-white p-5 rounded-2xl border-2 border-rose-300 shadow-soft hover:shadow-card transition-all">
+                            <div class="flex items-center justify-between text-xs font-bold mb-2">
+                                <span class="bg-rose-200 text-rose-900 px-2.5 py-0.5 rounded-full">22 नोव्हेंबर</span>
+                                <span class="text-rose-700 font-extrabold">🪔 दिवाळी मिलन</span>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-base marathi">सौ. व श्री सुनीलजी सोनार</h4>
+                            <p class="text-xs text-slate-500 mt-1">अन्नपूर्णा रोड, इंदूर</p>
+                            <div class="mt-3 text-[11px] text-rose-800 bg-rose-100/60 p-2 rounded-lg">
+                                लग्न वाढदिवस • दिवाळी मिलन सोहळा
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bottom Callout: Member Birthday/Anniversary Registration -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-amber-200/90 shadow-soft flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl flex-shrink-0 shadow-md">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <h4 data-i18n="celeb_callout_title" class="font-bold text-slate-900 text-base sm:text-lg marathi">
+                                आपला किंवा कुटुंबीयांचा वाढदिवस / लग्न वाढदिवस नोंदवा
+                            </h4>
+                            <p data-i18n="celeb_callout_desc" class="text-xs sm:text-sm text-slate-600 mt-0.5 marathi">
+                                समाज पोर्टलवर आपली तारीख नोंदवून आपल्या विशेष दिवशी समस्त सोनार समाज बांधवांचे आशीर्वाद व शुभेच्छा मिळवा.
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="openCelebRegisterModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-md transition-all hover:scale-105 flex-shrink-0">
+                        <i class="fas fa-plus"></i>
+                        <span data-i18n="btn_register_celeb_cta">नोंदणी करा • Register Date</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
 
         <!-- ═══════════════════ SECTION 6: DONATE & QR CODE (Featured from Attached File) ═══════════════════ -->
         <section id="donate" class="py-20 bg-gradient-to-b from-brand-50/50 via-surface-soft to-surface-pearl relative overflow-hidden">
@@ -1919,6 +2248,59 @@
         </div>
     </div>
 
+    
+    <!-- ═══════════════════ MODAL: CELEBRATION REGISTRATION ═══════════════════ -->
+    <div id="celeb-modal" class="modal">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-7 sm:p-8 relative shadow-2xl border border-amber-200">
+            <button onclick="closeCelebRegisterModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl flex-shrink-0">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div>
+                    <h3 data-i18n="modal_celeb_title" class="text-xl font-extrabold text-slate-900 marathi">वाढदिवस / लग्न वाढदिवस नोंदणी</h3>
+                    <p data-i18n="modal_celeb_sub" class="text-xs text-slate-500 marathi">सोनार समाज इंदूर डिजिटल शुभेच्छा फलक</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleCelebRegister(event)" class="space-y-4">
+                <div>
+                    <label data-i18n="lbl_celeb_name" class="block text-xs font-bold text-slate-700 uppercase mb-1">नाव / दांपत्याचे नाव *</label>
+                    <input type="text" id="celeb-reg-name" required placeholder="उदा. श्री राहुलजी सोनार" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label data-i18n="lbl_celeb_type" class="block text-xs font-bold text-slate-700 uppercase mb-1">प्रकार *</label>
+                        <select id="celeb-reg-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            <option value="वाढदिवस">🎂 वाढदिवस (Birthday)</option>
+                            <option value="लग्न वाढदिवस">💍 लग्न वाढदिवस (Anniversary)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label data-i18n="lbl_celeb_date" class="block text-xs font-bold text-slate-700 uppercase mb-1">तारीख व महिना *</label>
+                        <input type="text" id="celeb-reg-date" required placeholder="उदा. 22 नोव्हेंबर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label data-i18n="lbl_celeb_phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">मोबाईल / WhatsApp *</label>
+                        <input type="tel" id="celeb-reg-phone" required placeholder="+91 XXXXXXXXXX" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label data-i18n="lbl_celeb_area" class="block text-xs font-bold text-slate-700 uppercase mb-1">परिसर / कॉलनी *</label>
+                        <input type="text" id="celeb-reg-area" required placeholder="उदा. सुखलिया / विजय नगर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md transition-all">
+                        <span data-i18n="btn_submit_celeb">नोंदणी पूर्ण करा • Save & Wish</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- ═══════════════════ MODAL: GALLERY LIGHTBOX ═══════════════════ -->
     <div id="lightbox-modal" class="modal">
         <div class="max-w-4xl w-full p-2 relative flex flex-col items-center">
@@ -1975,6 +2357,90 @@
         }
         function closeLightbox() {
             document.getElementById('lightbox-modal').classList.remove('active');
+        }
+
+        
+        // ── Live Countdown Timer for Diwali Milan Samaroh (22 Nov 2026) ──
+        function updateDiwaliCountdown() {
+            // Target: 22 November 2026 at 17:00:00 (5:00 PM IST)
+            const targetDate = new Date('2026-11-22T17:00:00+05:30').getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const elContainer = document.getElementById('countdown-container');
+            if (diff <= 0) {
+                if (elContainer) {
+                    elContainer.innerHTML = '<div class="col-span-4 bg-amber-400 text-slate-950 font-black py-4 px-6 rounded-2xl text-base sm:text-lg shadow-md animate-pulse">🎉 भव्य दीपावली मिलन समारोह सुरू आहे! सर्वांचे हार्दिक स्वागतम! 🎉</div>';
+                }
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const dEl = document.getElementById('cd-days');
+            const hEl = document.getElementById('cd-hours');
+            const mEl = document.getElementById('cd-mins');
+            const sEl = document.getElementById('cd-secs');
+
+            if (dEl) dEl.textContent = String(days).padStart(2, '0');
+            if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+            if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+            if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateDiwaliCountdown, 1000);
+        updateDiwaliCountdown();
+
+        // ── Celebrations Interactive Tab Switching ──
+        function switchCelebTab(tab) {
+            const btnToday = document.getElementById('tab-celeb-today');
+            const btnUpcoming = document.getElementById('tab-celeb-upcoming');
+            const panelToday = document.getElementById('celeb-panel-today');
+            const panelUpcoming = document.getElementById('celeb-panel-upcoming');
+
+            if (tab === 'today') {
+                if (btnToday) {
+                    btnToday.className = 'px-5 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-600 to-amber-600 text-white shadow-sm transition-all flex items-center gap-2';
+                }
+                if (btnUpcoming) {
+                    btnUpcoming.className = 'px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-amber-50/60 transition-all flex items-center gap-2';
+                }
+                if (panelToday) panelToday.classList.remove('hidden');
+                if (panelUpcoming) panelUpcoming.classList.add('hidden');
+            } else {
+                if (btnUpcoming) {
+                    btnUpcoming.className = 'px-5 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-brand-600 to-amber-600 text-white shadow-sm transition-all flex items-center gap-2';
+                }
+                if (btnToday) {
+                    btnToday.className = 'px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-amber-50/60 transition-all flex items-center gap-2';
+                }
+                if (panelToday) panelToday.classList.add('hidden');
+                if (panelUpcoming) panelUpcoming.classList.remove('hidden');
+            }
+        }
+
+        // ── Celebration Registration Modal Controls ──
+        function openCelebRegisterModal() {
+            const m = document.getElementById('celeb-modal');
+            if (m) m.classList.add('active');
+        }
+        function closeCelebRegisterModal() {
+            const m = document.getElementById('celeb-modal');
+            if (m) m.classList.remove('active');
+        }
+
+        function handleCelebRegister(event) {
+            event.preventDefault();
+            const name = document.getElementById('celeb-reg-name').value;
+            const type = document.getElementById('celeb-reg-type').value;
+            const date = document.getElementById('celeb-reg-date').value;
+            const phone = document.getElementById('celeb-reg-phone').value;
+            const area = document.getElementById('celeb-reg-area').value;
+
+            closeCelebRegisterModal();
+            showSuccessModal('धन्यवाद! ' + name + ' यांच्या ' + type + ' ची नोंदणी (' + date + ') यशस्वीरित्या झाली आहे. शुभेच्छा फलक लवकरच प्रदर्शित होईल.');
         }
 
         // Click outside modal to close
@@ -2295,7 +2761,55 @@
                 "exec_12": "श्रीमती उल्का पोहेकर",
                 "exec_13": "श्रीमती शितल सोनगिरकर",
                 "exec_14": "श्रीमती भारती सोनगिरकर",
-                "exec_15": "श्रीमती पुर्णिमा सोनगिरकर"
+                "exec_15": "श्रीमती पुर्णिमा सोनगिरकर",
+                "nav_celebrations": "वाढदिवस",
+                "diwali_badge": "विशेष आगामी सोहळा • Featured Celebration",
+                "diwali_title": "भव्य दीपावली मिलन समारोह व स्नेहसंमेलन 2026",
+                "diwali_desc": "दीपावलीच्या मंगल व पावन पर्वावर समस्त सोनार समाज बांधव व भगिनींचा वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम, गुणवंत विद्यार्थी सत्कार व स्नेहभोजन सोहळा. सर्व समाजबांधवांनी सहकुटुंब उपस्थित राहावे.",
+                "diwali_date": "रविवार, 22 नोव्हेंबर 2026",
+                "diwali_time": "सायंकाळी 5:00 ते रात्री 9:00 वा.",
+                "diwali_venue": "शुभम गार्डन / समाज संकुल, सुखलिया, इंदूर (म.प्र.)",
+                "diwali_rsvp_btn": "उपस्थिती नोंदवा (RSVP WhatsApp)",
+                "diwali_contact_btn": "अधिक माहिती",
+                "cd_label": "सोहळा सुरू होण्यास उर्वरित वेळ",
+                "cd_days": "दिवस",
+                "cd_hours": "तास",
+                "cd_mins": "मिनिटे",
+                "cd_secs": "सेकंद",
+                "cd_tagline": "सोनार समाज बंधू-भगिनींचे भव्य स्नेहसंमेलन",
+                "ev_diwali_month": "नोव्हेंबर",
+                "badge_diwali": "दीपावली मिलन सोहळा",
+                "ev_diwali_title": "भव्य दीपावली मिलन समारोह व स्नेहसंमेलन 2026",
+                "ev_diwali_loc": "शुभम गार्डन / समाज संकुल, सुखलिया, इंदूर",
+                "ev_diwali_time": "रविवार • सायं. 5:00 ते रात्री 9:00 वा.",
+                "celeb_pill": "🎉 आनंद सोहळा • Celebrations",
+                "celeb_title_1": "आजचे अभीष्टचिंतन — ",
+                "celeb_title_2": "वाढदिवस व लग्न वाढदिवस",
+                "celeb_desc": "सोनार समाज ट्रस्ट, इंदूर परिवारातर्फे समाजातील सर्व सन्माननीय सदस्यांना त्यांच्या विशेष दिवशी हार्दिक मंगलमय शुभेच्छा!",
+                "tab_celeb_today": "आजचे अभीष्टचिंतन (Today)",
+                "tab_celeb_upcoming": "या आठवड्यातील आगामी",
+                "btn_register_celeb": "तुमचा वाढदिवस नोंदवा",
+                "bday_card_badge": "🎂 वाढदिवस अभीष्टचिंतन",
+                "bday_name": "श्री अविनाशजी सोनार",
+                "bday_loc": "सुखलिया, इंदूर (मध्य प्रदेश)",
+                "bday_wish_msg": "\"वाढदिवसाच्या हार्दिक मंगलमय शुभेच्छा! आपले पुढील आयुष्य आरोग्यसंपन्न, दीर्घायुषी व सुख-समृद्धीचे जावो हीच संत नरहरी महाराज चरणी प्रार्थना.\"",
+                "bday_btn_wish": "शुभेच्छा पाठवा (WhatsApp)",
+                "anni_card_badge": "💍 वैवाहिक वर्षगांठ (रौप्य महोत्सव)",
+                "anni_name": "सौ. सुचित्रा व श्री दीपकजी सोनार",
+                "anni_loc": "लवकुश विहार, सुखलिया, इंदूर",
+                "anni_wish_msg": "\"वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा! 25 वर्षांचे आपले प्रेमळ सहजीवन सुख, समाधान, उत्तम आरोग्य व भरभराटीने सदैव उजळत राहो हीच सदिच्छा.\"",
+                "anni_btn_wish": "शुभेच्छा पाठवा (WhatsApp)",
+                "celeb_callout_title": "आपला किंवा कुटुंबीयांचा वाढदिवस / लग्न वाढदिवस नोंदवा",
+                "celeb_callout_desc": "समाज पोर्टलवर आपली तारीख नोंदवून आपल्या विशेष दिवशी समस्त सोनार समाज बांधवांचे आशीर्वाद व शुभेच्छा मिळवा.",
+                "btn_register_celeb_cta": "नोंदणी करा • Register Date",
+                "modal_celeb_title": "वाढदिवस / लग्न वाढदिवस नोंदणी",
+                "modal_celeb_sub": "सोनार समाज इंदूर डिजिटल शुभेच्छा फलक",
+                "lbl_celeb_name": "नाव / दांपत्याचे नाव *",
+                "lbl_celeb_type": "प्रकार *",
+                "lbl_celeb_date": "तारीख व महिना *",
+                "lbl_celeb_phone": "मोबाईल / WhatsApp *",
+                "lbl_celeb_area": "परिसर / कॉलनी *",
+                "btn_submit_celeb": "नोंदणी पूर्ण करा • Save & Wish"
         },
         "hi": {
                 "top_addr": "फ्लैट नं. 201, सरस्वती विला, 362-ए, तुलसी नगर, इंदौर",
@@ -2563,7 +3077,55 @@
                 "exec_12": "श्रीमती उल्का पोहेकर",
                 "exec_13": "श्रीमती शीतल सोनगिरकर",
                 "exec_14": "श्रीमती भारती सोनगिरकर",
-                "exec_15": "श्रीमती पूर्णिमा सोनगिरकर"
+                "exec_15": "श्रीमती पूर्णिमा सोनगिरकर",
+                "nav_celebrations": "जन्मदिन",
+                "diwali_badge": "विशेष आगामी आयोजन • Featured Celebration",
+                "diwali_title": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन 2026",
+                "diwali_desc": "दीपावली के पावन पर्व पर समस्त सोनार समाज बंधुओं व मातृशक्ति का वार्षिक भव्य स्नेह सम्मेलन, सांस्कृतिक कार्यक्रम, प्रतिभा सम्मान व स्नेहभोज। सभी समाजजन सपरिवार सादर आमंत्रित हैं।",
+                "diwali_date": "रविवार, 22 नवंबर 2026",
+                "diwali_time": "सायं 5:00 से रात्रि 9:00 बजे तक",
+                "diwali_venue": "शुभम गार्डन / समाज संकुल, सुखलिया, इंदौर (म.प्र.)",
+                "diwali_rsvp_btn": "उपस्थिति दर्ज करें (RSVP WhatsApp)",
+                "diwali_contact_btn": "अधिक जानकारी",
+                "cd_label": "समारोह प्रारंभ होने में शेष समय",
+                "cd_days": "दिन",
+                "cd_hours": "घंटे",
+                "cd_mins": "मिनट",
+                "cd_secs": "सेकंड",
+                "cd_tagline": "सोनार समाज बंधु-भगिनी का भव्य स्नेह सम्मेलन",
+                "ev_diwali_month": "नवंबर",
+                "badge_diwali": "दीवाली मिलन समारोह",
+                "ev_diwali_title": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन 2026",
+                "ev_diwali_loc": "शुभम गार्डन / समाज संकुल, सुखलिया, इंदौर",
+                "ev_diwali_time": "रविवार • सायं 5:00 से रात्रि 9:00 बजे",
+                "celeb_pill": "🎉 मंगल उत्सव • Celebrations",
+                "celeb_title_1": "दैनिक शुभकामना फलक — ",
+                "celeb_title_2": "जन्मदिन एवं वैवाहिक वर्षगांठ",
+                "celeb_desc": "सोनार समाज ट्रस्ट, इंदौर परिवार की ओर से समाज के सभी सम्मानित सदस्यों को उनके विशेष दिन पर हार्दिक मंगलमय शुभकामनाएं!",
+                "tab_celeb_today": "आज की शुभकामनाएं (Today)",
+                "tab_celeb_upcoming": "इस सप्ताह के आगामी दिवस",
+                "btn_register_celeb": "अपना जन्मदिन दर्ज करें",
+                "bday_card_badge": "🎂 जन्मदिन की शुभकामनाएं",
+                "bday_name": "श्री अविनाशजी सोनार",
+                "bday_loc": "सुखलिया, इंदौर (मध्य प्रदेश)",
+                "bday_wish_msg": "\"जन्मदिन की हार्दिक मंगलमय शुभकामनाएं! आपका आगामी जीवन आरोग्यसंपन्न, दीर्घायु एवं सुख-समृद्धि से परिपूर्ण हो, यही संत नरहरी महाराज के चरणों में प्रार्थना है।\"",
+                "bday_btn_wish": "शुभकामनाएं भेजें (WhatsApp)",
+                "anni_card_badge": "💍 वैवाहिक वर्षगांठ (रजत जयंती)",
+                "anni_name": "श्रीमती सुचित्रा एवं श्री दीपकजी सोनार",
+                "anni_loc": "लवकुश विहार, सुखलिया, इंदौर",
+                "anni_wish_msg": "\"वैवाहिक वर्षगांठ की हार्दिक शुभकामनाएं! 25 वर्षों का आपका स्नेहिल सहजीवन सदैव प्रेम, विश्वास और खुशहाली से महकता रहे।\"",
+                "anni_btn_wish": "शुभकामनाएं भेजें (WhatsApp)",
+                "celeb_callout_title": "अपना या परिजनों का जन्मदिन / विवाह वर्षगांठ दर्ज करें",
+                "celeb_callout_desc": "समाज पोर्टल पर अपनी तिथि दर्ज कर अपने विशेष दिन पर समस्त समाजजनों का स्नेह व आशीर्वाद प्राप्त करें।",
+                "btn_register_celeb_cta": "तिथि दर्ज करें • Register Date",
+                "modal_celeb_title": "जन्मदिन / विवाह वर्षगांठ पंजीकरण",
+                "modal_celeb_sub": "सोनार समाज इंदौर डिजिटल शुभकामना पटल",
+                "lbl_celeb_name": "नाम / दम्पति का नाम *",
+                "lbl_celeb_type": "प्रकार *",
+                "lbl_celeb_date": "तारीख व माह *",
+                "lbl_celeb_phone": "मोबाइल / WhatsApp *",
+                "lbl_celeb_area": "क्षेत्र / कॉलोनी *",
+                "btn_submit_celeb": "पंजीकरण पूर्ण करें • Save & Wish"
         },
         "en": {
                 "top_addr": "Flat No.201, Saraswati Villa, 362-A, Tulsi Nagar, Indore",
@@ -2831,7 +3393,55 @@
                 "exec_12": "Shrimati Ulka Pohekar",
                 "exec_13": "Shrimati Shital Songirkar",
                 "exec_14": "Shrimati Bharati Songirkar",
-                "exec_15": "Shrimati Purnima Songirkar"
+                "exec_15": "Shrimati Purnima Songirkar",
+                "nav_celebrations": "Wishes",
+                "diwali_badge": "Featured Upcoming Event • Diwali Milan",
+                "diwali_title": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
+                "diwali_desc": "On the auspicious occasion of Deepawali, Sonar Samaj cordially invites all members and families for cultural celebrations, student felicitation, and fellowship dinner.",
+                "diwali_date": "Sunday, 22 November 2026",
+                "diwali_time": "5:00 PM to 9:00 PM IST",
+                "diwali_venue": "Shubham Garden / Samaj Complex, Sukhlia, Indore (M.P.)",
+                "diwali_rsvp_btn": "RSVP on WhatsApp",
+                "diwali_contact_btn": "Event Details",
+                "cd_label": "Time Remaining Until Event Starts",
+                "cd_days": "Days",
+                "cd_hours": "Hours",
+                "cd_mins": "Mins",
+                "cd_secs": "Secs",
+                "cd_tagline": "Grand Festive Gathering of Sonar Samaj Indore",
+                "ev_diwali_month": "November",
+                "badge_diwali": "Diwali Milan Festival",
+                "ev_diwali_title": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
+                "ev_diwali_loc": "Shubham Garden, Sukhlia, Indore",
+                "ev_diwali_time": "Sunday • 5:00 PM to 9:00 PM",
+                "celeb_pill": "🎉 Community Celebrations",
+                "celeb_title_1": "Today's Celebrations — ",
+                "celeb_title_2": "Birthdays & Wedding Anniversaries",
+                "celeb_desc": "Heartiest congratulations and warm blessings from Sonar Samaj Trust Indore to our community members on their special day!",
+                "tab_celeb_today": "Today's Wishes",
+                "tab_celeb_upcoming": "Upcoming This Week",
+                "btn_register_celeb": "Register Your Birthday",
+                "bday_card_badge": "🎂 Birthday Celebration",
+                "bday_name": "Shri Avinashji Sonar",
+                "bday_loc": "Sukhlia, Indore (Madhya Pradesh)",
+                "bday_wish_msg": "\"Wishing you a joyful and blessed birthday! May Lord Sant Narhari Maharaj bless you with longevity, prosperity, and radiant health.\"",
+                "bday_btn_wish": "Send WhatsApp Wish",
+                "anni_card_badge": "💍 Wedding Anniversary (Silver Jubilee)",
+                "anni_name": "Mrs. Suchitra & Shri Deepakji Sonar",
+                "anni_loc": "Luvkush Vihar, Sukhlia, Indore",
+                "anni_wish_msg": "\"Happy 25th Wedding Anniversary! May your journey together remain filled with boundless love, trust, and divine harmony.\"",
+                "anni_btn_wish": "Send WhatsApp Wish",
+                "celeb_callout_title": "Register Your Birthday or Wedding Anniversary",
+                "celeb_callout_desc": "Register your special date to receive warm greetings and blessings from the entire Sonar Samaj community.",
+                "btn_register_celeb_cta": "Register Date",
+                "modal_celeb_title": "Register Birthday / Wedding Anniversary",
+                "modal_celeb_sub": "Sonar Samaj Indore Digital Wishes Board",
+                "lbl_celeb_name": "Full Name / Couple Name *",
+                "lbl_celeb_type": "Occasion Type *",
+                "lbl_celeb_date": "Date & Month *",
+                "lbl_celeb_phone": "Phone / WhatsApp *",
+                "lbl_celeb_area": "Area / Locality *",
+                "btn_submit_celeb": "Complete Registration"
         }
 };
 
