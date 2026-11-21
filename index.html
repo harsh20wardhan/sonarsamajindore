@@ -235,19 +235,16 @@
     <!-- ═══════════════════ STICKY GLASSMORPHIC HEADER ═══════════════════ -->
     <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-surface-border shadow-soft transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-28">
                 <!-- Brand Logo (Merasamaj-style Squircle with ॐ) -->
                 <a href="#home" class="flex items-center gap-3.5 group">
-                    <img src="./src/samaj-logo.png" alt="सोनार समाज मंडळ, इंदूर अधिकृत बोधचिन्ह" class="w-13 h-13 w-12 h-12 rounded-full object-contain bg-white shadow-md shadow-brand-900/20 ring-2 ring-brand-gold/60 group-hover:scale-105 transition-transform flex-shrink-0">
+                    <img src="./src/samaj-logo.png" alt="सोनार समाज मंडळ, इंदूर अधिकृत बोधचिन्ह" class="w-20 h-20 rounded-full object-contain bg-white shadow-md shadow-brand-900/20 ring-2 ring-brand-gold/60 group-hover:scale-105 transition-transform flex-shrink-0">
                     <div>
                         <div class="flex items-center gap-2">
-                            <span data-i18n="brand_name" class="font-extrabold text-xl text-slate-900 tracking-tight leading-tight marathi">सोनार समाज</span>
-                            <span data-i18n="brand_trust" class="bg-brand-50 text-brand-700 border border-brand-200 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">ट्रस्ट</span>
+                            <span data-i18n="brand_name" class="font-extrabold text-2xl text-slate-900 tracking-tight leading-tight marathi">सोनार समाज ट्रस्ट</span>
                         </div>
-                        <div class="text-xs font-semibold text-brand-600 marathi flex items-center gap-1.5 mt-0.5">
-                            <span data-i18n="brand_loc">इंदौर, मध्य प्रदेश</span>
-                            <span class="text-slate-300">•</span>
-                            <span data-i18n="brand_tagline" class="text-slate-500 font-medium">सेवा • संस्कार • समाज विकास</span>
+                        <div class="text-sm font-semibold text-brand-600 marathi flex items-center gap-1.5 mt-0.5">
+                            <span data-i18n="brand_loc">इंदौर</span>
                         </div>
                     </div>
                 </a>
@@ -264,6 +261,10 @@
                     </a>
                     <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
                     <a href="contact.html" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
+                    <button onclick="openNewsModal()" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1 font-bold text-brand-700 bg-amber-50 border border-amber-200 px-3 rounded-full">
+                        <i class="fas fa-newspaper text-xs text-amber-600"></i>
+                        <span>समाचार</span>
+                    </button>
 
                     <!-- More Dropdown Menu (Organized & Clutter-Free) -->
                     <div class="relative group/dropdown py-1">
@@ -281,27 +282,17 @@
                     </div>
                 </nav>
 
-                <!-- Action CTAs (Merasamaj-style Pill Buttons) -->
+                <!-- Action CTAs - Rajwada logo only -->
                 <div class="hidden sm:flex items-center gap-3">
-                    <button onclick="openDonateModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-md shadow-brand-600/25 transition-all hover:scale-105">
-                        <i class="fas fa-heart text-amber-200 text-xs"></i>
-                        <span data-i18n="btn_donate" class="marathi">देणगी द्या</span>
-                    </button>
-                    <a href="https://wa.me/917314203099?text=Namaskar%20Sonar%20Samaj%20Trust%2C%20mala%20mahiti%20havi%20ahe." target="_blank" class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-all hover:scale-105" title="WhatsApp वर संपर्क करा">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                    </a>
                     <!-- Right Official Letterhead Seal (Rajwada, Indore) -->
                     <a href="#about" class="hidden sm:flex items-center group/rajwada flex-shrink-0 ml-1" title="सोनार समाज मंडळ, इंदूर (ऐतिहासिक राजवाडा बोधचिन्ह)">
-                        <img src="./src/rajwada-logo.png" alt="सोनार समाज मंडळ इंदूर राजवाडा बोधचिन्ह" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-contain bg-white shadow-md shadow-brand-900/15 ring-2 ring-brand-gold/60 group-hover/rajwada:scale-105 transition-transform flex-shrink-0">
+                        <img src="./src/rajwada-logo.png" alt="सोनार समाज मंडळ इंदूर राजवाडा बोधचिन्ह" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain bg-white shadow-md shadow-brand-900/15 ring-2 ring-brand-gold/60 group-hover/rajwada:scale-105 transition-transform flex-shrink-0">
                     </a>
                 </div>
 
                 <!-- Mobile Menu Hamburger & Quick Contact -->
                 <div class="flex items-center gap-2 lg:hidden">
-                    <a href="https://wa.me/917314203099" target="_blank" class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm shadow">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <img src="./src/rajwada-logo.png" alt="सोनार समाज इंदूर" class="w-9 h-9 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60">
+                    <img src="./src/rajwada-logo.png" alt="सोनार समाज इंदूर" class="w-12 h-12 rounded-full object-contain bg-white shadow-sm ring-1 ring-brand-gold/60">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl text-slate-700 hover:bg-surface-soft hover:text-brand-600 focus:outline-none transition-colors" aria-label="Toggle navigation">
                         <i id="menu-icon" class="fas fa-bars text-xl"></i>
                     </button>
@@ -346,6 +337,10 @@
                 <i class="fas fa-images text-brand-500 w-5 text-center"></i>
                 <span>वर्षनिहाय फोटो गॅलरी</span>
             </a>
+            <button onclick="openNewsModal(); closeMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-brand-700 bg-amber-50 hover:bg-amber-100 transition-colors border border-amber-200 w-full text-left">
+                <i class="fas fa-newspaper text-amber-600 w-5 text-center"></i>
+                <span>📰 समाचार (News)</span>
+            </button>
             <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
                 <i class="fas fa-users text-brand-500 w-5 text-center"></i>
                 <span>आमची समिती (Leadership)</span>
@@ -368,14 +363,11 @@
             </a>
 
             <div class="pt-3 border-t border-slate-100 flex gap-2">
-                <button onclick="openDonateModal(); closeMobileMenu();" class="flex-1 bg-gradient-to-r from-brand-600 to-amber-600 text-white font-bold py-3.5 rounded-xl text-center text-sm shadow-md flex items-center justify-center gap-2">
-                    <i class="fas fa-heart text-amber-200"></i>
-                    <span data-i18n="btn_donate">देणगी द्या</span>
-                </button>
-                <a href="https://wa.me/917314203099" target="_blank" class="w-14 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl shadow-md">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
+                    <a href="#committee" onclick="closeMobileMenu()" class="flex-1 bg-gradient-to-r from-brand-600 to-amber-600 text-white font-bold py-3.5 rounded-xl text-center text-sm shadow-md flex items-center justify-center gap-2">
+                        <i class="fas fa-users text-amber-200"></i>
+                        <span>आमची समिती</span>
+                    </a>
+                </div>
         </div>
     </header>
 
@@ -404,7 +396,7 @@
                             <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
                             <span data-i18n="hero_badge">🚩 सेवा • संस्कार • समाज विकास</span>
                             <span class="text-amber-400">|</span>
-                            <span data-i18n="hero_official" class="text-slate-800">इंदूरचे अधिकृत व्यासपीठ</span>
+                            <span class="text-slate-800 font-bold">Indore BIG</span>
                         </div>
 
                         <!-- Main H1 Title in Marathi Calligraphy -->
@@ -1819,8 +1811,8 @@
                     <!-- 7. Treasurer: Shri Nandkishore Songirkar -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-surface-border shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 relative group">
                         <div class="relative bg-gradient-to-br from-brand-gold/20 via-amber-50 to-white p-6 flex flex-col items-center">
-                            <div class="w-24 h-24 rounded-2xl bg-brand-gold text-amber-950 shadow-md flex items-center justify-center font-bold text-3xl ring-4 ring-white">
-                                <i class="fas fa-coins"></i>
+                            <div class="w-24 h-24 rounded-2xl overflow-hidden shadow-md ring-4 ring-white">
+                                <img src="./src/members/nandkishore-songirkar.jpg" alt="Shri Nandkishore Songirkar" class="w-full h-full object-cover">
                             </div>
                             <span data-i18n="role_treasurer" class="mt-3.5 px-4 py-1 rounded-full bg-brand-gold text-amber-950 text-xs font-bold uppercase tracking-wider marathi shadow-sm">
                                 खजिनदार
@@ -6013,5 +6005,49 @@
                 .catch(() => {});
         });
     </script>
+    <!-- ═══════════════════ NEWS MODAL ═══════════════════ -->
+    <div id="news-modal" class="modal" onclick="if(event.target===this) closeNewsModal()">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-gradient-to-r from-amber-50 to-brand-50">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center">
+                        <i class="fas fa-newspaper text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-extrabold text-xl text-slate-900 marathi">समाचार</h2>
+                        <p class="text-xs text-slate-500">वर्तमानपत्रातील बातम्या</p>
+                    </div>
+                </div>
+                <button onclick="closeNewsModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-red-100 text-slate-500 hover:text-red-600 flex items-center justify-center transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="overflow-y-auto p-6 space-y-6">
+                <!-- Article 1: New -->
+                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-soft">
+                    <div class="bg-amber-50 px-4 py-2 flex items-center gap-2 border-b border-amber-100">
+                        <i class="fas fa-newspaper text-amber-600 text-sm"></i>
+                        <span class="font-bold text-amber-900 text-sm marathi">सोनार समाज का कार्यकारी मंडल निर्वाचित</span>
+                        <span class="ml-auto text-xs text-slate-500">स्वदेश समाचार • इंदौर</span>
+                    </div>
+                    <img src="./src/news-article-1.jpg" alt="सोनार समाज का कार्यकारी मंडल निर्वाचित - स्वदेश समाचार" class="w-full object-contain max-h-96">
+                </div>
+                <!-- Existing articles placeholder text -->
+                <p class="text-center text-xs text-slate-400 marathi">अधिक बातम्या लवकरच येत आहेत…</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openNewsModal() {
+            document.getElementById('news-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeNewsModal() {
+            document.getElementById('news-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+
 </body>
 </html>
