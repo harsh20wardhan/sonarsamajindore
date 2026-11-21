@@ -1,5 +1,6 @@
 # Netlify Configuration for Sonar Samaj Trust Indore
 [build]
+  command = "npm install"
   publish = "."
   functions = "netlify/functions"
 

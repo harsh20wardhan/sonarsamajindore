@@ -4422,9 +4422,17 @@
             }
         }
 
-        // ── Membership Form Submission via Supabase & WhatsApp ──
+        // ── Membership Form Submission via Database & WhatsApp ──
         function handleMembershipSubmit(event) {
             event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalBtnHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>नोंदणी होत आहे...';
+            }
+
             const name = document.getElementById('member-name').value;
             const phone = document.getElementById('member-phone').value;
             const email = document.getElementById('member-email').value || '';
@@ -4432,7 +4440,15 @@
             const address = document.getElementById('member-address').value || '';
             const message = document.getElementById('member-message').value || '';
 
-            // 1. Save to Supabase DB via Netlify serverless function
+            const rawMsg = `*सोनार समाज ट्रस्ट, इंदौर - सदस्यता नोंदणी अर्ज*\n\n` +
+                           `👤 *नाव:* ${name}\n` +
+                           `📱 *मोबाईल:* ${phone}\n` +
+                           `📧 *ई-मेल:* ${email || 'नाही'}\n` +
+                           `🏷️ *सदस्य प्रकार:* ${type}\n` +
+                           `📍 *पत्ता:* ${address || 'नाही'}\n` +
+                           `💬 *संदेश:* ${message || 'नाही'}`;
+
+            // Save to database via Netlify serverless function
             fetch('/.netlify/functions/members', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -4444,23 +4460,35 @@
                     address: address,
                     notes: message
                 })
-            }).catch(e => console.warn('Supabase DB save note:', e));
-
-            const rawMsg = `*सोनार समाज ट्रस्ट, इंदौर - सदस्यता नोंदणी अर्ज*\n\n` +
-                           `👤 *नाव:* ${name}\n` +
-                           `📱 *मोबाईल:* ${phone}\n` +
-                           `📧 *ई-मेल:* ${email || 'नाही'}\n` +
-                           `🏷️ *सदस्य प्रकार:* ${type}\n` +
-                           `📍 *पत्ता:* ${address || 'नाही'}\n` +
-                           `💬 *संदेश:* ${message || 'नाही'}`;
-
-            showSuccessModal('आपला सदस्यता अर्ज Supabase डेटाबेसमध्ये सुरक्षित सेव्ह झाला आहे! आता WhatsApp उघडत आहे...');
-            setTimeout(() => {
-                window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawMsg), '_blank');
-            }, 800);
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Database save status: ' + res.status);
+                return res.json();
+            })
+            .then(() => {
+                showSuccessModal('आपला सदस्यता अर्ज यशस्वीरित्या प्राप्त झाला आहे! आता WhatsApp उघडत आहे...');
+                setTimeout(() => {
+                    window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawMsg), '_blank');
+                }, 800);
+                form.reset();
+            })
+            .catch(err => {
+                console.warn('Membership submission note:', err);
+                // Graceful fallback to WhatsApp even if backend experiences network latency
+                showSuccessModal('आपला अर्ज तयार झाला आहे! आता WhatsApp उघडत आहे...');
+                setTimeout(() => {
+                    window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawMsg), '_blank');
+                }, 800);
+            })
+            .finally(() => {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnHtml;
+                }
+            });
         }
 
-        // ── Contact Form Submission via Supabase ──
+        // ── Contact Form Submission via Database ──
         function handleContactSubmit(event) {
             event.preventDefault();
             const form = document.getElementById('contact-form');
@@ -4481,7 +4509,7 @@
             }).catch(() => {});
 
             form.reset();
-            showSuccessModal('संपर्क साधल्याबद्दल धन्यवाद! आपली माहिती सुरक्षित Supabase डेटाबेसमध्ये नोंदवली गेली असून ट्रस्टचे प्रतिनिधी लवकरच संपर्क साधतील.');
+            showSuccessModal('संपर्क साधल्याबद्दल धन्यवाद! आपला संदेश यशस्वीरित्या प्राप्त झाला असून ट्रस्टचे प्रतिनिधी लवकरच संपर्क साधतील.');
         }
 
         // ── Comprehensive Multi-lingual Translation Engine ──

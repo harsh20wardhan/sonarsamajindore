@@ -113,7 +113,7 @@
 
       <button onclick="switchTab('members')" id="tab-btn-members" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
         <i class="fas fa-users-gear text-emerald-600"></i>
-        <span>६. सदस्य अर्ज (Supabase)</span>
+        <span>६. नवीन सदस्य अर्ज (Live DB)</span>
         <span id="admin-members-badge" class="ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">०</span>
       </button>
     </div>
@@ -1481,7 +1481,7 @@
       const listEl = document.getElementById('admin-members-list');
       const badge = document.getElementById('admin-members-badge');
       if (listEl) {
-        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">Supabase डेटाबेसमधून अर्ज लोड होत आहेत...</td></tr>';
+        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">डेटाबेसमधून अर्ज लोड होत आहेत...</td></tr>';
       }
 
       fetch('/.netlify/functions/members')
@@ -1676,7 +1676,7 @@
       const badge = document.getElementById('admin-celeb-badge');
       const countBadge = document.getElementById('admin-celeb-count-badge');
       if (listEl) {
-        listEl.innerHTML = '<div class="p-8 text-center text-slate-400 marathi col-span-2">Supabase डेटाबेसमधून माहिती लोड होत आहे...</div>';
+        listEl.innerHTML = '<div class="p-8 text-center text-slate-400 marathi col-span-2">डेटाबेसमधून माहिती लोड होत आहे...</div>';
       }
 
       fetch('/.netlify/functions/celebrations')
