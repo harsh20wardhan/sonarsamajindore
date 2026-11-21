@@ -347,6 +347,45 @@
 
     <!-- ══════ TAB 2: BUSINESS DIRECTORY MANAGER ══════ -->
     <div id="panel-business" class="tab-panel hidden space-y-6">
+
+      <!-- Server Persistence & Sync Toolbar -->
+      <div class="bg-gradient-to-r from-amber-500/15 via-amber-50 to-orange-50 p-4 sm:p-5 rounded-3xl border-2 border-amber-300 shadow-soft">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-start sm:items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center text-xl flex-shrink-0 shadow-md">
+              <i class="fas fa-cloud-arrow-up"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="font-extrabold text-slate-900 text-sm sm:text-base marathi">थेट सर्व्हरवर सेव्ह (Permanent Server Sync)</h4>
+                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded-full uppercase">कायमस्वरूपी</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-0.5 marathi">येथील बदल पुढील सर्व डिप्लॉयमेंट्समध्ये कायमस्वरूपी राहण्यासाठी थेट GitHub वर सेव्ह करा किंवा JSON डाउनलोड करा.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 justify-end">
+            <button type="button" onclick="publishBusinessToGitHub()" id="btn-publish-biz" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white text-xs font-bold flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
+              <i class="fab fa-github text-sm"></i>
+              <span>सर्व्हरवर पब्लिश करा (Publish)</span>
+            </button>
+            <button type="button" onclick="downloadBusinessJSON()" class="px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-1.5 shadow transition-all">
+              <i class="fas fa-download"></i>
+              <span>JSON डाउनलोड</span>
+            </button>
+            <label class="px-3 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer" title="JSON फाइल इम्पोर्ट करा">
+              <i class="fas fa-upload text-blue-600"></i>
+              <span>इम्पोर्ट</span>
+              <input type="file" accept=".json" class="hidden" onchange="importBusinessJSON(event)">
+            </label>
+            <button type="button" onclick="resetBusinessToServerData()" class="px-3 py-2.5 rounded-xl bg-white hover:bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all" title="मूळ सर्व्हर डेटा पुन्हा आणा">
+              <i class="fas fa-rotate"></i>
+              <span>सर्व्हर डेटा रीलोड</span>
+            </button>
+          </div>
+        </div>
+        <div id="github-biz-status" class="hidden mt-3 text-xs font-bold p-3 rounded-xl border"></div>
+      </div>
       
       <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
         <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
@@ -1110,25 +1149,42 @@
       }
     }
 
-    // Business Directory Management
+    // ═══════════════════ Business Directory Management (With Server Persistence) ═══════════════════
     let businessesList = [];
-    function loadBusinesses() {
-      try {
-        const stored = localStorage.getItem('sonar_custom_biz');
-        if (stored) {
-          businessesList = JSON.parse(stored);
-          renderAdminBusinesses();
-          return;
-        }
-      } catch(e) {}
 
-      fetch('../content/business_directory.json')
+    function loadBusinesses() {
+      // 1. Fetch live content/business_directory.json from server with cache-busting
+      fetch('../content/business_directory.json?t=' + Date.now())
         .then(r => r.json())
         .then(d => {
-          businessesList = d.businesses || [];
+          const serverList = (d && Array.isArray(d.businesses)) ? d.businesses : [];
+          
+          // Check if local storage has any unsaved/new items
+          let merged = [...serverList];
+          try {
+            const stored = localStorage.getItem('sonar_custom_biz');
+            if (stored) {
+              const localList = JSON.parse(stored);
+              if (Array.isArray(localList)) {
+                const serverIds = new Set(serverList.map(b => b.id));
+                const localOnly = localList.filter(b => !serverIds.has(b.id));
+                if (localOnly.length > 0) {
+                  merged = [...localOnly, ...serverList];
+                }
+              }
+            }
+          } catch(e) {}
+
+          businessesList = merged;
+          localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
           renderAdminBusinesses();
         })
         .catch(() => {
+          // Fallback to local storage if offline
+          try {
+            const stored = localStorage.getItem('sonar_custom_biz');
+            if (stored) businessesList = JSON.parse(stored);
+          } catch(e) {}
           renderAdminBusinesses();
         });
     }
@@ -1175,7 +1231,14 @@
 
       document.getElementById('form-business').reset();
       renderAdminBusinesses();
-      alert('व्यवसाय डिरेक्टरीमध्ये यशस्वीरित्या जोडला गेला आहे! (Business Added Successfully)');
+
+      const statusEl = document.getElementById('github-biz-status');
+      if (statusEl) {
+        statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-amber-50 text-amber-900 border-amber-300 block marathi';
+        statusEl.innerHTML = '<i class="fas fa-info-circle mr-1 text-amber-600"></i> नवीन व्यवसाय जोडला गेला आहे! हा बदल पुढील सर्व डिप्लॉयमेंट्समध्ये कायमस्वरूपी ठेवण्यासाठी वरील <strong>"सर्व्हरवर पब्लिश करा"</strong> बटणावर क्लिक करा.';
+      }
+
+      alert('व्यवसाय स्थानिकरित्या जोडला गेला आहे! हा बदल सर्व्हरवर कायमस्वरूपी सेव्ह करण्यासाठी "सर्व्हरवर पब्लिश करा" बटणावर क्लिक करा.');
     }
 
     function renderAdminBusinesses() {
@@ -1185,7 +1248,7 @@
       if (!container) return;
 
       if (!businessesList.length) {
-        container.innerHTML = '<div class="col-span-full py-6 text-center text-slate-400 text-xs">कोणताही व्यवसाय आढळला नाही.</div>';
+        container.innerHTML = '<div class="col-span-full py-6 text-center text-slate-400 text-xs marathi">कोणताही व्यवसाय आढळला नाही.</div>';
         return;
       }
 
@@ -1215,6 +1278,189 @@
           localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
         } catch(err) {}
         renderAdminBusinesses();
+
+        const statusEl = document.getElementById('github-biz-status');
+        if (statusEl) {
+          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-amber-50 text-amber-900 border-amber-300 block marathi';
+          statusEl.innerHTML = '<i class="fas fa-info-circle mr-1 text-amber-600"></i> व्यवसाय हटवला गेला आहे! हा बदल सर्व्हरवर सेव्ह करण्यासाठी <strong>"सर्व्हरवर पब्लिश करा"</strong> बटण दाबा.';
+        }
+      }
+    }
+
+    // ── Persistent Server Sync (GitHub API & Netlify Function) ──
+    async function publishBusinessToGitHub() {
+      const statusEl = document.getElementById('github-biz-status');
+      const btn = document.getElementById('btn-publish-biz');
+      if (statusEl) {
+        statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-blue-50 text-blue-900 border-blue-200 block marathi';
+        statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> सर्व्हरशी कनेक्ट करत आहे...';
+      }
+      if (btn) btn.disabled = true;
+
+      // 1. Try serverless function on Netlify first
+      try {
+        const netlifyRes = await fetch('/.netlify/functions/save-business', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ businesses: businessesList })
+        });
+
+        if (netlifyRes.ok) {
+          const resData = await netlifyRes.json();
+          if (statusEl) {
+            statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-emerald-50 text-emerald-900 border-emerald-300 block marathi';
+            statusEl.innerHTML = '<i class="fas fa-check-circle text-emerald-600 mr-1.5"></i> बदल थेट GitHub वर पब्लिश झाले आहेत! पुढील ३०-४५ सेकंदात Netlify वर नवीन डिप्लॉयमेंट आपोआप लाईव्ह होईल.';
+          }
+          alert('यशस्वी: व्यवसाय डिरेक्टरी थेट GitHub वर सेव्ह झाली आहे! आता हे बदल कोणत्याही डिप्लॉयमेंटमध्ये कधीही नष्ट होणार नाहीत.');
+          if (btn) btn.disabled = false;
+          return;
+        }
+      } catch (e) {
+        // Netlify function not available (e.g. running locally or no token on netlify)
+      }
+
+      // 2. Fallback: Direct GitHub API with client token
+      let token = localStorage.getItem('sonar_gh_token');
+      if (!token) {
+        token = prompt('GitHub वर थेट सेव्ह करण्यासाठी GitHub Personal Access Token प्रविष्ट करा:\n(हा टोकन तुमच्या ब्राऊझरमध्ये सुरक्षित सेव्ह राहील ज्यामुळे तुम्ही एका क्लिकवर सर्व्हरवर सेव्ह करू शकाल)');
+        if (!token) {
+          if (statusEl) statusEl.classList.add('hidden');
+          if (btn) btn.disabled = false;
+          return;
+        }
+        localStorage.setItem('sonar_gh_token', token.trim());
+      }
+
+      try {
+        const owner = 'harsh20wardhan';
+        const repo = 'sonarsamajindore';
+        const path = 'content/business_directory.json';
+
+        if (statusEl) statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> GitHub कडून फाइल माहिती मिळवत आहे...';
+
+        const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+
+        if (getRes.status === 401) {
+          localStorage.removeItem('sonar_gh_token');
+          alert('GitHub Token अवैध (Invalid) आहे. कृपया योग्य टोकन प्रविष्ट करा.');
+          if (statusEl) statusEl.classList.add('hidden');
+          if (btn) btn.disabled = false;
+          return;
+        }
+
+        let sha = null;
+        if (getRes.ok) {
+          const getData = await getRes.json();
+          sha = getData.sha;
+        }
+
+        if (statusEl) statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> GitHub वर कमिट पाठवत आहे...';
+
+        const updatedData = {
+          title: "सोनार समाज इंदूर - व्यावसायिक निर्देशिका (Business Directory)",
+          description: "इंदूर व परिसरातील सोनार समाज बांधवांच्या प्रतिष्ठानांची, दुकानांची व सेवांची अधिकृत यादी",
+          last_updated: new Date().toISOString(),
+          businesses: businessesList
+        };
+
+        const jsonString = JSON.stringify(updatedData, null, 2);
+        const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
+
+        const putRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/vnd.github.v3+json'
+          },
+          body: JSON.stringify({
+            message: 'update: business directory updated via admin panel',
+            content: base64Content,
+            sha: sha,
+            branch: 'main'
+          })
+        });
+
+        if (!putRes.ok) {
+          const errData = await putRes.json();
+          throw new Error(errData.message || 'GitHub commit failed');
+        }
+
+        if (statusEl) {
+          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-emerald-50 text-emerald-900 border-emerald-300 block marathi';
+          statusEl.innerHTML = '<i class="fas fa-check-circle text-emerald-600 mr-1.5"></i> बदल थेट GitHub वर पब्लिश झाले आहेत! पुढील ३०-४५ सेकंदात Netlify वर नवीन डिप्लॉयमेंट आपोआप लाईव्ह होईल.';
+        }
+        alert('बदल यशस्वीरित्या GitHub वर कायमस्वरूपी सेव्ह झाले आहेत! नवीन डिप्लॉयमेंट सुरू झाली असून सर्व डिव्हाइसेसवर माहिती अपडेट राहील.');
+      } catch (err) {
+        console.error(err);
+        if (statusEl) {
+          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-rose-50 text-rose-900 border-rose-300 block marathi';
+          statusEl.innerHTML = '<i class="fas fa-exclamation-triangle text-rose-600 mr-1"></i> त्रुटी: ' + err.message + ' — तुम्ही "JSON डाउनलोड" बटण वापरून फाइल सेव्ह करू शकता.';
+        }
+        alert('सर्व्हरवर सेव्ह करताना त्रुटी आली: ' + err.message + '\n\nतुम्ही "JSON डाउनलोड" बटण वापरून फाइल सेव्ह करू शकता.');
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    }
+
+    // Download updated business_directory.json
+    function downloadBusinessJSON() {
+      const data = {
+        title: "सोनार समाज इंदूर - व्यावसायिक निर्देशिका (Business Directory)",
+        description: "इंदूर व परिसरातील सोनार समाज बांधवांच्या प्रतिष्ठानांची, दुकानांची व सेवांची अधिकृत यादी",
+        last_updated: new Date().toISOString(),
+        businesses: businessesList
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'business_directory.json';
+      a.click();
+    }
+
+    // Import JSON File into Admin
+    function importBusinessJSON(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          const list = Array.isArray(parsed) ? parsed : (parsed.businesses || []);
+          if (Array.isArray(list) && list.length > 0) {
+            businessesList = list;
+            localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
+            renderAdminBusinesses();
+            alert(`${list.length} व्यवसाय यशस्वीरित्या इम्पोर्ट झाले आहेत!`);
+          } else {
+            alert('JSON फाइलमध्ये योग्य व्यवसाय सूची आढळली नाही.');
+          }
+        } catch(err) {
+          alert('अवैध JSON फाइल: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Reset Business Data to Default Server Data
+    function resetBusinessToServerData() {
+      if (confirm('सर्व्हरवरील मूळ business_directory.json डेटा पुन्हा लोड करायचा आहे का?')) {
+        localStorage.removeItem('sonar_custom_biz');
+        fetch('../content/business_directory.json?t=' + Date.now())
+          .then(r => r.json())
+          .then(d => {
+            businessesList = (d && Array.isArray(d.businesses)) ? d.businesses : [];
+            renderAdminBusinesses();
+            alert('सर्व्हर डेटा यशस्वीरित्या रीलोड झाला!');
+          })
+          .catch(() => {
+            alert('सर्व्हर डेटा लोड करताना त्रुटी आली.');
+          });
       }
     }
 

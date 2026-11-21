@@ -5377,223 +5377,303 @@
         
         // ═══════════════════ COMMUNITY BUSINESS DIRECTORY LOGIC ═══════════════════
         const defaultBusinessesData = [
-            {
-                id: "biz-songirkar-jewellers",
-                name_mr: "सोनगीरकर ज्वेलर्स",
-                name_hi: "सोनगीरकर ज्वेलर्स",
-                name_en: "Songirkar Jewellers",
-                owner_mr: "श्री विश्वासजी सोनगीरकर",
-                owner_hi: "श्री विश्वासजी सोनगीरकर",
-                owner_en: "Shri Vishwas Songirkar",
-                category_key: "jewellery",
-                category_mr: "सराफा व सुवर्णकार",
-                category_hi: "सराफा एवं स्वर्णकार",
-                category_en: "Jewellery & Bullion",
-                phone: "+919827653310",
-                whatsapp: "+919827653310",
-                address_mr: "सराफा बाजार, इंदूर",
-                address_hi: "सराफा बाजार, इंदौर",
-                address_en: "Sarafa Bazaar, Indore",
-                description_mr: "शुद्ध ९१६ हॉलमार्क सोन्याचे दागिने, हिरेजडित आभूषणे व पारंपारिक महाराष्ट्रीयन डिझाईन्सचे विश्वसनीय दालन.",
-                description_hi: "शुद्ध ९१६ हॉलमार्क सोने के आभूषण, हीरे के गहने एवं पारंपरिक महाराष्ट्रीयन डिजाइन्स।",
-                description_en: "Pure 916 Hallmarked gold ornaments, diamond jewelry and authentic Maharashtrian designs.",
-                established: "1992",
-                verified: true
-            },
-            {
-                id: "biz-mukesh-ornaments",
-                name_mr: "मुकेश ज्वेलर्स व सराफा",
-                name_hi: "मुकेश ज्वेलर्स एवं सराफा",
-                name_en: "Mukesh Jewellers & Sarafa",
-                owner_mr: "श्री मुकेशजी सोनगीरकर",
-                owner_hi: "श्री मुकेशजी सोनगीरकर",
-                owner_en: "Shri Mukesh Songirkar",
-                category_key: "jewellery",
-                category_mr: "सराफा व सुवर्णकार",
-                category_hi: "सराफा एवं स्वर्णकार",
-                category_en: "Jewellery & Bullion",
-                phone: "+917879833999",
-                whatsapp: "+917879833999",
-                address_mr: "छोटा सराफा, राजवाडा जवळ, इंदूर",
-                address_hi: "छोटा सराफा, राजवाड़ा के पास, इंदौर",
-                address_en: "Chhota Sarafa, Near Rajwada, Indore",
-                description_mr: "लग्नकार्यासाठी खास ब्रायडल दागिने, चांदीची भांडी व पुजेचे साहित्य.",
-                description_hi: "विवाह हेतु विशेष ब्राइडल ज्वेलरी, चांदी के बर्तन एवं पूजन सामग्री।",
-                description_en: "Exclusive bridal jewelry collections, pure silver articles, and pooja items.",
-                established: "1998",
-                verified: true
-            },
-            {
-                id: "biz-narhari-cad-cam",
-                name_mr: "श्री नरहरी ३डी ज्वेलरी डिझायनिंग व सीएडी",
-                name_hi: "श्री नरहरि ३डी ज्वेलरी डिजाइनिंग एवं सीएडी",
-                name_en: "Shri Narhari 3D Jewellery CAD/CAM",
-                owner_mr: "श्री राहुलजी सोनार",
-                owner_hi: "श्री राहुलजी सोनार",
-                owner_en: "Shri Rahul Sonar",
-                category_key: "manufacturing",
-                category_mr: "उत्पादन व डिझायनिंग",
-                category_hi: "उत्पादन एवं डिजाइनिंग",
-                category_en: "Manufacturing & CAD",
-                phone: "+919098491789",
-                whatsapp: "+919098491789",
-                address_mr: "सुखलिया मेन रोड, इंदूर",
-                address_hi: "सुखलिया मेन रोड, इंदौर",
-                address_en: "Sukhlia Main Road, Indore",
-                description_mr: "आधुनिक मॅट्रिक्स व राइनो तंत्रज्ञानाद्वारे दागिन्यांचे ३डी मॉडेलिंग, रेंडरिंग व सीएडी/सीएएम सेवा.",
-                description_hi: "आधुनिक मैट्रिक्स व राइनो तकनीक द्वारा ३डी मॉडलिंग, रेंडरिंग व सीएडी सेवाएं।",
-                description_en: "Modern Matrix & Rhino 3D jewelry designing, rendering and CAM die casting services.",
-                established: "2015",
-                verified: true
-            },
-            {
-                id: "biz-sonar-tax-consultancy",
-                name_mr: "सोनार असोसिएट्स — कर व वित्तीय सल्लागार",
-                name_hi: "सोनार एसोसिएट्स — टैक्स व वित्तीय सलाहकार",
-                name_en: "Sonar Associates — Tax & Financial Advisory",
-                owner_mr: "सीए दीपकजी सोनार",
-                owner_hi: "सीए दीपकजी सोनार",
-                owner_en: "CA Deepak Sonar",
-                category_key: "services",
-                category_mr: "व्यावसायिक सेवा",
-                category_hi: "व्यावसायिक सेवाएं",
-                category_en: "Professional Services",
-                phone: "+919425022334",
-                whatsapp: "+919425022334",
-                address_mr: "तुलसी नगर, इंदूर",
-                address_hi: "तुलसी नगर, इंदौर",
-                address_en: "Tulsi Nagar, Indore",
-                description_mr: "जीएसटी नोंदणी, इन्कम टॅक्स रिटर्न, सुवर्ण व्यवसाय ऑडिट व फायनान्स सल्लागार सेवा.",
-                description_hi: "जीएसटी, आयकर रिटर्न, ज्वैलरी उद्योग ऑडिट एवं वित्तीय परामर्श सेवाएं।",
-                description_en: "GST registration, Income Tax audits, jewellery business finance and compliance.",
-                established: "2008",
-                verified: true
-            },
-            {
-                id: "biz-royal-gems-testing",
-                name_mr: "रॉयल जेम्स व रत्न चाचणी प्रयोगशाळा",
-                name_hi: "रॉयल जेम्स एवं रत्न परीक्षण प्रयोगशाला",
-                name_en: "Royal Gemological Testing Lab",
-                owner_mr: "श्री अविनाशजी सोनार",
-                owner_hi: "श्री अविनाशजी सोनार",
-                owner_en: "Shri Avinash Sonar",
-                category_key: "services",
-                category_mr: "व्यावसायिक सेवा",
-                category_hi: "व्यावसायिक सेवाएं",
-                category_en: "Professional Services",
-                phone: "+919826011223",
-                whatsapp: "+919826011223",
-                address_mr: "बडा सराफा, इंदूर",
-                address_hi: "बड़ा सराफा, इंदौर",
-                address_en: "Bada Sarafa, Indore",
-                description_mr: "सर्व प्रकारच्या मौल्यवान रत्नांची शास्त्रीय तपासणी व अधिकृत प्रमाणपत्र.",
-                description_hi: "सभी प्रकार के बहुमूल्य रत्नों की वैज्ञानिक जांच एवं प्रामाणिक सर्टिफिकेशन।",
-                description_en: "Scientific testing and certified grading of precious gemstones and diamonds.",
-                established: "2012",
-                verified: true
-            },
-            {
-                id: "biz-khandekar-molds",
-                name_mr: "खांडेकर डाईज व मोल्ड्स मॅन्युफॅक्चरिंग",
-                name_hi: "खांडेकर डाइज एवं मोल्ड्स मैन्युफैक्चरिंग",
-                name_en: "Khandekar Dies & Molds Manufacturing",
-                owner_mr: "श्री तरुणजी खांडेकर",
-                owner_hi: "श्री तरुणजी खांडेकर",
-                owner_en: "Shri Tarun Khandekar",
-                category_key: "manufacturing",
-                category_mr: "उत्पादन व डिझायनिंग",
-                category_hi: "उत्पादन एवं डिजाइनिंग",
-                category_en: "Manufacturing & CAD",
-                phone: "+919827011445",
-                whatsapp: "+919827011445",
-                address_mr: "सांवेर रोड इंडस्ट्रियल एरिया, इंदूर",
-                address_hi: "सांवेर रोड इंडस्ट्रियल एरिया, इंदौर",
-                address_en: "Sanwer Road Industrial Area, Indore",
-                description_mr: "सुवर्ण व चांदीच्या दागिन्यांसाठी प्रिसीजन डाईज, मास्टर मॉडेल्स व मोल्डिंग सोल्यूशन्स.",
-                description_hi: "स्वर्ण व रजत आभूषणों हेतु प्रिसीजन डाइज एवं मास्टर मॉडेल्स।",
-                description_en: "Precision dies, master molds and casting tools for gold and silver jewelers.",
-                established: "2005",
-                verified: true
-            },
-            {
-                id: "biz-shree-shakti-refining",
-                name_mr: "श्री शक्ती गोल्ड टेस्टिंग व रिफायनिंग",
-                name_hi: "श्री शक्ति गोल्ड टेस्टिंग एवं रिफाइनिंग",
-                name_en: "Shree Shakti Gold Testing & Refining",
-                owner_mr: "श्री गिरीशजी सोनगीरकर",
-                owner_hi: "श्री गिरीशजी सोनगीरकर",
-                owner_en: "Shri Girish Songirkar",
-                category_key: "jewellery",
-                category_mr: "सराफा व सुवर्णकार",
-                category_hi: "सराफा एवं स्वर्णकार",
-                category_en: "Jewellery & Bullion",
-                phone: "+919300055442",
-                whatsapp: "+919300055442",
-                address_mr: "छोटा सराफा, इंदूर",
-                address_hi: "छोटा सराफा, इंदौर",
-                address_en: "Chhota Sarafa, Indore",
-                description_mr: "अत्याधुनिक एक्सआरएफ (XRF) कम्प्युटराइज्ड गोल्ड टेस्टिंग व पर्यावरणपूरक रिफायनिंग सेवा.",
-                description_hi: "आधुनिक एक्सआरएफ कंप्यूटरीकृत गोल्ड टेस्टिंग एवं रिफाइनिंग सेवाएं।",
-                description_en: "Modern computerized XRF gold purity testing and eco-friendly refining.",
-                established: "2010",
-                verified: true
-            },
-            {
-                id: "biz-alok-digital-studio",
-                name_mr: "आलोक डिजिटल फोटोग्राफी व सिनेमॅटोग्राफी",
-                name_hi: "आलोक डिजिटल फोटोग्राफी एवं सिनेमैटोग्राफी",
-                name_en: "Alok Digital Photography & Cinematography",
-                owner_mr: "श्री अक्षयजी गोटीवाले",
-                owner_hi: "श्री अक्षयजी गोटीवाले",
-                owner_en: "Shri Akshay Gotiwale",
-                category_key: "other",
-                category_mr: "इतर उद्योग",
-                category_hi: "अन्य उद्योग",
-                category_en: "Other Ventures",
-                phone: "+919755512345",
-                whatsapp: "+919755512345",
-                address_mr: "विजय नगर, इंदूर",
-                address_hi: "विजय नगर, इंदौर",
-                address_en: "Vijay Nagar, Indore",
-                description_mr: "लग्नसोहळे, ज्वेलरी प्रॉडक्ट फोटोशूट व समाज कार्यक्रमांसाठी विशेष फोटोग्राफी सेवा.",
-                description_hi: "विवाह, आभूषण प्रोडक्ट शूट एवं समाज कार्यक्रमों हेतु पेशेवर फोटोग्राफी।",
-                description_en: "Wedding cinematography, jewelry catalog product shoots and event coverage.",
-                established: "2018",
-                verified: true
-            }
-        ];
+          {
+                    "id": "biz-songirkar-jewellers",
+                    "name_mr": "सोनगीरकर ज्वेलर्स",
+                    "name_hi": "सोनगीरकर ज्वेलर्स",
+                    "name_en": "Songirkar Jewellers",
+                    "owner_mr": "श्री विश्वासजी सोनगीरकर",
+                    "owner_hi": "श्री विश्वासजी सोनगीरकर",
+                    "owner_en": "Shri Vishwas Songirkar",
+                    "category_key": "jewellery",
+                    "category_mr": "सराफा व सुवर्णकार",
+                    "category_hi": "सराफा एवं स्वर्णकार",
+                    "category_en": "Jewellery & Bullion",
+                    "phone": "+919827653310",
+                    "whatsapp": "+919827653310",
+                    "address_mr": "सराफा बाजार, इंदूर",
+                    "address_hi": "सराफा बाजार, इंदौर",
+                    "address_en": "Sarafa Bazaar, Indore",
+                    "description_mr": "शुद्ध ९१६ हॉलमार्क सोन्याचे दागिने, हिरेजडित आभूषणे व पारंपारिक महाराष्ट्रीयन डिझाईन्सचे विश्वसनीय दालन.",
+                    "description_hi": "शुद्ध ९१६ हॉलमार्क सोने के आभूषण, हीरे के गहने एवं पारंपरिक महाराष्ट्रीयन डिजाइन्स।",
+                    "description_en": "Pure 916 Hallmarked gold ornaments, diamond jewelry and authentic Maharashtrian designs.",
+                    "established": "1992",
+                    "verified": true
+          },
+          {
+                    "id": "biz-mukesh-ornaments",
+                    "name_mr": "मुकेश ज्वेलर्स व सराफा",
+                    "name_hi": "मुकेश ज्वेलर्स एवं सराफा",
+                    "name_en": "Mukesh Jewellers & Sarafa",
+                    "owner_mr": "श्री मुकेशजी सोनगीरकर",
+                    "owner_hi": "श्री मुकेशजी सोनगीरकर",
+                    "owner_en": "Shri Mukesh Songirkar",
+                    "category_key": "jewellery",
+                    "category_mr": "सराफा व सुवर्णकार",
+                    "category_hi": "सराफा एवं स्वर्णकार",
+                    "category_en": "Jewellery & Bullion",
+                    "phone": "+917879833999",
+                    "whatsapp": "+917879833999",
+                    "address_mr": "छोटा सराफा, राजवाडा जवळ, इंदूर",
+                    "address_hi": "छोटा सराफा, राजवाड़ा के पास, इंदौर",
+                    "address_en": "Chhota Sarafa, Near Rajwada, Indore",
+                    "description_mr": "लग्नकार्यासाठी खास ब्रायडल दागिने, चांदीची भांडी व पुजेचे साहित्य.",
+                    "description_hi": "विवाह हेतु विशेष ब्राइडल ज्वेलरी, चांदी के बर्तन एवं पूजन सामग्री।",
+                    "description_en": "Exclusive bridal jewelry collections, pure silver articles, and pooja items.",
+                    "established": "1998",
+                    "verified": true
+          },
+          {
+                    "id": "biz-narhari-cad-cam",
+                    "name_mr": "श्री नरहरी ३डी ज्वेलरी डिझायनिंग व सीएडी",
+                    "name_hi": "श्री नरहरि ३डी ज्वेलरी डिजाइनिंग एवं सीएडी",
+                    "name_en": "Shri Narhari 3D Jewellery CAD/CAM",
+                    "owner_mr": "श्री राहुलजी सोनार",
+                    "owner_hi": "श्री राहुलजी सोनार",
+                    "owner_en": "Shri Rahul Sonar",
+                    "category_key": "manufacturing",
+                    "category_mr": "उत्पादन व डिझायनिंग",
+                    "category_hi": "उत्पादन एवं डिजाइनिंग",
+                    "category_en": "Manufacturing & CAD",
+                    "phone": "+919098491789",
+                    "whatsapp": "+919098491789",
+                    "address_mr": "सुखलिया मेन रोड, इंदूर",
+                    "address_hi": "सुखलिया मेन रोड, इंदौर",
+                    "address_en": "Sukhlia Main Road, Indore",
+                    "description_mr": "आधुनिक मॅट्रिक्स व राइनो तंत्रज्ञानाद्वारे दागिन्यांचे ३डी मॉडेलिंग, रेंडरिंग व सीएडी/सीएएम सेवा.",
+                    "description_hi": "आधुनिक मैट्रिक्स व राइनो तकनीक द्वारा ३डी मॉडलिंग, रेंडरिंग व सीएडी सेवाएं।",
+                    "description_en": "Modern Matrix & Rhino 3D jewelry designing, rendering and CAM die casting services.",
+                    "established": "2015",
+                    "verified": true
+          },
+          {
+                    "id": "biz-sonar-tax-consultancy",
+                    "name_mr": "सोनार असोसिएट्स — कर व वित्तीय सल्लागार",
+                    "name_hi": "सोनार एसोसिएट्स — टैक्स व वित्तीय सलाहकार",
+                    "name_en": "Sonar Associates — Tax & Financial Advisory",
+                    "owner_mr": "सीए दीपकजी सोनार",
+                    "owner_hi": "सीए दीपकजी सोनार",
+                    "owner_en": "CA Deepak Sonar",
+                    "category_key": "services",
+                    "category_mr": "व्यावसायिक सेवा",
+                    "category_hi": "व्यावसायिक सेवाएं",
+                    "category_en": "Professional Services",
+                    "phone": "+919425022334",
+                    "whatsapp": "+919425022334",
+                    "address_mr": "तुलसी नगर, इंदूर",
+                    "address_hi": "तुलसी नगर, इंदौर",
+                    "address_en": "Tulsi Nagar, Indore",
+                    "description_mr": "जीएसटी नोंदणी, इन्कम टॅक्स रिटर्न, सुवर्ण व्यवसाय ऑडिट व फायनान्स सल्लागार सेवा.",
+                    "description_hi": "जीएसटी, आयकर रिटर्न, ज्वैलरी उद्योग ऑडिट एवं वित्तीय परामर्श सेवाएं।",
+                    "description_en": "GST registration, Income Tax audits, jewellery business finance and compliance.",
+                    "established": "2008",
+                    "verified": true
+          },
+          {
+                    "id": "biz-royal-gems-testing",
+                    "name_mr": "रॉयल जेम्स व रत्न चाचणी प्रयोगशाळा",
+                    "name_hi": "रॉयल जेम्स एवं रत्न परीक्षण प्रयोगशाला",
+                    "name_en": "Royal Gemological Testing Lab",
+                    "owner_mr": "श्री अविनाशजी सोनार",
+                    "owner_hi": "श्री अविनाशजी सोनार",
+                    "owner_en": "Shri Avinash Sonar",
+                    "category_key": "services",
+                    "category_mr": "व्यावसायिक सेवा",
+                    "category_hi": "व्यावसायिक सेवाएं",
+                    "category_en": "Professional Services",
+                    "phone": "+919826011223",
+                    "whatsapp": "+919826011223",
+                    "address_mr": "बडा सराफा, इंदूर",
+                    "address_hi": "बड़ा सराफा, इंदौर",
+                    "address_en": "Bada Sarafa, Indore",
+                    "description_mr": "वैज्ञानिक उपकरणांद्वारे सर्व प्रकारच्या मौल्यवान खडे व रत्नांचे अधिकृत सर्टिफिकेशन आणि चाचणी.",
+                    "description_hi": "वैज्ञानिक उपकरणों द्वारा सभी रत्नों का आधिकारिक प्रमाणीकरण व गुणवत्ता जांच।",
+                    "description_en": "Certified scientific testing of precious gemstones, diamonds, and astro-stones.",
+                    "established": "2011",
+                    "verified": true
+          },
+          {
+                    "id": "biz-om-shree-die-makers",
+                    "name_mr": "ओम श्री ज्वेलरी डाय व मोल्ड्स",
+                    "name_hi": "ओम श्री ज्वेलरी डाई एवं मोल्ड्स",
+                    "name_en": "Om Shree Jewellery Dies & Molds",
+                    "owner_mr": "श्री सुधीरजी सोनगीरकर",
+                    "owner_hi": "श्री सुधीरजी सोनगीरकर",
+                    "owner_en": "Shri Sudhir Songirkar",
+                    "category_key": "manufacturing",
+                    "category_mr": "उत्पादन व डिझायनिंग",
+                    "category_hi": "उत्पादन एवं डिजाइनिंग",
+                    "category_en": "Manufacturing & CAD",
+                    "phone": "+919827033445",
+                    "whatsapp": "+919827033445",
+                    "address_mr": "सराफा लेबर कॉलनी, इंदूर",
+                    "address_hi": "सराफा लेबर कॉलोनी, इंदौर",
+                    "address_en": "Sarafa Labor Colony, Indore",
+                    "description_mr": "सुवर्ण अलंकारांसाठी उच्च गुणवत्तेचे प्रेस डाय, लेझर कटिंग व मास्टर मोल्ड्स निर्मिती.",
+                    "description_hi": "स्वर्ण आभूषणों हेतु उच्च गुणवत्ता वाली प्रेस डाई, लेजर कटिंग व मास्टर मोल्ड्स।",
+                    "description_en": "High precision dies, master molds, and laser cutting for jewelry artisans.",
+                    "established": "2004",
+                    "verified": true
+          },
+          {
+                    "id": "biz-creative-studio",
+                    "name_mr": "क्रिएटिव्ह डिजिटल स्टुडिओ व फोटोग्राफी",
+                    "name_hi": "क्रिएटिव डिजिटल स्टूडियो एवं फोटोग्राफी",
+                    "name_en": "Creative Digital Studio & Photography",
+                    "owner_mr": "श्री सागरजी सोनार",
+                    "owner_hi": "श्री सागरजी सोनार",
+                    "owner_en": "Shri Sagar Sonar",
+                    "category_key": "other",
+                    "category_mr": "इतर व्यवसाय",
+                    "category_hi": "अन्य व्यवसाय",
+                    "category_en": "Other Businesses",
+                    "phone": "+919753516376",
+                    "whatsapp": "+919753516376",
+                    "address_mr": "विजय नगर, इंदूर",
+                    "address_hi": "विजय नगर, इंदौर",
+                    "address_en": "Vijay Nagar, Indore",
+                    "description_mr": "लग्न सोहळे, इव्हेंट्स, प्रॉडक्ट फोटोग्राफी आणि यूट्यूब व्हिडिओ निर्मिती सेवा.",
+                    "description_hi": "विवाह, सामाजिक कार्यक्रम एवं ज्वेलरी उत्पाद फोटोग्राफी सेवाएं।",
+                    "description_en": "Wedding cinematography, event coverage, and high-end jewelry product photography.",
+                    "established": "2018",
+                    "verified": true
+          },
+          {
+                    "id": "biz-shravane-metals",
+                    "name_mr": "श्रवणे रिफायनिंग व बुलियन ट्रेडर्स",
+                    "name_hi": "श्रवणे रिफाइनिंग एवं बुलियन ट्रेडर्स",
+                    "name_en": "Shravane Refining & Bullion Traders",
+                    "owner_mr": "श्री नितीनजी श्रवणे",
+                    "owner_hi": "श्री नितिनजी श्रवणे",
+                    "owner_en": "Shri Nitin Shravane",
+                    "category_key": "jewellery",
+                    "category_mr": "सराफा व सुवर्णकार",
+                    "category_hi": "सराफा एवं स्वर्णकार",
+                    "category_en": "Jewellery & Bullion",
+                    "phone": "+919009797090",
+                    "whatsapp": "+919009797090",
+                    "address_mr": "सराफा बाजार मेन रोड, इंदूर",
+                    "address_hi": "सराफा बाजार मेन रोड, इंदौर",
+                    "address_en": "Sarafa Bazaar Main Road, Indore",
+                    "description_mr": "सोने-चांदी शुद्धिकरण (रिफायनिंग), टंच चाचणी व अधिकृत बुलियन बार पुरवठादार.",
+                    "description_hi": "सोने-चांदी रिफाइनिंग, टंच परीक्षण एवं बुलियन बार्स आपूर्ति।",
+                    "description_en": "Gold and silver refining, purity assaying, and authentic bullion trading.",
+                    "established": "2001",
+                    "verified": true
+          },
+          {
+                    "id": "biz-qsolsoft-technologies",
+                    "name_mr": "क्युसोलसॉफ्ट टेक्नॉलॉजीज (Qsolsoft Technologies)",
+                    "name_hi": "क्युसोलसॉफ्ट टेक्नोलॉजीज (Qsolsoft Technologies)",
+                    "name_en": "Qsolsoft Technologies",
+                    "owner_mr": "श्री मुकेशजी सोनगीरकर",
+                    "owner_hi": "श्री मुकेशजी सोनगीरकर",
+                    "owner_en": "Shri Mukesh Songirkar",
+                    "category_key": "services",
+                    "category_mr": "माहिती तंत्रज्ञान व सॉफ्टवेअर सेवा",
+                    "category_hi": "सूचना प्रौद्योगिकी एवं सॉफ्टवेयर सेवाएँ",
+                    "category_en": "IT & Software Development Services",
+                    "phone": "+919827000000",
+                    "whatsapp": "+919827000000",
+                    "address_mr": "इंदूर (मध्य प्रदेश)",
+                    "address_hi": "इंदौर (मध्य प्रदेश)",
+                    "address_en": "Indore (Madhya Pradesh)",
+                    "description_mr": "कस्टम सॉफ्टवेअर डेव्हलपमेंट, वेब व मोबाईल ॲप्लिकेशन, क्लाउड सोल्यूशन्स व डिजिटल ट्रान्सफॉर्मेशन सेवा.",
+                    "description_hi": "कस्टम सॉफ्टवेयर डेवलपमेंट, वेब एवं मोबाइल एप्लिकेशन, क्लाउड सॉल्यूशंस व डिजिटल सेवाएं।",
+                    "description_en": "Custom Software Development, Web & Mobile Applications, Cloud Solutions and Digital Services.",
+                    "established": "2015",
+                    "verified": true
+          },
+          {
+                    "id": "biz-pooja-spray",
+                    "name_mr": "पूजा स्प्रे पेंटिंग (Pooja Spray Painting)",
+                    "name_hi": "पूजा स्प्रे पेंटिंग (Pooja Spray Painting)",
+                    "name_en": "Pooja Spray Painting",
+                    "owner_mr": "श्री नंदकिशोरजी सोनगीरकर",
+                    "owner_hi": "श्री नंदकिशोरजी सोनगीरकर",
+                    "owner_en": "Shri Nandkishore Songirkar",
+                    "category_key": "manufacturing",
+                    "category_mr": "उत्पादन व औद्योगिक सेवा",
+                    "category_hi": "उत्पादन एवं औद्योगिक सेवाएँ",
+                    "category_en": "Industrial & Spray Painting Services",
+                    "phone": "+919827000000",
+                    "whatsapp": "+919827000000",
+                    "address_mr": "इंदूर (मध्य प्रदेश)",
+                    "address_hi": "इंदौर (मध्य प्रदेश)",
+                    "address_en": "Indore (Madhya Pradesh)",
+                    "description_mr": "औद्योगिक व व्यावसायिक स्प्रे पेंटिंग, कोटिंग फिनिशिंग, मेटल पॉलिशिंग आणि दर्जेदार पेंटिंग कार्य.",
+                    "description_hi": "औद्योगिक एवं व्यावसायिक स्प्रे पेंटिंग, कोटिंग फिनिशिंग एवं मेटल पॉलिशिंग सेवाएँ।",
+                    "description_en": "Industrial & commercial spray painting, protective coating, and fine metal finishing.",
+                    "established": "2010",
+                    "verified": true
+          },
+          {
+                    "id": "biz-rameshwaram-studio",
+                    "name_mr": "रामेश्वरम स्टुडिओ (Rameshwaram Studio)",
+                    "name_hi": "रामेश्वरम स्टूडियो (Rameshwaram Studio)",
+                    "name_en": "Rameshwaram Studio",
+                    "owner_mr": "सोनार समाज सदस्य",
+                    "owner_hi": "सोनार समाज सदस्य",
+                    "owner_en": "Sonar Samaj Member",
+                    "category_key": "services",
+                    "category_mr": "फोटोग्राफी व डिजिटल मीडिया",
+                    "category_hi": "फोटोग्राफी एवं डिजिटल मीडिया",
+                    "category_en": "Photography & Digital Studio",
+                    "phone": "+919827000000",
+                    "whatsapp": "+919827000000",
+                    "address_mr": "इंदूर (मध्य प्रदेश)",
+                    "address_hi": "इंदौर (मध्य प्रदेश)",
+                    "address_en": "Indore (Madhya Pradesh)",
+                    "description_mr": "लग्नसोहळे, सांस्कृतिक कार्यक्रम, व्यावसायिक फोटोशूट, व्हिडिओग्राफी व अल्बम डिझायनिंग.",
+                    "description_hi": "विवाह समारोह, सांस्कृतिक कार्यक्रम, व्यावसायिक फोटोशूट एवं वीडियो एडिटिंग।",
+                    "description_en": "Wedding shoots, cultural events, professional photography, videography, and album design.",
+                    "established": "2018",
+                    "verified": true
+          }
+];
 
         let allBusinessesList = [];
         let currentBizCategory = 'all';
         let currentBizSearch = '';
 
         function initBusinessDirectory() {
-            // Check if stored in localStorage (from admin panel updates)
-            let localData = null;
-            try {
-                const stored = localStorage.getItem('sonar_custom_biz') || localStorage.getItem('sonar_cms_businesses');
-                if (stored) localData = JSON.parse(stored);
-            } catch(e) {}
-
-            if (localData && Array.isArray(localData) && localData.length > 0) {
-                allBusinessesList = localData;
-                renderBusinessDirectoryDOM();
-                return;
-            }
-
-            // Fetch from content/business_directory.json
-            fetch('./content/business_directory.json')
+            // Fetch latest from server content/business_directory.json (cache-busted with timestamp)
+            fetch('./content/business_directory.json?t=' + Date.now())
                 .then(r => r.json())
                 .then(data => {
                     if (data && Array.isArray(data.businesses) && data.businesses.length > 0) {
                         allBusinessesList = data.businesses;
+                        
+                        // If localStorage has extra items from recent admin edits, merge them for preview
+                        try {
+                            const stored = localStorage.getItem('sonar_custom_biz');
+                            if (stored) {
+                                const localArr = JSON.parse(stored);
+                                if (Array.isArray(localArr)) {
+                                    const serverIds = new Set(allBusinessesList.map(b => b.id));
+                                    const extra = localArr.filter(b => !serverIds.has(b.id));
+                                    if (extra.length > 0) {
+                                        allBusinessesList = [...extra, ...allBusinessesList];
+                                    }
+                                }
+                            }
+                        } catch(e) {}
                     } else {
                         allBusinessesList = defaultBusinessesData;
                     }
                     renderBusinessDirectoryDOM();
                 })
                 .catch(() => {
-                    allBusinessesList = defaultBusinessesData;
+                    let localData = null;
+                    try {
+                        const stored = localStorage.getItem('sonar_custom_biz') || localStorage.getItem('sonar_cms_businesses');
+                        if (stored) localData = JSON.parse(stored);
+                    } catch(e) {}
+                    if (localData && Array.isArray(localData) && localData.length > 0) {
+                        allBusinessesList = localData;
+                    } else {
+                        allBusinessesList = defaultBusinessesData;
+                    }
                     renderBusinessDirectoryDOM();
                 });
         }

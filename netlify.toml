@@ -1,6 +1,7 @@
 # Netlify Configuration for Sonar Samaj Trust Indore
 [build]
   publish = "."
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/admin"
