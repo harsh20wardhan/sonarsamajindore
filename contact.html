@@ -551,6 +551,19 @@
             const subject = document.getElementById('cp-subject').value;
             const message = document.getElementById('cp-message').value.trim();
 
+            // Save to Supabase DB via Netlify serverless function
+            fetch('/.netlify/functions/members', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    city: city,
+                    occupation: subject,
+                    notes: 'संपर्क पृष्ठ संदेश: ' + message
+                })
+            }).catch(e => console.warn('Supabase DB save note:', e));
+
             const rawText = `*सोनार समाज ट्रस्ट, इंदौर — संपर्क पोर्टल संदेश*\n\n` +
                             `👤 *नाव:* ${name}\n` +
                             `📱 *फोन:* ${phone}\n` +

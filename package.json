@@ -1,0 +1,12 @@
+{
+  "name": "sonarsamajindore",
+  "version": "1.0.0",
+  "description": "Official Website and Admin Portal for Sonar Samaj Trust Indore",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}

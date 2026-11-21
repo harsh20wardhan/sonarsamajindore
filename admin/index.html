@@ -109,6 +109,12 @@
         <i class="fas fa-gear"></i>
         <span>५. संपर्क व UPI माहिती</span>
       </button>
+
+      <button onclick="switchTab('members')" id="tab-btn-members" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
+        <i class="fas fa-users-gear text-emerald-600"></i>
+        <span>६. सदस्य अर्ज (Supabase)</span>
+        <span id="admin-members-badge" class="ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">०</span>
+      </button>
     </div>
 
     <!-- ══════ TAB 1: PHOTO GALLERY MANAGER ══════ -->
@@ -616,6 +622,58 @@
       </div>
     </div>
 
+      <!-- ══════ TAB 6: MEMBER REGISTRATIONS (SUPABASE DB) ══════ -->
+    <div id="panel-members" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-emerald-300 shadow-soft">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center text-2xl shadow-md flex-shrink-0">
+              <i class="fas fa-address-card"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900 marathi">नोंदणी झालेले सदस्य अर्ज (Member Registrations)</h2>
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Supabase Live DB</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5 marathi">वेबसाईटवरील "आमच्याशी जुडा / सदस्यता नोंदणी" फॉर्मवरून आलेले सर्व अर्ज येथे थेट Supabase मधून दिसतील.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="loadMemberRegistrations()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow flex items-center gap-1.5">
+              <i class="fas fa-rotate"></i>
+              <span>रीफ्रेश करा</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="mb-4">
+          <input type="text" id="member-search-input" oninput="filterMemberRegistrations()" placeholder="नावाने किंवा फोन नंबरने शोधा..." class="w-full sm:w-80 px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none marathi">
+        </div>
+
+        <!-- Members Table -->
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full text-left text-xs marathi">
+            <thead class="bg-slate-50 text-slate-700 font-bold uppercase tracking-wider border-b border-slate-200">
+              <tr>
+                <th class="py-3 px-4">तारीख</th>
+                <th class="py-3 px-4">पूर्ण नाव</th>
+                <th class="py-3 px-4">मोबाईल क्रमांक</th>
+                <th class="py-3 px-4">सदस्य प्रकार</th>
+                <th class="py-3 px-4">पत्ता / शहर</th>
+                <th class="py-3 px-4">संदेश / टीप</th>
+                <th class="py-3 px-4 text-center">क्रिया</th>
+              </tr>
+            </thead>
+            <tbody id="admin-members-list" class="divide-y divide-slate-100">
+              <tr>
+                <td colspan="7" class="py-8 text-center text-slate-400">माहिती लोड होत आहे...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Interactive Simple Admin Script -->
@@ -1149,47 +1207,47 @@
       }
     }
 
-    // ═══════════════════ Business Directory Management (With Server Persistence) ═══════════════════
+    // ═══════════════════ Business Directory Management (Direct Supabase DB Sync) ═══════════════════
     let businessesList = [];
 
     function loadBusinesses() {
-      // 1. Fetch live content/business_directory.json from server with cache-busting
-      fetch('../content/business_directory.json?t=' + Date.now())
+      // 1. Fetch live from Supabase Database
+      fetch('/.netlify/functions/businesses')
         .then(r => r.json())
         .then(d => {
-          const serverList = (d && Array.isArray(d.businesses)) ? d.businesses : [];
-          
-          // Check if local storage has any unsaved/new items
-          let merged = [...serverList];
-          try {
-            const stored = localStorage.getItem('sonar_custom_biz');
-            if (stored) {
-              const localList = JSON.parse(stored);
-              if (Array.isArray(localList)) {
-                const serverIds = new Set(serverList.map(b => b.id));
-                const localOnly = localList.filter(b => !serverIds.has(b.id));
-                if (localOnly.length > 0) {
-                  merged = [...localOnly, ...serverList];
-                }
-              }
-            }
-          } catch(e) {}
-
-          businessesList = merged;
-          localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
-          renderAdminBusinesses();
+          if (d && Array.isArray(d.businesses) && d.businesses.length > 0) {
+            businessesList = d.businesses;
+            localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
+            renderAdminBusinesses();
+            showSupabaseStatus(true, businessesList.length);
+          } else {
+            fallbackLocalLoad();
+          }
         })
         .catch(() => {
-          // Fallback to local storage if offline
-          try {
-            const stored = localStorage.getItem('sonar_custom_biz');
-            if (stored) businessesList = JSON.parse(stored);
-          } catch(e) {}
-          renderAdminBusinesses();
+          fallbackLocalLoad();
         });
     }
 
-    function handleBusinessSave(e) {
+    function fallbackLocalLoad() {
+      fetch('../content/business_directory.json?t=' + Date.now())
+        .then(r => r.json())
+        .then(d => {
+          businessesList = (d && Array.isArray(d.businesses)) ? d.businesses : [];
+          renderAdminBusinesses();
+        })
+        .catch(() => renderAdminBusinesses());
+    }
+
+    function showSupabaseStatus(isLive, count) {
+      const statusEl = document.getElementById('github-biz-status');
+      if (statusEl) {
+        statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-emerald-50 text-emerald-900 border-emerald-300 block marathi';
+        statusEl.innerHTML = '<i class="fas fa-database text-emerald-600 mr-1.5"></i> <strong>Supabase लाइव्ह डेटाबेस कनेक्टेड:</strong> ' + count + ' व्यवसाय थेट डेटाबेसमधून लोड झाले आहेत. येथे केलेले बदल डिप्लॉयमेंटवर अवलंबून नसून डेटाबेसमध्ये कायमस्वरूपी राहतील.';
+      }
+    }
+
+    async function handleBusinessSave(e) {
       e.preventDefault();
       const name = document.getElementById('biz-name').value.trim();
       const owner = document.getElementById('biz-owner').value.trim();
@@ -1224,21 +1282,28 @@
         verified: true
       };
 
+      // Optimistic update in UI
       businessesList.unshift(newBiz);
+      renderAdminBusinesses();
+      document.getElementById('form-business').reset();
+
+      // Save directly to Supabase Database
+      try {
+        const res = await fetch('/.netlify/functions/businesses', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newBiz)
+        });
+        if (res.ok) {
+          alert('व्यवसाय थेट Supabase डेटाबेसमध्ये कायमस्वरूपी सेव्ह झाला आहे!');
+        }
+      } catch(err) {
+        console.warn('Supabase DB save note:', err);
+      }
+
       try {
         localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
       } catch(err) {}
-
-      document.getElementById('form-business').reset();
-      renderAdminBusinesses();
-
-      const statusEl = document.getElementById('github-biz-status');
-      if (statusEl) {
-        statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-amber-50 text-amber-900 border-amber-300 block marathi';
-        statusEl.innerHTML = '<i class="fas fa-info-circle mr-1 text-amber-600"></i> नवीन व्यवसाय जोडला गेला आहे! हा बदल पुढील सर्व डिप्लॉयमेंट्समध्ये कायमस्वरूपी ठेवण्यासाठी वरील <strong>"सर्व्हरवर पब्लिश करा"</strong> बटणावर क्लिक करा.';
-      }
-
-      alert('व्यवसाय स्थानिकरित्या जोडला गेला आहे! हा बदल सर्व्हरवर कायमस्वरूपी सेव्ह करण्यासाठी "सर्व्हरवर पब्लिश करा" बटणावर क्लिक करा.');
     }
 
     function renderAdminBusinesses() {
@@ -1261,154 +1326,105 @@
             </div>
             <h4 class="font-bold text-sm text-slate-900 marathi">${b.name_mr}</h4>
             <p class="text-slate-600 mt-0.5"><i class="fas fa-user-tie text-[10px] mr-1 text-amber-600"></i>${b.owner_mr}</p>
-            <p class="text-slate-500 mt-0.5"><i class="fas fa-location-dot text-[10px] mr-1 text-amber-600"></i>${b.address_mr}</p>
+            <p class="text-slate-500 mt-0.5"><i class="fas fa-location-dot text-[10px] mr-1 text-amber-600"></i>${b.address_mr || 'इंदूर'}</p>
           </div>
           <div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
-            <span><i class="fas fa-phone mr-1"></i>${b.phone}</span>
+            <span><i class="fas fa-phone mr-1"></i>${b.phone || '-'}</span>
             <span class="text-emerald-600 font-bold"><i class="fab fa-whatsapp mr-1"></i>WhatsApp</span>
           </div>
         </div>
       `).join('');
     }
 
-    function removeBusiness(idx) {
-      if (confirm('हा व्यवसाय डिरेक्टरीतून काढायचा आहे का?')) {
-        businessesList.splice(idx, 1);
+    async function removeBusiness(idx) {
+      const b = businessesList[idx];
+      if (!b) return;
+      if (confirm(`"${b.name_mr}" हा व्यवसाय डिरेक्टरीतून कायमचा काढायचा आहे का?`)) {
+        const deleted = businessesList.splice(idx, 1)[0];
+        renderAdminBusinesses();
+
+        // Delete from Supabase Database
+        try {
+          await fetch('/.netlify/functions/businesses?id=' + encodeURIComponent(deleted.id), {
+            method: 'DELETE'
+          });
+        } catch(err) {
+          console.warn('Supabase DB delete note:', err);
+        }
+
         try {
           localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
         } catch(err) {}
-        renderAdminBusinesses();
-
-        const statusEl = document.getElementById('github-biz-status');
-        if (statusEl) {
-          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-amber-50 text-amber-900 border-amber-300 block marathi';
-          statusEl.innerHTML = '<i class="fas fa-info-circle mr-1 text-amber-600"></i> व्यवसाय हटवला गेला आहे! हा बदल सर्व्हरवर सेव्ह करण्यासाठी <strong>"सर्व्हरवर पब्लिश करा"</strong> बटण दाबा.';
-        }
       }
     }
 
-    // ── Persistent Server Sync (GitHub API & Netlify Function) ──
-    async function publishBusinessToGitHub() {
-      const statusEl = document.getElementById('github-biz-status');
-      const btn = document.getElementById('btn-publish-biz');
-      if (statusEl) {
-        statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-blue-50 text-blue-900 border-blue-200 block marathi';
-        statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> सर्व्हरशी कनेक्ट करत आहे...';
-      }
-      if (btn) btn.disabled = true;
+    // ── Member Registrations Management (Supabase) ──
+    let allMemberRegistrations = [];
 
-      // 1. Try serverless function on Netlify first
-      try {
-        const netlifyRes = await fetch('/.netlify/functions/save-business', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ businesses: businessesList })
-        });
-
-        if (netlifyRes.ok) {
-          const resData = await netlifyRes.json();
-          if (statusEl) {
-            statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-emerald-50 text-emerald-900 border-emerald-300 block marathi';
-            statusEl.innerHTML = '<i class="fas fa-check-circle text-emerald-600 mr-1.5"></i> बदल थेट GitHub वर पब्लिश झाले आहेत! पुढील ३०-४५ सेकंदात Netlify वर नवीन डिप्लॉयमेंट आपोआप लाईव्ह होईल.';
-          }
-          alert('यशस्वी: व्यवसाय डिरेक्टरी थेट GitHub वर सेव्ह झाली आहे! आता हे बदल कोणत्याही डिप्लॉयमेंटमध्ये कधीही नष्ट होणार नाहीत.');
-          if (btn) btn.disabled = false;
-          return;
-        }
-      } catch (e) {
-        // Netlify function not available (e.g. running locally or no token on netlify)
+    function loadMemberRegistrations() {
+      const listEl = document.getElementById('admin-members-list');
+      const badge = document.getElementById('admin-members-badge');
+      if (listEl) {
+        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">Supabase डेटाबेसमधून अर्ज लोड होत आहेत...</td></tr>';
       }
 
-      // 2. Fallback: Direct GitHub API with client token
-      let token = localStorage.getItem('sonar_gh_token');
-      if (!token) {
-        token = prompt('GitHub वर थेट सेव्ह करण्यासाठी GitHub Personal Access Token प्रविष्ट करा:\n(हा टोकन तुमच्या ब्राऊझरमध्ये सुरक्षित सेव्ह राहील ज्यामुळे तुम्ही एका क्लिकवर सर्व्हरवर सेव्ह करू शकाल)');
-        if (!token) {
-          if (statusEl) statusEl.classList.add('hidden');
-          if (btn) btn.disabled = false;
-          return;
-        }
-        localStorage.setItem('sonar_gh_token', token.trim());
-      }
-
-      try {
-        const owner = 'harsh20wardhan';
-        const repo = 'sonarsamajindore';
-        const path = 'content/business_directory.json';
-
-        if (statusEl) statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> GitHub कडून फाइल माहिती मिळवत आहे...';
-
-        const getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Accept': 'application/vnd.github.v3+json'
+      fetch('/.netlify/functions/members')
+        .then(r => r.json())
+        .then(d => {
+          allMemberRegistrations = (d && Array.isArray(d.members)) ? d.members : [];
+          if (badge) badge.textContent = allMemberRegistrations.length;
+          renderMemberRegistrations(allMemberRegistrations);
+        })
+        .catch(err => {
+          if (listEl) {
+            listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-rose-500 marathi">डेटाबेस लोड करताना त्रुटी आली: ' + err.message + '</td></tr>';
           }
         });
-
-        if (getRes.status === 401) {
-          localStorage.removeItem('sonar_gh_token');
-          alert('GitHub Token अवैध (Invalid) आहे. कृपया योग्य टोकन प्रविष्ट करा.');
-          if (statusEl) statusEl.classList.add('hidden');
-          if (btn) btn.disabled = false;
-          return;
-        }
-
-        let sha = null;
-        if (getRes.ok) {
-          const getData = await getRes.json();
-          sha = getData.sha;
-        }
-
-        if (statusEl) statusEl.innerHTML = '<span class="animate-spin inline-block mr-2"><i class="fas fa-circle-notch"></i></span> GitHub वर कमिट पाठवत आहे...';
-
-        const updatedData = {
-          title: "सोनार समाज इंदूर - व्यावसायिक निर्देशिका (Business Directory)",
-          description: "इंदूर व परिसरातील सोनार समाज बांधवांच्या प्रतिष्ठानांची, दुकानांची व सेवांची अधिकृत यादी",
-          last_updated: new Date().toISOString(),
-          businesses: businessesList
-        };
-
-        const jsonString = JSON.stringify(updatedData, null, 2);
-        const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
-
-        const putRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-          method: 'PUT',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-            'Accept': 'application/vnd.github.v3+json'
-          },
-          body: JSON.stringify({
-            message: 'update: business directory updated via admin panel',
-            content: base64Content,
-            sha: sha,
-            branch: 'main'
-          })
-        });
-
-        if (!putRes.ok) {
-          const errData = await putRes.json();
-          throw new Error(errData.message || 'GitHub commit failed');
-        }
-
-        if (statusEl) {
-          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-emerald-50 text-emerald-900 border-emerald-300 block marathi';
-          statusEl.innerHTML = '<i class="fas fa-check-circle text-emerald-600 mr-1.5"></i> बदल थेट GitHub वर पब्लिश झाले आहेत! पुढील ३०-४५ सेकंदात Netlify वर नवीन डिप्लॉयमेंट आपोआप लाईव्ह होईल.';
-        }
-        alert('बदल यशस्वीरित्या GitHub वर कायमस्वरूपी सेव्ह झाले आहेत! नवीन डिप्लॉयमेंट सुरू झाली असून सर्व डिव्हाइसेसवर माहिती अपडेट राहील.');
-      } catch (err) {
-        console.error(err);
-        if (statusEl) {
-          statusEl.className = 'mt-3 text-xs font-bold p-3 rounded-xl border bg-rose-50 text-rose-900 border-rose-300 block marathi';
-          statusEl.innerHTML = '<i class="fas fa-exclamation-triangle text-rose-600 mr-1"></i> त्रुटी: ' + err.message + ' — तुम्ही "JSON डाउनलोड" बटण वापरून फाइल सेव्ह करू शकता.';
-        }
-        alert('सर्व्हरवर सेव्ह करताना त्रुटी आली: ' + err.message + '\n\nतुम्ही "JSON डाउनलोड" बटण वापरून फाइल सेव्ह करू शकता.');
-      } finally {
-        if (btn) btn.disabled = false;
-      }
     }
 
-    // Download updated business_directory.json
+    function renderMemberRegistrations(list) {
+      const listEl = document.getElementById('admin-members-list');
+      if (!listEl) return;
+
+      if (!list.length) {
+        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">अद्याप कोणताही सदस्य नोंदणी अर्ज आलेला नाही.</td></tr>';
+        return;
+      }
+
+      listEl.innerHTML = list.map((m) => {
+        const dt = m.created_at ? new Date(m.created_at).toLocaleDateString('mr-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '-';
+        const waMsg = encodeURIComponent('नमस्कार ' + m.name + ', सोनार समाज ट्रस्ट इंदूरमध्ये आपला नोंदणी अर्ज प्राप्त झाला आहे.');
+        return `
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-3 px-4 text-slate-500 font-mono text-[11px] whitespace-nowrap">${dt}</td>
+            <td class="py-3 px-4 font-bold text-slate-900">${m.name}</td>
+            <td class="py-3 px-4 font-mono font-semibold text-slate-700 whitespace-nowrap">${m.phone}</td>
+            <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold">${m.occupation || 'सामान्य सदस्य'}</span></td>
+            <td class="py-3 px-4 text-slate-600 max-w-xs truncate">${m.address || m.city || 'इंदूर'}</td>
+            <td class="py-3 px-4 text-slate-500 max-w-xs truncate">${m.notes || '-'}</td>
+            <td class="py-3 px-4 text-center whitespace-nowrap">
+              <a href="https://wa.me/91${(m.phone || '').replace(/[^0-9]/g, '')}?text=${waMsg}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] shadow-xs">
+                <i class="fab fa-whatsapp"></i> संपर्क
+              </a>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterMemberRegistrations() {
+      const q = (document.getElementById('member-search-input')?.value || '').trim().toLowerCase();
+      if (!q) {
+        renderMemberRegistrations(allMemberRegistrations);
+        return;
+      }
+      const filtered = allMemberRegistrations.filter(m => {
+        return (m.name || '').toLowerCase().includes(q) || (m.phone || '').includes(q) || (m.address || '').toLowerCase().includes(q);
+      });
+      renderMemberRegistrations(filtered);
+    }
+
+    // ── Download JSON Backup fallback ──
     function downloadBusinessJSON() {
       const data = {
         title: "सोनार समाज इंदूर - व्यावसायिक निर्देशिका (Business Directory)",
@@ -1423,45 +1439,8 @@
       a.click();
     }
 
-    // Import JSON File into Admin
-    function importBusinessJSON(e) {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        try {
-          const parsed = JSON.parse(evt.target.result);
-          const list = Array.isArray(parsed) ? parsed : (parsed.businesses || []);
-          if (Array.isArray(list) && list.length > 0) {
-            businessesList = list;
-            localStorage.setItem('sonar_custom_biz', JSON.stringify(businessesList));
-            renderAdminBusinesses();
-            alert(`${list.length} व्यवसाय यशस्वीरित्या इम्पोर्ट झाले आहेत!`);
-          } else {
-            alert('JSON फाइलमध्ये योग्य व्यवसाय सूची आढळली नाही.');
-          }
-        } catch(err) {
-          alert('अवैध JSON फाइल: ' + err.message);
-        }
-      };
-      reader.readAsText(file);
-    }
-
-    // Reset Business Data to Default Server Data
     function resetBusinessToServerData() {
-      if (confirm('सर्व्हरवरील मूळ business_directory.json डेटा पुन्हा लोड करायचा आहे का?')) {
-        localStorage.removeItem('sonar_custom_biz');
-        fetch('../content/business_directory.json?t=' + Date.now())
-          .then(r => r.json())
-          .then(d => {
-            businessesList = (d && Array.isArray(d.businesses)) ? d.businesses : [];
-            renderAdminBusinesses();
-            alert('सर्व्हर डेटा यशस्वीरित्या रीलोड झाला!');
-          })
-          .catch(() => {
-            alert('सर्व्हर डेटा लोड करताना त्रुटी आली.');
-          });
-      }
+      loadBusinesses();
     }
 
     // Birthday Save

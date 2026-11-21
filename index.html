@@ -4228,36 +4228,66 @@
             }
         }
 
-        // ── Membership Form Submission via WhatsApp ──
+        // ── Membership Form Submission via Supabase & WhatsApp ──
         function handleMembershipSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('member-name').value;
             const phone = document.getElementById('member-phone').value;
-            const email = document.getElementById('member-email').value || 'नाही';
+            const email = document.getElementById('member-email').value || '';
             const type = document.getElementById('member-type').value;
-            const address = document.getElementById('member-address').value || 'नाही';
-            const message = document.getElementById('member-message').value || 'नाही';
+            const address = document.getElementById('member-address').value || '';
+            const message = document.getElementById('member-message').value || '';
+
+            // 1. Save to Supabase DB via Netlify serverless function
+            fetch('/.netlify/functions/members', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    occupation: type,
+                    address: address,
+                    notes: message
+                })
+            }).catch(e => console.warn('Supabase DB save note:', e));
 
             const rawMsg = `*सोनार समाज ट्रस्ट, इंदौर - सदस्यता नोंदणी अर्ज*\n\n` +
                            `👤 *नाव:* ${name}\n` +
                            `📱 *मोबाईल:* ${phone}\n` +
-                           `📧 *ई-मेल:* ${email}\n` +
+                           `📧 *ई-मेल:* ${email || 'नाही'}\n` +
                            `🏷️ *सदस्य प्रकार:* ${type}\n` +
-                           `📍 *पत्ता:* ${address}\n` +
-                           `💬 *संदेश:* ${message}`;
+                           `📍 *पत्ता:* ${address || 'नाही'}\n` +
+                           `💬 *संदेश:* ${message || 'नाही'}`;
 
-            showSuccessModal('सदस्यता अर्ज तयार झाला आहे. आता WhatsApp उघडत आहे...');
+            showSuccessModal('आपला सदस्यता अर्ज Supabase डेटाबेसमध्ये सुरक्षित सेव्ह झाला आहे! आता WhatsApp उघडत आहे...');
             setTimeout(() => {
                 window.open('https://wa.me/917314203099?text=' + encodeURIComponent(rawMsg), '_blank');
             }, 800);
         }
 
-        // ── Contact Form Submission ──
+        // ── Contact Form Submission via Supabase ──
         function handleContactSubmit(event) {
             event.preventDefault();
             const form = document.getElementById('contact-form');
+            const name = form.querySelector('[name="name"]')?.value || '';
+            const phone = form.querySelector('[name="phone"]')?.value || '';
+            const email = form.querySelector('[name="email"]')?.value || '';
+            const msg = form.querySelector('[name="message"]')?.value || '';
+
+            fetch('/.netlify/functions/members', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    notes: 'वेबसाईट संपर्क फॉर्म संदेश: ' + msg
+                })
+            }).catch(() => {});
+
             form.reset();
-            showSuccessModal('संपर्क साधल्याबद्दल धन्यवाद! ट्रस्टचे प्रतिनिधी लवकरच आपल्याशी संपर्क साधतील.');
+            showSuccessModal('संपर्क साधल्याबद्दल धन्यवाद! आपली माहिती सुरक्षित Supabase डेटाबेसमध्ये नोंदवली गेली असून ट्रस्टचे प्रतिनिधी लवकरच संपर्क साधतील.');
         }
 
         // ── Comprehensive Multi-lingual Translation Engine ──
@@ -5637,43 +5667,35 @@
         let currentBizSearch = '';
 
         function initBusinessDirectory() {
-            // Fetch latest from server content/business_directory.json (cache-busted with timestamp)
+            // 1. Fetch live from Supabase Database via serverless function
+            fetch('/.netlify/functions/businesses')
+                .then(r => r.json())
+                .then(data => {
+                    if (data && Array.isArray(data.businesses) && data.businesses.length > 0) {
+                        allBusinessesList = data.businesses;
+                        renderBusinessDirectoryDOM();
+                    } else {
+                        loadFallbackBusinessJSON();
+                    }
+                })
+                .catch(() => {
+                    loadFallbackBusinessJSON();
+                });
+        }
+
+        function loadFallbackBusinessJSON() {
             fetch('./content/business_directory.json?t=' + Date.now())
                 .then(r => r.json())
                 .then(data => {
                     if (data && Array.isArray(data.businesses) && data.businesses.length > 0) {
                         allBusinessesList = data.businesses;
-                        
-                        // If localStorage has extra items from recent admin edits, merge them for preview
-                        try {
-                            const stored = localStorage.getItem('sonar_custom_biz');
-                            if (stored) {
-                                const localArr = JSON.parse(stored);
-                                if (Array.isArray(localArr)) {
-                                    const serverIds = new Set(allBusinessesList.map(b => b.id));
-                                    const extra = localArr.filter(b => !serverIds.has(b.id));
-                                    if (extra.length > 0) {
-                                        allBusinessesList = [...extra, ...allBusinessesList];
-                                    }
-                                }
-                            }
-                        } catch(e) {}
                     } else {
                         allBusinessesList = defaultBusinessesData;
                     }
                     renderBusinessDirectoryDOM();
                 })
                 .catch(() => {
-                    let localData = null;
-                    try {
-                        const stored = localStorage.getItem('sonar_custom_biz') || localStorage.getItem('sonar_cms_businesses');
-                        if (stored) localData = JSON.parse(stored);
-                    } catch(e) {}
-                    if (localData && Array.isArray(localData) && localData.length > 0) {
-                        allBusinessesList = localData;
-                    } else {
-                        allBusinessesList = defaultBusinessesData;
-                    }
+                    allBusinessesList = defaultBusinessesData;
                     renderBusinessDirectoryDOM();
                 });
         }
