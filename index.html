@@ -800,128 +800,161 @@
         <section id="events" class="py-20 bg-white border-y border-surface-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div data-i18n="events_pill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi">
-                        अपडेट्स व घडामोडी
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider marathi">
+                        🌕 विशेष सोहळा वृत्तांत • कार्यक्रम
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight marathi">
-                        <span data-i18n="events_title">आगामी कार्यक्रम व नवीनतम बातम्या</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-3 mb-4 tracking-tight marathi">
+                        कोजागिरी पौर्णिमा सोहळा
                     </h2>
-                    <p data-i18n="events_desc" class="text-slate-600 text-base sm:text-lg marathi">
-                        समाजातील आगामी कार्यक्रम, संस्कार सोहळे, शिबिरे आणि महत्त्वाच्या बातम्यांची माहिती.
+                    <p class="text-slate-600 text-base sm:text-lg marathi">
+                        आनंद आणि एकतेचा सुंदर संगम — सोनार समाज मंडळ, इन्दौर (म.प्र)
                     </p>
                 </div>
 
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                    
-                    <!-- Left: Upcoming Events Panel (From Attached Reference) -->
-                    <div class="bg-surface-pearl p-6 sm:p-8 rounded-3xl border border-surface-border shadow-soft">
-                        <div class="flex items-center justify-between pb-4 border-b border-surface-border mb-6">
-                            <h3 class="text-2xl font-bold text-brand-600 marathi flex items-center gap-2.5">
-                                <i class="fas fa-calendar-alt text-brand-500"></i>
-                                <span data-i18n="panel_events_title">📅 आगामी कार्यक्रम</span>
-                            </h3>
-                            <span class="text-xs bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full font-bold">2027</span>
+                <!-- ═══════════ KOJAGIRI POURNIMA SHOWCASE CARD ═══════════ -->
+                <div class="bg-gradient-to-br from-[#fffdfa] via-white to-amber-50/60 rounded-3xl border-2 border-amber-200/90 shadow-card overflow-hidden p-6 sm:p-8 lg:p-10 mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                        
+                        <!-- Left Column: Photo Frame & Highlights -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="relative rounded-2xl overflow-hidden border-2 border-amber-200 shadow-md group cursor-pointer" onclick="openLightbox(this)" data-title="कोजागिरी पौर्णिमा सोहळा २०२६" data-caption="सिंगापूर ग्रीन, देवास नाका, इंदूर • रविवार २५.१०.२०२६">
+                                <img src="./src/kojagiri-sohala.jpg" alt="कोजागिरी पौर्णिमा सोहळा २०२६ - सोनार समाज मंडळ, इंदूर" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                    <span class="text-white text-xs font-bold flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full">
+                                        <i class="fas fa-search-plus"></i> फोटो मोठे करून पहा
+                                    </span>
+                                </div>
+                                <div class="absolute top-3 left-3 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm marathi">
+                                    🌕 कोजागिरी पौर्णिमा सोहळा
+                                </div>
+                                <div class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-sm text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full border border-amber-400/30 marathi">
+                                    सिंगापूर ग्रीन, देवास नाका
+                                </div>
+                            </div>
+
+                            <!-- Cultural Highlights Badges -->
+                            <div class="p-4 rounded-2xl bg-amber-50/90 border border-amber-200">
+                                <p class="text-xs font-bold text-amber-900 mb-2.5 marathi flex items-center gap-1.5">
+                                    <i class="fas fa-sparkles text-amber-600"></i> सोहळ्याची प्रमुख वैशिष्ट्ये व आकर्षणे:
+                                </p>
+                                <div class="flex flex-wrap gap-2 text-xs marathi">
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">🙏 छप्पन भोग</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">💃 उत्साहपूर्ण गरबा</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">🎶 भुला बाईची गानी</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">🎯 मनोरंजक खेळ</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">🏆 पारितोषिक वितरण</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-slate-800 font-semibold shadow-2xs">🍲 स्नेहभोजन</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="events-container" class="space-y-5">
+                        <!-- Right Column: Full Writeup & President Sign-off -->
+                        <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+                            <div>
+                                <!-- Event Date & Venue Badge -->
+                                <div class="inline-flex flex-wrap items-center gap-2 mb-3">
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 marathi">
+                                        <i class="fas fa-check-circle"></i> सोहळा यशस्वीरित्या संपन्न
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200 marathi">
+                                        <i class="fas fa-calendar-alt text-brand-600"></i> रविवार दिनांक 25.10.2026
+                                    </span>
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200 marathi">
+                                        <i class="fas fa-map-marker-alt text-brand-600"></i> सिंगापूर ग्रीन, देवास नाका
+                                    </span>
+                                </div>
 
-                            <!-- Event: Jan 2027 Sankranti & Varshik Aam Sabha -->
-                            <div class="flex items-start gap-4 p-5 rounded-2xl bg-amber-50/90 border-2 border-amber-300 hover:shadow-md transition-shadow relative overflow-hidden">
-                                <div class="absolute top-0 right-0 bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                                    आगामी मुख्य सोहळा
+                                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight marathi mb-4">
+                                    🌕✨ कोजागिरी पौर्णिमा सोहळा – आनंद आणि एकतेचा सुंदर संगम! ✨
+                                </h3>
+
+                                <div class="space-y-3.5 text-slate-700 text-sm sm:text-base leading-relaxed marathi">
+                                    <p>
+                                        आपल्या <strong>सोनार समाज,इन्दौर</strong> चा कोजागिरी पौर्णिमा सोहळा सर्व समाजबांधवांच्या उत्स्फूर्त सहभागामुळे, सहकार्यामुळे आणि आपुलकीच्या वातावरणात अत्यंत आनंदात व उत्साहात रविवार दिनांक 25.10.2026ला सिंगापूर ग्रीन,देवास नाका येथे संपन्न झाला.
+                                    </p>
+                                    <p>
+                                        विविध सांस्कृतिक कार्यक्रम, लहान मुलांचे व महिलांचे मनोरंजक खेळ, उत्साहपूर्ण गरबा , भुला बाईची गानी ,छप्पन भोग,पारितोषिक वितरण आणि स्नेहभोजन यामुळे हा सोहळा खऱ्या अर्थाने अविस्मरणीय ठरला. ❤️
+                                    </p>
+                                    <p>
+                                        हा कार्यक्रम यशस्वी करण्यासाठी सहकार्य करणाऱ्या सर्व कार्यकर्त्यांचे, महिला भगिनींचे, युवकांचे आणि समस्त समाजबांधवांचे मनःपूर्वक आभार! 🙏
+                                    </p>
                                 </div>
-                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex flex-col items-center justify-center flex-shrink-0 text-center font-bold shadow-md">
-                                    <span class="text-xl sm:text-2xl leading-none font-bold">जाने</span>
-                                    <span class="text-xs leading-tight">वारी</span>
-                                    <span class="text-[11px] text-amber-200">2027</span>
+
+                                <!-- Quote Highlight Box -->
+                                <div class="mt-5 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 text-slate-800 marathi shadow-2xs">
+                                    <p class="text-sm sm:text-base font-semibold leading-relaxed">
+                                        "आपली एकजूट, आपले प्रेम आणि परस्परांचे सहकार्य हीच आपल्या समाजाची खरी ताकद आहे. भविष्यातही असेच स्नेहबंध अधिक दृढ होत राहोत, हीच सदिच्छा!"
+                                    </p>
                                 </div>
-                                <div class="flex-1 min-w-0 pr-6">
-                                    <div class="flex items-center gap-2 mb-1.5">
-                                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-950 marathi">मकर संक्रांती • वार्षिक आम सभा</span>
+                            </div>
+
+                            <!-- President Gratitude Box -->
+                            <div class="mt-6 pt-5 border-t border-amber-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white/90 p-4 sm:p-5 rounded-2xl border border-amber-200 shadow-2xs">
+                                <div class="flex items-center gap-3.5">
+                                    <img src="./src/members/vishwas-songirkar.jpg" alt="विश्वास सोनगिरकर" class="w-14 h-14 rounded-full object-cover border-2 border-brand-500 shadow-sm flex-shrink-0">
+                                    <div>
+                                        <div class="text-xs font-bold text-amber-800 marathi mb-0.5">💐 सर्वांचे मनःपूर्वक आभार! 💐</div>
+                                        <h4 class="font-bold text-slate-900 text-base marathi">🙏🏻विश्वास सोनगिरकर</h4>
+                                        <p class="text-xs text-brand-600 font-semibold marathi">(अध्यक्ष) — सोनार समाज मंडळ, इन्दौर (म.प्र)</p>
                                     </div>
-                                    <h4 class="font-bold text-slate-900 text-lg marathi">मकर संक्रांती उत्सव व वार्षिक आम सभा २०२७</h4>
-                                    <p class="text-xs text-slate-600 mt-1.5 flex items-center gap-1.5 marathi">
-                                        <i class="fas fa-calendar-alt text-brand-500"></i>
-                                        <span>जानेवारी २०२७ • तिळगूळ वाटप, हळदी-कुंकू व वार्षिक सर्वसाधारण सभा</span>
-                                    </p>
-                                    <p class="text-xs text-slate-600 mt-1 flex items-center gap-1.5 marathi">
-                                        <i class="fas fa-map-marker-alt text-brand-500"></i>
-                                        <span>स्थळ: लवकरच अधिकृतपणे जाहीर होईल (इंदूर)</span>
-                                    </p>
-                                    <div class="mt-3.5 pt-3 border-t border-amber-200/60 flex items-center gap-3">
-                                        <a href="https://wa.me/917314203099?text=Namaskar%2C%20Makar%20Sankranti%20ani%20Varshik%20Aam%20Sabha%202027%20baddal%20mahiti%20havi%20ahe." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-xs">
-                                            <i class="fab fa-whatsapp"></i> अधिक माहितीसाठी संपर्क
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="https://wa.me/917314203099?text=Namaskar%2C%20Kojagiri%20Pournima%20Sohala%20baddal%20khup%20khup%20shubhechha!" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-bold transition-all shadow-xs">
+                                        <i class="fab fa-whatsapp"></i> शुभेच्छा पाठवा
+                                    </a>
                                 </div>
                             </div>
 
                         </div>
+
                     </div>
-
-                    <!-- Right: Latest News Panel (From Attached Reference) -->
-                    <div class="bg-surface-pearl p-6 sm:p-8 rounded-3xl border border-surface-border shadow-soft">
-                        <div class="flex items-center justify-between pb-4 border-b border-surface-border mb-6">
-                            <h3 class="text-2xl font-bold text-brand-600 marathi flex items-center gap-2.5">
-                                <i class="fas fa-newspaper text-brand-500"></i>
-                                <span data-i18n="panel_news_title">📰 नवीनतम बातम्या</span>
-                            </h3>
-                            <span data-i18n="badge_latest" class="text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold">ताजी माहिती</span>
-                        </div>
-
-                        <div id="news-container" class="space-y-5">
-                            
-                            <!-- News 1 -->
-                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-surface-border hover:shadow-md transition-shadow">
-                                <div class="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 flex flex-col items-center justify-center flex-shrink-0 text-center font-bold">
-                                    <span class="text-xl leading-none">12</span>
-                                    <span class="text-[11px] leading-tight marathi">सप्टेंबर</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 data-i18n="news_1_title" class="font-bold text-slate-900 text-base marathi">समाज ट्रस्टची नवीन कार्यकारिणी जाहीर</h4>
-                                    <p data-i18n="news_1_desc" class="text-xs text-slate-600 mt-1 marathi">
-                                        ट्रस्टच्या आगामी कार्यकाळासाठी नवीन कार्यकारिणीची घोषणा करण्यात आली असून, समाजाच्या विकासासाठी विविध समित्या गठीत करण्यात आल्या आहेत.
-                                    </p>
-                                    <span data-i18n="news_read_more" class="inline-block mt-2 text-xs font-semibold text-brand-600 marathi hover:underline cursor-pointer">सविस्तर वाचा →</span>
-                                </div>
-                            </div>
-
-                            <!-- News 2 -->
-                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-surface-border hover:shadow-md transition-shadow">
-                                <div class="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 flex flex-col items-center justify-center flex-shrink-0 text-center font-bold">
-                                    <span class="text-xl leading-none">05</span>
-                                    <span class="text-[11px] leading-tight marathi">सप्टेंबर</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 data-i18n="news_2_title" class="font-bold text-slate-900 text-base marathi">दिव्यांग सहाय्य उपक्रम संपन्न</h4>
-                                    <p data-i18n="news_2_desc" class="text-xs text-slate-600 mt-1 marathi">
-                                        समाजातील गरजू दिव्यांग बांधवांना विशेष सहाय्य साहित्य व मदतीचे वितरण करण्यात आले.
-                                    </p>
-                                    <span data-i18n="news_read_more" class="inline-block mt-2 text-xs font-semibold text-brand-600 marathi hover:underline cursor-pointer">सविस्तर वाचा →</span>
-                                </div>
-                            </div>
-
-                            <!-- News 3 -->
-                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-surface-border hover:shadow-md transition-shadow">
-                                <div class="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 flex flex-col items-center justify-center flex-shrink-0 text-center font-bold">
-                                    <span class="text-xl leading-none">28</span>
-                                    <span data-i18n="news_3_month" class="text-[11px] leading-tight marathi">ऑगस्ट</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 data-i18n="news_3_title" class="font-bold text-slate-900 text-base marathi">शैक्षणिक सहाय्य व वह्या-पुस्तके वितरण</h4>
-                                    <p data-i18n="news_3_desc" class="text-xs text-slate-600 mt-1 marathi">
-                                        समाजातील प्रतिभावंत व होतकरू विद्यार्थ्यांना शैक्षणिक साहित्य व मार्गदर्शन सत्र आयोजित करून सन्मानित करण्यात आले.
-                                    </p>
-                                    <span data-i18n="news_read_more" class="inline-block mt-2 text-xs font-semibold text-brand-600 marathi hover:underline cursor-pointer">सविस्तर वाचा →</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- ═══════════ UPCOMING EVENT 2027: MAKAR SANKRANTI ═══════════ -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center justify-between pb-3 border-b border-surface-border mb-4">
+                        <h3 class="text-xl sm:text-2xl font-bold text-brand-600 marathi flex items-center gap-2.5">
+                            <i class="fas fa-calendar-alt text-brand-500"></i>
+                            <span>📅 आगामी कार्यक्रम</span>
+                        </h3>
+                        <span class="text-xs bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full font-bold">2027</span>
+                    </div>
+
+                    <div id="events-container">
+                        <!-- Event: Jan 2027 Sankranti & Varshik Aam Sabha -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-amber-50/90 border-2 border-amber-300 hover:shadow-md transition-shadow relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                                आगामी मुख्य सोहळा
+                            </div>
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex flex-col items-center justify-center flex-shrink-0 text-center font-bold shadow-md">
+                                <span class="text-xl sm:text-2xl leading-none font-bold">जाने</span>
+                                <span class="text-xs leading-tight">वारी</span>
+                                <span class="text-[11px] text-amber-200">2027</span>
+                            </div>
+                            <div class="flex-1 min-w-0 pr-6">
+                                <div class="flex items-center gap-2 mb-1.5">
+                                    <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-950 marathi">मकर संक्रांती • वार्षिक आम सभा</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-lg marathi">मकर संक्रांती उत्सव व वार्षिक आम सभा २०२७</h4>
+                                <p class="text-xs text-slate-600 mt-1.5 flex items-center gap-1.5 marathi">
+                                    <i class="fas fa-calendar-alt text-brand-500"></i>
+                                    <span>जानेवारी २०२७ • तिळगूळ वाटप, हळदी-कुंकू व वार्षिक सर्वसाधारण सभा</span>
+                                </p>
+                                <p class="text-xs text-slate-600 mt-1 flex items-center gap-1.5 marathi">
+                                    <i class="fas fa-map-marker-alt text-brand-500"></i>
+                                    <span>स्थळ: लवकरच अधिकृतपणे जाहीर होईल (इंदूर)</span>
+                                </p>
+                                <div class="mt-3.5 pt-3 border-t border-amber-200/60 flex items-center gap-3">
+                                    <a href="https://wa.me/917314203099?text=Namaskar%2C%20Makar%20Sankranti%20ani%20Varshik%20Aam%20Sabha%202027%20baddal%20mahiti%20havi%20ahe." target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-xs">
+                                        <i class="fab fa-whatsapp"></i> अधिक माहितीसाठी संपर्क
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
