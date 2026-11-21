@@ -19,7 +19,7 @@ exports.handler = async function(event, context) {
       const res = await pool.query(`
         SELECT * FROM public.celebrations 
         WHERE is_active = true 
-        ORDER BY created_at DESC
+        ORDER BY date_month ASC NULLS LAST, date_day ASC NULLS LAST, created_at DESC
       `);
       return {
         statusCode: 200,
@@ -37,14 +37,18 @@ exports.handler = async function(event, context) {
       const id = d.id || ('celeb-' + Date.now());
       const query = `
         INSERT INTO public.celebrations (
-          id, name, type, date_display, date_month, date_day, year, area, message, photo_url, is_active, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, true, NOW())
+          id, name, type, date_display, date_month, date_day, year, area, message, photo_url, phone, is_active, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, true, NOW())
         ON CONFLICT (id) DO UPDATE SET
           name = EXCLUDED.name,
           type = EXCLUDED.type,
           date_display = EXCLUDED.date_display,
+          date_month = EXCLUDED.date_month,
+          date_day = EXCLUDED.date_day,
           area = EXCLUDED.area,
-          message = EXCLUDED.message
+          message = EXCLUDED.message,
+          photo_url = EXCLUDED.photo_url,
+          phone = EXCLUDED.phone
         RETURNING *;
       `;
 
@@ -53,12 +57,13 @@ exports.handler = async function(event, context) {
         d.name,
         d.type || 'birthday',
         d.date_display || d.date || '',
-        d.date_month || null,
-        d.date_day || null,
+        d.date_month ? parseInt(d.date_month) : null,
+        d.date_day ? parseInt(d.date_day) : null,
         d.year || 2026,
         d.area || '',
         d.message || '',
-        d.photo_url || ''
+        d.photo_url || '',
+        d.phone || ''
       ];
 
       const res = await pool.query(query, values);

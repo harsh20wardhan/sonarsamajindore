@@ -4128,6 +4128,310 @@
             }
         }
 
+        // ══════ DYNAMIC CELEBRATIONS & TEMPLATE BANNER ENGINE (SUPABASE LIVE) ══════
+        const MARATHI_MONTHS_LIST = ['', 'जानेवारी', 'फेब्रुवारी', 'मार्च', 'एप्रिल', 'मे', 'जून', 'जुलै', 'ऑगस्ट', 'सप्टेंबर', 'ऑक्टोबर', 'नोव्हेंबर', 'डिसेंबर'];
+
+        function initCelebrationsDynamic() {
+            fetch('/.netlify/functions/celebrations')
+                .then(r => r.json())
+                .then(data => {
+                    if (data && Array.isArray(data.celebrations)) {
+                        processAndRenderCelebrations(data.celebrations);
+                    } else {
+                        fallbackCelebrationsJSON();
+                    }
+                })
+                .catch(err => {
+                    console.warn('Could not load dynamic celebrations from Supabase, loading fallback:', err);
+                    fallbackCelebrationsJSON();
+                });
+        }
+
+        function fallbackCelebrationsJSON() {
+            fetch('./content/celebrations.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const list = [];
+                    if (data && data.today) {
+                        (data.today.birthdays || []).forEach(b => list.push({
+                            id: b.id,
+                            name: b.name,
+                            type: 'birthday',
+                            date_display: data.today.date_display || 'नोव्हेंबर',
+                            date_month: 11,
+                            date_day: null,
+                            area: b.relation || 'सोनार समाज, इंदूर',
+                            message: b.message,
+                            phone: b.phone || '',
+                            photo_url: b.photo || '',
+                            is_active: true
+                        }));
+                        (data.today.anniversaries || []).forEach(a => list.push({
+                            id: a.id,
+                            name: a.name,
+                            type: 'anniversary',
+                            date_display: data.today.date_display || 'नोव्हेंबर',
+                            date_month: 11,
+                            date_day: null,
+                            area: a.relation || 'सोनार समाज, इंदूर',
+                            message: a.message,
+                            phone: a.phone || '',
+                            photo_url: a.photo || '',
+                            is_active: true
+                        }));
+                    }
+                    processAndRenderCelebrations(list);
+                })
+                .catch(e => {
+                    console.error('Fallback celebrations fetch failed', e);
+                });
+        }
+
+        function processAndRenderCelebrations(allCelebs) {
+            const now = new Date();
+            const todayDay = now.getDate();
+            const todayMonth = now.getMonth() + 1; // 1-12
+
+            const todayCelebs = [];
+            const upcomingCelebs = [];
+
+            allCelebs.forEach(c => {
+                if (c.is_active === false) return;
+                const m = parseInt(c.date_month);
+                const d = (c.date_day !== null && c.date_day !== undefined && c.date_day !== '') ? parseInt(c.date_day) : null;
+
+                // Matches today if same month and (either day matches or day is null for month-wide banner)
+                if (m === todayMonth && (d === null || d === todayDay)) {
+                    todayCelebs.push(c);
+                } else {
+                    upcomingCelebs.push(c);
+                }
+            });
+
+            const celebrationsSec = document.getElementById('celebrations');
+            const panelToday = document.getElementById('celeb-panel-today');
+            const tabTodayBtn = document.getElementById('tab-celeb-today');
+
+            // Requirement: "when its nobaddys birthday and anniversay the banner should not be there on the website."
+            if (todayCelebs.length === 0) {
+                if (panelToday) panelToday.style.display = 'none';
+                if (tabTodayBtn) tabTodayBtn.style.display = 'none';
+
+                if (upcomingCelebs.length === 0) {
+                    if (celebrationsSec) celebrationsSec.style.display = 'none';
+                } else {
+                    switchCelebTab('upcoming');
+                }
+            } else {
+                if (celebrationsSec) celebrationsSec.style.display = 'block';
+                if (panelToday) {
+                    panelToday.style.display = '';
+                    renderTodayBannersTemplate(todayCelebs);
+                }
+                if (tabTodayBtn) tabTodayBtn.style.display = '';
+                switchCelebTab('today');
+            }
+
+            renderUpcomingCelebrationsDOM(upcomingCelebs);
+        }
+
+        function renderTodayBannersTemplate(celebs) {
+            const panelToday = document.getElementById('celeb-panel-today');
+            if (!panelToday) return;
+
+            if (celebs.length === 1) {
+                panelToday.className = 'max-w-3xl mx-auto mb-6';
+            } else {
+                panelToday.className = 'grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6';
+            }
+
+            const now = new Date();
+            const todayDay = now.getDate();
+            const todayMonth = now.getMonth() + 1;
+            const currentMonthName = MARATHI_MONTHS_LIST[todayMonth] || '';
+
+            panelToday.innerHTML = celebs.map(c => {
+                const isBday = (c.type === 'birthday');
+                const dateText = c.date_display || (c.date_day ? `आज • ${c.date_day} ${MARATHI_MONTHS_LIST[c.date_month] || currentMonthName}` : currentMonthName);
+                const cleanPhone = (c.phone || '').replace(/[^0-9]/g, '');
+                const waPhone = cleanPhone.length === 10 ? ('91' + cleanPhone) : (cleanPhone || '917314203099');
+
+                const wishHeading = isBday ? 'वाढदिवसाच्या हार्दिक शुभेच्छा!' : 'वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा!';
+                const defaultMsg = isBday 
+                    ? '"आपणास उदंड, निरोगी, संपन्न आणि सुख-शांतीचे दीर्घायुष्य लाभो, हीच संत नरहरी महाराज व कुलदेवतेच्या चरणी मनःपूर्वक प्रार्थना!"'
+                    : '"विश्वासाचे आणि प्रेमाचे हे सहजीवन शतगुणित होवो, आपल्या संसारात सदैव सुख, शांती व आनंदाची बरसात होवो हीच सदिच्छा!"';
+                const finalMsg = c.message ? `"${c.message}"` : defaultMsg;
+                const waText = encodeURIComponent(`${c.name} यांना ${isBday ? 'वाढदिवसाच्या' : 'वैवाहिक वर्षगांठीच्या'} हार्दिक शुभेच्छा!`);
+
+                if (isBday) {
+                    // Birthday Banner Template
+                    const photoEl = c.photo_url 
+                        ? `<img src="${c.photo_url}" alt="${c.name}" class="w-full h-full object-cover rounded-full">`
+                        : `<div class="w-full h-full rounded-full bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center text-white text-3xl sm:text-4xl shadow-inner border-2 border-white/40">
+                             <i class="fas fa-gift text-amber-200 drop-shadow"></i>
+                           </div>`;
+
+                    return `
+                    <div class="relative bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 text-white rounded-3xl p-7 sm:p-9 shadow-2xl border-4 border-amber-300/80 overflow-hidden group">
+                        <div class="absolute -right-8 -top-8 w-40 h-40 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="absolute right-4 top-4 text-3xl festive-balloon select-none pointer-events-none opacity-90">🎈</div>
+                        <div class="absolute right-16 top-2 text-2xl festive-balloon select-none pointer-events-none opacity-80" style="animation-delay: 1.5s;">🎈</div>
+                        <div class="absolute left-4 top-4 text-3xl festive-popper select-none pointer-events-none">🎉</div>
+                        <div class="absolute right-8 bottom-6 text-4xl select-none pointer-events-none opacity-20">🎂</div>
+                        <div class="absolute left-8 bottom-6 text-2xl select-none pointer-events-none opacity-30">✨</div>
+
+                        <div class="relative z-10 flex items-center justify-between pb-4 border-b border-white/25 mb-6">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-amber-100 font-extrabold text-xs uppercase tracking-wider border border-white/30 shadow-sm">
+                                🎂 वाढदिवस अभीष्टचिंतन फलक
+                            </span>
+                            <span class="text-xs bg-white text-amber-950 font-black px-4 py-1.5 rounded-full shadow-md flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                <span>${dateText}</span>
+                            </span>
+                        </div>
+
+                        <div class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                            <div class="relative flex-shrink-0">
+                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-amber-200 via-yellow-100 to-amber-300 shadow-2xl ring-4 ring-white/60 flex items-center justify-center">
+                                    ${photoEl}
+                                </div>
+                                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-amber-950 text-amber-300 text-[10px] font-black px-3 py-0.5 rounded-full border border-amber-300/60 shadow uppercase tracking-wider whitespace-nowrap">
+                                    🎂 वाढदिवस
+                                </div>
+                            </div>
+
+                            <div class="flex-1 space-y-2">
+                                <h3 class="marathi-calligraphy text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug drop-shadow-md">
+                                    ${wishHeading}
+                                </h3>
+                                
+                                <h4 class="text-2xl sm:text-3xl font-black text-amber-100 marathi drop-shadow-sm">
+                                    ${c.name}
+                                </h4>
+
+                                <p class="text-xs sm:text-sm text-amber-100/90 font-medium flex items-center justify-center sm:justify-start gap-1.5">
+                                    <i class="fas fa-map-marker-alt text-amber-200"></i>
+                                    <span>${c.area || 'सोनार समाज, इंदूर'}</span>
+                                </p>
+
+                                <div class="p-4 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/20 text-xs sm:text-sm text-amber-50 leading-relaxed marathi italic">
+                                    ${finalMsg}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 mt-6 pt-4 border-t border-white/25 flex flex-wrap items-center justify-between gap-3">
+                            <div class="text-xs text-amber-100 font-bold flex items-center gap-1.5 marathi">
+                                <span>🚩</span>
+                                <span>सोनार समाज ट्रस्ट परिवार, इंदूर</span>
+                            </div>
+                            <a href="https://wa.me/${waPhone}?text=${waText}" target="_blank" class="inline-flex items-center gap-2 bg-white text-emerald-800 hover:bg-amber-100 font-black px-5 py-2.5 rounded-full text-xs shadow-xl transition-all hover:scale-105">
+                                <i class="fab fa-whatsapp text-emerald-600 text-sm"></i>
+                                <span>💐 शुभेच्छा पाठवा (WhatsApp)</span>
+                            </a>
+                        </div>
+                    </div>`;
+                } else {
+                    // Anniversary Banner Template
+                    const photoEl = c.photo_url 
+                        ? `<img src="${c.photo_url}" alt="${c.name}" class="w-full h-full object-cover rounded-full">`
+                        : `<div class="w-full h-full rounded-full bg-gradient-to-br from-rose-600 to-pink-700 flex items-center justify-center text-white text-3xl sm:text-4xl shadow-inner border-2 border-white/40">
+                             <i class="fas fa-heart text-rose-200 drop-shadow"></i>
+                           </div>`;
+
+                    return `
+                    <div class="relative bg-gradient-to-br from-rose-500 via-pink-600 to-amber-600 text-white rounded-3xl p-7 sm:p-9 shadow-2xl border-4 border-rose-300/80 overflow-hidden group">
+                        <div class="absolute -right-8 -top-8 w-40 h-40 bg-white/20 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="absolute right-4 top-4 text-3xl select-none pointer-events-none opacity-90">🌹</div>
+                        <div class="absolute right-16 top-2 text-2xl select-none pointer-events-none opacity-80">💍</div>
+                        <div class="absolute left-4 top-4 text-3xl festive-popper select-none pointer-events-none">🎉</div>
+                        <div class="absolute right-8 bottom-6 text-4xl select-none pointer-events-none opacity-20">💖</div>
+                        <div class="absolute left-8 bottom-6 text-2xl select-none pointer-events-none opacity-30">✨</div>
+
+                        <div class="relative z-10 flex items-center justify-between pb-4 border-b border-white/25 mb-6">
+                            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-rose-100 font-extrabold text-xs uppercase tracking-wider border border-white/30 shadow-sm">
+                                💍 वैवाहिक वर्षगांठ शुभेच्छा फलक
+                            </span>
+                            <span class="text-xs bg-white text-rose-950 font-black px-4 py-1.5 rounded-full shadow-md flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+                                <span>${dateText}</span>
+                            </span>
+                        </div>
+
+                        <div class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                            <div class="relative flex-shrink-0">
+                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-rose-200 via-pink-100 to-amber-300 shadow-2xl ring-4 ring-white/60 flex items-center justify-center">
+                                    ${photoEl}
+                                </div>
+                                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-rose-950 text-rose-300 text-[10px] font-black px-3 py-0.5 rounded-full border border-rose-300/60 shadow uppercase tracking-wider whitespace-nowrap">
+                                    💍 लग्न वाढदिवस
+                                </div>
+                            </div>
+
+                            <div class="flex-1 space-y-2">
+                                <h3 class="marathi-calligraphy text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug drop-shadow-md">
+                                    ${wishHeading}
+                                </h3>
+                                
+                                <h4 class="text-2xl sm:text-3xl font-black text-rose-100 marathi drop-shadow-sm">
+                                    ${c.name}
+                                </h4>
+
+                                <p class="text-xs sm:text-sm text-rose-100/90 font-medium flex items-center justify-center sm:justify-start gap-1.5">
+                                    <i class="fas fa-map-marker-alt text-rose-200"></i>
+                                    <span>${c.area || 'सोनार समाज, इंदूर'}</span>
+                                </p>
+
+                                <div class="p-4 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/20 text-xs sm:text-sm text-rose-50 leading-relaxed marathi italic">
+                                    ${finalMsg}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 mt-6 pt-4 border-t border-white/25 flex flex-wrap items-center justify-between gap-3">
+                            <div class="text-xs text-rose-100 font-bold flex items-center gap-1.5 marathi">
+                                <span>🌹</span>
+                                <span>सोनार समाज ट्रस्ट परिवार, इंदूर</span>
+                            </div>
+                            <a href="https://wa.me/${waPhone}?text=${waText}" target="_blank" class="inline-flex items-center gap-2 bg-white text-emerald-800 hover:bg-rose-100 font-black px-5 py-2.5 rounded-full text-xs shadow-xl transition-all hover:scale-105">
+                                <i class="fab fa-whatsapp text-emerald-600 text-sm"></i>
+                                <span>💐 शुभेच्छा पाठवा (WhatsApp)</span>
+                            </a>
+                        </div>
+                    </div>`;
+                }
+            }).join('');
+        }
+
+        function renderUpcomingCelebrationsDOM(upcomingList) {
+            const container = document.querySelector('#celeb-panel-upcoming .grid');
+            if (!container) return;
+
+            if (!upcomingList.length) {
+                container.innerHTML = '<div class="col-span-full py-6 text-center text-slate-400 text-sm marathi">या आठवड्यात कोणतेही आगामी वाढदिवस किंवा वर्धापनदिन नाहीत.</div>';
+                return;
+            }
+
+            container.innerHTML = upcomingList.slice(0, 8).map(u => {
+                const isBday = (u.type === 'birthday');
+                const badgeClass = isBday ? 'bg-amber-200 text-amber-900' : 'bg-rose-200 text-rose-900';
+                const cardBg = isBday ? 'bg-amber-50/70 border-amber-200/80' : 'bg-rose-50/70 border-rose-200/80';
+                const dateColor = isBday ? 'text-amber-800' : 'text-rose-800';
+                const badgeText = isBday ? '🎂 वाढदिवस' : '💍 लग्न वाढदिवस';
+                const dateText = u.date_display || (u.date_day ? (u.date_day + ' ' + (MARATHI_MONTHS_LIST[u.date_month] || '')) : (MARATHI_MONTHS_LIST[u.date_month] || 'आगामी'));
+
+                return `
+                <div class="p-4 rounded-2xl ${cardBg} border hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold ${dateColor}">${dateText}</span>
+                        <span class="text-[10px] ${badgeClass} px-2 py-0.5 rounded-full font-bold">${badgeText}</span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-sm mt-2 marathi">${u.name}</h5>
+                    <p class="text-xs text-slate-500 mt-1">${u.area || 'इंदूर'}</p>
+                </div>`;
+            }).join('');
+        }
+
         // Click outside modal to close
         window.onclick = function(e) {
             if (e.target.classList.contains('modal')) {
@@ -5815,6 +6119,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof initBusinessDirectory === 'function') {
                 initBusinessDirectory();
+            }
+            if (typeof initCelebrationsDynamic === 'function') {
+                initCelebrationsDynamic();
             }
             if (typeof initGalleryArchive === 'function') {
                 initGalleryArchive();

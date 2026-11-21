@@ -96,8 +96,9 @@
       </button>
 
       <button onclick="switchTab('birthdays')" id="tab-btn-birthdays" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
-        <i class="fas fa-cake-candles"></i>
+        <i class="fas fa-cake-candles text-amber-600"></i>
         <span>३. वाढदिवस व शुभेच्छा</span>
+        <span id="admin-celeb-badge" class="ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">०</span>
       </button>
 
       <button onclick="switchTab('events')" id="tab-btn-events" class="admin-tab-btn px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-amber-50 border border-slate-200 flex items-center gap-2 flex-shrink-0 transition-all">
@@ -465,62 +466,175 @@
 
     </div>
 
-    <!-- ══════ TAB 3: BIRTHDAYS & CELEBRATIONS ══════ -->
+    <!-- ══════ TAB 3: BIRTHDAYS & CELEBRATIONS (SUPABASE LIVE) ══════ -->
     <div id="panel-birthdays" class="tab-panel hidden space-y-6">
+      
+      <!-- Top Header & Quick Actions -->
       <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
-        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
-          <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl">
-            <i class="fas fa-cake-candles"></i>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 text-white flex items-center justify-center text-2xl shadow-md flex-shrink-0">
+              <i class="fas fa-cake-candles"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-xl font-black text-slate-900 marathi">वाढदिवस व लग्न वाढदिवस व्यवस्थापन</h2>
+                <span class="text-[11px] font-bold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-300">
+                  <i class="fas fa-database mr-1"></i>Supabase Live
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5 marathi">
+                येथून जोडलेली माहिती थेट Supabase डेटाबेसमध्ये सेव्ह होते. संबंधित दिवशी वेबसाईटवर शुभेच्छा फलक आपोआप झळकतो आणि इतर दिवशी आपोआप लपवला जातो.
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900 marathi">वाढदिवस व शुभेच्छा व्यवस्थापन (Manage Birthdays)</h2>
-            <p class="text-xs text-slate-500 marathi">वेबसाईटवरील शुभेच्छा फलकावर सदस्यांचा वाढदिवस अथवा लग्न वाढदिवस जोडा.</p>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="loadCelebrations()" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow flex items-center gap-1.5">
+              <i class="fas fa-rotate"></i>
+              <span>रीफ्रेश करा</span>
+            </button>
           </div>
         </div>
 
-        <form id="form-birthday" onsubmit="handleBirthdaySave(event)" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">१. सदस्य / दांपत्याचे नाव *</label>
-              <input type="text" id="bday-name" required placeholder="उदा. श्री अविनाशजी सोनार" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">२. प्रकार (Event Type) *</label>
-              <select id="bday-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white">
-                <option value="वाढदिवस">🎂 वाढदिवस (Birthday)</option>
-                <option value="लग्न वाढदिवस">💍 लग्न वाढदिवस (Wedding Anniversary)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">३. तारीख व महिना *</label>
-              <input type="text" id="bday-date" required placeholder="उदा. 20 नोव्हेंबर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
-            </div>
-          </div>
+        <!-- Add/Edit Celebration Form -->
+        <form id="form-celebration" onsubmit="handleCelebrationSubmit(event)" class="space-y-5">
+          <input type="hidden" id="celeb-edit-id" value="">
+          <input type="hidden" id="celeb-photo-data" value="">
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">४. परिसर / कॉलनी</label>
-              <input type="text" id="bday-area" placeholder="उदा. सुखलिया / तुलसी नगर, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">५. WhatsApp नंबर</label>
-              <input type="tel" id="bday-phone" placeholder="उदा. +919826011223" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
-            </div>
-          </div>
+          <div class="p-5 rounded-2xl bg-amber-50/50 border border-amber-200/80 space-y-4">
+            <h3 class="text-sm font-extrabold text-amber-950 flex items-center gap-2 marathi">
+              <i class="fas fa-plus-circle text-amber-600"></i>
+              <span id="form-celeb-title">नवीन वाढदिवस किंवा लग्न वाढदिवस जोडा</span>
+            </h3>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">६. शुभेच्छा संदेश (Wishes Message)</label>
-            <input type="text" id="bday-message" placeholder="उदा. वाढदिवसाच्या हार्दिक शुभेच्छा! संत नरहरी महाराज आपणास उदंड आयुष्य देवोत." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
-          </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- 1. Event Type -->
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">१. प्रकार (Event Type) *</label>
+                <select id="celeb-type" onchange="onCelebTypeChange()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-semibold">
+                  <option value="birthday">🎂 वाढदिवस (Birthday)</option>
+                  <option value="anniversary">💍 लग्न वाढदिवस (Wedding Anniversary)</option>
+                </select>
+              </div>
 
-          <div class="pt-2">
-            <button type="submit" class="bg-gradient-to-r from-pink-600 to-amber-600 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow transition-all hover:scale-105">
-              <i class="fas fa-heart mr-1"></i> शुभेच्छा फलकावर जोडा (Save Greeting)
-            </button>
+              <!-- 2. Person / Couple Name -->
+              <div class="sm:col-span-2">
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">२. सदस्य / दांपत्याचे नाव *</label>
+                <input type="text" id="celeb-name" required placeholder="उदा. क्रांती तांबे किंवा सौ. सुचित्रा व श्री दीपकजी सोनार" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+              </div>
+            </div>
+
+            <!-- Date Selection Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">३. महिना (Month) *</label>
+                <select id="celeb-month" onchange="updateCelebDateDisplay()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-semibold">
+                  <option value="1">जानेवारी (January)</option>
+                  <option value="2">फेब्रुवारी (February)</option>
+                  <option value="3">मार्च (March)</option>
+                  <option value="4">एप्रिल (April)</option>
+                  <option value="5">मे (May)</option>
+                  <option value="6">जून (June)</option>
+                  <option value="7">जुलै (July)</option>
+                  <option value="8">ऑगस्ट (August)</option>
+                  <option value="9">सप्टेंबर (September)</option>
+                  <option value="10">ऑक्टोबर (October)</option>
+                  <option value="11" selected>नोव्हेंबर (November)</option>
+                  <option value="12">डिसेंबर (December)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">४. दिवस (Day of Month)</label>
+                <select id="celeb-day" onchange="updateCelebDateDisplay()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                  <option value="">-- फक्त महिना (तारीख नको) --</option>
+                  <!-- Days 1 to 31 -->
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">फलकावर दिसणारी तारीख (Display Date)</label>
+                <input type="text" id="celeb-date-display" placeholder="उदा. 22 नोव्हेंबर किंवा नोव्हेंबर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-slate-50 text-slate-800 outline-none marathi">
+              </div>
+            </div>
+
+            <!-- Location & Phone Number -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">५. परिसर / कॉलनी / शहर</label>
+                <input type="text" id="celeb-area" placeholder="उदा. सुखलिया, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">६. WhatsApp नंबर (शुभेच्छा पाठवण्यासाठी)</label>
+                <input type="tel" id="celeb-phone" placeholder="उदा. 9826011223 (१० अंकी)" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+              </div>
+            </div>
+
+            <!-- Photo Upload & Preview -->
+            <div class="p-4 rounded-xl bg-white border border-slate-200">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-2 marathi">७. फोटो (Photo) — ऐच्छिक (Optional)</label>
+              <div class="flex flex-col sm:flex-row items-center gap-4">
+                <div class="w-20 h-20 rounded-full border-2 border-amber-400 bg-amber-50 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-inner" id="celeb-photo-preview-wrap">
+                  <i class="fas fa-image text-2xl text-amber-300" id="celeb-photo-placeholder-icon"></i>
+                  <img id="celeb-photo-preview-img" src="" alt="Preview" class="w-full h-full object-cover hidden">
+                </div>
+                <div class="flex-1 space-y-1.5 text-left">
+                  <div class="flex items-center gap-2">
+                    <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-xl transition-all border border-slate-300 inline-flex items-center gap-1.5">
+                      <i class="fas fa-upload text-amber-600"></i>
+                      <span>फोटो निवडा (Upload Photo)</span>
+                      <input type="file" id="celeb-file-input" accept="image/*" onchange="handleCelebFileSelect(event)" class="hidden">
+                    </label>
+                    <button type="button" onclick="clearCelebPhoto()" id="btn-clear-celeb-photo" class="text-xs text-rose-600 hover:underline hidden font-bold">
+                      <i class="fas fa-trash-alt mr-1"></i>फोटो काढा
+                    </button>
+                  </div>
+                  <p class="text-[11px] text-slate-500 marathi">
+                    टीप: फोटो रिकामा ठेवल्यास वेबसाईटवर सुबक <strong>रॉयल गिफ्ट / रिंग्ज आयकॉन प्लेसहोल्डर</strong> आपोआप दिसेल.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishes Message -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">८. शुभेच्छा संदेश (Custom Message)</label>
+              <textarea id="celeb-message" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi"></textarea>
+            </div>
+
+            <div class="pt-2 flex items-center gap-3">
+              <button type="submit" id="btn-save-celeb" class="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 hover:from-amber-700 hover:to-orange-800 text-white font-extrabold py-3 px-8 rounded-xl text-sm shadow-md transition-all hover:scale-[1.02] flex items-center gap-2">
+                <i class="fas fa-cloud-arrow-up"></i>
+                <span id="btn-save-celeb-text">डेटाबेसमध्ये सेव्ह करा (Save to Database)</span>
+              </button>
+              <button type="button" onclick="resetCelebForm()" class="text-xs text-slate-500 hover:text-slate-700 font-bold px-3 py-2">
+                रद्द करा / रीसेट
+              </button>
+            </div>
           </div>
         </form>
+
+        <!-- Registered Celebrations Table/Cards List -->
+        <div class="mt-8 pt-6 border-t border-slate-200 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h3 class="text-base font-extrabold text-slate-900 marathi flex items-center gap-2">
+              <i class="fas fa-cake-candles text-amber-600"></i>
+              <span>नोंदणी झालेले वाढदिवस व वर्धापनदिन (Registered Celebrations)</span>
+              <span id="admin-celeb-count-badge" class="ml-1 text-xs font-bold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">० नोंदी</span>
+            </h3>
+            
+            <div class="flex items-center gap-2">
+              <input type="text" id="celeb-search-input" oninput="filterAdminCelebrations()" placeholder="नावाने शोधा..." class="px-3.5 py-1.5 rounded-xl border border-slate-300 text-xs outline-none focus:ring-2 focus:ring-amber-500 marathi w-44">
+            </div>
+          </div>
+
+          <div id="admin-celeb-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-8 text-center text-slate-400 marathi col-span-2">डेटा लोड होत आहे...</div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </div>    </div>
 
     <!-- ══════ TAB 4: UPCOMING EVENTS MANAGER ══════ -->
     <div id="panel-events" class="tab-panel hidden space-y-6">
@@ -698,6 +812,8 @@
       if (activeBtn) {
         activeBtn.className = 'admin-tab-btn active px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-md flex items-center gap-2 flex-shrink-0 transition-all';
       }
+      if (tabId === 'birthdays') loadCelebrations();
+      if (tabId === 'members') loadMemberRegistrations();
     }
 
     // 1. Initialize Admin Gallery
@@ -1443,17 +1559,314 @@
       loadBusinesses();
     }
 
-    // Birthday Save
-    function handleBirthdaySave(e) {
-      e.preventDefault();
-      const name = document.getElementById('bday-name').value.trim();
-      const type = document.getElementById('bday-type').value;
-      const date = document.getElementById('bday-date').value.trim();
-      const area = document.getElementById('bday-area').value.trim();
-      const message = document.getElementById('bday-message').value.trim();
+    // ══════ CELEBRATIONS (BIRTHDAYS & ANNIVERSARIES) SUPABASE LOGIC ══════
+    let allCelebrationsList = [];
+    const marathiMonthNames = ['', 'जानेवारी', 'फेब्रुवारी', 'मार्च', 'एप्रिल', 'मे', 'जून', 'जुलै', 'ऑगस्ट', 'सप्टेंबर', 'ऑक्टोबर', 'नोव्हेंबर', 'डिसेंबर'];
 
-      alert(`शुभेच्छा फलकावर ${name} यांच्या ${type} ची नोंद (${date}) यशस्वीरित्या सेव्ह झाली!`);
-      document.getElementById('form-birthday').reset();
+    function initCelebDays() {
+      const daySelect = document.getElementById('celeb-day');
+      if (!daySelect) return;
+      daySelect.innerHTML = '<option value="">-- फक्त महिना (तारीख नको) --</option>';
+      for (let i = 1; i <= 31; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = i + ' तारीख';
+        daySelect.appendChild(opt);
+      }
+      onCelebTypeChange();
+      updateCelebDateDisplay();
+    }
+
+    function onCelebTypeChange() {
+      const type = document.getElementById('celeb-type').value;
+      const msgEl = document.getElementById('celeb-message');
+      if (!msgEl) return;
+      if (type === 'anniversary') {
+        if (!msgEl.value || msgEl.value.includes('वाढदिवस')) {
+          msgEl.value = 'वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा! आपले सहजीवन प्रेम, सुख, शांती व आनंदाने सदैव बहरत राहो हीच ईश्वरचरणी सदिच्छा!';
+        }
+      } else {
+        if (!msgEl.value || msgEl.value.includes('वैवाहिक वर्षगांठ')) {
+          msgEl.value = 'वाढदिवसाच्या हार्दिक मंगलमय शुभेच्छा! आपले पुढील आयुष्य आरोग्यसंपन्न, दीर्घायुषी व समृद्धीचे जावो हीच संत नरहरी महाराज चरणी प्रार्थना.';
+        }
+      }
+    }
+
+    function updateCelebDateDisplay() {
+      const mVal = parseInt(document.getElementById('celeb-month').value) || 11;
+      const dVal = document.getElementById('celeb-day').value;
+      const dispEl = document.getElementById('celeb-date-display');
+      if (!dispEl) return;
+      const monthName = marathiMonthNames[mVal] || '';
+      if (dVal) {
+        dispEl.value = dVal + ' ' + monthName;
+      } else {
+        dispEl.value = monthName;
+      }
+    }
+
+    function handleCelebFileSelect(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxDim = 400;
+          let w = img.width;
+          let h = img.height;
+          if (w > h && w > maxDim) {
+            h = Math.round((h * maxDim) / w);
+            w = maxDim;
+          } else if (h > maxDim) {
+            w = Math.round((w * maxDim) / h);
+            h = maxDim;
+          }
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+          document.getElementById('celeb-photo-data').value = dataUrl;
+          const prevImg = document.getElementById('celeb-photo-preview-img');
+          const prevIcon = document.getElementById('celeb-photo-placeholder-icon');
+          const clearBtn = document.getElementById('btn-clear-celeb-photo');
+          if (prevImg) {
+            prevImg.src = dataUrl;
+            prevImg.classList.remove('hidden');
+          }
+          if (prevIcon) prevIcon.classList.add('hidden');
+          if (clearBtn) clearBtn.classList.remove('hidden');
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearCelebPhoto() {
+      document.getElementById('celeb-photo-data').value = '';
+      const fileInput = document.getElementById('celeb-file-input');
+      if (fileInput) fileInput.value = '';
+      const prevImg = document.getElementById('celeb-photo-preview-img');
+      const prevIcon = document.getElementById('celeb-photo-placeholder-icon');
+      const clearBtn = document.getElementById('btn-clear-celeb-photo');
+      if (prevImg) {
+        prevImg.src = '';
+        prevImg.classList.add('hidden');
+      }
+      if (prevIcon) prevIcon.classList.remove('hidden');
+      if (clearBtn) clearBtn.classList.add('hidden');
+    }
+
+    function resetCelebForm() {
+      document.getElementById('form-celebration').reset();
+      document.getElementById('celeb-edit-id').value = '';
+      clearCelebPhoto();
+      document.getElementById('form-celeb-title').textContent = 'नवीन वाढदिवस किंवा लग्न वाढदिवस जोडा';
+      document.getElementById('btn-save-celeb-text').textContent = 'डेटाबेसमध्ये सेव्ह करा (Save to Database)';
+      onCelebTypeChange();
+      updateCelebDateDisplay();
+    }
+
+    function loadCelebrations() {
+      const listEl = document.getElementById('admin-celeb-list');
+      const badge = document.getElementById('admin-celeb-badge');
+      const countBadge = document.getElementById('admin-celeb-count-badge');
+      if (listEl) {
+        listEl.innerHTML = '<div class="p-8 text-center text-slate-400 marathi col-span-2">Supabase डेटाबेसमधून माहिती लोड होत आहे...</div>';
+      }
+
+      fetch('/.netlify/functions/celebrations')
+        .then(r => r.json())
+        .then(data => {
+          allCelebrationsList = (data && Array.isArray(data.celebrations)) ? data.celebrations : [];
+          if (badge) badge.textContent = allCelebrationsList.length;
+          if (countBadge) countBadge.textContent = allCelebrationsList.length + ' नोंदी';
+          renderAdminCelebrations(allCelebrationsList);
+        })
+        .catch(err => {
+          console.error('Error fetching celebrations:', err);
+          if (listEl) {
+            listEl.innerHTML = '<div class="p-8 text-center text-rose-500 marathi col-span-2">डेटाबेसशी संपर्क होऊ शकला नाही.</div>';
+          }
+        });
+    }
+
+    function renderAdminCelebrations(list) {
+      const listEl = document.getElementById('admin-celeb-list');
+      if (!listEl) return;
+
+      if (!list.length) {
+        listEl.innerHTML = '<div class="p-8 text-center text-slate-400 marathi col-span-2">अद्याप कोणताही वाढदिवस किंवा लग्न वाढदिवस जोडलेला नाही. वर फॉर्म भरून नवीन नोंद जोडा!</div>';
+        return;
+      }
+
+      const now = new Date();
+      const todayDay = now.getDate();
+      const todayMonth = now.getMonth() + 1;
+
+      listEl.innerHTML = list.map(c => {
+        const isBday = c.type === 'birthday';
+        const typeBadge = isBday 
+          ? '<span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">🎂 वाढदिवस</span>'
+          : '<span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-100 text-rose-900 border border-rose-300">💍 लग्न वाढदिवस</span>';
+
+        const cMonth = parseInt(c.date_month);
+        const cDay = (c.date_day !== null && c.date_day !== undefined && c.date_day !== '') ? parseInt(c.date_day) : null;
+        const isLiveToday = (cMonth === todayMonth) && (cDay === null || cDay === todayDay);
+
+        const liveBadge = isLiveToday
+          ? '<span class="px-2.5 py-1 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1.5 animate-pulse"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>🎉 आज वेबसाईटवर थेट लाईव्ह!</span>'
+          : '<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-600">📅 नियोजित (Scheduled)</span>';
+
+        const photoHtml = c.photo_url
+          ? `<img src="${c.photo_url}" alt="${c.name}" class="w-14 h-14 rounded-full object-cover border-2 border-amber-400 shadow-sm flex-shrink-0">`
+          : `<div class="w-14 h-14 rounded-full bg-gradient-to-br ${isBday ? 'from-amber-400 to-orange-500' : 'from-rose-400 to-pink-500'} flex items-center justify-center text-white text-xl shadow flex-shrink-0">
+               <i class="${isBday ? 'fas fa-gift' : 'fas fa-heart'}"></i>
+             </div>`;
+
+        return `
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-2">
+                  ${typeBadge}
+                  <span class="text-xs font-black text-slate-700 bg-slate-100 px-2.5 py-1 rounded-full">
+                    ${c.date_display || (cDay ? cDay + ' ' + (marathiMonthNames[cMonth] || '') : marathiMonthNames[cMonth] || '')}
+                  </span>
+                </div>
+                ${liveBadge}
+              </div>
+
+              <div class="flex items-start gap-3.5 mb-3">
+                ${photoHtml}
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-extrabold text-slate-900 text-base marathi truncate">${c.name}</h4>
+                  <p class="text-xs text-slate-500 marathi flex items-center gap-1 mt-0.5">
+                    <i class="fas fa-map-marker-alt text-amber-500"></i>
+                    <span>${c.area || 'सोनार समाज, इंदूर'}</span>
+                  </p>
+                  ${c.phone ? `<p class="text-xs text-emerald-700 font-semibold mt-0.5 flex items-center gap-1"><i class="fab fa-whatsapp"></i><span>${c.phone}</span></p>` : ''}
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 marathi italic line-clamp-2 mb-4">
+                "${c.message || (isBday ? 'वाढदिवसाच्या हार्दिक शुभेच्छा!' : 'वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा!')}"
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <span class="text-[10px] text-slate-400">ID: ${c.id}</span>
+              <button onclick="deleteCelebration('${c.id}', '${c.name}')" class="text-rose-600 hover:text-rose-800 text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-rose-50 transition-all flex items-center gap-1">
+                <i class="fas fa-trash-alt"></i>
+                <span>हटवा (Delete)</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleCelebrationSubmit(e) {
+      e.preventDefault();
+      const saveBtn = document.getElementById('btn-save-celeb');
+      const saveBtnText = document.getElementById('btn-save-celeb-text');
+      const editId = document.getElementById('celeb-edit-id').value;
+      const type = document.getElementById('celeb-type').value;
+      const name = document.getElementById('celeb-name').value.trim();
+      const month = document.getElementById('celeb-month').value;
+      const day = document.getElementById('celeb-day').value;
+      const dateDisplay = document.getElementById('celeb-date-display').value.trim();
+      const area = document.getElementById('celeb-area').value.trim();
+      const phone = document.getElementById('celeb-phone').value.trim();
+      const photoData = document.getElementById('celeb-photo-data').value;
+      const message = document.getElementById('celeb-message').value.trim();
+
+      if (!name) {
+        alert('कृपया सदस्य किंवा दांपत्याचे नाव भरा.');
+        return;
+      }
+
+      saveBtn.disabled = true;
+      saveBtnText.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> सेव्ह होत आहे...';
+
+      const payload = {
+        id: editId || ('celeb-' + Date.now()),
+        type: type,
+        name: name,
+        date_month: month ? parseInt(month) : null,
+        date_day: day ? parseInt(day) : null,
+        date_display: dateDisplay || (day ? day + ' ' + marathiMonthNames[parseInt(month)] : marathiMonthNames[parseInt(month)]),
+        area: area || 'सोनार समाज, इंदूर',
+        phone: phone || '',
+        photo_url: photoData || '',
+        message: message,
+        year: 2026
+      };
+
+      fetch('/.netlify/functions/celebrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(r => r.json())
+      .then(res => {
+        saveBtn.disabled = false;
+        saveBtnText.textContent = 'डेटाबेसमध्ये सेव्ह करा (Save to Database)';
+        if (res && res.success) {
+          alert(`${name} यांची नोंद Supabase डेटाबेसमध्ये यशस्वीरित्या सेव्ह झाली!`);
+          resetCelebForm();
+          loadCelebrations();
+        } else {
+          alert('त्रुटी: ' + (res.error || 'नोंद सेव्ह करता आली नाही'));
+        }
+      })
+      .catch(err => {
+        saveBtn.disabled = false;
+        saveBtnText.textContent = 'डेटाबेसमध्ये सेव्ह करा (Save to Database)';
+        console.error('Error saving celebration:', err);
+        alert('त्रुटी: सर्व्हरशी संपर्क होऊ शकला नाही.');
+      });
+    }
+
+    function deleteCelebration(id, name) {
+      if (!confirm(`तुम्हाला खरोखर "${name}" यांची नोंद डेटाबेसमधून कायमची हटवायची आहे का?`)) {
+        return;
+      }
+
+      fetch('/.netlify/functions/celebrations?id=' + encodeURIComponent(id), {
+        method: 'DELETE'
+      })
+      .then(r => r.json())
+      .then(res => {
+        if (res && res.success) {
+          alert('नोंद यशस्वीरित्या हटवली!');
+          loadCelebrations();
+        } else {
+          alert('त्रुटी: ' + (res.error || 'हटवता आली नाही'));
+        }
+      })
+      .catch(err => {
+        console.error('Error deleting celebration:', err);
+        alert('त्रुटी: सर्व्हरशी संपर्क होऊ शकला नाही.');
+      });
+    }
+
+    function filterAdminCelebrations() {
+      const q = (document.getElementById('celeb-search-input').value || '').toLowerCase().trim();
+      if (!q) {
+        renderAdminCelebrations(allCelebrationsList);
+        return;
+      }
+      const filtered = allCelebrationsList.filter(c => {
+        return (c.name && c.name.toLowerCase().includes(q)) ||
+               (c.area && c.area.toLowerCase().includes(q)) ||
+               (c.date_display && c.date_display.toLowerCase().includes(q));
+      });
+      renderAdminCelebrations(filtered);
     }
 
     // Event Save
@@ -1490,6 +1903,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       initAdminGallery();
       loadBusinesses();
+      initCelebDays();
+      loadCelebrations();
+      loadMemberRegistrations();
     });
   </script>
 </body>
