@@ -2,129 +2,1491 @@
   "years": [
     {
       "year": "2026",
-      "year_label_mr": "वर्ष २०२६ (चालू वर्ष)",
-      "year_label_hi": "वर्ष २०२६ (वर्तमान वर्ष)",
-      "year_label_en": "Year 2026 (Current)",
+      "year_label_mr": "वर्ष २०२६ (चालू वर्ष - ११८ फोटो)",
+      "year_label_hi": "वर्ष २०२६ (वर्तमान वर्ष - ११८ फोटो)",
+      "year_label_en": "Year 2026 (Current - 118 Photos)",
       "programs": [
         {
-          "id": "2026-sankranti",
-          "title_mr": "मकर संक्रांती स्नेहसंमेलन २०२६",
-          "title_hi": "मकर संक्रांति स्नेह सम्मेलन २०२६",
-          "title_en": "Makar Sankranti Celebration 2026",
-          "date_mr": "१४ जानेवारी २०२६",
-          "date_hi": "१४ जनवरी २०२६",
-          "date_en": "14 January 2026",
+          "id": "2026-all-photos",
+          "title_mr": "समाज स्नेहसंमेलन व सर्व छायाचित्रे २०२६ (११८ फोटो)",
+          "title_hi": "समाज स्नेह सम्मेलन एवं समस्त छायाचित्र २०२६ (११८ फोटो)",
+          "title_en": "Complete Community Photo Gallery 2026 (118 Photos)",
+          "date_mr": "वर्ष २०२६",
+          "date_hi": "वर्ष २०२६",
+          "date_en": "Year 2026",
+          "venue_mr": "सिंगापूर ग्रीन, देवास नाका / समाज भवन, इंदूर",
+          "venue_hi": "सिंगापुर ग्रीन, देवास नाका / समाज भवन, इंदौर",
+          "venue_en": "Singapore Green, Dewas Naka / Samaj Bhavan, Indore",
+          "description_mr": "सोनार समाज मंडळ, इंदूर आयोजित विविध सांस्कृतिक, सामाजिक व स्नेहसंमेलन कार्यक्रमांचे संपूर्ण ११८ छायाचित्रांचे भव्य संकलन.",
+          "description_hi": "सोनार समाज मंडल, इंदौर द्वारा आयोजित समस्त सांस्कृतिक, सामाजिक एवं स्नेह सम्मेलन कार्यक्रमों का ११८ छायाचित्रों का भव्य संग्रह।",
+          "description_en": "Grand archival collection of 118 photographs capturing cultural events, community gatherings, and festivities in Indore.",
+          "photos": [
+            {
+              "url": "./src/gallery/samaj-photo-001.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 1",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 1",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 1"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-002.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 2",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 2",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 2"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-003.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 3",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 3",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 3"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-004.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 4",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 4",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 4"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-005.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 5",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 5",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 5"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-006.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 6",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 6",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 6"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-007.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 7",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 7",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 7"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-008.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 8",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 8",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 8"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-009.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 9",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 9",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 9"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-010.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 10",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 10",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 10"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-011.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 11",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 11",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 11"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-012.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 12",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 12",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 12"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-013.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 13",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 13",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 13"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-014.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 14",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 14",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 14"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-015.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 15",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 15",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 15"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-016.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 16",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 16",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 16"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-017.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 17",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 17",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 17"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-018.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 18",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 18",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 18"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-019.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 19",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 19",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 19"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-020.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 20",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 20",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 20"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-021.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 21",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 21",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 21"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-022.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 22",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 22",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 22"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-023.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 23",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 23",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 23"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-024.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 24",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 24",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 24"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-025.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 25",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 25",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 25"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-026.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 26",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 26",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 26"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-027.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 27",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 27",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 27"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-028.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 28",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 28",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 28"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-029.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 29",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 29",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 29"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-030.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 30",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 30",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 30"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-031.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 31",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 31",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 31"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-032.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 32",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 32",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 32"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-033.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 33",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 33",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 33"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-034.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 34",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 34",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 34"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-035.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 35",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 35",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 35"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-036.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 36",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 36",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 36"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-037.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 37",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 37",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 37"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-038.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 38",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 38",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 38"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-039.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 39",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 39",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 39"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-040.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 40",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 40",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 40"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-041.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 41",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 41",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 41"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-042.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 42",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 42",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 42"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-043.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 43",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 43",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 43"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-044.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 44",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 44",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 44"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-045.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 45",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 45",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 45"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-046.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 46",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 46",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 46"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-047.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 47",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 47",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 47"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-048.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 48",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 48",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 48"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-049.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 49",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 49",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 49"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-050.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 50",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 50",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 50"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-051.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 51",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 51",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 51"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-052.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 52",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 52",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 52"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-053.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 53",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 53",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 53"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-054.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 54",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 54",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 54"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-055.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 55",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 55",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 55"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-056.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 56",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 56",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 56"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-057.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 57",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 57",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 57"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-058.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 58",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 58",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 58"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-059.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 59",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 59",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 59"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-060.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 60",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 60",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 60"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-061.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 61",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 61",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 61"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-062.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 62",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 62",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 62"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-063.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 63",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 63",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 63"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-064.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 64",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 64",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 64"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-065.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 65",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 65",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 65"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-066.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 66",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 66",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 66"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-067.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 67",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 67",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 67"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-068.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 68",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 68",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 68"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-069.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 69",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 69",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 69"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-070.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 70",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 70",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 70"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-071.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 71",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 71",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 71"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-072.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 72",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 72",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 72"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-073.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 73",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 73",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 73"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-074.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 74",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 74",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 74"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-075.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 75",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 75",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 75"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-076.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 76",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 76",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 76"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-077.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 77",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 77",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 77"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-078.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 78",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 78",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 78"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-079.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 79",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 79",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 79"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-080.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 80",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 80",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 80"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-081.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 81",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 81",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 81"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-082.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 82",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 82",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 82"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-083.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 83",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 83",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 83"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-084.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 84",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 84",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 84"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-085.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 85",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 85",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 85"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-086.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 86",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 86",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 86"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-087.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 87",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 87",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 87"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-088.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 88",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 88",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 88"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-089.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 89",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 89",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 89"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-090.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 90",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 90",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 90"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-091.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 91",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 91",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 91"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-092.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 92",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 92",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 92"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-093.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 93",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 93",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 93"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-094.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 94",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 94",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 94"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-095.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 95",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 95",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 95"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-096.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 96",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 96",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 96"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-097.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 97",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 97",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 97"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-098.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 98",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 98",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 98"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-099.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 99",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 99",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 99"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-100.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 100",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 100",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 100"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-101.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 101",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 101",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 101"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-102.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 102",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 102",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 102"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-103.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 103",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 103",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 103"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-104.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 104",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 104",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 104"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-105.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 105",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 105",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 105"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-106.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 106",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 106",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 106"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-107.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 107",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 107",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 107"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-108.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 108",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 108",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 108"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-109.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 109",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 109",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 109"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-110.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 110",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 110",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 110"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-111.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 111",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 111",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 111"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-112.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 112",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 112",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 112"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-113.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 113",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 113",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 113"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-114.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 114",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 114",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 114"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-115.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 115",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 115",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 115"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-116.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 116",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 116",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 116"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-117.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 117",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 117",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 117"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-118.jpg",
+              "caption_mr": "सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र 118",
+              "caption_hi": "सोनार समाज इंदौर स्नेह सम्मेलन छायाचित्र 118",
+              "caption_en": "Sonar Samaj Indore Gathering Photo 118"
+            }
+          ]
+        },
+        {
+          "id": "2026-mahila-mandal",
+          "title_mr": "महिला मंडळ हळदी-कुंकू व सर्वमिलन सोहळा",
+          "title_hi": "महिला मंडल हल्दी-कुमकुम एवं सर्वमिलन समारोह",
+          "title_en": "Mahila Mandal Haldi-Kunku & Milan Samaroh",
+          "date_mr": "वर्ष २०२६",
+          "date_hi": "वर्ष २०२६",
+          "date_en": "Year 2026",
           "venue_mr": "सोनार समाज भवन, इंदूर",
           "venue_hi": "सोनार समाज भवन, इंदौर",
           "venue_en": "Sonar Samaj Bhavan, Indore",
-          "description_mr": "पारंपारिक मकर संक्रांती सोहळा, हळदी-कुंकू कार्यक्रम व तीळगुळ वाटप सोहळा.",
-          "description_hi": "पारंपरिक मकर संक्रांति समारोह, हल्दी-कुमकुम कार्यक्रम एवं तिलगुड़ वितरण।",
-          "description_en": "Traditional Makar Sankranti gathering, Haldi-Kunku ceremony, and community celebration.",
+          "description_mr": "सोनार समाज महिला मंडळाचा हळदी-कुंकू सोहळा, मनोरंजक खेळ, भुलाबाईची गाणी व स्नेहसंमेलन.",
+          "description_hi": "सोनार समाज महिला मंडल का हल्दी-कुमकुम समारोह, खेल एवं स्नेह सम्मेलन।",
+          "description_en": "Traditional Haldi-Kunku ceremony, interactive games, and women's gathering.",
           "photos": [
             {
-              "url": "./src/samaj-group-photo.jpeg",
-              "caption_mr": "मकर संक्रांती सोहळा २०२६ - समाज बांधवांची उत्साही उपस्थिती",
-              "caption_hi": "मकर संक्रांति समारोह २०२६ - समाज बंधुओं की उपस्थिति",
-              "caption_en": "Makar Sankranti 2026 - Community members gathering"
+              "url": "./src/gallery/samaj-photo-001.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 1",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 1",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 1"
             },
             {
-              "url": "./src/newspaper-ss.jpeg",
-              "caption_mr": "संक्रांती सोहळ्याची वृत्तपत्रात विशेष प्रसिद्धी",
-              "caption_hi": "संक्रांति समारोह की समाचार पत्रों में कवरेज",
-              "caption_en": "Press coverage of Sankranti celebrations"
+              "url": "./src/gallery/samaj-photo-002.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 2",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 2",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 2"
             },
             {
-              "url": "./src/samaj-logo.png",
-              "caption_mr": "संत नरहरी महाराज पूजन व मंगलाचरण",
-              "caption_hi": "संत नरहरि महाराज पूजन एवं मंगलाचरण",
-              "caption_en": "Sant Narhari Maharaj Pujan ceremony"
+              "url": "./src/gallery/samaj-photo-003.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 3",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 3",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 3"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-004.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 4",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 4",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 4"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-005.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 5",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 5",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 5"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-006.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 6",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 6",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 6"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-007.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 7",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 7",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 7"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-008.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 8",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 8",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 8"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-009.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 9",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 9",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 9"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-010.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 10",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 10",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 10"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-011.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 11",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 11",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 11"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-012.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 12",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 12",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 12"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-013.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 13",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 13",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 13"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-014.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 14",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 14",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 14"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-015.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 15",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 15",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 15"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-016.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 16",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 16",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 16"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-017.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 17",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 17",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 17"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-018.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 18",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 18",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 18"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-019.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 19",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 19",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 19"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-020.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 20",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 20",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 20"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-021.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 21",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 21",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 21"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-022.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 22",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 22",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 22"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-023.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 23",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 23",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 23"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-024.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 24",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 24",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 24"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-025.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 25",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 25",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 25"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-026.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 26",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 26",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 26"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-027.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 27",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 27",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 27"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-028.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 28",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 28",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 28"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-029.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 29",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 29",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 29"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-030.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 30",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 30",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 30"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-031.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 31",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 31",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 31"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-032.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 32",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 32",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 32"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-033.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 33",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 33",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 33"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-034.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 34",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 34",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 34"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-035.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 35",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 35",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 35"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-036.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 36",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 36",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 36"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-037.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 37",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 37",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 37"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-038.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 38",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 38",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 38"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-039.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 39",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 39",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 39"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-040.jpg",
+              "caption_mr": "महिला मंडळ हळदी-कुंकू व खेळ छायाचित्र 40",
+              "caption_hi": "महिला मंडल हल्दी-कुमकुम एवं खेल छायाचित्र 40",
+              "caption_en": "Mahila Mandal Haldi-Kunku & Activities Photo 40"
             }
           ]
         },
         {
-          "id": "2026-blood-donation",
-          "title_mr": "रक्तदान व मोफत आरोग्य शिबिर २०२६",
-          "title_hi": "रक्तदान एवं नि:शुल्क स्वास्थ्य शिविर २०२६",
-          "title_en": "Blood Donation & Health Camp 2026",
-          "date_mr": "१५ ऑगस्ट २०२६",
-          "date_hi": "१५ अगस्त २०२६",
-          "date_en": "15 August 2026",
-          "venue_mr": "सुखलिया परिसर, इंदूर",
-          "venue_hi": "सुखलिया परिसर, इंदौर",
-          "venue_en": "Sukhlia Area, Indore",
-          "description_mr": "स्वातंत्र्य दिनानिमित्त भव्य रक्तदान शिबिर, १२५+ रक्त बाटल्यांचे संकलन.",
-          "description_hi": "स्वतंत्रता दिवस पर रक्तदान शिविर, १२५+ यूनिट रक्त संकलन।",
-          "description_en": "Mega blood donation camp on Independence Day with 125+ units collected.",
+          "id": "2026-kojagiri-utsav",
+          "title_mr": "कोजागिरी पौर्णिमा, छप्पन भोग व गरबा सोहळा",
+          "title_hi": "कोजागिरी पूर्णिमा, छप्पन भोग एवं गरबा समारोह",
+          "title_en": "Kojagiri Pournima, 56 Bhog & Garba Utsav",
+          "date_mr": "२५ ऑक्टोबर २०२६",
+          "date_hi": "२५ अक्टूबर २०२६",
+          "date_en": "25 October 2026",
+          "venue_mr": "सिंगापूर ग्रीन, देवास नाका, इंदूर",
+          "venue_hi": "सिंगापुर ग्रीन, देवास नाका, इंदौर",
+          "venue_en": "Singapore Green, Dewas Naka, Indore",
+          "description_mr": "छप्पन भोग दर्शन, उत्साहपूर्ण गरबा, संगीत मैफल, मसाला दूध व समाजबांधवांची उपस्थिती.",
+          "description_hi": "छप्पन भोग दर्शन, गरबा, संगीत एवं समाजजनों की उपस्थिति।",
+          "description_en": "Chappan Bhog, traditional Garba, festive music, and community celebration.",
           "photos": [
             {
-              "url": "./src/samaj-group-photo.jpeg",
-              "caption_mr": "रक्तदान शिबिर - दाते व डॉक्टर्स टीम",
-              "caption_hi": "रक्तदान शिविर - रक्तदाता एवं डॉक्टर्स",
-              "caption_en": "Blood donation camp - Donors and Medical Team"
+              "url": "./src/gallery/samaj-photo-041.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 1",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 1",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 1"
             },
             {
-              "url": "./src/newspaper-ss.jpeg",
-              "caption_mr": "रक्तदान उपक्रमाचे वृत्तपत्र कव्हरेज",
-              "caption_hi": "रक्तदान शिविर की मीडिया रिपोर्ट",
-              "caption_en": "Media coverage of Blood Donation Drive"
+              "url": "./src/gallery/samaj-photo-042.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 2",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 2",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 2"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-043.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 3",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 3",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 3"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-044.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 4",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 4",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 4"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-045.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 5",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 5",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 5"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-046.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 6",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 6",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 6"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-047.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 7",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 7",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 7"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-048.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 8",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 8",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 8"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-049.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 9",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 9",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 9"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-050.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 10",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 10",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 10"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-051.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 11",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 11",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 11"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-052.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 12",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 12",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 12"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-053.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 13",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 13",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 13"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-054.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 14",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 14",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 14"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-055.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 15",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 15",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 15"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-056.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 16",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 16",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 16"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-057.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 17",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 17",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 17"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-058.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 18",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 18",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 18"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-059.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 19",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 19",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 19"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-060.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 20",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 20",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 20"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-061.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 21",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 21",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 21"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-062.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 22",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 22",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 22"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-063.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 23",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 23",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 23"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-064.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 24",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 24",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 24"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-065.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 25",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 25",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 25"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-066.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 26",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 26",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 26"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-067.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 27",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 27",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 27"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-068.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 28",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 28",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 28"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-069.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 29",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 29",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 29"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-070.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 30",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 30",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 30"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-071.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 31",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 31",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 31"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-072.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 32",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 32",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 32"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-073.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 33",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 33",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 33"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-074.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 34",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 34",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 34"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-075.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 35",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 35",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 35"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-076.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 36",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 36",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 36"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-077.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 37",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 37",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 37"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-078.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 38",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 38",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 38"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-079.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 39",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 39",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 39"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-080.jpg",
+              "caption_mr": "कोजागिरी पौर्णिमा सोहळा व सांस्कृतिक कार्यक्रम छायाचित्र 40",
+              "caption_hi": "कोजागिरी पूर्णिमा समारोह एवं सांस्कृतिक कार्यक्रम छायाचित्र 40",
+              "caption_en": "Kojagiri Pournima & Cultural Event Photo 40"
             }
           ]
         },
         {
-          "id": "2026-ganesh-utsav",
-          "title_mr": "गणेशोत्सव व भव्य महाआरती २०२६",
-          "title_hi": "गणेशोत्सव एवं भव्य महाआरती २०२६",
-          "title_en": "Ganesh Utsav & Maha Aarti 2026",
-          "date_mr": "०७ सप्टेंबर २०२६",
-          "date_hi": "०७ सितंबर २०२६",
-          "date_en": "07 September 2026",
-          "venue_mr": "लवकुश आवास विहार, इंदूर",
-          "venue_hi": "लवकुश आवास विहार, इंदौर",
-          "venue_en": "Luvkush Awas Vihar, Indore",
-          "description_mr": "सामूहिक अथर्वशीर्ष पठण, ५००+ समाज बांधवांची उपस्थिती व महाप्रसाद वितरण.",
-          "description_hi": "सामूहिक अथर्वशीर्ष पाठ, ५००+ बंधुओं की उपस्थिति एवं महाप्रसाद।",
-          "description_en": "Community Atharvashirsha chanting and Maha Aarti with 500+ attendees.",
+          "id": "2026-snehbhojan-samaj",
+          "title_mr": "समाज एकत्रीकरण, स्नेहभोजन व पारितोषिक वितरण",
+          "title_hi": "समाज एकत्रीकरण, स्नेहभोज एवं पुरस्कार वितरण",
+          "title_en": "Community Unity, Dinner & Award Ceremony",
+          "date_mr": "वर्ष २०२६",
+          "date_hi": "वर्ष २०२६",
+          "date_en": "Year 2026",
+          "venue_mr": "सिंगापूर ग्रीन, इंदूर",
+          "venue_hi": "सिंगापुर ग्रीन, इंदौर",
+          "venue_en": "Singapore Green, Indore",
+          "description_mr": "समाजबांधवांचे स्नेहभोजन, लहान मुलांचे व महिलांचे पारितोषिक वितरण व एकतेचा संगम.",
+          "description_hi": "समाजजनों का स्नेहभोज, पुरस्कार वितरण एवं एकता का संगम।",
+          "description_en": "Community feast, prize distribution for children and women, and unity celebration.",
           "photos": [
             {
-              "url": "./src/samaj-group-photo.jpeg",
-              "caption_mr": "गणेशोत्सव महाआरती - भाविकांची अलोट गर्दी",
-              "caption_hi": "गणेशोत्सव महाआरती - श्रद्धालुओं की भीड़",
-              "caption_en": "Ganesh Utsav Maha Aarti - Devotees gathering"
+              "url": "./src/gallery/samaj-photo-081.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 1",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 1",
+              "caption_en": "Community Dinner & Gathering Photo 1"
             },
             {
-              "url": "./src/samaj-logo.png",
-              "caption_mr": "बाप्पाची मनोभावे पूजा व आरती",
-              "caption_hi": "गणपति बाप्पा की पूजा व आरती",
-              "caption_en": "Bappa's Worship and Aarti"
-            }
-          ]
-        },
-        {
-          "id": "2026-diwali-milan",
-          "title_mr": "दिवाळी मिलन समारोह २०२६",
-          "title_hi": "दीपावली मिलन समारोह २०२६",
-          "title_en": "Diwali Milan Samaroh 2026",
-          "date_mr": "२२ नोव्हेंबर २०२६",
-          "date_hi": "२२ नवंबर २०२६",
-          "date_en": "22 November 2026",
-          "venue_mr": "बंधन गार्डन, लवकुश, इंदूर (वेळ: ११:३० ते ३:३०)",
-          "venue_hi": "बंधन गार्डन, लवकुश, इंदौर (समय: ११:३० से ३:३०)",
-          "venue_en": "Bandhan garden, luv kush, Indore (11:30AM to 3:30PM)",
-          "description_mr": "वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम व स्नेहभोजन सोहळा.",
-          "description_hi": "वार्षिक भव्य स्नेह सम्मेलन, सांस्कृतिक कार्यक्रम एवं स्नेहभोज।",
-          "description_en": "Annual grand community gathering, cultural events and festive feast.",
-          "photos": [
-            {
-              "url": "./src/samaj-group-photo.jpeg",
-              "caption_mr": "दिवाळी मिलन स्नेहसंमेलन - वार्षिक कौटुंबिक भेट",
-              "caption_hi": "दीपावली मिलन - वार्षिक पारिवारिक मिलन",
-              "caption_en": "Diwali Milan - Annual Family Gathering"
+              "url": "./src/gallery/samaj-photo-082.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 2",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 2",
+              "caption_en": "Community Dinner & Gathering Photo 2"
             },
             {
-              "url": "./src/newspaper-ss.jpeg",
-              "caption_mr": "दिवाळी सोहळ्याची अधिकृत प्रसिद्धी",
-              "caption_hi": "दीपावली समारोह की आधिकारिक प्रेस विज्ञप्ति",
-              "caption_en": "Official Diwali Milan Press Coverage"
+              "url": "./src/gallery/samaj-photo-083.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 3",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 3",
+              "caption_en": "Community Dinner & Gathering Photo 3"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-084.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 4",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 4",
+              "caption_en": "Community Dinner & Gathering Photo 4"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-085.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 5",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 5",
+              "caption_en": "Community Dinner & Gathering Photo 5"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-086.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 6",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 6",
+              "caption_en": "Community Dinner & Gathering Photo 6"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-087.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 7",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 7",
+              "caption_en": "Community Dinner & Gathering Photo 7"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-088.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 8",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 8",
+              "caption_en": "Community Dinner & Gathering Photo 8"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-089.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 9",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 9",
+              "caption_en": "Community Dinner & Gathering Photo 9"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-090.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 10",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 10",
+              "caption_en": "Community Dinner & Gathering Photo 10"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-091.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 11",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 11",
+              "caption_en": "Community Dinner & Gathering Photo 11"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-092.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 12",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 12",
+              "caption_en": "Community Dinner & Gathering Photo 12"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-093.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 13",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 13",
+              "caption_en": "Community Dinner & Gathering Photo 13"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-094.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 14",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 14",
+              "caption_en": "Community Dinner & Gathering Photo 14"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-095.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 15",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 15",
+              "caption_en": "Community Dinner & Gathering Photo 15"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-096.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 16",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 16",
+              "caption_en": "Community Dinner & Gathering Photo 16"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-097.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 17",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 17",
+              "caption_en": "Community Dinner & Gathering Photo 17"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-098.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 18",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 18",
+              "caption_en": "Community Dinner & Gathering Photo 18"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-099.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 19",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 19",
+              "caption_en": "Community Dinner & Gathering Photo 19"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-100.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 20",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 20",
+              "caption_en": "Community Dinner & Gathering Photo 20"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-101.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 21",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 21",
+              "caption_en": "Community Dinner & Gathering Photo 21"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-102.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 22",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 22",
+              "caption_en": "Community Dinner & Gathering Photo 22"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-103.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 23",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 23",
+              "caption_en": "Community Dinner & Gathering Photo 23"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-104.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 24",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 24",
+              "caption_en": "Community Dinner & Gathering Photo 24"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-105.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 25",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 25",
+              "caption_en": "Community Dinner & Gathering Photo 25"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-106.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 26",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 26",
+              "caption_en": "Community Dinner & Gathering Photo 26"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-107.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 27",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 27",
+              "caption_en": "Community Dinner & Gathering Photo 27"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-108.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 28",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 28",
+              "caption_en": "Community Dinner & Gathering Photo 28"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-109.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 29",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 29",
+              "caption_en": "Community Dinner & Gathering Photo 29"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-110.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 30",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 30",
+              "caption_en": "Community Dinner & Gathering Photo 30"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-111.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 31",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 31",
+              "caption_en": "Community Dinner & Gathering Photo 31"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-112.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 32",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 32",
+              "caption_en": "Community Dinner & Gathering Photo 32"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-113.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 33",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 33",
+              "caption_en": "Community Dinner & Gathering Photo 33"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-114.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 34",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 34",
+              "caption_en": "Community Dinner & Gathering Photo 34"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-115.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 35",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 35",
+              "caption_en": "Community Dinner & Gathering Photo 35"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-116.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 36",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 36",
+              "caption_en": "Community Dinner & Gathering Photo 36"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-117.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 37",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 37",
+              "caption_en": "Community Dinner & Gathering Photo 37"
+            },
+            {
+              "url": "./src/gallery/samaj-photo-118.jpg",
+              "caption_mr": "समाज स्नेहभोजन व स्नेहसंमेलन छायाचित्र 38",
+              "caption_hi": "समाज स्नेहभोज एवं स्नेह सम्मेलन छायाचित्र 38",
+              "caption_en": "Community Dinner & Gathering Photo 38"
             }
           ]
         }

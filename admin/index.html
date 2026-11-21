@@ -113,83 +113,234 @@
 
     <!-- ══════ TAB 1: PHOTO GALLERY MANAGER ══════ -->
     <div id="panel-gallery" class="tab-panel space-y-6">
-      
-      <!-- Add New Photos Box -->
+
+      <!-- Gallery Stats & Quick Action Bar -->
       <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-300/80 shadow-soft">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-5">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center text-2xl shadow-md flex-shrink-0">
+              <i class="fas fa-images"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900 marathi">गॅलरी व्यवस्थापन केंद्र (Gallery Admin)</h2>
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Direct Sync</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5 marathi">गॅलरीतील सर्व फोटो पहा, बल्क अपलोड करा, नवीन अल्बम बनवा अथवा जुने फोटो थेट एका क्लिकवर हटवा.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button type="button" onclick="downloadGalleryJSON()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow flex items-center gap-1.5">
+              <i class="fas fa-file-arrow-down text-amber-400"></i>
+              <span>gallery.json डाऊनलोड करा</span>
+            </button>
+            <button type="button" onclick="resetGalleryToServerData()" class="bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5" title="सर्व्हरवरील मूळ डेटा रीसेट करा">
+              <i class="fas fa-rotate-left"></i>
+              <span>डेटा रीसेट</span>
+            </button>
+            <a href="/#gallery" target="_blank" class="bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5">
+              <i class="fas fa-eye text-amber-700"></i>
+              <span>लाईव्ह गॅलरी पहा</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Metrics Boxes -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center text-lg font-bold shadow-sm">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div>
+              <span class="text-[11px] text-amber-900 font-bold uppercase tracking-wider block marathi">एकूण छायाचित्रे</span>
+              <span id="stat-total-photos" class="text-2xl font-black text-slate-900 font-sans">--</span>
+            </div>
+          </div>
+          <div class="p-4 rounded-2xl bg-orange-50/70 border border-orange-200 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center text-lg font-bold shadow-sm">
+              <i class="fas fa-calendar-days"></i>
+            </div>
+            <div>
+              <span class="text-[11px] text-orange-900 font-bold uppercase tracking-wider block marathi">उपलब्ध वर्ष</span>
+              <span id="stat-total-years" class="text-2xl font-black text-slate-900 font-sans">--</span>
+            </div>
+          </div>
+          <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg font-bold shadow-sm">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <div>
+              <span class="text-[11px] text-emerald-900 font-bold uppercase tracking-wider block marathi">सक्रिय अल्बम / कार्यक्रम</span>
+              <span id="stat-total-programs" class="text-2xl font-black text-slate-900 font-sans">--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════ 1. BULK PHOTOS UPLOAD CARD ══════ -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-400 shadow-soft">
         <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
           <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl">
             <i class="fas fa-cloud-arrow-up"></i>
           </div>
           <div>
-            <h2 class="text-xl font-bold text-slate-900 marathi">गॅलरीत नवीन फोटो जोडा (Add Photos to Gallery)</h2>
-            <p class="text-xs text-slate-500 marathi">वर्ष निवडा, कार्यक्रमाचे नाव लिहा आणि तुमच्या मोबाईल अथवा संगणकावरून फोटो निवडा.</p>
+            <div class="flex items-center gap-2">
+              <h3 class="text-xl font-bold text-slate-900 marathi">मोठ्या प्रमाणात फोटो अपलोड (Bulk Photos Upload)</h3>
+              <span class="bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Bulk Mode</span>
+            </div>
+            <p class="text-xs text-slate-500 marathi">एकाच वेळी १०, ५० किंवा १००+ फोटो निवडा आणि थेट निवडलेल्या अल्बममध्ये जोडा.</p>
           </div>
         </div>
 
-        <form id="form-gallery" onsubmit="handleGallerySave(event)" class="space-y-5">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <form id="form-bulk-gallery" onsubmit="handleBulkGalleryUpload(event)" class="space-y-5">
+          <!-- Destination Selection -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 rounded-2xl bg-amber-50/60 border border-amber-200">
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">१. वर्ष निवडा (Year) *</label>
-              <select id="gal-year-select" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-bold">
-                <option value="2026">वर्ष २०२६ (Current Year)</option>
+              <select id="bulk-year-select" onchange="handleBulkYearChange()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-bold">
+                <option value="2026" selected>वर्ष २०२६ (चालू वर्ष)</option>
                 <option value="2025">वर्ष २०२५</option>
                 <option value="2024">वर्ष २०२४</option>
-                <option value="2023" selected>वर्ष २०२३ (मकर संक्रांती इ.)</option>
+                <option value="2023">वर्ष २०२३</option>
                 <option value="2022">वर्ष २०२२ व पूर्वी</option>
+                <option value="__new__">+ नवीन वर्ष जोडा...</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">२. कार्यक्रमाचे नाव (Program Title) *</label>
-              <input type="text" id="gal-prog-title" required placeholder="उदा. मकर संक्रांती स्नेहसंमेलन" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">२. अल्बम / कार्यक्रम निवडा (Target Album) *</label>
+              <select id="bulk-program-select" onchange="handleBulkProgramSelectChange()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none bg-white font-bold">
+                <!-- Dynamically populated -->
+              </select>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">३. तारीख (Date)</label>
-              <input type="text" id="gal-prog-date" placeholder="उदा. १५ जानेवारी २०२३" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">३. कॉमन कॅप्शन (Caption Prefix)</label>
+              <input type="text" id="bulk-caption-prefix" placeholder="उदा. सोनार समाज इंदूर स्नेहसंमेलन" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
             </div>
           </div>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">४. कार्यक्रमाचे ठिकाण (Venue)</label>
-            <input type="text" id="gal-prog-venue" placeholder="उदा. सोनार समाज भवन / सराफा, इंदूर" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 outline-none marathi">
-          </div>
-
-          <!-- Photo Picker Area -->
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">५. फोटो निवडा (Choose Photos from device) *</label>
-            <div class="border-2 border-dashed border-amber-300 bg-amber-50/40 rounded-2xl p-6 text-center cursor-pointer hover:bg-amber-50 transition-all" onclick="document.getElementById('gal-photos-input').click()">
-              <input type="file" id="gal-photos-input" multiple accept="image/*" class="hidden" onchange="handleAdminPhotoSelect(this)">
-              <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-2 text-xl">
-                <i class="fas fa-file-image"></i>
+          <!-- New Program fields if __new_program__ is selected -->
+          <div id="bulk-new-program-fields" class="hidden p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <i class="fas fa-plus-circle text-amber-600"></i> नवीन अल्बम / कार्यक्रमाचा तपशील:
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">कार्यक्रमाचे नाव *</label>
+                <input type="text" id="new-prog-title" placeholder="उदा. मकर संक्रांती सोहळा" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none marathi">
               </div>
-              <p class="font-bold text-sm text-slate-800 marathi">येथे क्लिक करून फोटो निवडा (Click to Select Photos)</p>
-              <p class="text-xs text-slate-500 mt-1 marathi">मोबाईलवरून किंवा कॉम्प्युटरवरून एकापेक्षा जास्त फोटो (.JPG, .PNG) निवडू शकता.</p>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">तारीख</label>
+                <input type="text" id="new-prog-date" placeholder="उदा. १५ जानेवारी २०२६" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none marathi">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">ठिकाण</label>
+                <input type="text" id="new-prog-venue" placeholder="उदा. सिंगापूर ग्रीन, इंदूर" class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none marathi">
+              </div>
             </div>
-
-            <!-- Photos Preview Grid -->
-            <div id="gal-photos-preview" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3 mt-4 hidden"></div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1 marathi">कार्यक्रमाबद्दल माहिती</label>
+              <input type="text" id="new-prog-desc" placeholder="उदा. समाज बांधवांचा उत्साही सहभाग व स्नेहभोजन..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm outline-none marathi">
+            </div>
           </div>
 
-          <div class="pt-2 flex flex-wrap items-center gap-3">
-            <button type="submit" class="bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow-md transition-all flex items-center gap-2">
-              <i class="fas fa-check-circle"></i>
-              <span>गॅलरीमध्ये फोटो सेव्ह करा (Save Photos)</span>
+          <!-- Drag and Drop / Bulk File Picker Area -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">४. फोटो निवडा (Choose Multiple Photos) *</label>
+            <div id="bulk-dropzone" class="border-2 border-dashed border-amber-400 bg-amber-50/50 hover:bg-amber-100/70 transition-all rounded-3xl p-8 text-center cursor-pointer" onclick="document.getElementById('bulk-photos-input').click()">
+              <input type="file" id="bulk-photos-input" multiple accept="image/*" class="hidden" onchange="handleBulkPhotosSelected(this)">
+              <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-3 text-2xl shadow-sm">
+                <i class="fas fa-images"></i>
+              </div>
+              <p class="font-black text-base text-slate-900 marathi">येथे क्लिक करा किंवा फोटो ड्रॅग करून टाका (Click or Drag & Drop Photos)</p>
+              <p class="text-xs text-slate-600 mt-1.5 marathi">मोबाईलवरून किंवा संगणकावरून एकाच वेळी १०, ५० किंवा १००+ फोटो (.JPG, .PNG, .WEBP) निवडू शकता.</p>
+              <span class="inline-block mt-3 px-4 py-1.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold shadow-2xs">
+                <i class="fas fa-folder-open mr-1"></i> मोबाईल / कॉम्प्युटरवरून फोटो निवडा
+              </span>
+            </div>
+
+            <!-- Staged Photos Preview Strip & Counter -->
+            <div id="bulk-preview-container" class="mt-4 hidden space-y-3">
+              <div class="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span id="bulk-staged-count-text" class="text-xs font-bold text-slate-800 marathi">० फोटो निवडले</span>
+                </div>
+                <button type="button" onclick="clearBulkStagedPhotos()" class="text-xs text-rose-600 font-bold hover:underline">
+                  <i class="fas fa-trash-can mr-1"></i> सर्व काढा (Clear All)
+                </button>
+              </div>
+              <div id="bulk-photos-grid" class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-2.5 max-h-72 overflow-y-auto p-2 bg-slate-50 rounded-2xl border border-slate-200"></div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <button type="submit" id="btn-save-bulk" class="bg-gradient-to-r from-brand-600 via-orange-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white font-bold py-3.5 px-8 rounded-2xl text-sm shadow-md transition-all flex items-center gap-2">
+              <i class="fas fa-cloud-arrow-up"></i>
+              <span>सर्व फोटो गॅलरीमध्ये सेव्ह करा (Upload All in Bulk)</span>
             </button>
-            <span id="gal-save-status" class="text-xs font-bold text-emerald-600 hidden">
-              <i class="fas fa-check mr-1"></i> फोटो यशस्वीरित्या सेव्ह झाले!
+            <span id="bulk-save-status" class="text-xs font-bold text-emerald-600 hidden">
+              <i class="fas fa-check-circle mr-1"></i> फोटो यशस्वीरित्या सेव्ह झाले आहेत!
             </span>
           </div>
         </form>
       </div>
 
-      <!-- Current Programs Overview -->
-      <div class="bg-white rounded-3xl p-6 border border-slate-200">
-        <h3 class="text-base font-bold text-slate-900 mb-4 marathi flex items-center gap-2">
-          <i class="fas fa-list text-amber-600"></i>
-          <span>सध्या उपलब्ध असलेले वर्ष व कार्यक्रम (Current Programs in Gallery)</span>
-        </h3>
-        <div id="admin-gallery-list" class="space-y-4"></div>
+      <!-- ══════ 2. CURRENT GALLERY VIEWER & DIRECT DELETE MANAGER ══════ -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-soft space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-xl font-bold text-slate-900 marathi">सध्याची गॅलरी, फोटो पाहणे व थेट हटवणे (Manage & Delete Photos)</h3>
+              <span class="bg-rose-100 text-rose-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Direct Delete</span>
+            </div>
+            <p class="text-xs text-slate-500 marathi">खालील अल्बममधून कोणताही विशिष्ट फोटो लाल रंगाच्या 'हटवा' (Delete) बटणावर क्लिक करून थेट काढू शकता.</p>
+          </div>
+        </div>
+
+        <!-- Year Selector Tabs -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 uppercase mb-2 marathi">वर्ष निवडा (Choose Year):</label>
+          <div id="admin-view-year-tabs" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Program / Album Selector Pills -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 uppercase mb-2 marathi">अल्बम / कार्यक्रम निवडा (Choose Album):</label>
+          <div id="admin-view-program-pills" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Selected Program Header & Action Bar -->
+        <div id="admin-prog-meta-card" class="p-4 sm:p-5 rounded-2xl bg-amber-50/70 border border-amber-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span id="meta-prog-tag" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-200 text-amber-950">कार्यक्रम</span>
+              <span id="meta-prog-date" class="text-xs text-slate-600 font-semibold"><i class="far fa-calendar-alt text-brand-600 mr-1"></i>--</span>
+              <span id="meta-prog-venue" class="text-xs text-slate-600 font-semibold"><i class="fas fa-location-dot text-brand-600 mr-1"></i>--</span>
+            </div>
+            <h4 id="meta-prog-title" class="text-lg font-black text-slate-900 marathi">--</h4>
+            <p id="meta-prog-desc" class="text-xs text-slate-600 mt-1 max-w-2xl marathi">--</p>
+          </div>
+          <div class="flex items-center gap-2.5 flex-shrink-0">
+            <span id="meta-prog-count-badge" class="px-3.5 py-1.5 rounded-xl bg-white border border-amber-300 text-amber-950 text-xs font-bold shadow-2xs">
+              ० फोटो
+            </span>
+            <button type="button" onclick="deleteActiveAdminProgram()" class="px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5" title="संपूर्ण कार्यक्रम हटवा">
+              <i class="fas fa-trash-can"></i>
+              <span>संपूर्ण अल्बम हटवा</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Photos Visual Grid with Immediate Delete Button on Every Photo -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-slate-700 uppercase tracking-wider marathi">या अल्बममधील सर्व छायाचित्रे (Photos in this Album):</span>
+            <span class="text-[11px] text-slate-500 marathi">प्रत्येक फोटोवर लाल रंगाचे 'हटवा' बटण दाबून तो थेट गॅलरीतून हटवला जातो.</span>
+          </div>
+          <div id="admin-photos-delete-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"></div>
+        </div>
       </div>
 
     </div>
@@ -430,7 +581,11 @@
 
   <!-- Interactive Simple Admin Script -->
   <script>
-    let stagedAdminPhotos = [];
+    // ══════ GALLERY ADMIN STATE & FUNCTIONS ══════
+    let galleryYears = [];
+    let activeAdminYear = '2026';
+    let activeAdminProgId = '2026-all-photos';
+    let stagedBulkPhotos = [];
 
     // Switch Tabs
     function switchTab(tabId) {
@@ -448,123 +603,511 @@
       }
     }
 
-    // Photo Select Handler
-    function handleAdminPhotoSelect(input) {
-      const files = input.files;
-      if (!files || !files.length) return;
-      const preview = document.getElementById('gal-photos-preview');
-      preview.classList.remove('hidden');
+    // 1. Initialize Admin Gallery
+    function initAdminGallery() {
+      // Check local storage first
+      try {
+        const local = localStorage.getItem('sonar_gallery_data');
+        if (local) {
+          const parsed = JSON.parse(local);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            galleryYears = parsed;
+            finishAdminGalleryInit();
+            return;
+          }
+        }
+      } catch(e) {}
 
-      Array.from(files).forEach((file, i) => {
+      // Fetch from content/gallery.json
+      fetch('../content/gallery.json')
+        .then(r => r.json())
+        .then(data => {
+          if (data && Array.isArray(data.years) && data.years.length > 0) {
+            galleryYears = data.years;
+          }
+          finishAdminGalleryInit();
+        })
+        .catch(err => {
+          console.error('Failed to load gallery.json:', err);
+          finishAdminGalleryInit();
+        });
+    }
+
+    function finishAdminGalleryInit() {
+      if (!galleryYears || !galleryYears.length) {
+        galleryYears = [
+          {
+            year: "2026",
+            year_label_mr: "वर्ष २०२६",
+            programs: []
+          }
+        ];
+      }
+      // Ensure active year exists
+      const yExists = galleryYears.find(y => y.year === activeAdminYear);
+      if (!yExists && galleryYears.length) {
+        activeAdminYear = galleryYears[0].year;
+      }
+      populateBulkYearSelect();
+      handleBulkYearChange();
+      renderAdminGalleryView();
+      updateGalleryStats();
+    }
+
+    // 2. Metrics & Stats
+    function updateGalleryStats() {
+      let totalPhotos = 0;
+      let totalProgs = 0;
+      galleryYears.forEach(y => {
+        if (y.programs) {
+          totalProgs += y.programs.length;
+          y.programs.forEach(p => {
+            if (p.photos) totalPhotos += p.photos.length;
+          });
+        }
+      });
+      const pEl = document.getElementById('stat-total-photos');
+      const yEl = document.getElementById('stat-total-years');
+      const prEl = document.getElementById('stat-total-programs');
+      if (pEl) pEl.textContent = totalPhotos.toLocaleString('mr-IN');
+      if (yEl) yEl.textContent = galleryYears.length;
+      if (prEl) prEl.textContent = totalProgs;
+    }
+
+    function saveGalleryDataLocally() {
+      try {
+        localStorage.setItem('sonar_gallery_data', JSON.stringify(galleryYears));
+      } catch(e) {
+        console.warn('LocalStorage save failed:', e);
+      }
+      updateGalleryStats();
+    }
+
+    // 3. Bulk Upload Dropzone & Handlers
+    function populateBulkYearSelect() {
+      const select = document.getElementById('bulk-year-select');
+      if (!select) return;
+      let html = galleryYears.map(y => {
+        return `<option value="${y.year}" ${y.year === activeAdminYear ? 'selected' : ''}>वर्ष ${y.year} ${y.year_label_mr ? `(${y.year_label_mr})` : ''}</option>`;
+      }).join('');
+      html += `<option value="__new__">+ नवीन वर्ष जोडा...</option>`;
+      select.innerHTML = html;
+    }
+
+    function handleBulkYearChange() {
+      const yearSelect = document.getElementById('bulk-year-select');
+      const progSelect = document.getElementById('bulk-program-select');
+      if (!yearSelect || !progSelect) return;
+
+      const yearVal = yearSelect.value;
+      if (yearVal === '__new__') {
+        const customYear = prompt('नवीन वर्षाचा आकडा लिहा (उदा. 2027):');
+        if (customYear && /^\d{4}$/.test(customYear.trim())) {
+          const cy = customYear.trim();
+          if (!galleryYears.find(y => y.year === cy)) {
+            galleryYears.unshift({
+              year: cy,
+              year_label_mr: `वर्ष ${cy}`,
+              year_label_hi: `वर्ष ${cy}`,
+              year_label_en: `Year ${cy}`,
+              programs: []
+            });
+            saveGalleryDataLocally();
+            populateBulkYearSelect();
+            yearSelect.value = cy;
+          }
+        } else {
+          yearSelect.value = galleryYears[0].year;
+        }
+      }
+
+      const currentYearObj = galleryYears.find(y => y.year === yearSelect.value);
+      let progHtml = '';
+      if (currentYearObj && currentYearObj.programs && currentYearObj.programs.length) {
+        progHtml += currentYearObj.programs.map((p, idx) => {
+          const count = p.photos ? p.photos.length : 0;
+          return `<option value="${p.id}">${p.title_mr || p.title || 'कार्यक्रम ' + (idx + 1)} (${count} फोटो)</option>`;
+        }).join('');
+      }
+      progHtml += `<option value="__new_program__">+ नवीन अल्बम / कार्यक्रम तयार करा...</option>`;
+      progSelect.innerHTML = progHtml;
+      handleBulkProgramSelectChange();
+    }
+
+    function handleBulkProgramSelectChange() {
+      const progSelect = document.getElementById('bulk-program-select');
+      const newFields = document.getElementById('bulk-new-program-fields');
+      if (!progSelect || !newFields) return;
+      if (progSelect.value === '__new_program__') {
+        newFields.classList.remove('hidden');
+      } else {
+        newFields.classList.add('hidden');
+      }
+    }
+
+    // Photo Select Handler for Bulk Upload
+    function handleBulkPhotosSelected(input) {
+      const files = Array.from(input.files || []);
+      if (!files.length) return;
+
+      const previewContainer = document.getElementById('bulk-preview-container');
+      const countText = document.getElementById('bulk-staged-count-text');
+      if (previewContainer) previewContainer.classList.remove('hidden');
+
+      let loadedCount = 0;
+      files.forEach((file) => {
         const reader = new FileReader();
         reader.onload = function(e) {
-          const url = e.target.result;
-          stagedAdminPhotos.push({
-            url: url,
+          stagedBulkPhotos.push({
+            url: e.target.result,
             name: file.name
           });
-          renderStagedPhotos();
+          loadedCount++;
+          if (loadedCount === files.length) {
+            renderBulkStagedPhotos();
+          }
         };
         reader.readAsDataURL(file);
       });
+      input.value = ''; // allow re-selecting same
     }
 
-    function renderStagedPhotos() {
-      const preview = document.getElementById('gal-photos-preview');
-      if (!preview) return;
-      preview.innerHTML = stagedAdminPhotos.map((p, idx) => `
-        <div class="relative group rounded-xl overflow-hidden border border-amber-300 bg-white p-1 shadow-sm">
-          <img src="${p.url}" class="w-full h-20 object-cover rounded-lg">
-          <button type="button" onclick="removeAdminStagedPhoto(${idx})" class="absolute top-1 right-1 w-5 h-5 bg-rose-600 text-white rounded-full flex items-center justify-center text-xs">&times;</button>
-          <span class="block text-[9px] text-slate-500 truncate mt-1">${p.name}</span>
+    function renderBulkStagedPhotos() {
+      const grid = document.getElementById('bulk-photos-grid');
+      const countText = document.getElementById('bulk-staged-count-text');
+      const previewContainer = document.getElementById('bulk-preview-container');
+
+      if (!grid) return;
+      if (countText) countText.textContent = `${stagedBulkPhotos.length} फोटो जोडण्यासाठी निवडले आहेत`;
+
+      if (!stagedBulkPhotos.length) {
+        if (previewContainer) previewContainer.classList.add('hidden');
+        grid.innerHTML = '';
+        return;
+      }
+
+      grid.innerHTML = stagedBulkPhotos.map((p, idx) => `
+        <div class="relative group rounded-xl overflow-hidden border border-amber-300 bg-white p-1 shadow-sm flex flex-col justify-between">
+          <img src="${p.url}" class="w-full h-16 object-cover rounded-lg">
+          <button type="button" onclick="removeBulkStagedPhoto(${idx})" class="absolute top-1 right-1 w-5 h-5 bg-rose-600 hover:bg-rose-700 text-white rounded-full flex items-center justify-center text-xs shadow" title="काढा">&times;</button>
+          <span class="block text-[8px] text-slate-500 truncate mt-1">${p.name}</span>
         </div>
       `).join('');
     }
 
-    function removeAdminStagedPhoto(idx) {
-      stagedAdminPhotos.splice(idx, 1);
-      renderStagedPhotos();
-      if (!stagedAdminPhotos.length) {
-        document.getElementById('gal-photos-preview').classList.add('hidden');
-      }
+    function removeBulkStagedPhoto(idx) {
+      stagedBulkPhotos.splice(idx, 1);
+      renderBulkStagedPhotos();
     }
 
-    // Save Gallery Program
-    function handleGallerySave(e) {
+    function clearBulkStagedPhotos() {
+      stagedBulkPhotos = [];
+      renderBulkStagedPhotos();
+    }
+
+    // Save Bulk Photos
+    function handleBulkGalleryUpload(e) {
       e.preventDefault();
-      const year = document.getElementById('gal-year-select').value;
-      const title = document.getElementById('gal-prog-title').value.trim();
-      const date = document.getElementById('gal-prog-date').value.trim() || 'नवीन कार्यक्रम';
-      const venue = document.getElementById('gal-prog-venue').value.trim() || 'सोनार समाज भवन, इंदूर';
+      if (!stagedBulkPhotos.length) {
+        alert('कृपया अपलोड करण्यासाठी किमान एक फोटो निवडा! (Please select photos first)');
+        return;
+      }
 
-      const newProg = {
-        id: year + '-' + Date.now(),
-        title_mr: title,
-        title_hi: title,
-        title_en: title,
-        date_mr: date,
-        date_hi: date,
-        date_en: date,
-        venue_mr: venue,
-        venue_hi: venue,
-        venue_en: venue,
-        description_mr: title + ' - छायाचित्रे व वृत्तांत.',
-        description_hi: title + ' - छायाचित्र एवं वृत्तांत।',
-        description_en: title + ' - Photos and coverage.',
-        photos: stagedAdminPhotos.length ? stagedAdminPhotos.map(p => ({
+      const yearVal = document.getElementById('bulk-year-select').value;
+      const progVal = document.getElementById('bulk-program-select').value;
+      const prefix = document.getElementById('bulk-caption-prefix').value.trim() || 'सोनार समाज इंदूर स्नेहसंमेलन छायाचित्र';
+
+      let yearObj = galleryYears.find(y => y.year === yearVal);
+      if (!yearObj) {
+        yearObj = {
+          year: yearVal,
+          year_label_mr: `वर्ष ${yearVal}`,
+          year_label_hi: `वर्ष ${yearVal}`,
+          year_label_en: `Year ${yearVal}`,
+          programs: []
+        };
+        galleryYears.unshift(yearObj);
+      }
+
+      let targetProg;
+      if (progVal === '__new_program__') {
+        const title = document.getElementById('new-prog-title').value.trim();
+        if (!title) {
+          alert('कृपया नवीन कार्यक्रमाचे नाव लिहा!');
+          return;
+        }
+        const date = document.getElementById('new-prog-date').value.trim() || `वर्ष ${yearVal}`;
+        const venue = document.getElementById('new-prog-venue').value.trim() || 'सोनार समाज भवन, इंदूर';
+        const desc = document.getElementById('new-prog-desc').value.trim() || `${title} - छायाचित्रे व वृत्तांत.`;
+
+        targetProg = {
+          id: `${yearVal}-${Date.now()}`,
+          title_mr: title,
+          title_hi: title,
+          title_en: title,
+          date_mr: date,
+          date_hi: date,
+          date_en: date,
+          venue_mr: venue,
+          venue_hi: venue,
+          venue_en: venue,
+          description_mr: desc,
+          description_hi: desc,
+          description_en: desc,
+          photos: []
+        };
+        yearObj.programs.unshift(targetProg);
+      } else {
+        targetProg = yearObj.programs.find(p => p.id === progVal);
+        if (!targetProg) {
+          targetProg = yearObj.programs[0];
+        }
+      }
+
+      if (!targetProg.photos) targetProg.photos = [];
+
+      // Add all staged photos with indexed captions
+      const startNum = targetProg.photos.length + 1;
+      stagedBulkPhotos.forEach((p, i) => {
+        const cap = `${prefix} ${startNum + i}`;
+        targetProg.photos.push({
           url: p.url,
-          caption_mr: title,
-          caption_hi: title,
-          caption_en: title
-        })) : [{
-          url: './src/samaj-group-photo.jpeg',
-          caption_mr: title,
-          caption_hi: title,
-          caption_en: title
-        }]
-      };
+          caption_mr: cap,
+          caption_hi: cap,
+          caption_en: cap
+        });
+      });
 
-      // Save to localStorage
-      try {
-        let localGallery = JSON.parse(localStorage.getItem('sonar_custom_gallery') || '[]');
-        localGallery.push({ year: year, program: newProg });
-        localStorage.setItem('sonar_custom_gallery', JSON.stringify(localGallery));
-      } catch(err) {}
+      // Save & Update
+      saveGalleryDataLocally();
 
-      // Reset
-      document.getElementById('form-gallery').reset();
-      stagedAdminPhotos = [];
-      document.getElementById('gal-photos-preview').classList.add('hidden');
+      // Clear staged
+      stagedBulkPhotos = [];
+      renderBulkStagedPhotos();
+      document.getElementById('form-bulk-gallery').reset();
 
-      const status = document.getElementById('gal-save-status');
+      // Show toast
+      const status = document.getElementById('bulk-save-status');
       if (status) {
         status.classList.remove('hidden');
-        setTimeout(() => status.classList.add('hidden'), 4000);
+        setTimeout(() => status.classList.add('hidden'), 5000);
       }
-      loadGalleryList();
-      alert('फोटो यशस्वीरित्या गॅलरीमध्ये सेव्ह झाले आहेत! (Photos Saved Successfully)');
+
+      // Switch view to this program
+      activeAdminYear = yearVal;
+      activeAdminProgId = targetProg.id;
+      handleBulkYearChange();
+      renderAdminGalleryView();
+
+      alert(`यशस्वी! ${targetProg.title_mr || targetProg.title} या अल्बममध्ये फोटो सेव्ह झाले आहेत.`);
     }
 
-    function loadGalleryList() {
-      const container = document.getElementById('admin-gallery-list');
+    // 4. View, Manage & Delete Existing Photos
+    function renderAdminGalleryView() {
+      renderAdminYearTabs();
+      renderAdminProgramPills();
+      renderAdminActiveProgramDetails();
+    }
+
+    function renderAdminYearTabs() {
+      const container = document.getElementById('admin-view-year-tabs');
       if (!container) return;
 
-      container.innerHTML = `
-        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 text-xs text-slate-700 marathi flex items-center justify-between">
-          <div>
-            <span class="font-bold text-amber-900">वर्ष २०२३: मकर संक्रांती स्नेहसंमेलन (संक्रांती कार्यक्रम)</span>
-            <p class="text-slate-500 mt-0.5">४ फोटो उपलब्ध • सोनार समाज भवन, इंदूर</p>
+      container.innerHTML = galleryYears.map(y => {
+        const isActive = y.year === activeAdminYear;
+        const count = y.programs ? y.programs.reduce((acc, p) => acc + (p.photos ? p.photos.length : 0), 0) : 0;
+        return `
+          <button type="button" onclick="selectAdminYear('${y.year}')"
+            class="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              isActive 
+                ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' 
+                : 'bg-slate-100 hover:bg-amber-50 text-slate-700 border border-slate-200'
+            }">
+            <span>वर्ष ${y.year}</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded-full ${isActive ? 'bg-white/30 text-white' : 'bg-slate-200 text-slate-600'} font-bold">${count} फोटो</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectAdminYear(year) {
+      activeAdminYear = year;
+      const yObj = galleryYears.find(y => y.year === year);
+      if (yObj && yObj.programs && yObj.programs.length) {
+        activeAdminProgId = yObj.programs[0].id;
+      }
+      renderAdminGalleryView();
+    }
+
+    function renderAdminProgramPills() {
+      const container = document.getElementById('admin-view-program-pills');
+      if (!container) return;
+      const yObj = galleryYears.find(y => y.year === activeAdminYear);
+      if (!yObj || !yObj.programs || !yObj.programs.length) {
+        container.innerHTML = '<span class="text-xs text-slate-400">या वर्षात कोणताही अल्बम उपलब्ध नाही.</span>';
+        return;
+      }
+
+      container.innerHTML = yObj.programs.map(p => {
+        const isActive = p.id === activeAdminProgId;
+        const photoCount = p.photos ? p.photos.length : 0;
+        return `
+          <button type="button" onclick="selectAdminProgram('${p.id}')"
+            class="px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              isActive
+                ? 'bg-slate-900 text-white shadow-sm ring-2 ring-slate-400'
+                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-300'
+            }">
+            <span class="truncate max-w-[220px] marathi">${p.title_mr || p.title || 'अल्बम'}</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full ${isActive ? 'bg-amber-400 text-slate-950 font-black' : 'bg-amber-100 text-amber-900 font-bold'}">${photoCount}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectAdminProgram(progId) {
+      activeAdminProgId = progId;
+      renderAdminProgramPills();
+      renderAdminActiveProgramDetails();
+    }
+
+    function renderAdminActiveProgramDetails() {
+      const yObj = galleryYears.find(y => y.year === activeAdminYear);
+      const titleEl = document.getElementById('meta-prog-title');
+      const dateEl = document.getElementById('meta-prog-date');
+      const venueEl = document.getElementById('meta-prog-venue');
+      const descEl = document.getElementById('meta-prog-desc');
+      const countEl = document.getElementById('meta-prog-count-badge');
+      const gridEl = document.getElementById('admin-photos-delete-grid');
+
+      if (!yObj || !yObj.programs || !yObj.programs.length) {
+        if (titleEl) titleEl.textContent = 'कोणताही कार्यक्रम आढळला नाही';
+        if (gridEl) gridEl.innerHTML = '<div class="col-span-full py-8 text-center text-slate-400 text-xs">कोणतेही फोटो उपलब्ध नाहीत.</div>';
+        return;
+      }
+
+      let prog = yObj.programs.find(p => p.id === activeAdminProgId);
+      if (!prog) {
+        prog = yObj.programs[0];
+        activeAdminProgId = prog.id;
+      }
+
+      if (titleEl) titleEl.textContent = prog.title_mr || prog.title || 'कार्यक्रम';
+      if (dateEl) dateEl.innerHTML = `<i class="far fa-calendar-alt text-brand-600 mr-1"></i>${prog.date_mr || prog.date || '--'}`;
+      if (venueEl) venueEl.innerHTML = `<i class="fas fa-location-dot text-brand-600 mr-1"></i>${prog.venue_mr || prog.venue || '--'}`;
+      if (descEl) descEl.textContent = prog.description_mr || prog.description || '';
+      const photoCount = prog.photos ? prog.photos.length : 0;
+      if (countEl) countEl.textContent = `${photoCount} छायाचित्रे`;
+
+      if (!gridEl) return;
+      if (!prog.photos || !prog.photos.length) {
+        gridEl.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+            <i class="fas fa-camera text-slate-300 text-3xl mb-2"></i>
+            <p class="text-xs text-slate-500 font-bold marathi">या अल्बममध्ये सध्या कोणतेही फोटो नाहीत.</p>
+            <p class="text-[11px] text-slate-400 mt-1 marathi">वर दिलेल्या 'बल्क फोटो अपलोड' विभागातून येथे नवीन फोटो जोडू शकता.</p>
           </div>
-          <span class="text-emerald-700 font-bold bg-emerald-100 px-2.5 py-1 rounded-full">सक्रिय</span>
-        </div>
-        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 marathi flex items-center justify-between">
-          <div>
-            <span class="font-bold text-slate-900">वर्ष २०२६: गणेशोत्सव व भव्य महाआरती २०२६</span>
-            <p class="text-slate-500 mt-0.5">२ फोटो उपलब्ध • लवकुश आवास विहार, इंदूर</p>
+        `;
+        return;
+      }
+
+      gridEl.innerHTML = prog.photos.map((p, idx) => `
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs group flex flex-col justify-between hover:shadow-md transition-shadow relative">
+          <div class="relative h-32 sm:h-36 bg-slate-100 overflow-hidden">
+            <img src="${p.url}" alt="${p.caption_mr || ''}" class="w-full h-full object-cover">
+            <!-- Delete Button (Prominent & Clear) -->
+            <button type="button" onclick="deletePhotoFromActiveProg(${idx})" 
+                    class="absolute top-2 right-2 px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-bold shadow-md transition-all flex items-center gap-1 marathi"
+                    title="हा फोटो गॅलरीतून हटवा">
+              <i class="fas fa-trash-can text-[10px]"></i>
+              <span>हटवा</span>
+            </button>
+            <span class="absolute bottom-1.5 left-2 bg-black/60 backdrop-blur-sm text-white text-[9px] font-bold px-2 py-0.5 rounded-full font-mono">
+              #${idx + 1}
+            </span>
           </div>
-          <span class="text-emerald-700 font-bold bg-emerald-100 px-2.5 py-1 rounded-full">सक्रिय</span>
+          <div class="p-2.5 bg-white">
+            <p class="text-[11px] text-slate-700 marathi truncate font-semibold" title="${p.caption_mr || ''}">
+              ${p.caption_mr || `फोटो ${idx + 1}`}
+            </p>
+          </div>
         </div>
-      `;
+      `).join('');
+    }
+
+    // Direct Photo Deletion Function
+    function deletePhotoFromActiveProg(photoIdx) {
+      const yObj = galleryYears.find(y => y.year === activeAdminYear);
+      if (!yObj) return;
+      const prog = yObj.programs.find(p => p.id === activeAdminProgId);
+      if (!prog || !prog.photos) return;
+
+      const photo = prog.photos[photoIdx];
+      const name = photo.caption_mr || `फोटो #${photoIdx + 1}`;
+
+      if (confirm(`खात्री करा: "${name}" हा फोटो या गॅलरीतून नक्की हटवायचा आहे का?`)) {
+        prog.photos.splice(photoIdx, 1);
+        saveGalleryDataLocally();
+        renderAdminGalleryView();
+        alert('फोटो यशस्वीरित्या गॅलरीतून हटवला गेला आहे!');
+      }
+    }
+
+    // Direct Program Deletion Function
+    function deleteActiveAdminProgram() {
+      const yObj = galleryYears.find(y => y.year === activeAdminYear);
+      if (!yObj) return;
+      const progIdx = yObj.programs.findIndex(p => p.id === activeAdminProgId);
+      if (progIdx === -1) return;
+
+      const prog = yObj.programs[progIdx];
+      const title = prog.title_mr || prog.title || 'हा कार्यक्रम';
+
+      if (confirm(`चेतावणी: "${title}" हा संपूर्ण अल्बम आणि त्यातील सर्व फोटो कायमचे हटवायचे आहेत का?`)) {
+        yObj.programs.splice(progIdx, 1);
+        if (yObj.programs.length) {
+          activeAdminProgId = yObj.programs[0].id;
+        } else {
+          activeAdminProgId = '';
+        }
+        saveGalleryDataLocally();
+        handleBulkYearChange();
+        renderAdminGalleryView();
+        alert(`"${title}" अल्बम यशस्वीरित्या हटवला गेला आहे!`);
+      }
+    }
+
+    // Download updated gallery.json
+    function downloadGalleryJSON() {
+      const data = {
+        years: galleryYears
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'gallery.json';
+      a.click();
+    }
+
+    // Reset Gallery to Default Server Data
+    function resetGalleryToServerData() {
+      if (confirm('चेतावणी: स्थानिक बदल काढून सर्व्हरवरील मूळ gallery.json डेटा लोड करायचा आहे का?')) {
+        localStorage.removeItem('sonar_gallery_data');
+        fetch('../content/gallery.json?t=' + Date.now())
+          .then(r => r.json())
+          .then(data => {
+            if (data && Array.isArray(data.years)) {
+              galleryYears = data.years;
+              activeAdminYear = '2026';
+              activeAdminProgId = '2026-all-photos';
+              finishAdminGalleryInit();
+              alert('सर्व्हर डेटा यशस्वीरित्या रीसेट झाला!');
+            }
+          })
+          .catch(e => {
+            alert('सर्व्हर डेटा लोड करताना त्रुटी आली.');
+          });
+      }
     }
 
     // Business Directory Management
@@ -720,7 +1263,7 @@
 
     // Initial load
     document.addEventListener('DOMContentLoaded', () => {
-      loadGalleryList();
+      initAdminGallery();
       loadBusinesses();
     });
   </script>

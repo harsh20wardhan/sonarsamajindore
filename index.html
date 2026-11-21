@@ -3214,8 +3214,8 @@
         }
 
         // ── Year-wise & Program-wise Interactive Photo Gallery Archive ──
-        let currentGalleryYear = '2023'; // Default to 2023 as requested by user
-        let currentGalleryProgramId = '2023-sankranti'; // Default to sankranti karyakram
+        let currentGalleryYear = '2026'; // Default to 2026 with 118 community photos
+        let currentGalleryProgramId = '2026-all-photos'; // Default to complete photos collection
 
         const defaultGalleryArchive = [
   {
@@ -3738,14 +3738,48 @@
         let galleryArchiveData = defaultGalleryArchive;
 
         function initGalleryArchive() {
-            galleryArchiveData = defaultGalleryArchive;
+            // 1. Check local storage from admin panel
+            try {
+                const local = localStorage.getItem('sonar_gallery_data');
+                if (local) {
+                    const parsed = JSON.parse(local);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        galleryArchiveData = parsed;
+                        const yMatch = galleryArchiveData.find(y => y.year === currentGalleryYear) || galleryArchiveData[0];
+                        if (yMatch) {
+                            currentGalleryYear = yMatch.year;
+                            if (yMatch.programs && yMatch.programs.length) {
+                                currentGalleryProgramId = yMatch.programs[0].id;
+                            }
+                        }
+                        renderGalleryDOM();
+                    }
+                }
+            } catch(e) {}
+
+            // 2. Fetch server content/gallery.json
             if (typeof fetch !== 'undefined') {
                 fetch('./content/gallery.json')
                     .then(r => r.json())
                     .then(data => {
                         if (data && Array.isArray(data.years) && data.years.length > 0) {
-                            galleryArchiveData = data.years;
-                            renderGalleryDOM();
+                            try {
+                                const local = localStorage.getItem('sonar_gallery_data');
+                                if (!local) {
+                                    galleryArchiveData = data.years;
+                                    const yMatch = galleryArchiveData.find(y => y.year === currentGalleryYear) || galleryArchiveData[0];
+                                    if (yMatch) {
+                                        currentGalleryYear = yMatch.year;
+                                        if (yMatch.programs && yMatch.programs.length) {
+                                            currentGalleryProgramId = yMatch.programs[0].id;
+                                        }
+                                    }
+                                    renderGalleryDOM();
+                                }
+                            } catch(e) {
+                                galleryArchiveData = data.years;
+                                renderGalleryDOM();
+                            }
                         }
                     })
                     .catch(() => {});
