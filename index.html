@@ -444,80 +444,6 @@
 
         <main class="flex-grow">
 
-        <!-- ═══════════════════ TODAY'S EVENT BANNER: DIWALI MILAN SAMAROH ═══════════════════ -->
-        <aside id="todays-event-banner" aria-label="Today's Event Banner" class="relative bg-gradient-to-r from-amber-700 via-orange-600 to-rose-700 text-white shadow-lg border-b-2 border-amber-300/40 overflow-hidden isolate">
-            <!-- Festive Diya Glow & Pattern Accents -->
-            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-amber-400/25 rounded-full blur-2xl pointer-events-none"></div>
-            <div class="absolute -left-12 -top-12 w-48 h-48 bg-rose-500/25 rounded-full blur-2xl pointer-events-none"></div>
-            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 relative z-10">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-3.5 lg:gap-6">
-                    
-                    <!-- Left: Diya Icon + Live Badge + Event Title + Meta -->
-                    <div class="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-3.5 sm:gap-4 text-center sm:text-left flex-1 min-w-0">
-                        <div class="flex-shrink-0 relative">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/15 border border-amber-200/50 backdrop-blur-md flex items-center justify-center text-2xl sm:text-3xl shadow-inner shadow-black/20">
-                                🪔
-                            </div>
-                            <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-rose-700"></span>
-                            </span>
-                        </div>
-
-                        <div class="space-y-1 min-w-0">
-                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-black/35 border border-amber-300/50 text-[11px] sm:text-xs font-bold text-amber-200 shadow-sm">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                    <span data-i18n="banner_today_badge">🔴 आजचे विशेष आयोजन • आज, २२ नोव्हेंबर २०२६</span>
-                                </span>
-                                <span class="text-[11px] font-semibold text-amber-100/90 bg-white/15 px-2.5 py-0.5 rounded-md border border-white/20">
-                                    सोनार समाज ट्रस्ट, इंदूर
-                                </span>
-                            </div>
-
-                            <h2 class="text-base sm:text-xl lg:text-2xl font-black text-white tracking-tight marathi-calligraphy leading-tight drop-shadow-sm">
-                                <span data-i18n="banner_today_title">भव्य दिवाळी मिलन समारोह व स्नेहसंमेलन २०२६</span>
-                            </h2>
-
-                            <div class="text-xs sm:text-sm text-amber-100 flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 font-medium pt-0.5">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fas fa-clock text-amber-300"></i>
-                                    <span data-i18n="banner_today_time">सकाळी ११:३० ते दुपारी ३:३० वा.</span>
-                                </span>
-                                <span class="hidden sm:inline text-amber-300/60">•</span>
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fas fa-location-dot text-amber-300"></i>
-                                    <span data-i18n="banner_today_venue">बंधन गार्डन, लवकुश, इंदूर</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right CTAs: Directions (Google Maps), Contact (WhatsApp), Details -->
-                    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 flex-shrink-0 w-full sm:w-auto">
-                        <a href="https://maps.google.com/?q=Bandhan+Garden+Luv+Kush+Indore" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95">
-                            <i class="fas fa-location-arrow text-rose-700"></i>
-                            <span data-i18n="banner_today_maps">मार्ग नकाशा (Google Maps)</span>
-                        </a>
-                        <a href="https://wa.me/917314203099?text=Namaskar%2C%20aajchya%20Diwali%20Milan%20sandarbhat%20sampark." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95">
-                            <i class="fab fa-whatsapp text-base"></i>
-                            <span data-i18n="banner_today_rsvp">संपर्क (WhatsApp)</span>
-                        </a>
-                        <a href="#events" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm backdrop-blur-sm border border-white/25 transition-all">
-                            <span data-i18n="banner_today_details">तपशील</span>
-                            <i class="fas fa-chevron-right text-[10px]"></i>
-                        </a>
-                        <button type="button" onclick="document.getElementById('todays-event-banner').style.display='none'" class="text-white/70 hover:text-white p-2 rounded-lg hover:bg-white/10 transition-colors ml-1" title="Close banner" aria-label="Close banner">
-                            <i class="fas fa-times text-sm"></i>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </aside>
-
         <!-- ═══════════════════ SECTION 1: HERO (Lighter Luminous Heritage Theme) ═══════════════════ -->
         <section id="home" class="relative bg-gradient-to-b from-amber-50/90 via-[#fffbf5] to-[#fef2f2] text-slate-900 overflow-hidden isolate pt-12 pb-24 sm:pt-16 sm:pb-28 border-b border-amber-200/80">
             <!-- Background Image with Light Vignette Overlay -->
@@ -941,7 +867,150 @@
             </div>
         </section>
 
-                <!-- ═══════════════════ SECTION 5: EVENTS & NEWS (From Attached Reference) ═══════════════════ -->
+                        <!-- ═══════════════════ TODAY'S FEATURED EVENT: DIWALI MILAN SAMAROH 2026 ═══════════════════ -->
+        <section id="diwali-milan-today" aria-label="Today's Special Event: Diwali Milan" class="py-12 sm:py-16 bg-gradient-to-b from-amber-50/80 via-[#fff8ed] to-orange-50/60 border-y-2 border-amber-300 relative overflow-hidden isolate shadow-inner">
+            <!-- Festive Diya Glow & Radiance -->
+            <div class="ambient-glow bg-amber-400/20 top-10 left-10 pointer-events-none"></div>
+            <div class="ambient-glow bg-rose-400/20 bottom-10 right-10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-600 to-rose-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md ring-2 ring-red-300/50">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-300 animate-ping"></span>
+                        <span data-i18n="diwali_feature_badge">🔴 आजचे विशेष आयोजन • आज, २२ नोव्हेंबर २०२६</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mt-4 mb-3 tracking-tight marathi-calligraphy">
+                        <span data-i18n="diwali_feature_title">भव्य दिवाळी मिलन समारंभ व स्नेहसंमेलन २०२६</span>
+                    </h2>
+                    <p class="text-amber-900/90 font-bold text-sm sm:text-base marathi">
+                        ॥ श्री गणेशाय नमः ॥ &nbsp;•&nbsp; सोनार समाज मंडळ, इंदूर &nbsp;•&nbsp; <span class="text-rose-700 font-extrabold">एकता • संस्कार • समवेत • सामाजिक सुसंस्कार</span>
+                    </p>
+                </div>
+
+                <!-- 2-Column Showcase Grid: Left Flyer / Right Details -->
+                <div class="bg-white rounded-3xl border-2 border-amber-200/90 shadow-2xl p-6 sm:p-8 lg:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                        
+                        <!-- Left: High-Res Invitation Flyer -->
+                        <div class="lg:col-span-5 flex flex-col items-center">
+                            <div class="relative group rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-400/70 bg-slate-950 max-w-md w-full">
+                                <img src="./src/diwali-milan-2026.jpg" alt="सोनार समाज मंडळ इंदूर - दिवाळी मिलन समारंभ स्नेह निमंत्रण" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+                                    <a href="./src/diwali-milan-2026.jpg" target="_blank" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 font-black text-xs shadow-lg hover:bg-amber-300 transition-colors flex items-center gap-2">
+                                        <i class="fas fa-search-plus"></i> <span data-i18n="diwali_zoom_btn">पूर्ण निमंत्रण पत्रिका पहा</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt-3 flex items-center gap-3">
+                                <a href="./src/diwali-milan-2026.jpg" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-brand-600 transition-colors">
+                                    <i class="fas fa-expand text-amber-600"></i> <span data-i18n="diwali_view_hires">मोठ्या आकारात पहा (HD Flyer)</span>
+                                </a>
+                                <span class="text-slate-300">|</span>
+                                <a href="./src/diwali-milan-2026.jpg" download="Diwali-Milan-2026-Sonar-Samaj-Indore.jpg" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors">
+                                    <i class="fas fa-download text-emerald-600"></i> <span data-i18n="diwali_download_btn">डाउनलोड करा</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right: Event Description, Key Facts, Schedule, Sponsors & CTAs -->
+                        <div class="lg:col-span-7 space-y-6 text-left">
+                            
+                            <!-- Invitation Quote Card -->
+                            <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+                                <h3 class="text-xs font-black uppercase text-amber-800 tracking-wider mb-1.5 flex items-center gap-2">
+                                    <i class="fas fa-envelope-open-text text-amber-600"></i>
+                                    <span data-i18n="diwali_invite_heading">स्नेह निमंत्रण (Warm Invitation)</span>
+                                </h3>
+                                <p class="text-slate-800 text-sm sm:text-base leading-relaxed font-medium marathi" data-i18n="diwali_invite_text">
+                                    दीपावलीच्या पावन पर्वानिमित्त सोनार समाजाच्या सर्व परिवारांचा स्नेह, सन्मान आणि एकतेच्या भावनेने आयोजित “दिवाळी मिलन समारंभ” मध्ये आपली उपस्थिती सादर प्रार्थनीय आहे.
+                                </p>
+                            </div>
+
+                            <!-- 3 Quick Highlight Cards: Date, Time, Venue -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                                <!-- Date -->
+                                <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-left">
+                                    <div class="text-[11px] font-bold text-slate-500 uppercase flex items-center gap-1.5 mb-1">
+                                        <i class="fas fa-calendar-check text-rose-600"></i> <span data-i18n="diwali_meta_date_label">दिनांक</span>
+                                    </div>
+                                    <div class="font-extrabold text-slate-900 text-sm sm:text-base" data-i18n="diwali_meta_date">२२ नोव्हेंबर २०२६</div>
+                                    <div class="text-[11px] text-rose-700 font-bold" data-i18n="diwali_meta_day">रविवार (आज • Today)</div>
+                                </div>
+                                <!-- Time -->
+                                <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-left">
+                                    <div class="text-[11px] font-bold text-slate-500 uppercase flex items-center gap-1.5 mb-1">
+                                        <i class="fas fa-clock text-amber-600"></i> <span data-i18n="diwali_meta_time_label">वेळ</span>
+                                    </div>
+                                    <div class="font-extrabold text-slate-900 text-sm sm:text-base" data-i18n="diwali_meta_time">सकाळी ११:३०</div>
+                                    <div class="text-[11px] text-slate-600 font-semibold" data-i18n="diwali_meta_duration">ते दुपारी ३:३० पर्यंत</div>
+                                </div>
+                                <!-- Venue -->
+                                <div class="p-3.5 rounded-2xl bg-amber-50/80 border-2 border-amber-300 text-left">
+                                    <div class="text-[11px] font-bold text-amber-800 uppercase flex items-center gap-1.5 mb-1">
+                                        <i class="fas fa-map-marker-alt text-rose-600"></i> <span data-i18n="diwali_meta_venue_label">स्थळ (Venue)</span>
+                                    </div>
+                                    <div class="font-black text-slate-900 text-sm sm:text-base" data-i18n="diwali_meta_venue">गजानन वाटिका</div>
+                                    <div class="text-[11px] text-amber-900 font-bold" data-i18n="diwali_meta_city">इंदूर (मध्य प्रदेश)</div>
+                                </div>
+                            </div>
+
+                            <!-- Program Schedule (कार्याक्रमाची रूपरेषा) -->
+                            <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200">
+                                <h4 class="text-xs font-black uppercase text-slate-700 tracking-wider mb-3 flex items-center gap-2">
+                                    <i class="fas fa-list-check text-brand-600"></i>
+                                    <span data-i18n="diwali_schedule_title">कार्यक्रमाची रूपरेषा</span>
+                                </h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-bold text-slate-800 marathi">
+                                    <div class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-50">
+                                        <span class="text-base">🪔</span> <span data-i18n="diwali_sch_1">मंगल दीप प्रज्वलन व लक्ष्मी पूजन</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-50">
+                                        <span class="text-base">🎖️</span> <span data-i18n="diwali_sch_2">वरिष्ठांचा सत्कार</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-50">
+                                        <span class="text-base">🍽️</span> <span data-i18n="diwali_sch_3">स्नेह भोजन</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-50">
+                                        <span class="text-base">🤝</span> <span data-i18n="diwali_sch_4">परिवारिक मिलन व संवाद</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sponsors & Welcomers Honors -->
+                            <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 text-xs sm:text-sm marathi">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div>
+                                        <span class="font-extrabold text-amber-950" data-i18n="diwali_sponsors_label">प्रायोजक:</span>
+                                        <span class="font-semibold text-slate-800 ml-1" data-i18n="diwali_sponsors_val">सौ. नीता राजेश सोनगिरकर व सौ. शीतल गिरीश सोनगिरकर</span>
+                                    </div>
+                                </div>
+                                <div class="mt-2 pt-2 border-t border-amber-200/60 flex items-center gap-2 text-slate-700">
+                                    <span class="font-extrabold text-amber-950" data-i18n="diwali_welcomers_label">स्वागतकर्ता:</span>
+                                    <span class="font-semibold" data-i18n="diwali_welcomers_val">समस्त कार्यकारिणी मंडळ, इंदूर</span>
+                                </div>
+                            </div>
+
+                            <!-- CTAs: Google Maps & WhatsApp -->
+                            <div class="flex flex-wrap items-center gap-3 pt-2">
+                                <a href="https://maps.google.com/?q=Gajanan+Vatika+Indore" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm shadow-md transition-all hover:scale-105 active:scale-95">
+                                    <i class="fas fa-location-arrow text-rose-700"></i>
+                                    <span data-i18n="diwali_maps_btn">गजानन वाटिका मार्ग नकाशा (Google Maps)</span>
+                                </a>
+                                <a href="https://wa.me/917314203099?text=Namaskar%2C%20Gajanan%20Vatika%20yethil%20Diwali%20Milan%20sandarbhat%20sampark." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-md transition-all hover:scale-105 active:scale-95">
+                                    <i class="fab fa-whatsapp text-lg"></i>
+                                    <span data-i18n="diwali_wa_btn">संपर्क / RSVP (WhatsApp)</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════ SECTION 5: EVENTS & NEWS (From Attached Reference) ═══════════════════ -->
         <!-- ═══════════════════ SECTION 5: EVENTS & NEWS ═══════════════════ -->
         <section id="events" class="py-20 bg-white border-y border-surface-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -995,13 +1064,13 @@
                                     </p>
                                     <p class="text-xs text-slate-600 mt-1 flex items-center gap-1.5 marathi">
                                         <i class="fas fa-map-marker-alt text-brand-500"></i>
-                                        <span data-i18n="ev_diwali_loc">बंधन गार्डन, लवकुश, इंदूर</span>
+                                        <span data-i18n="ev_diwali_loc">गजानन वाटिका, इंदूर</span>
                                     </p>
                                     <p class="text-xs text-slate-600 mt-1.5 marathi line-clamp-2" data-i18n="diwali_desc">
                                         दीपावलीच्या मंगल व पावन पर्वावर समस्त सोनार समाज बांधव व भगिनींचा वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम, गुणवंत विद्यार्थी सत्कार व स्नेहभोजन सोहळा.
                                     </p>
                                     <div class="mt-3.5 pt-3 border-t border-orange-200/60 flex flex-wrap items-center gap-2.5">
-                                        <a href="https://maps.google.com/?q=Bandhan+Garden+Luv+Kush+Indore" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition-colors shadow-xs">
+                                        <a href="https://maps.google.com/?q=Gajanan+Vatika+Indore" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition-colors shadow-xs">
                                             <i class="fas fa-location-arrow text-rose-700"></i> <span data-i18n="banner_today_maps">मार्ग नकाशा (Google Maps)</span>
                                         </a>
                                         <a href="https://wa.me/917314203099?text=Namaskar%2C%20aajchya%20Diwali%20Milan%20sandarbhat%20sampark." target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-xs">
@@ -3210,9 +3279,9 @@
         "date_mr": "२२ नोव्हेंबर २०२६",
         "date_hi": "२२ नवंबर २०२६",
         "date_en": "22 November 2026",
-        "venue_mr": "बंधन गार्डन, लवकुश, इंदूर (वेळ: ११:३० ते ३:३०)",
-        "venue_hi": "बंधन गार्डन, लवकुश, इंदौर (समय: ११:३० से ३:३०)",
-        "venue_en": "Bandhan garden, luv kush, Indore (11:30AM to 3:30PM)",
+        "venue_mr": "गजानन वाटिका, इंदूर (वेळ: ११:३० ते ३:३०)",
+        "venue_hi": "गजानन वाटिका, इंदौर (समय: ११:३० से ३:३०)",
+        "venue_en": "Gajanan Vatika, Indore (11:30 AM to 3:30 PM)",
         "description_mr": "वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम व स्नेहभोजन सोहळा.",
         "description_hi": "वार्षिक भव्य स्नेह सम्मेलन, सांस्कृतिक कार्यक्रम एवं स्नेहभोज।",
         "description_en": "Annual grand community gathering, cultural events and festive feast.",
@@ -5021,9 +5090,36 @@
                 "exec_15": "श्रीमती पुर्णिमा सोनगिरकर",
                 "nav_celebrations": "वाढदिवस",
                 "banner_today_badge": "🔴 आजचे विशेष आयोजन • आज, २२ नोव्हेंबर २०२६",
+                "diwali_feature_badge": "🔴 आजचे विशेष आयोजन • आज, २२ नोव्हेंबर २०२६",
+                "diwali_feature_title": "भव्य दिवाळी मिलन समारंभ व स्नेहसंमेलन २०२६",
+                "diwali_zoom_btn": "पूर्ण निमंत्रण पत्रिका पहा",
+                "diwali_view_hires": "मोठ्या आकारात पहा (HD Flyer)",
+                "diwali_download_btn": "डाउनलोड करा",
+                "diwali_invite_heading": "स्नेह निमंत्रण (Warm Invitation)",
+                "diwali_invite_text": "दीपावलीच्या पावन पर्वानिमित्त सोनार समाजाच्या सर्व परिवारांचा स्नेह, सन्मान आणि एकतेच्या भावनेने आयोजित “दिवाळी मिलन समारंभ” मध्ये आपली उपस्थिती सादर प्रार्थनीय आहे.",
+                "diwali_meta_date_label": "दिनांक",
+                "diwali_meta_date": "२२ नोव्हेंबर २०२६",
+                "diwali_meta_day": "रविवार (आज • Today)",
+                "diwali_meta_time_label": "वेळ",
+                "diwali_meta_time": "सकाळी ११:३०",
+                "diwali_meta_duration": "ते दुपारी ३:३० पर्यंत",
+                "diwali_meta_venue_label": "स्थळ (Venue)",
+                "diwali_meta_venue": "गजानन वाटिका",
+                "diwali_meta_city": "इंदूर (मध्य प्रदेश)",
+                "diwali_schedule_title": "कार्यक्रमाची रूपरेषा",
+                "diwali_sch_1": "मंगल दीप प्रज्वलन व लक्ष्मी पूजन",
+                "diwali_sch_2": "वरिष्ठांचा सत्कार",
+                "diwali_sch_3": "स्नेह भोजन",
+                "diwali_sch_4": "परिवारिक मिलन व संवाद",
+                "diwali_sponsors_label": "प्रायोजक:",
+                "diwali_sponsors_val": "सौ. नीता राजेश सोनगिरकर व सौ. शीतल गिरीश सोनगिरकर",
+                "diwali_welcomers_label": "स्वागतकर्ता:",
+                "diwali_welcomers_val": "समस्त कार्यकारिणी मंडळ, इंदूर",
+                "diwali_maps_btn": "गजानन वाटिका मार्ग नकाशा (Google Maps)",
+                "diwali_wa_btn": "संपर्क / RSVP (WhatsApp)",
                 "banner_today_title": "भव्य दिवाळी मिलन समारोह व स्नेहसंमेलन २०२६",
                 "banner_today_time": "सकाळी ११:३० ते दुपारी ३:३० वा.",
-                "banner_today_venue": "बंधन गार्डन, लवकुश, इंदूर",
+                "banner_today_venue": "गजानन वाटिका, इंदूर",
                 "banner_today_maps": "मार्ग नकाशा (Google Maps)",
                 "banner_today_rsvp": "संपर्क (WhatsApp)",
                 "banner_today_details": "तपशील",
@@ -5033,7 +5129,7 @@
                 "diwali_desc": "दीपावलीच्या मंगल व पावन पर्वावर समस्त सोनार समाज बांधव व भगिनींचा वार्षिक भव्य स्नेहसंमेलन, सांस्कृतिक कार्यक्रम, गुणवंत विद्यार्थी सत्कार व स्नेहभोजन सोहळा. सर्व समाजबांधवांनी सहकुटुंब उपस्थित राहावे.",
                 "diwali_date": "रविवार, 22 नोव्हेंबर 2026",
                 "diwali_time": "सकाळी 11:30 ते दुपारी 3:30 वा.",
-                "diwali_venue": "बंधन गार्डन, लवकुश, इंदूर (म.प्र.)",
+                "diwali_venue": "गजानन वाटिका, इंदूर (म.प्र.)",
                 "diwali_rsvp_btn": "उपस्थिती नोंदवा (RSVP WhatsApp)",
                 "diwali_contact_btn": "अधिक माहिती",
                 "cd_label": "सोहळा सुरू होण्यास उर्वरित वेळ",
@@ -5045,7 +5141,7 @@
                 "ev_diwali_month": "नोव्हेंबर",
                 "badge_diwali": "दीपावली मिलन सोहळा",
                 "ev_diwali_title": "भव्य दीपावली मिलन समारोह व स्नेहसंमेलन 2026",
-                "ev_diwali_loc": "बंधन गार्डन, लवकुश, इंदूर",
+                "ev_diwali_loc": "गजानन वाटिका, इंदूर",
                 "ev_diwali_time": "रविवार • सकाळी 11:30 ते दुपारी 3:30 वा.",
                 "celeb_pill": "🎉 आनंद सोहळा • Celebrations",
                 "celeb_title_1": "आजचे अभीष्टचिंतन — ",
@@ -5399,9 +5495,36 @@
                 "exec_15": "श्रीमती पूर्णिमा सोनगिरकर",
                 "nav_celebrations": "जन्मदिन",
                 "banner_today_badge": "🔴 आज का विशेष आयोजन • आज, २२ नवंबर २०२६",
+                "diwali_feature_badge": "🔴 आज का विशेष आयोजन • आज, २२ नवंबर २०२६",
+                "diwali_feature_title": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन 2026",
+                "diwali_zoom_btn": "पूर्ण निमंत्रण पत्र देखें",
+                "diwali_view_hires": "बड़े आकार में देखें (HD Flyer)",
+                "diwali_download_btn": "डाउनलोड करें",
+                "diwali_invite_heading": "स्नेह निमंत्रण (Warm Invitation)",
+                "diwali_invite_text": "दीपावली के पावन पर्व पर सोनार समाज के सभी परिवारों के स्नेह, सम्मान और एकता की भावना से आयोजित “दीवाली मिलन समारोह” में आपकी उपस्थिति सादर प्रार्थनीय है।",
+                "diwali_meta_date_label": "दिनांक",
+                "diwali_meta_date": "२२ नवंबर २०२६",
+                "diwali_meta_day": "रविवार (आज • Today)",
+                "diwali_meta_time_label": "समय",
+                "diwali_meta_time": "सुबह ११:३०",
+                "diwali_meta_duration": "से दोपहर ३:३० तक",
+                "diwali_meta_venue_label": "स्थान (Venue)",
+                "diwali_meta_venue": "गजानन वाटिका",
+                "diwali_meta_city": "इंदौर (मध्य प्रदेश)",
+                "diwali_schedule_title": "कार्यक्रम की रूपरेखा",
+                "diwali_sch_1": "मंगल दीप प्रज्वलन एवं लक्ष्मी पूजन",
+                "diwali_sch_2": "वरिष्ठजनों का सम्मान",
+                "diwali_sch_3": "स्नेह भोज",
+                "diwali_sch_4": "पारिवारिक मिलन एवं संवाद",
+                "diwali_sponsors_label": "प्रायोजक:",
+                "diwali_sponsors_val": "सौ. नीता राजेश सोनगिरकर व सौ. शीतल गिरीश सोनगिरकर",
+                "diwali_welcomers_label": "स्वागतकर्ता:",
+                "diwali_welcomers_val": "समस्त कार्यकारिणी मंडल, इंदौर",
+                "diwali_maps_btn": "गजानन वाटिका मार्ग मानचित्र (Google Maps)",
+                "diwali_wa_btn": "संपर्क / RSVP (WhatsApp)",
                 "banner_today_title": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन 2026",
                 "banner_today_time": "सुबह ११:३० से दोपहर ३:३० बजे",
-                "banner_today_venue": "बंधन गार्डन, लवकुश, इंदौर",
+                "banner_today_venue": "गजानन वाटिका, इंदौर",
                 "banner_today_maps": "मार्ग मानचित्र (Google Maps)",
                 "banner_today_rsvp": "संपर्क (WhatsApp)",
                 "banner_today_details": "विवरण",
@@ -5411,7 +5534,7 @@
                 "diwali_desc": "दीपावली के पावन पर्व पर समस्त सोनार समाज बंधुओं व मातृशक्ति का वार्षिक भव्य स्नेह सम्मेलन, सांस्कृतिक कार्यक्रम, प्रतिभा सम्मान व स्नेहभोज। सभी समाजजन सपरिवार सादर आमंत्रित हैं।",
                 "diwali_date": "रविवार, 22 नवंबर 2026",
                 "diwali_time": "सुबह 11:30 से दोपहर 3:30 बजे",
-                "diwali_venue": "बंधन गार्डन, लवकुश, इंदौर (म.प्र.)",
+                "diwali_venue": "गजानन वाटिका, इंदौर (म.प्र.)",
                 "diwali_rsvp_btn": "उपस्थिति दर्ज करें (RSVP WhatsApp)",
                 "diwali_contact_btn": "अधिक जानकारी",
                 "cd_label": "समारोह प्रारंभ होने में शेष समय",
@@ -5423,7 +5546,7 @@
                 "ev_diwali_month": "नवंबर",
                 "badge_diwali": "दीवाली मिलन समारोह",
                 "ev_diwali_title": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन 2026",
-                "ev_diwali_loc": "बंधन गार्डन, लवकुश, इंदौर",
+                "ev_diwali_loc": "गजानन वाटिका, इंदौर",
                 "ev_diwali_time": "रविवार • सुबह 11:30 से दोपहर 3:30 बजे",
                 "celeb_pill": "🎉 मंगल उत्सव • Celebrations",
                 "celeb_title_1": "दैनिक शुभकामना फलक — ",
@@ -5777,9 +5900,36 @@
                 "exec_15": "Shrimati Purnima Songirkar",
                 "nav_celebrations": "Wishes",
                 "banner_today_badge": "🔴 HAPPENING TODAY • Sunday, 22 November 2026",
+                "diwali_feature_badge": "🔴 HAPPENING TODAY • Sunday, 22 November 2026",
+                "diwali_feature_title": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
+                "diwali_zoom_btn": "View Full Invitation Flyer",
+                "diwali_view_hires": "View in High Resolution",
+                "diwali_download_btn": "Download Flyer",
+                "diwali_invite_heading": "Warm Invitation",
+                "diwali_invite_text": "On the auspicious festival of Deepawali, Sonar Samaj cordially invites all families with affection, honor, and unity to grace the Grand Diwali Milan Samaroh.",
+                "diwali_meta_date_label": "Date",
+                "diwali_meta_date": "22 November 2026",
+                "diwali_meta_day": "Sunday (Today)",
+                "diwali_meta_time_label": "Time",
+                "diwali_meta_time": "11:30 AM",
+                "diwali_meta_duration": "to 3:30 PM IST",
+                "diwali_meta_venue_label": "Venue",
+                "diwali_meta_venue": "Gajanan Vatika",
+                "diwali_meta_city": "Indore (Madhya Pradesh)",
+                "diwali_schedule_title": "Program Itinerary",
+                "diwali_sch_1": "Deep Prajjwalan & Lakshmi Pujan",
+                "diwali_sch_2": "Elders Felicitation",
+                "diwali_sch_3": "Fellowship Lunch / Feast",
+                "diwali_sch_4": "Family Fellowship & Networking",
+                "diwali_sponsors_label": "Sponsors:",
+                "diwali_sponsors_val": "Mrs. Nita Rajesh Songirkar & Mrs. Sheetal Girish Songirkar",
+                "diwali_welcomers_label": "Hosted By:",
+                "diwali_welcomers_val": "All Executive Committee Members, Indore",
+                "diwali_maps_btn": "Gajanan Vatika Directions (Google Maps)",
+                "diwali_wa_btn": "Contact / RSVP (WhatsApp)",
                 "banner_today_title": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
                 "banner_today_time": "11:30 AM to 3:30 PM IST",
-                "banner_today_venue": "Bandhan Garden, Luv Kush, Indore",
+                "banner_today_venue": "Gajanan Vatika, Indore",
                 "banner_today_maps": "Get Directions (Maps)",
                 "banner_today_rsvp": "Contact (WhatsApp)",
                 "banner_today_details": "Details",
@@ -5789,7 +5939,7 @@
                 "diwali_desc": "On the auspicious occasion of Deepawali, Sonar Samaj cordially invites all members and families for cultural celebrations, student felicitation, and fellowship dinner.",
                 "diwali_date": "Sunday, 22 November 2026",
                 "diwali_time": "11:30 AM to 3:30 PM IST",
-                "diwali_venue": "Bandhan Garden, Luv Kush, Indore (M.P.)",
+                "diwali_venue": "Gajanan Vatika, Indore (M.P.)",
                 "diwali_rsvp_btn": "RSVP on WhatsApp",
                 "diwali_contact_btn": "Event Details",
                 "cd_label": "Time Remaining Until Event Starts",
@@ -5801,7 +5951,7 @@
                 "ev_diwali_month": "November",
                 "badge_diwali": "Diwali Milan Festival",
                 "ev_diwali_title": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
-                "ev_diwali_loc": "Bandhan Garden, Luv Kush, Indore",
+                "ev_diwali_loc": "Gajanan Vatika, Indore",
                 "ev_diwali_time": "Sunday • 11:30 AM to 3:30 PM",
                 "celeb_pill": "🎉 Community Celebrations",
                 "celeb_title_1": "Today's Celebrations — ",
