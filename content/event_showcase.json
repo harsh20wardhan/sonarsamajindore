@@ -2,6 +2,100 @@
   "title": "सोनार समाज इंदूर - कार्यक्रम वृत्तांत व छायाचित्र दालन",
   "items": [
     {
+      "id": "ev-diwali-milan-2026",
+      "category_key": "cultural",
+      "category_mr": "धार्मिक व सांस्कृतिक",
+      "category_hi": "धार्मिक एवं सांस्कृतिक",
+      "category_en": "Religious & Cultural",
+      "category_color": "brand",
+      "title_mr": "भव्य दिवाळी मिलन समारंभ व स्नेहसंमेलन २०२६",
+      "title_hi": "भव्य दीवाली मिलन समारोह एवं स्नेह सम्मेलन २०२६",
+      "title_en": "Grand Diwali Milan Samaroh & Annual Gathering 2026",
+      "date_mr": "२२ नोव्हेंबर २०२६",
+      "date_hi": "२२ नवंबर २०२६",
+      "date_en": "22 November 2026",
+      "time_mr": "रविवार, सकाळी ११:३० ते दुपारी ३:३०",
+      "time_hi": "रविवार, सुबह ११:३० से दोपहर ३:३०",
+      "time_en": "Sunday, 11:30 AM to 3:30 PM",
+      "venue_mr": "गजानन वाटिका, इंदूर",
+      "venue_hi": "गजानन वाटिका, इंदौर",
+      "venue_en": "Gajanan Vatika, Indore",
+      "summary_mr": "दीपावलीच्या पावन पर्वानिमित्त सोनार समाजाच्या सर्व परिवारांचा स्नेह, सन्मान आणि एकतेच्या भावनेने आयोजित “दिवाळी मिलन समारंभ” २२ नोव्हेंबर २०२६ रोजी गजानन वाटिका, इंदूर येथे मोठ्या उत्साहात व आनंदाच्या वातावरणात संपन्न झाला. कार्यक्रमात मंगल दीप प्रज्वलन, लक्ष्मी पूजन, समाजातील ज्येष्ठांचा व गुणवंतांचा सत्कार आणि कौटुंबिक स्नेहभोजनाचा सर्व समाजबांधवांनी आनंद घेतला.",
+      "summary_hi": "दीपावली के पावन पर्व पर सोनार समाज के सभी परिवारों के स्नेह, सम्मान और एकता की भावना से आयोजित “दीवाली मिलन समारोह” २२ नवंबर २०२६ को गजानन वाटिका, इंदौर में हर्षोल्लास के साथ संपन्न हुआ। दीप प्रज्वलन, वरिष्ठ सम्मान और स्नेहभोज के साथ कार्यक्रम ऐतिहासिक रहा।",
+      "summary_en": "On the auspicious occasion of Deepawali, the Grand Diwali Milan Samaroh & Annual Gathering of Sonar Samaj Indore was successfully organized on 22 November 2026 at Gajanan Vatika, Indore featuring traditional Lakshmi Pujan, felicitation of elders, and fellowship feast.",
+      "organizer_mr": "सोनार समाज मंडळ / ट्रस्ट, इंदूर • प्रायोजक: सौ. नीता राजेश सोनगिरकर व सौ. शीतल गिरीश सोनगिरकर",
+      "organizer_hi": "सोनार समाज मंडल / ट्रस्ट, इंदौर • प्रायोजक: श्रीमती नीता राजेश सोनगिरकर एवं श्रीमती शीतल गिरीश सोनगिरकर",
+      "organizer_en": "Sonar Samaj Trust, Indore • Sponsors: Mrs. Nita Rajesh Songirkar & Mrs. Sheetal Girish Songirkar",
+      "highlights_mr": [
+        "मंगल दीप प्रज्वलन व पारंपरिक लक्ष्मी पूजन",
+        "समाजातील वरिष्ठांचा व गुणवंतांचा सन्मान व सत्कार",
+        "पारिवारिक मिलन, सुसंवाद व कौटुंबिक एकता",
+        "समस्त समाजबांधवांसाठी स्वादिष्ट स्नेहभोजन"
+      ],
+      "highlights_hi": [
+        "मंगल दीप प्रज्वलन एवं पारंपरिक लक्ष्मी पूजन",
+        "वरिष्ठजनों एवं प्रतिभाओं का सम्मान",
+        "पारिवारिक मिलन, संवाद एवं एकता",
+        "समस्त समाजजनों हेतु स्नेहभोज"
+      ],
+      "highlights_en": [
+        "Traditional Deep Prajjwalan & Lakshmi Pujan",
+        "Felicitation and honoring of community elders",
+        "Family fellowship, dialogue, and unity",
+        "Festive fellowship lunch for all attendees"
+      ],
+      "metrics": [
+        {
+          "icon": "fa-users",
+          "value": "५००+",
+          "label_mr": "समाजबांधव उपस्थित",
+          "label_hi": "समाजजन उपस्थित",
+          "label_en": "Attendees"
+        },
+        {
+          "icon": "fa-heart",
+          "value": "१००%",
+          "label_mr": "आनंद व एकता",
+          "label_hi": "आनंद एवं एकता",
+          "label_en": "Joy & Unity"
+        },
+        {
+          "icon": "fa-trophy",
+          "value": "२०+",
+          "label_mr": "ज्येष्ठ सत्कार",
+          "label_hi": "वरिष्ठ सम्मान",
+          "label_en": "Felicited"
+        },
+        {
+          "icon": "fa-handshake",
+          "value": "सफल",
+          "label_mr": "कौटुंबिक सोहळा",
+          "label_hi": "पारिवारिक मिलन",
+          "label_en": "Family Gathering"
+        }
+      ],
+      "photos": [
+        {
+          "url": "./src/diwali-milan-2026.jpg",
+          "caption_mr": "दिवाळी मिलन समारंभ २०२६ अधिकृत स्नेह निमंत्रण पत्रिका - गजानन वाटिका, इंदूर",
+          "caption_hi": "दीपावली मिलन समारोह २०२६ आधिकारिक स्नेह निमंत्रण पत्र - गजानन वाटिका, इंदौर",
+          "caption_en": "Official Diwali Milan Samaroh 2026 Invitation Flyer - Gajanan Vatika, Indore"
+        },
+        {
+          "url": "./src/samaj-group-photo.jpeg",
+          "caption_mr": "दिवाळी मिलन स्नेहसंमेलन - वार्षिक कौटुंबिक स्नेहभेट",
+          "caption_hi": "दीपावली मिलन - वार्षिक पारिवारिक मिलन",
+          "caption_en": "Diwali Milan - Annual Family Gathering"
+        },
+        {
+          "url": "./src/newspaper-ss.jpeg",
+          "caption_mr": "दिवाळी सोहळ्याची अधिकृत प्रसिद्धी व वृत्त",
+          "caption_hi": "दीपावली समारोह की आधिकारिक प्रेस विज्ञप्ति",
+          "caption_en": "Official Diwali Milan Press Coverage"
+        }
+      ]
+    },
+    {
       "id": "ev-kojagiri-pournima",
       "category_key": "cultural",
       "category_mr": "धार्मिक व सांस्कृतिक",
