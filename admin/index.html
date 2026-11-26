@@ -796,6 +796,13 @@
   <script>
     // ══════ GALLERY ADMIN STATE & FUNCTIONS ══════
     let galleryYears = [];
+
+    function resolveAdminMediaUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('./src/')) return '../' + url.slice(2);
+      if (url.startsWith('src/')) return '../' + url;
+      return url;
+    }
     let activeAdminYear = '2026';
     let activeAdminProgId = '2026-all-photos';
     let stagedBulkPhotos = [];
@@ -1226,12 +1233,19 @@
         return;
       }
 
-      gridEl.innerHTML = prog.photos.map((p, idx) => `
+      gridEl.innerHTML = prog.photos.map((p, idx) => {
+        const imgSrc = resolveAdminMediaUrl(p.url);
+        const cap = p.caption_mr || `फोटो ${idx + 1}`;
+        return `
         <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs group flex flex-col justify-between hover:shadow-md transition-shadow relative">
-          <div class="relative h-32 sm:h-36 bg-slate-100 overflow-hidden">
-            <img src="${p.url}" alt="${p.caption_mr || ''}" class="w-full h-full object-cover">
+          <div class="relative h-32 sm:h-36 bg-slate-100 overflow-hidden cursor-pointer" onclick="openAdminPhotoPreview(${idx})">
+            <img src="${imgSrc}" alt="${cap}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <!-- Preview Icon -->
+            <div class="absolute top-2 left-2 w-7 h-7 bg-black/55 backdrop-blur-sm text-white rounded-lg flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity" title="मोठा फोटो पहा (Preview)">
+              <i class="fas fa-expand"></i>
+            </div>
             <!-- Delete Button (Prominent & Clear) -->
-            <button type="button" onclick="deletePhotoFromActiveProg(${idx})" 
+            <button type="button" onclick="event.stopPropagation(); deletePhotoFromActiveProg(${idx})" 
                     class="absolute top-2 right-2 px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-bold shadow-md transition-all flex items-center gap-1 marathi"
                     title="हा फोटो गॅलरीतून हटवा">
               <i class="fas fa-trash-can text-[10px]"></i>
@@ -1241,13 +1255,14 @@
               #${idx + 1}
             </span>
           </div>
-          <div class="p-2.5 bg-white">
-            <p class="text-[11px] text-slate-700 marathi truncate font-semibold" title="${p.caption_mr || ''}">
-              ${p.caption_mr || `फोटो ${idx + 1}`}
+          <div class="p-2.5 bg-white cursor-pointer" onclick="openAdminPhotoPreview(${idx})">
+            <p class="text-[11px] text-slate-700 marathi truncate font-semibold" title="${cap}">
+              ${cap}
             </p>
           </div>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // Direct Photo Deletion Function
@@ -1741,7 +1756,7 @@
           : '<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-600">📅 नियोजित (Scheduled)</span>';
 
         const photoHtml = c.photo_url
-          ? `<img src="${c.photo_url}" alt="${c.name}" class="w-14 h-14 rounded-full object-cover border-2 border-amber-400 shadow-sm flex-shrink-0">`
+          ? `<img src="${resolveAdminMediaUrl(c.photo_url)}" alt="${c.name}" class="w-14 h-14 rounded-full object-cover border-2 border-amber-400 shadow-sm flex-shrink-0">`
           : `<div class="w-14 h-14 rounded-full bg-gradient-to-br ${isBday ? 'from-amber-400 to-orange-500' : 'from-rose-400 to-pink-500'} flex items-center justify-center text-white text-xl shadow flex-shrink-0">
                <i class="${isBday ? 'fas fa-gift' : 'fas fa-heart'}"></i>
              </div>`;
@@ -1925,6 +1940,101 @@
       loadCelebrations();
       loadMemberRegistrations();
     });
+
+    // ══════ ADMIN PHOTO PREVIEW LIGHTBOX ══════
+    let adminPreviewIdx = 0;
+
+    function getActiveAdminPhotos() {
+      const yObj = galleryYears.find(y => y.year === activeAdminYear);
+      if (!yObj || !yObj.programs) return [];
+      const prog = yObj.programs.find(p => p.id === activeAdminProgId) || yObj.programs[0];
+      return (prog && prog.photos) ? prog.photos : [];
+    }
+
+    function openAdminPhotoPreview(idx) {
+      const photos = getActiveAdminPhotos();
+      if (!photos.length) return;
+      adminPreviewIdx = Math.max(0, Math.min(idx, photos.length - 1));
+      renderAdminPhotoPreview();
+      const modal = document.getElementById('admin-photo-preview-modal');
+      if (modal) modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderAdminPhotoPreview() {
+      const photos = getActiveAdminPhotos();
+      if (!photos.length) {
+        closeAdminPhotoPreview();
+        return;
+      }
+      if (adminPreviewIdx >= photos.length) adminPreviewIdx = photos.length - 1;
+      const p = photos[adminPreviewIdx];
+      const imgEl = document.getElementById('admin-preview-img');
+      const capEl = document.getElementById('admin-preview-caption');
+      const counterEl = document.getElementById('admin-preview-counter');
+
+      if (imgEl) imgEl.src = resolveAdminMediaUrl(p.url);
+      if (capEl) capEl.textContent = p.caption_mr || `फोटो #${adminPreviewIdx + 1}`;
+      if (counterEl) counterEl.textContent = `${adminPreviewIdx + 1} / ${photos.length}`;
+    }
+
+    function stepAdminPhotoPreview(delta) {
+      const photos = getActiveAdminPhotos();
+      if (!photos.length) return;
+      adminPreviewIdx = (adminPreviewIdx + delta + photos.length) % photos.length;
+      renderAdminPhotoPreview();
+    }
+
+    function closeAdminPhotoPreview() {
+      const modal = document.getElementById('admin-photo-preview-modal');
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function deleteFromAdminPreview() {
+      deletePhotoFromActiveProg(adminPreviewIdx);
+      const photos = getActiveAdminPhotos();
+      if (photos.length) {
+        renderAdminPhotoPreview();
+      } else {
+        closeAdminPhotoPreview();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('admin-photo-preview-modal');
+      if (!modal || modal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeAdminPhotoPreview();
+      else if (e.key === 'ArrowRight') stepAdminPhotoPreview(1);
+      else if (e.key === 'ArrowLeft') stepAdminPhotoPreview(-1);
+    });
   </script>
+
+  <!-- Admin Photo Preview Modal -->
+  <div id="admin-photo-preview-modal" class="hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-4" onclick="if(event.target===this) closeAdminPhotoPreview()">
+    <div class="w-full max-w-4xl flex items-center justify-between text-white mb-3">
+      <div class="flex items-center gap-3">
+        <span id="admin-preview-counter" class="px-3 py-1 rounded-full bg-white/15 text-xs font-mono font-bold">1 / 1</span>
+        <span id="admin-preview-caption" class="text-sm font-bold marathi truncate max-w-md"></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="deleteFromAdminPreview()" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold flex items-center gap-1.5 marathi">
+          <i class="fas fa-trash-can"></i> हटवा
+        </button>
+        <button type="button" onclick="closeAdminPhotoPreview()" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-lg">
+          &times;
+        </button>
+      </div>
+    </div>
+    <div class="relative w-full max-w-4xl flex items-center justify-center">
+      <button type="button" onclick="stepAdminPhotoPreview(-1)" class="absolute left-2 sm:-left-12 w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <img id="admin-preview-img" src="" alt="Preview" class="max-h-[78vh] max-w-full rounded-2xl object-contain shadow-2xl border border-white/10 bg-black">
+      <button type="button" onclick="stepAdminPhotoPreview(1)" class="absolute right-2 sm:-right-12 w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
 </body>
 </html>
