@@ -9,6 +9,11 @@
   to = "/admin/index.html"
   status = 200
 
+[[redirects]]
+  from = "/city/*"
+  to = "/city.html?slug=:splat"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -16,3 +21,13 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/src/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="mr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सोनार समाज शाखा | Sonar Samaj City Portal</title>
+    <meta name="description" content="सोनार समाज अधिकृत शहर शाखा पोर्टल — कार्यक्रम व छायाचित्रे (Events & Photo Gallery).">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#c2410c">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', 'sans-serif'],
+                        marathi: ['"Noto Sans Devanagari"', '"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Yatra One"', '"Noto Sans Devanagari"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                            800: '#7c2d12',
+                            900: '#431407',
+                            maroon: '#781d1d',
+                            gold: '#d97706'
+                        },
+                        surface: {
+                            ivory: '#fffdf9',
+                            pearl: '#faf8f5',
+                            border: '#f0e6d8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif; background-color: #fffdf9; color: #1e293b; }
+        .marathi { font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif; }
+        .calligraphy { font-family: 'Yatra One', 'Noto Sans Devanagari', serif; }
+        .shadow-soft { box-shadow: 0 4px 20px -2px rgba(194, 65, 12, 0.08); }
+        .shadow-card { box-shadow: 0 10px 30px -5px rgba(120, 29, 29, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-brand-900 text-amber-100/90 text-xs py-2 border-b border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <a href="/" class="inline-flex items-center gap-1.5 text-amber-200 hover:text-white font-bold transition-colors marathi">
+                <i class="fas fa-arrow-left text-[11px]"></i>
+                <span data-i18n="back_main">मुख्य पोर्टल (सोनार समाज इंदूर)</span>
+            </a>
+            <div class="flex items-center gap-1 bg-brand-800/80 p-0.5 rounded-full border border-brand-700">
+                <button onclick="setCityLang('mr')" id="lang-btn-mr" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-brand-gold text-brand-900 transition-all">मराठी</button>
+                <button onclick="setCityLang('hi')" id="lang-btn-hi" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold text-amber-100 hover:text-white transition-all">हिंदी</button>
+                <button onclick="setCityLang('en')" id="lang-btn-en" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold text-amber-100 hover:text-white transition-all">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-surface-border shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <a href="#top" class="flex items-center gap-3 min-w-0">
+                <img src="/src/samaj-logo.png" alt="सोनार समाज" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain bg-white shadow-sm ring-2 ring-brand-gold/60 flex-shrink-0">
+                <div class="min-w-0">
+                    <div id="city-header-title" class="font-extrabold text-lg sm:text-2xl text-slate-900 tracking-tight truncate marathi">सोनार समाज</div>
+                    <div id="city-header-subtitle" class="text-xs font-bold text-brand-600 truncate marathi">अधिकृत शहर शाखा पोर्टल</div>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-bold text-slate-700 marathi">
+                <a href="#events" class="hover:text-brand-600 transition-colors" data-i18n="nav_events">कार्यक्रम (Events)</a>
+                <a href="#gallery" class="hover:text-brand-600 transition-colors" data-i18n="nav_gallery">फोटो गॅलरी (Gallery)</a>
+                <a href="/" class="px-4 py-2 rounded-full bg-amber-50 text-brand-700 border border-amber-200 hover:bg-amber-100 transition-colors text-xs" data-i18n="nav_indore">मुख्य इंदूर पोर्टल ↗</a>
+            </nav>
+
+            <img src="/src/rajwada-logo.png" alt="सोनार समाज" class="hidden sm:block w-12 h-12 rounded-full object-contain bg-white shadow-xs ring-2 ring-brand-gold/50 flex-shrink-0">
+        </div>
+    </header>
+
+    <!-- Loading Skeleton -->
+    <div id="city-loading" class="flex-1 flex items-center justify-center py-24">
+        <div class="text-center space-y-3">
+            <div class="w-12 h-12 rounded-full border-4 border-brand-200 border-t-brand-600 animate-spin mx-auto"></div>
+            <p class="text-sm font-bold text-slate-500 marathi">शहर पोर्टल माहिती लोड होत आहे...</p>
+        </div>
+    </div>
+
+    <!-- Not Found State -->
+    <div id="city-not-found" class="hidden flex-1 flex items-center justify-center py-24 px-4">
+        <div class="max-w-md w-full bg-white rounded-3xl p-8 border-2 border-amber-200 shadow-card text-center space-y-4">
+            <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-3xl mx-auto">
+                <i class="fas fa-city"></i>
+            </div>
+            <h1 class="text-2xl font-extrabold text-slate-900 marathi">शहर शाखा आढळली नाही</h1>
+            <p class="text-sm text-slate-600 marathi">ही शहर शाखा अद्याप सक्रिय नाही किंवा लिंक चुकीची आहे.</p>
+            <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition-all marathi">
+                <i class="fas fa-home"></i> मुख्य वेबसाइटवर परत जा
+            </a>
+        </div>
+    </div>
+
+    <!-- Main City Content (Events + Gallery) -->
+    <main id="city-main" class="hidden flex-1">
+        <!-- Hero Banner -->
+        <section id="top" class="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-amber-900 text-white py-14 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-amber-300/30 text-amber-200 text-xs font-bold tracking-wider uppercase marathi">
+                    <i class="fas fa-location-dot text-amber-400"></i>
+                    <span data-i18n="hero_badge">सोनार समाज अधिकृत शाखा पोर्टल</span>
+                </div>
+                <h1 id="city-hero-name" class="text-3xl sm:text-5xl font-black tracking-tight calligraphy text-amber-100 drop-shadow">सोनार समाज</h1>
+                <p id="city-hero-tagline" class="max-w-2xl mx-auto text-sm sm:text-lg text-amber-100/90 marathi leading-relaxed"></p>
+                <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+                    <a href="#events" class="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-brand-900 font-extrabold text-sm shadow-lg transition-all flex items-center gap-2 marathi">
+                        <i class="fas fa-calendar-days"></i>
+                        <span data-i18n="cta_events">कार्यक्रम पहा (Events)</span>
+                    </a>
+                    <a href="#gallery" class="px-6 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 font-bold text-sm transition-all flex items-center gap-2 marathi">
+                        <i class="fas fa-images"></i>
+                        <span data-i18n="cta_gallery">फोटो गॅलरी (Gallery)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-16 sm:py-20 bg-white border-b border-surface-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi" data-i18n="events_pill">कार्यक्रम • Events</div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3 tracking-tight marathi" data-i18n="events_heading">आगामी व संपन्न कार्यक्रम</h2>
+                    <p class="text-slate-600 text-sm sm:text-base marathi" data-i18n="events_sub">या शहर शाखेचे सर्व सामाजिक, धार्मिक व सांस्कृतिक उपक्रम.</p>
+                </div>
+
+                <div id="city-events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- Collapsible Gallery Section -->
+        <section id="gallery" class="py-16 sm:py-20 bg-surface-pearl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi" data-i18n="gallery_pill">छायाचित्रे • Photo Gallery</div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3 tracking-tight marathi" data-i18n="gallery_heading">गॅलरी — वर्षनिहाय कार्यक्रम व छायाचित्रे</h2>
+                    <p class="text-slate-600 text-sm sm:text-base marathi" data-i18n="gallery_sub">कार्यक्रम निवडा आणि त्यातील छायाचित्रे पहा.</p>
+                </div>
+
+                <!-- Year Tabs -->
+                <div id="city-gallery-years" class="flex items-center justify-center gap-2.5 flex-wrap mb-6"></div>
+
+                <!-- Album Pills -->
+                <div id="city-gallery-albums" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8"></div>
+
+                <!-- Active Album View -->
+                <div id="city-gallery-workspace" class="hidden bg-white rounded-3xl p-6 sm:p-8 border-2 border-amber-200/90 shadow-soft">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-amber-100 mb-6">
+                        <div>
+                            <h3 id="city-album-title" class="text-xl sm:text-2xl font-black text-slate-900 marathi"></h3>
+                            <p id="city-album-meta" class="text-xs text-slate-500 mt-1 marathi"></p>
+                            <p id="city-album-desc" class="text-xs sm:text-sm text-slate-600 mt-1.5 marathi"></p>
+                        </div>
+                        <span id="city-album-count" class="px-3.5 py-1.5 rounded-xl bg-brand-600 text-white text-xs font-bold self-start"></span>
+                    </div>
+
+                    <div id="city-photos-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+
+                    <div id="city-photos-expand-bar" class="hidden mt-6 pt-5 border-t border-amber-100 flex justify-center">
+                        <button type="button" onclick="toggleCityPhotosExpand()" id="city-photos-expand-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-gradient-to-r from-brand-600 to-amber-600 text-white shadow-md hover:shadow-lg transition-all marathi"></button>
+                    </div>
+                </div>
+
+                <div id="city-gallery-empty" class="hidden bg-white rounded-3xl p-12 border border-surface-border text-center text-slate-400 text-sm marathi">
+                    या शाखेचे गॅलरी फोटो लवकरच अपलोड केले जातील.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div class="flex items-center gap-2.5">
+                <img src="/src/samaj-logo.png" alt="Logo" class="w-8 h-8 rounded-full bg-white p-0.5">
+                <span id="city-footer-name" class="font-bold text-white marathi">सोनार समाज पोर्टल</span>
+            </div>
+            <div class="flex items-center gap-4 marathi">
+                <a href="/" class="text-amber-300 hover:text-white font-semibold">सोनार समाज इंदूर (मुख्य पोर्टल)</a>
+                <span class="text-slate-600">|</span>
+                <a href="/admin/" class="text-slate-400 hover:text-white">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="city-lightbox" class="hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-4" onclick="if(event.target===this) closeCityLightbox()">
+        <div class="w-full max-w-4xl flex items-center justify-between text-white mb-3">
+            <div class="flex items-center gap-3">
+                <span id="city-lb-counter" class="px-3 py-1 rounded-full bg-white/15 text-xs font-mono font-bold"></span>
+                <span id="city-lb-caption" class="text-sm font-bold marathi truncate max-w-md"></span>
+            </div>
+            <button type="button" onclick="closeCityLightbox()" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-lg">&times;</button>
+        </div>
+        <div class="relative w-full max-w-4xl flex items-center justify-center">
+            <button type="button" onclick="stepCityLightbox(-1)" class="absolute left-2 sm:-left-12 w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+            <img id="city-lb-img" src="" alt="Preview" class="max-h-[80vh] max-w-full rounded-2xl object-contain shadow-2xl bg-black">
+            <button type="button" onclick="stepCityLightbox(1)" class="absolute right-2 sm:-right-12 w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="/js/city-portal.js"></script>
+</body>
+</html>
