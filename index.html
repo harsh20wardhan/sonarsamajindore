@@ -944,6 +944,27 @@
 
                         <div id="news-container" class="space-y-5">
                             
+                            <!-- News 0: Diwali Milan 2026 & Website Launch -->
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gradient-to-r from-amber-50/90 to-white border border-amber-200 hover:shadow-md transition-shadow">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-brand-600 text-white flex flex-col items-center justify-center flex-shrink-0 text-center font-bold shadow-xs">
+                                    <span class="text-xl leading-none">23</span>
+                                    <span class="text-[11px] leading-tight marathi">नोव्हेंबर</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                                        <span class="text-[10px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full border border-red-200">स्वदेश समाचार</span>
+                                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full border border-emerald-200">व्हिडिओ वार्ता</span>
+                                    </div>
+                                    <h4 data-i18n="news_diwali_title" class="font-bold text-slate-900 text-base marathi">सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह; प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे यांच्या हस्ते वेबसाइटचे विमोचन</h4>
+                                    <p data-i18n="news_diwali_desc" class="text-xs text-slate-600 mt-1 marathi">
+                                        गजानन वाटिका, सुखलिया येथे आयोजित भव्य दीपावली मिलन सोहळा उत्साहात संपन्न झाला. याप्रसंगी 'sonarsamaj.com' अधिकृत समाज पोर्टलचे लोकार्पण व मान्यवरांचा सत्कार करण्यात आला.
+                                    </p>
+                                    <button onclick="openNewsModal()" class="inline-flex items-center gap-1.5 mt-2.5 text-xs font-bold text-brand-700 bg-amber-100/80 hover:bg-amber-200 px-3 py-1.5 rounded-xl transition-colors marathi border border-amber-200">
+                                        <i class="fas fa-newspaper text-amber-600"></i> बातमी व व्हिडिओ क्लिप पहा →
+                                    </button>
+                                </div>
+                            </div>
+                            
                             <!-- News 1 -->
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-surface-border hover:shadow-md transition-shadow">
                                 <div class="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 flex flex-col items-center justify-center flex-shrink-0 text-center font-bold">
@@ -2814,6 +2835,23 @@
                     <ul id="ev-modal-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></ul>
                 </div>
 
+                <!-- Video Section (if event has a video) -->
+                <div id="ev-modal-video-box" class="hidden mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-sm font-bold text-slate-900 marathi flex items-center gap-2">
+                            <i class="fas fa-video text-brand-600"></i>
+                            <span>व्हिडिओ वार्ता व प्रसिद्धी (Video Highlights)</span>
+                        </h4>
+                        <span class="text-xs bg-red-100 text-red-700 px-2.5 py-0.5 rounded-full font-bold">News Video</span>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-amber-200 bg-black shadow-md">
+                        <video id="ev-modal-video-player" controls preload="metadata" class="w-full max-h-80 bg-black" poster="./src/samaj-group-photo.jpeg">
+                            <source src="./src/diwali-milan-news-clip.mp4" type="video/mp4">
+                            तुमचा ब्राउझर व्हिडिओ प्लेबॅकला सपोर्ट करत नाही.
+                        </video>
+                    </div>
+                </div>
+
                 <!-- Complete Photo Gallery for this Event -->
                 <div>
                     <div class="flex items-center justify-between mb-3">
@@ -3137,6 +3175,12 @@
             "caption_mr": "दिवाळी मिलन स्नेहसंमेलन - वार्षिक कौटुंबिक भेट",
             "caption_hi": "दीपावली मिलन - वार्षिक पारिवारिक मिलन",
             "caption_en": "Diwali Milan - Annual Family Gathering"
+          },
+          {
+            "url": "./src/swadesh-diwali-milan-2026.jpg",
+            "caption_mr": "स्वदेश वृत्तपत्र - सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह",
+            "caption_hi": "स्वदेश समाचार - सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह",
+            "caption_en": "Swadesh News Coverage - Diwali Milan Samaroh 2026"
           },
           {
             "url": "./src/newspaper-ss.jpeg",
@@ -3782,6 +3826,7 @@
         const defaultEventShowcase = [
           {
             "id": "ev-diwali-milan-2026",
+            "video": "./src/diwali-milan-news-clip.mp4",
             "category_key": "cultural",
             "category_mr": "धार्मिक व सांस्कृतिक",
             "category_hi": "धार्मिक एवं सांस्कृतिक",
@@ -3854,6 +3899,12 @@
               }
             ],
             "photos": [
+              {
+                "url": "./src/swadesh-diwali-milan-2026.jpg",
+                "caption_mr": "स्वदेश समाचार - सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह (२३ नोव्हेंबर २०२६)",
+                "caption_hi": "स्वदेश समाचार - सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह (२३ नवंबर २०२६)",
+                "caption_en": "Swadesh News Coverage - Diwali Milan Samaroh 2026"
+              },
               {
                 "url": "./src/diwali-milan-2026.jpg",
                 "caption_mr": "दिवाळी मिलन समारंभ २०२६ अधिकृत स्नेह निमंत्रण पत्रिका - गजानन वाटिका, इंदूर",
@@ -4081,6 +4132,21 @@
             if (organizerEl) organizerEl.textContent = organizer;
             if (countEl) countEl.textContent = (ev.photos ? ev.photos.length : 0) + ' फोटो उपलब्ध';
 
+            // Video Box handling
+            const vidBox = document.getElementById('ev-modal-video-box');
+            const vidPlayer = document.getElementById('ev-modal-video-player');
+            if (vidBox && vidPlayer) {
+                if (ev.video) {
+                    vidBox.classList.remove('hidden');
+                    const srcTag = vidPlayer.querySelector('source');
+                    if (srcTag) srcTag.src = ev.video;
+                    vidPlayer.load();
+                } else {
+                    vidBox.classList.add('hidden');
+                    vidPlayer.pause();
+                }
+            }
+
             // Metrics
             const metricsEl = document.getElementById('ev-modal-metrics');
             if (metricsEl) {
@@ -4137,6 +4203,8 @@
         function closeEventDetailModal() {
             const m = document.getElementById('event-detail-modal');
             if (m) m.classList.remove('active');
+            const vidPlayer = document.getElementById('ev-modal-video-player');
+            if (vidPlayer) vidPlayer.pause();
         }
 
         function shareEventFromModalWhatsApp() {
@@ -4885,6 +4953,8 @@
                 "panel_news_title": "📰 नवीनतम बातम्या",
                 "badge_latest": "ताजी माहिती",
                 "news_1_month": "सप्टेंबर",
+                "news_diwali_title": "सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह; प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे यांच्या हस्ते वेबसाइटचे विमोचन",
+                "news_diwali_desc": "गजानन वाटिका, सुखलिया येथे आयोजित भव्य दीपावली मिलन सोहळा उत्साहात संपन्न झाला. याप्रसंगी 'sonarsamaj.com' अधिकृत समाज पोर्टलचे लोकार्पण व मान्यवरांचा सत्कार करण्यात आला.",
                 "news_1_title": "समाज ट्रस्टची नवीन कार्यकारिणी जाहीर",
                 "news_1_desc": "ट्रस्टच्या आगामी कार्यकाळासाठी नवीन कार्यकारिणीची घोषणा करण्यात आली असून, समाजाच्या विकासासाठी विविध समित्या गठीत करण्यात आल्या आहेत.",
                 "news_read_more": "सविस्तर वाचा →",
@@ -5293,6 +5363,8 @@
                 "panel_news_title": "📰 नवीनतम समाचार",
                 "badge_latest": "ताज़ा जानकारी",
                 "news_1_month": "सितंबर",
+                "news_diwali_title": "सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह; प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे ने किया वेबसाइट का विमोचन",
+                "news_diwali_desc": "गजानन वाटिका, सुखलिया में आयोजित भव्य दीपावली मिलन समारोह हर्षोल्लास के साथ संपन्न हुआ। इस अवसर पर 'sonarsamaj.com' आधिकारिक पोर्टल का लोकार्पण एवं समाज के वरिष्ठजनों का सम्मान किया गया।",
                 "news_1_title": "समाज ट्रस्ट की नई कार्यकारिणी घोषित",
                 "news_1_desc": "ट्रस्ट के आगामी कार्यकाल हेतु नई कार्यकारिणी की घोषणा की गई है, जिसमें समाज कल्याण हेतु विभिन्न समितियाँ गठित हुई हैं।",
                 "news_read_more": "विस्तार से पढ़ें →",
@@ -5701,6 +5773,8 @@
                 "panel_news_title": "📰 Latest News",
                 "badge_latest": "Latest Updates",
                 "news_1_month": "September",
+                "news_diwali_title": "Diwali Milan Samaroh Celebrated by Sonar Samaj; Official Website Launched by Cartoonist Ravindra Balapure",
+                "news_diwali_desc": "Grand Diwali Milan celebration was held with enthusiasm at Gajanan Vatika, Sukhlia. The official portal 'sonarsamaj.com' was launched and distinguished community members were felicitated.",
                 "news_1_title": "New Trust Executive Committee Announced",
                 "news_1_desc": "The new executive committee for the upcoming term has been appointed, establishing dedicated welfare sub-committees.",
                 "news_read_more": "Read More →",
@@ -6554,6 +6628,56 @@
                 </button>
             </div>
             <div class="overflow-y-auto p-6 space-y-6">
+                <!-- Article 0: Diwali Milan 2026 Swadesh News & Video Clip -->
+                <div class="rounded-2xl overflow-hidden border-2 border-brand-200 bg-white shadow-soft">
+                    <div class="bg-gradient-to-r from-amber-500 to-brand-600 px-4 py-3 flex flex-wrap items-center justify-between gap-2 text-white">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-newspaper text-base"></i>
+                            <span class="font-bold text-sm sm:text-base marathi">सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह</span>
+                        </div>
+                        <span class="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full backdrop-blur-xs">स्वदेश समाचार • २३ नोव्हेंबर २०२६ • पेज ९</span>
+                    </div>
+
+                    <div class="p-4 sm:p-5 space-y-4">
+                        <!-- Newspaper Clipping Scan -->
+                        <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-xs">
+                            <a href="./src/swadesh-diwali-milan-2026.jpg" target="_blank" title="क्लिक करून पूर्ण आकारातील वृत्तपत्र पहा">
+                                <img src="./src/swadesh-diwali-milan-2026.jpg" alt="सोनार समाज मंडल ने मनाया दीपावली मिलन समारोह - स्वदेश समाचार" class="w-full object-contain max-h-[500px] hover:scale-[1.01] transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-3.5 bg-amber-50/70 rounded-xl border border-amber-200/80">
+                            <h4 class="font-extrabold text-brand-900 text-sm sm:text-base marathi flex items-center gap-1.5">
+                                <i class="fas fa-certificate text-amber-600"></i>
+                                <span>प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे ने किया वेबसाइट का विमोचन</span>
+                            </h4>
+                            <p class="text-xs text-slate-700 mt-1.5 leading-relaxed marathi">
+                                रविवार, २२ नोव्हेंबर रोजी गजानन वाटिका, सुखलिया, इंदूर येथे सोनार समाज मंडळातर्फे आयोजित भव्य दीपावली मिलन समारोह हर्षोल्लासात पार पडला. मुख्य अतिथी प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे व विशेष अतिथी अविनाश बीड (पुणे) यांच्या उपस्थितीत समाजाच्या <b>'sonarsamaj.com'</b> अधिकृत वेबसाइटचे भव्य विमोचन करण्यात आले. कार्यक्रमात समाजातील ज्येष्ठांचा सत्कार, मनमोहक सांस्कृतिक नृत्य व कौटुंबिक स्नेहभोजन संपन्न झाले.
+                            </p>
+                        </div>
+
+                        <!-- Video Clip Section -->
+                        <div class="pt-3 border-t border-slate-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-7 h-7 rounded-lg bg-red-100 text-red-600 flex items-center justify-center text-xs">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <span class="font-bold text-slate-900 text-sm marathi">दीपावली मिलन समारोह — विशेष व्हिडिओ बातमी (News Clip)</span>
+                                </div>
+                                <span class="text-[11px] text-red-700 bg-red-50 border border-red-200 px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1">
+                                    <i class="fas fa-circle text-[7px] text-red-500 animate-pulse"></i> 44 Sec
+                                </span>
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-slate-200 bg-black shadow-md">
+                                <video id="news-diwali-video" controls preload="metadata" class="w-full max-h-[380px] bg-black" poster="./src/samaj-group-photo.jpeg">
+                                    <source src="./src/diwali-milan-news-clip.mp4" type="video/mp4">
+                                    तुमचा ब्राउझर व्हिडिओ प्लेबॅकला सपोर्ट करत नाही.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Article 1: New -->
                 <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-soft">
                     <div class="bg-amber-50 px-4 py-2 flex items-center gap-2 border-b border-amber-100">
@@ -6583,6 +6707,8 @@
         function closeNewsModal() {
             document.getElementById('news-modal').classList.remove('active');
             document.body.style.overflow = '';
+            const vid = document.getElementById('news-diwali-video');
+            if (vid) vid.pause();
         }
     </script>
 
