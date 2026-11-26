@@ -1,4 +1,5 @@
 const { getPool } = require('./db');
+const { requireAdmin } = require('./auth');
 
 const headers = {
   'Content-Type': 'application/json',
@@ -29,6 +30,9 @@ exports.handler = async function(event, context) {
     }
 
     if (event.httpMethod === 'POST') {
+      const auth = requireAdmin(event, headers);
+      if (!auth.ok) return auth.response;
+
       const d = JSON.parse(event.body || '{}');
       const upsertQuery = `
         INSERT INTO public.celebrations (
@@ -122,6 +126,9 @@ exports.handler = async function(event, context) {
     }
 
     if (event.httpMethod === 'DELETE') {
+      const auth = requireAdmin(event, headers);
+      if (!auth.ok) return auth.response;
+
       const id = (event.queryStringParameters && event.queryStringParameters.id) ||
                  (event.body ? JSON.parse(event.body).id : null);
       if (!id) {

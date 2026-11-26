@@ -1,4 +1,5 @@
 const { getPool } = require('./db');
+const { requireAdmin } = require('./auth');
 
 const headers = {
   'Content-Type': 'application/json',
@@ -17,6 +18,9 @@ exports.handler = async function(event, context) {
   try {
     // ── GET: View all member registrations (for admin) ──
     if (event.httpMethod === 'GET') {
+      const auth = requireAdmin(event, headers);
+      if (!auth.ok) return auth.response;
+
       const res = await pool.query(`
         SELECT * FROM public.member_registrations 
         ORDER BY created_at DESC 

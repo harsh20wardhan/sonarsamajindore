@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>सोपे ॲडमिन पॅनेल | सोनार समाज ट्रस्ट, इंदौर — Simple Admin Panel</title>
 
   <!-- Tailwind CSS -->
@@ -40,6 +41,57 @@
 </head>
 <body class="min-h-screen flex flex-col bg-slate-100 text-slate-800 antialiased">
 
+  <!-- ══════ ADMIN LOGIN SCREEN ══════ -->
+  <div id="admin-login-screen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-950">
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl border-2 border-amber-400/50 overflow-hidden">
+      <div class="bg-slate-900 px-6 py-6 text-center border-b-2 border-amber-500">
+        <img src="../src/samaj-logo.png" alt="सोनार समाज" class="w-16 h-16 mx-auto rounded-full bg-white object-contain p-1 border-2 border-amber-400 shadow-md mb-3">
+        <h1 class="font-extrabold text-xl text-white marathi">सोनार समाज ट्रस्ट, इंदौर</h1>
+        <p class="text-xs text-amber-300 font-semibold mt-1 marathi">अधिकृत ॲडमिन लॉगिन (Admin Portal)</p>
+      </div>
+
+      <form id="form-admin-login" onsubmit="handleAdminLogin(event)" class="p-6 sm:p-8 space-y-5">
+        <div id="admin-login-error" class="hidden p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold flex items-center gap-2 marathi">
+          <i class="fas fa-triangle-exclamation"></i>
+          <span id="admin-login-error-text">चुकीचे युझरनेम किंवा पासवर्ड!</span>
+        </div>
+
+        <div>
+          <label for="admin-login-username" class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">युझरनेम (Username)</label>
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"><i class="fas fa-user-shield"></i></span>
+            <input type="text" id="admin-login-username" required autocomplete="username" placeholder="Username" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label for="admin-login-password" class="block text-xs font-bold text-slate-700 uppercase mb-1.5 marathi">पासवर्ड (Password)</label>
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"><i class="fas fa-lock"></i></span>
+            <input type="password" id="admin-login-password" required autocomplete="current-password" placeholder="••••••••" class="w-full pl-10 pr-11 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none">
+            <button type="button" onclick="toggleAdminPasswordVisibility()" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700" title="Show/Hide Password">
+              <i id="admin-pwd-eye" class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-admin-login" class="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm marathi">
+          <i class="fas fa-right-to-bracket"></i>
+          <span id="btn-admin-login-text">लॉगिन करा (Sign In)</span>
+        </button>
+
+        <div class="text-center pt-2">
+          <a href="/" class="text-xs font-semibold text-slate-500 hover:text-amber-700 marathi">
+            <i class="fas fa-arrow-left mr-1"></i> मुख्य वेबसाईटवर परत जा
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════ PROTECTED ADMIN APP SHELL ══════ -->
+  <div id="admin-app-shell" class="hidden min-h-screen flex flex-col">
+
   <!-- Top Simple Admin Bar -->
   <header class="bg-slate-900 text-white border-b-2 border-amber-500 shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -64,7 +116,11 @@
         </a>
         <button onclick="downloadAllData()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow">
           <i class="fas fa-download"></i>
-          <span>डेटा डाउनलोड</span>
+          <span class="hidden sm:inline">डेटा डाउनलोड</span>
+        </button>
+        <button onclick="handleAdminLogout()" class="bg-rose-600 hover:bg-rose-700 text-white px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow marathi" title="Logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>बाहेर पडा</span>
         </button>
       </div>
 
@@ -1996,13 +2052,150 @@
       a.click();
     }
 
-    // Initial load
-    document.addEventListener('DOMContentLoaded', () => {
+    // ══════ AUTHENTICATION & PROTECTED FETCH ══════
+    const ADMIN_TOKEN_KEY = 'sonar_admin_token';
+
+    function getAdminToken() {
+      return sessionStorage.getItem(ADMIN_TOKEN_KEY) || '';
+    }
+
+    function setAdminToken(token) {
+      if (token) sessionStorage.setItem(ADMIN_TOKEN_KEY, token);
+      else sessionStorage.removeItem(ADMIN_TOKEN_KEY);
+    }
+
+    // Automatically attach Bearer token to all /.netlify/functions/ calls
+    const _origFetch = window.fetch.bind(window);
+    window.fetch = async function(resource, init = {}) {
+      const url = typeof resource === 'string' ? resource : (resource && resource.url) || '';
+      const isFnCall = url.includes('/.netlify/functions/');
+      const isLoginPost = url.includes('/.netlify/functions/admin-login') && (init.method || 'GET').toUpperCase() === 'POST';
+
+      if (isFnCall && !isLoginPost) {
+        const token = getAdminToken();
+        const headers = new Headers(init.headers || {});
+        if (token && !headers.has('Authorization')) {
+          headers.set('Authorization', `Bearer ${token}`);
+        }
+        init = { ...init, headers };
+      }
+
+      const res = await _origFetch(resource, init);
+      if (isFnCall && !isLoginPost && res.status === 401) {
+        handleAdminLogout(true);
+      }
+      return res;
+    };
+
+    function toggleAdminPasswordVisibility() {
+      const pwd = document.getElementById('admin-login-password');
+      const eye = document.getElementById('admin-pwd-eye');
+      if (!pwd) return;
+      const isPwd = pwd.type === 'password';
+      pwd.type = isPwd ? 'text' : 'password';
+      if (eye) eye.className = isPwd ? 'fas fa-eye-slash' : 'fas fa-eye';
+    }
+
+    function showAdminShell() {
+      const loginEl = document.getElementById('admin-login-screen');
+      const shellEl = document.getElementById('admin-app-shell');
+      if (loginEl) loginEl.classList.add('hidden');
+      if (shellEl) shellEl.classList.remove('hidden');
+    }
+
+    function showAdminLogin(errorMsg = '') {
+      const loginEl = document.getElementById('admin-login-screen');
+      const shellEl = document.getElementById('admin-app-shell');
+      const errBox = document.getElementById('admin-login-error');
+      const errTxt = document.getElementById('admin-login-error-text');
+      if (shellEl) shellEl.classList.add('hidden');
+      if (loginEl) loginEl.classList.remove('hidden');
+      if (errBox && errTxt) {
+        if (errorMsg) {
+          errTxt.textContent = errorMsg;
+          errBox.classList.remove('hidden');
+        } else {
+          errBox.classList.add('hidden');
+        }
+      }
+    }
+
+    let adminDataInitialized = false;
+    function initAdminDashboardData() {
+      if (adminDataInitialized) return;
+      adminDataInitialized = true;
       initAdminGallery();
       loadBusinesses();
       initCelebDays();
       loadCelebrations();
       loadMemberRegistrations();
+    }
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const username = (document.getElementById('admin-login-username').value || '').trim();
+      const password = document.getElementById('admin-login-password').value || '';
+      const btn = document.getElementById('btn-admin-login');
+      const btnText = document.getElementById('btn-admin-login-text');
+      const errBox = document.getElementById('admin-login-error');
+
+      if (errBox) errBox.classList.add('hidden');
+      if (btn) btn.disabled = true;
+      if (btnText) btnText.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> तपासत आहे...';
+
+      try {
+        const res = await _origFetch('/.netlify/functions/admin-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (res.ok && data.success && data.token) {
+          setAdminToken(data.token);
+          showAdminShell();
+          initAdminDashboardData();
+        } else {
+          showAdminLogin(data.error || 'चुकीचे युझरनेम किंवा पासवर्ड!');
+        }
+      } catch (err) {
+        showAdminLogin('सर्व्हरशी संपर्क होऊ शकला नाही. कृपया पुन्हा प्रयत्न करा.');
+      } finally {
+        if (btn) btn.disabled = false;
+        if (btnText) btnText.textContent = 'लॉगिन करा (Sign In)';
+      }
+    }
+
+    function handleAdminLogout(expired = false) {
+      setAdminToken('');
+      adminDataInitialized = false;
+      const form = document.getElementById('form-admin-login');
+      if (form) form.reset();
+      showAdminLogin(expired ? 'तुमचे सेशन संपले आहे. कृपया पुन्हा लॉगिन करा.' : '');
+    }
+
+    // Initial load: verify session token before showing admin dashboard
+    document.addEventListener('DOMContentLoaded', async () => {
+      const token = getAdminToken();
+      if (!token) {
+        showAdminLogin();
+        return;
+      }
+      try {
+        const res = await _origFetch('/.netlify/functions/admin-login', {
+          method: 'GET',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.ok) {
+          showAdminShell();
+          initAdminDashboardData();
+        } else {
+          setAdminToken('');
+          showAdminLogin();
+        }
+      } catch (err) {
+        setAdminToken('');
+        showAdminLogin();
+      }
     });
 
     // ══════ EXCEL / CSV BULK BIRTHDAY IMPORT ══════
@@ -2310,6 +2503,9 @@
       else if (e.key === 'ArrowLeft') stepAdminPhotoPreview(-1);
     });
   </script>
+
+  </div>
+  <!-- /#admin-app-shell -->
 
   <!-- Admin Photo Preview Modal -->
   <div id="admin-photo-preview-modal" class="hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-4" onclick="if(event.target===this) closeAdminPhotoPreview()">

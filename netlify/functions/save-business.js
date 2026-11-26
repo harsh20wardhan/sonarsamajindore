@@ -1,13 +1,17 @@
+const { requireAdmin } = require('./auth');
+
 exports.handler = async function(event, context) {
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Methods": "POST, OPTIONS"
+  };
+
   // CORS & method check
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-        "Access-Control-Allow-Methods": "POST, OPTIONS"
-      },
+      headers: corsHeaders,
       body: ""
     };
   }
@@ -15,9 +19,13 @@ exports.handler = async function(event, context) {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
+      headers: corsHeaders,
       body: JSON.stringify({ error: "Method not allowed" })
     };
   }
+
+  const auth = requireAdmin(event, corsHeaders);
+  if (!auth.ok) return auth.response;
 
   const token = process.env.GITHUB_TOKEN;
   if (!token) {

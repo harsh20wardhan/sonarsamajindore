@@ -1,4 +1,5 @@
 const { getPool } = require('./db');
+const { requireAdmin } = require('./auth');
 
 const headers = {
   'Content-Type': 'application/json',
@@ -30,6 +31,9 @@ exports.handler = async function(event, context) {
 
     // ── POST: Add or Update business ──
     if (event.httpMethod === 'POST') {
+      const auth = requireAdmin(event, headers);
+      if (!auth.ok) return auth.response;
+
       const b = JSON.parse(event.body || '{}');
       if (!b.name_mr || !b.owner_mr) {
         return {
@@ -95,6 +99,9 @@ exports.handler = async function(event, context) {
 
     // ── DELETE: Remove business ──
     if (event.httpMethod === 'DELETE') {
+      const auth = requireAdmin(event, headers);
+      if (!auth.ok) return auth.response;
+
       const id = (event.queryStringParameters && event.queryStringParameters.id) ||
                  (event.body ? JSON.parse(event.body).id : null);
 
