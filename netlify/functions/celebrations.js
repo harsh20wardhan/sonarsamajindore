@@ -30,12 +30,7 @@ exports.handler = async function(event, context) {
 
     if (event.httpMethod === 'POST') {
       const d = JSON.parse(event.body || '{}');
-      if (!d.name) {
-        return { statusCode: 400, headers, body: JSON.stringify({ error: 'Name is required' }) };
-      }
-
-      const id = d.id || ('celeb-' + Date.now());
-      const query = `
+      const upsertQuery = `
         INSERT INTO public.celebrations (
           id, name, type, date_display, date_month, date_day, year, area, message, photo_url, phone, is_active, created_at
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, true, NOW())
@@ -52,6 +47,58 @@ exports.handler = async function(event, context) {
         RETURNING *;
       `;
 
+      // Support bulk array upload: { celebrations: [...] } or [...]
+      const bulkList = Array.isArray(d) ? d : (Array.isArray(d.celebrations) ? d.celebrations : null);
+      if (bulkList) {
+        const validItems = bulkList.filter(item => item && String(item.name || '').trim());
+        if (!validItems.length) {
+          return { statusCode: 400, headers, body: JSON.stringify({ error: 'No valid records with name found' }) };
+        }
+
+        const client = await pool.connect();
+        const inserted = [];
+        try {
+          await client.query('BEGIN');
+          const baseTs = Date.now();
+          for (let i = 0; i < validItems.length; i++) {
+            const item = validItems[i];
+            const id = item.id || (`celeb-${baseTs}-${i}`);
+            const values = [
+              id,
+              String(item.name).trim(),
+              item.type || 'birthday',
+              item.date_display || item.date || '',
+              item.date_month ? parseInt(item.date_month) : null,
+              item.date_day ? parseInt(item.date_day) : null,
+              item.year || 2026,
+              item.area || '',
+              item.message || '',
+              item.photo_url || '',
+              item.phone || ''
+            ];
+            const res = await client.query(upsertQuery, values);
+            inserted.push(res.rows[0]);
+          }
+          await client.query('COMMIT');
+        } catch (txErr) {
+          await client.query('ROLLBACK');
+          throw txErr;
+        } finally {
+          client.release();
+        }
+
+        return {
+          statusCode: 200,
+          headers,
+          body: JSON.stringify({ success: true, count: inserted.length, celebrations: inserted })
+        };
+      }
+
+      if (!d.name) {
+        return { statusCode: 400, headers, body: JSON.stringify({ error: 'Name is required' }) };
+      }
+
+      const id = d.id || ('celeb-' + Date.now());
       const values = [
         id,
         d.name,
@@ -66,7 +113,7 @@ exports.handler = async function(event, context) {
         d.phone || ''
       ];
 
-      const res = await pool.query(query, values);
+      const res = await pool.query(upsertQuery, values);
       return {
         statusCode: 200,
         headers,

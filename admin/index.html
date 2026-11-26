@@ -19,6 +19,9 @@
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+  <!-- SheetJS for Excel (.xlsx/.xls/.csv) Import/Export -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../src/samaj-logo.png">
 
@@ -493,6 +496,67 @@
               <i class="fas fa-rotate"></i>
               <span>रीफ्रेश करा</span>
             </button>
+          </div>
+        </div>
+
+        <!-- Excel / CSV Bulk Upload Card -->
+        <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/50 border-2 border-emerald-200 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="text-sm sm:text-base font-extrabold text-emerald-950 flex items-center gap-2 marathi">
+                <i class="fas fa-file-excel text-emerald-600 text-lg"></i>
+                <span>Excel / CSV शीटमधून वाढदिवस बल्क अपलोड करा (Bulk Import)</span>
+              </h3>
+              <p class="text-xs text-slate-600 mt-1 marathi">
+                फक्त <strong>Name</strong> आणि <strong>Birthday</strong> (उदा. 22/11/1990 किंवा 22 Nov) असलेली Excel (.xlsx / .xls / .csv) फाईल निवडा — सर्व नोंदी थेट डेटाबेसमध्ये सेव्ह होतील.
+              </p>
+            </div>
+            <button type="button" onclick="downloadBirthdayExcelTemplate()" class="bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-300 text-xs font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 shadow-2xs shrink-0 marathi">
+              <i class="fas fa-download"></i>
+              <span>नमुना Excel डाउनलोड करा</span>
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <label class="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-xl shadow-sm transition-all inline-flex items-center gap-2 marathi">
+              <i class="fas fa-file-upload"></i>
+              <span>Excel / CSV फाईल निवडा (.xlsx, .xls, .csv)</span>
+              <input type="file" id="celeb-excel-input" accept=".xlsx,.xls,.csv" onchange="handleBirthdayExcelUpload(event)" class="hidden">
+            </label>
+            <span id="celeb-excel-file-label" class="text-xs text-slate-500 font-medium marathi">कोणतीही फाईल निवडलेली नाही</span>
+          </div>
+
+          <!-- Parsed Preview Area -->
+          <div id="celeb-excel-preview-box" class="hidden space-y-3 pt-3 border-t border-emerald-200/80">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="celeb-excel-valid-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">0 नोंदी तयार</span>
+                <span id="celeb-excel-skipped-badge" class="hidden px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">0 वगळल्या</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="clearExcelPreview()" class="text-xs font-bold text-slate-500 hover:text-rose-600 px-3 py-1.5 rounded-lg">रद्द करा</button>
+                <button type="button" id="btn-upload-excel-celebs" onclick="uploadParsedBirthdaysToDB()" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs sm:text-sm font-extrabold px-5 py-2 rounded-xl shadow-md flex items-center gap-2 marathi">
+                  <i class="fas fa-cloud-arrow-up"></i>
+                  <span id="btn-upload-excel-text">डेटाबेसमध्ये अपलोड करा</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="max-h-60 overflow-y-auto rounded-xl border border-slate-200 bg-white">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-50 text-slate-600 font-bold sticky top-0 border-b border-slate-200">
+                  <tr>
+                    <th class="px-3 py-2">#</th>
+                    <th class="px-3 py-2 marathi">नाव (Name)</th>
+                    <th class="px-3 py-2 marathi">तारीख (Birthday)</th>
+                    <th class="px-3 py-2 marathi">प्रकार</th>
+                    <th class="px-3 py-2 marathi">परिसर</th>
+                    <th class="px-3 py-2 marathi">मोबाईल</th>
+                  </tr>
+                </thead>
+                <tbody id="celeb-excel-preview-tbody" class="divide-y divide-slate-100"></tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -1940,6 +2004,243 @@
       loadCelebrations();
       loadMemberRegistrations();
     });
+
+    // ══════ EXCEL / CSV BULK BIRTHDAY IMPORT ══════
+    let parsedExcelCelebrations = [];
+
+    function downloadBirthdayExcelTemplate() {
+      if (typeof XLSX === 'undefined') {
+        alert('Excel लायब्ररी लोड होत आहे, कृपया २ सेकंदांनी पुन्हा प्रयत्न करा.');
+        return;
+      }
+      const rows = [
+        { Name: 'राजेश शर्मा / राजेश सोनार', Birthday: '26/11/1985', Type: 'birthday', Area: 'सुखलिया, इंदूर', Phone: '9826011223', Message: 'वाढदिवसाच्या हार्दिक शुभेच्छा!' },
+        { Name: 'सौ. अनिता व श्री दीपकजी तांबे', Birthday: '15/12/2010', Type: 'anniversary', Area: 'विजय नगर, इंदूर', Phone: '9827653310', Message: 'वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा!' }
+      ];
+      const ws = XLSX.utils.json_to_sheet(rows);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Birthdays');
+      XLSX.writeFile(wb, 'sonar_samaj_birthdays_template.xlsx');
+    }
+
+    function parseFlexibleBirthdayDate(val) {
+      if (val === null || val === undefined || val === '') return null;
+
+      // 1. JS Date object (from SheetJS cellDates: true)
+      if (val instanceof Date && !isNaN(val.getTime())) {
+        return { month: val.getMonth() + 1, day: val.getDate() };
+      }
+
+      // 2. Excel numeric serial date
+      if (typeof val === 'number' && val > 1 && val < 100000) {
+        const d = XLSX.SSF && XLSX.SSF.parse_date_code ? XLSX.SSF.parse_date_code(val) : null;
+        if (d && d.m && d.d) return { month: d.m, day: d.d };
+      }
+
+      const str = String(val).trim();
+      if (!str) return null;
+
+      const monthMap = {
+        jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3,
+        apr: 4, april: 4, may: 5, jun: 6, june: 6, jul: 7, july: 7,
+        aug: 8, august: 8, sep: 9, sept: 9, september: 9,
+        oct: 10, october: 10, nov: 11, november: 11, dec: 12, december: 12
+      };
+
+      // 3. YYYY-MM-DD
+      let m = str.match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})$/);
+      if (m) {
+        const mo = parseInt(m[2], 10), dy = parseInt(m[3], 10);
+        if (mo >= 1 && mo <= 12 && dy >= 1 && dy <= 31) return { month: mo, day: dy };
+      }
+
+      // 4. DD/MM/YYYY or DD-MM-YYYY or DD.MM.YYYY or DD/MM
+      m = str.match(/^(\d{1,2})[-\/.](\d{1,2})(?:[-\/.](\d{2,4}))?$/);
+      if (m) {
+        let a = parseInt(m[1], 10), b = parseInt(m[2], 10);
+        // Handle MM/DD if second number > 12
+        if (b > 12 && a <= 12) return { month: a, day: b };
+        if (b >= 1 && b <= 12 && a >= 1 && a <= 31) return { month: b, day: a };
+      }
+
+      // 5. "22 Nov" or "22-Nov-1990" or "Nov 22"
+      m = str.match(/^(\d{1,2})[\s\-,]+([a-zA-Z]+)/);
+      if (m && monthMap[m[2].toLowerCase()]) {
+        const dy = parseInt(m[1], 10);
+        if (dy >= 1 && dy <= 31) return { month: monthMap[m[2].toLowerCase()], day: dy };
+      }
+      m = str.match(/^([a-zA-Z]+)[\s\-,]+(\d{1,2})/);
+      if (m && monthMap[m[1].toLowerCase()]) {
+        const dy = parseInt(m[2], 10);
+        if (dy >= 1 && dy <= 31) return { month: monthMap[m[1].toLowerCase()], day: dy };
+      }
+
+      // 6. Fallback native Date parse
+      const parsed = new Date(str);
+      if (!isNaN(parsed.getTime())) {
+        return { month: parsed.getMonth() + 1, day: parsed.getDate() };
+      }
+      return null;
+    }
+
+    function pickExcelField(row, keys) {
+      const rowKeys = Object.keys(row);
+      for (const k of keys) {
+        const found = rowKeys.find(rk => rk.toLowerCase().trim() === k || rk.toLowerCase().includes(k));
+        if (found && row[found] !== undefined && row[found] !== null && String(row[found]).trim() !== '') {
+          return row[found];
+        }
+      }
+      return '';
+    }
+
+    function handleBirthdayExcelUpload(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      if (typeof XLSX === 'undefined') {
+        alert('Excel लायब्ररी लोड झालेली नाही. कृपया पेज रिफ्रेश करा.');
+        return;
+      }
+
+      const labelEl = document.getElementById('celeb-excel-file-label');
+      if (labelEl) labelEl.textContent = `निवडलेली फाईल: ${file.name}`;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const data = new Uint8Array(evt.target.result);
+          const wb = XLSX.read(data, { type: 'array', cellDates: true });
+          const sheetName = wb.SheetNames[0];
+          const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { defval: '' });
+
+          parsedExcelCelebrations = [];
+          let skippedCount = 0;
+
+          rows.forEach((row) => {
+            const rawName = pickExcelField(row, ['name', 'full name', 'member', 'नाव', 'सदस्य']);
+            const rawDate = pickExcelField(row, ['birthday', 'dob', 'date of birth', 'birth date', 'date', 'वाढदिवस', 'जन्म तारीख', 'तारीख']);
+            const rawType = String(pickExcelField(row, ['type', 'event', 'प्रकार']) || '').toLowerCase();
+            const rawArea = pickExcelField(row, ['area', 'city', 'address', 'परिसर', 'शहर', 'पत्ता']);
+            const rawPhone = pickExcelField(row, ['phone', 'mobile', 'whatsapp', 'मोबाईल', 'नंबर']);
+            const rawMsg = pickExcelField(row, ['message', 'wishes', 'संदेश']);
+
+            const name = String(rawName || '').trim();
+            const dt = parseFlexibleBirthdayDate(rawDate);
+
+            if (!name || !dt) {
+              if (name || rawDate) skippedCount++;
+              return;
+            }
+
+            const isAnniv = rawType.includes('anniv') || rawType.includes('लग्न') || rawType.includes('wedding');
+            const type = isAnniv ? 'anniversary' : 'birthday';
+            const dateDisplay = `${dt.day} ${marathiMonthNames[dt.month] || ''}`.trim();
+
+            parsedExcelCelebrations.push({
+              name,
+              type,
+              date_month: dt.month,
+              date_day: dt.day,
+              date_display: dateDisplay,
+              area: String(rawArea || '').trim() || 'सोनार समाज, इंदूर',
+              phone: String(rawPhone || '').replace(/\D/g, '').slice(-10),
+              message: String(rawMsg || '').trim() || (isAnniv ? 'वैवाहिक वर्षगांठीच्या हार्दिक शुभेच्छा!' : 'वाढदिवसाच्या हार्दिक शुभेच्छा!'),
+              photo_url: '',
+              year: 2026
+            });
+          });
+
+          renderExcelPreviewTable(skippedCount);
+        } catch (err) {
+          console.error('Excel parse error:', err);
+          alert('Excel फाईल वाचताना त्रुटी आली: ' + err.message);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    function renderExcelPreviewTable(skippedCount = 0) {
+      const box = document.getElementById('celeb-excel-preview-box');
+      const tbody = document.getElementById('celeb-excel-preview-tbody');
+      const validBadge = document.getElementById('celeb-excel-valid-badge');
+      const skippedBadge = document.getElementById('celeb-excel-skipped-badge');
+      const btnText = document.getElementById('btn-upload-excel-text');
+
+      if (!box || !tbody) return;
+      box.classList.remove('hidden');
+
+      if (validBadge) validBadge.textContent = `${parsedExcelCelebrations.length} नोंदी तयार`;
+      if (btnText) btnText.textContent = `सर्व ${parsedExcelCelebrations.length} नोंदी डेटाबेसमध्ये अपलोड करा`;
+      if (skippedBadge) {
+        if (skippedCount > 0) {
+          skippedBadge.textContent = `${skippedCount} अपूर्ण ओळी वगळल्या`;
+          skippedBadge.classList.remove('hidden');
+        } else {
+          skippedBadge.classList.add('hidden');
+        }
+      }
+
+      if (!parsedExcelCelebrations.length) {
+        tbody.innerHTML = '<tr><td colspan="6" class="px-3 py-6 text-center text-rose-500 font-bold marathi">एकही वैध नोंद आढळली नाही. कृपया Name आणि Birthday (DD/MM/YYYY) कॉलम तपासा.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = parsedExcelCelebrations.map((c, idx) => `
+        <tr class="hover:bg-slate-50">
+          <td class="px-3 py-2 text-slate-400 font-mono">${idx + 1}</td>
+          <td class="px-3 py-2 font-bold text-slate-900 marathi">${c.name}</td>
+          <td class="px-3 py-2 font-semibold text-amber-800">${c.date_display}</td>
+          <td class="px-3 py-2">${c.type === 'anniversary' ? '💍 लग्न वाढदिवस' : '🎂 वाढदिवस'}</td>
+          <td class="px-3 py-2 text-slate-600 marathi">${c.area}</td>
+          <td class="px-3 py-2 text-slate-600 font-mono">${c.phone || '--'}</td>
+        </tr>
+      `).join('');
+    }
+
+    function clearExcelPreview() {
+      parsedExcelCelebrations = [];
+      const box = document.getElementById('celeb-excel-preview-box');
+      const input = document.getElementById('celeb-excel-input');
+      const label = document.getElementById('celeb-excel-file-label');
+      if (box) box.classList.add('hidden');
+      if (input) input.value = '';
+      if (label) label.textContent = 'कोणतीही फाईल निवडलेली नाही';
+    }
+
+    function uploadParsedBirthdaysToDB() {
+      if (!parsedExcelCelebrations.length) {
+        alert('अपलोड करण्यासाठी कोणतीही वैध नोंद नाही.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-upload-excel-celebs');
+      const btnText = document.getElementById('btn-upload-excel-text');
+      if (btn) btn.disabled = true;
+      if (btnText) btnText.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> डेटाबेसमध्ये अपलोड होत आहे...';
+
+      fetch('/.netlify/functions/celebrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ celebrations: parsedExcelCelebrations })
+      })
+      .then(r => r.json())
+      .then(res => {
+        if (btn) btn.disabled = false;
+        if (res && res.success) {
+          alert(`यशस्वी! एकूण ${res.count || parsedExcelCelebrations.length} वाढदिवस/सण डेटाबेसमध्ये अपलोड झाले आहेत.`);
+          clearExcelPreview();
+          loadCelebrations();
+        } else {
+          if (btnText) btnText.textContent = `सर्व ${parsedExcelCelebrations.length} नोंदी डेटाबेसमध्ये अपलोड करा`;
+          alert('अपलोड करताना त्रुटी: ' + (res.error || 'Unknown error'));
+        }
+      })
+      .catch(err => {
+        if (btn) btn.disabled = false;
+        if (btnText) btnText.textContent = `सर्व ${parsedExcelCelebrations.length} नोंदी डेटाबेसमध्ये अपलोड करा`;
+        alert('सर्व्हरशी संपर्क होऊ शकला नाही: ' + err.message);
+      });
+    }
 
     // ══════ ADMIN PHOTO PREVIEW LIGHTBOX ══════
     let adminPreviewIdx = 0;
