@@ -2457,7 +2457,7 @@
         <section id="gallery" class="py-20 bg-surface-pearl border-t border-surface-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="text-center max-w-3xl mx-auto mb-8">
                     <div data-i18n="gallery_pill" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider marathi">
                         छायाचित्रे • Photo Gallery
                     </div>
@@ -2467,8 +2467,16 @@
                     <p data-i18n="gallery_desc" class="text-slate-600 text-base sm:text-lg marathi">
                         वर्ष निवडून त्या वर्षातील विशिष्ट कार्यक्रमांची (उदा. संक्रांती कार्यक्रम, स्नेहसंमेलन) छायाचित्रे पहा.
                     </p>
+                    <div class="mt-5 flex justify-center">
+                        <button type="button" id="gallery-section-toggle-btn" onclick="toggleGallerySection()"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white border-2 border-brand-200 text-brand-700 hover:bg-brand-50 hover:border-brand-400 shadow-sm transition-all marathi">
+                            <i id="gallery-section-toggle-icon" class="fas fa-chevron-up text-xs"></i>
+                            <span id="gallery-section-toggle-text">गॅलरी लपवा (Collapse Gallery)</span>
+                        </button>
+                    </div>
                 </div>
 
+                <div id="gallery-collapsible-content" class="transition-all duration-300">
                 <!-- ══════ YEAR SELECTION TABS ══════ -->
                 <div class="mb-8">
                     <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap" id="gallery-year-tabs">
@@ -2527,8 +2535,18 @@
                             <!-- Populated dynamically -->
                         </div>
 
+                        <!-- Show All / Collapse Photos Toggle Bar -->
+                        <div id="gallery-photos-expand-bar" class="hidden mt-6 pt-5 border-t border-amber-200/60 flex justify-center">
+                            <button type="button" id="gallery-photos-toggle-btn" onclick="toggleGalleryPhotosExpand()"
+                                class="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-700 hover:to-amber-700 text-white shadow-md hover:shadow-lg transition-all hover:scale-[1.02] marathi">
+                                <i id="gallery-photos-toggle-icon" class="fas fa-images"></i>
+                                <span id="gallery-photos-toggle-text">सर्व फोटो पहा (Show All)</span>
+                            </button>
+                        </div>
+
                     </div>
 
+                </div>
                 </div>
 
             </div>
@@ -4309,8 +4327,44 @@
             renderGalleryDOM();
         }
 
+        let isGallerySectionCollapsed = false;
+        let isGalleryPhotosExpanded = false;
+        const GALLERY_PREVIEW_LIMIT = 8;
+
+        function toggleGallerySection() {
+            isGallerySectionCollapsed = !isGallerySectionCollapsed;
+            const content = document.getElementById('gallery-collapsible-content');
+            const icon = document.getElementById('gallery-section-toggle-icon');
+            const text = document.getElementById('gallery-section-toggle-text');
+            const lang = currentLang || 'mr';
+
+            if (content) {
+                content.classList.toggle('hidden', isGallerySectionCollapsed);
+            }
+            if (icon) {
+                icon.className = isGallerySectionCollapsed ? 'fas fa-chevron-down text-xs' : 'fas fa-chevron-up text-xs';
+            }
+            if (text) {
+                if (isGallerySectionCollapsed) {
+                    text.textContent = lang === 'en' ? 'Show Gallery (Expand)' : (lang === 'hi' ? 'गैलरी देखें (Expand Gallery)' : 'गॅलरी पहा (Expand Gallery)');
+                } else {
+                    text.textContent = lang === 'en' ? 'Hide Gallery (Collapse)' : (lang === 'hi' ? 'गैलरी छुपाएं (Collapse Gallery)' : 'गॅलरी लपवा (Collapse Gallery)');
+                }
+            }
+        }
+
+        function toggleGalleryPhotosExpand() {
+            isGalleryPhotosExpanded = !isGalleryPhotosExpanded;
+            renderGalleryProgramDetails();
+            if (!isGalleryPhotosExpanded) {
+                const viewEl = document.getElementById('gallery-program-view');
+                if (viewEl) viewEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         function selectGalleryYear(year) {
             currentGalleryYear = year;
+            isGalleryPhotosExpanded = false;
             const years = galleryArchiveData || defaultGalleryArchive;
             const yearObj = years.find(y => y.year === year);
             if (yearObj && yearObj.programs && yearObj.programs.length) {
@@ -4321,6 +4375,7 @@
 
         function selectGalleryProgram(progId) {
             currentGalleryProgramId = progId;
+            isGalleryPhotosExpanded = false;
             renderGalleryProgramButtons();
             renderGalleryProgramDetails();
         }
@@ -4440,6 +4495,9 @@
             const venueEl = document.getElementById('gal-prog-venue');
             const countEl = document.getElementById('gal-prog-photo-count');
             const gridEl = document.getElementById('gallery-photos-grid');
+            const expandBarEl = document.getElementById('gallery-photos-expand-bar');
+            const toggleIconEl = document.getElementById('gallery-photos-toggle-icon');
+            const toggleTextEl = document.getElementById('gallery-photos-toggle-text');
 
             if (titleEl) titleEl.textContent = prog['title_' + lang] || prog.title_mr || prog.title;
             if (descEl) descEl.textContent = prog['description_' + lang] || prog.description_mr || prog.description;
@@ -4450,19 +4508,25 @@
             if (gridEl) {
                 if (!prog.photos || !prog.photos.length) {
                     gridEl.innerHTML = `<div class="col-span-full py-8 text-center text-slate-400 text-sm">या कार्यक्रमाचे फोटो लवकरच उपलब्ध होतील.</div>`;
+                    if (expandBarEl) expandBarEl.classList.add('hidden');
                     return;
                 }
 
                 const yearIdx = years.indexOf(yearObj);
                 const progIdx = yearObj.programs.indexOf(prog);
+                const totalPhotos = prog.photos.length;
+                const hasMore = totalPhotos > GALLERY_PREVIEW_LIMIT;
+                const photosToShow = (hasMore && !isGalleryPhotosExpanded)
+                    ? prog.photos.slice(0, GALLERY_PREVIEW_LIMIT)
+                    : prog.photos;
 
-                gridEl.innerHTML = prog.photos.map((p, pIdx) => {
+                gridEl.innerHTML = photosToShow.map((p, pIdx) => {
                     const caption = p['caption_' + lang] || p.caption_mr || (prog['title_' + lang] || prog.title_mr);
                     return `
                         <div class="overflow-hidden rounded-2xl shadow-soft hover:shadow-card transition-all group cursor-pointer bg-white border border-surface-border relative gallery-photo-card"
                              onclick="openGalleryPhotoByIndex(${yearIdx}, ${progIdx}, ${pIdx})">
                             <div class="relative h-48 sm:h-56 overflow-hidden bg-slate-100">
-                                <img src="${p.url}" alt="${caption}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <img src="${p.url}" alt="${caption}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-75 group-hover:opacity-90 transition-opacity"></div>
                                 <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                                     <i class="fas fa-expand"></i>
@@ -4477,6 +4541,28 @@
                         </div>
                     `;
                 }).join('');
+
+                if (expandBarEl) {
+                    if (hasMore) {
+                        expandBarEl.classList.remove('hidden');
+                        if (toggleIconEl) {
+                            toggleIconEl.className = isGalleryPhotosExpanded ? 'fas fa-chevron-up' : 'fas fa-images';
+                        }
+                        if (toggleTextEl) {
+                            if (isGalleryPhotosExpanded) {
+                                toggleTextEl.textContent = lang === 'en'
+                                    ? 'Show Less (Collapse Photos)'
+                                    : (lang === 'hi' ? 'कम फोटो दिखाएं (Collapse Photos)' : 'कमी फोटो पहा (Collapse Photos)');
+                            } else {
+                                toggleTextEl.textContent = lang === 'en'
+                                    ? `View All ${totalPhotos} Photos`
+                                    : (lang === 'hi' ? `सभी ${totalPhotos} फोटो देखें (Expand)` : `सर्व ${totalPhotos} फोटो पहा (Expand All)`);
+                            }
+                        }
+                    } else {
+                        expandBarEl.classList.add('hidden');
+                    }
+                }
             }
         }
 
