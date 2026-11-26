@@ -7,6 +7,719 @@
       "year_label_en": "Year 2026 (Current - 118 Photos)",
       "programs": [
         {
+          "id": "2026-diwali-milan",
+          "title_mr": "भव्य दिवाळी मिलन समारोह २०२६ (116 फोटो)",
+          "title_hi": "भव्य दीवाली मिलन समारोह २०२६ (116 फोटो)",
+          "title_en": "Grand Diwali Milan Samaroh 2026 (116 Photos)",
+          "date_mr": "२२ नोव्हेंबर २०२६",
+          "date_hi": "२२ नवंबर २०२६",
+          "date_en": "22 November 2026",
+          "venue_mr": "गजानन वाटिका, सुखलिया, इंदूर (वेळ: ११:३० ते ३:३०)",
+          "venue_hi": "गजानन वाटिका, सुखलिया, इंदौर (समय: ११:३० से ३:३०)",
+          "venue_en": "Gajanan Vatika, Sukhlia, Indore (11:30 AM to 3:30 PM)",
+          "description_mr": "२२ नोव्हेंबर २०२६ रोजी गजानन वाटिका, सुखलिया येथे आयोजित भव्य दिवाळी मिलन समारोह, सांस्कृतिक कार्यक्रम, मान्यवर सत्कार, वेबसाइट विमोचन व कौटुंबिक स्नेहभोजनाची सर्व छायाचित्रे.",
+          "description_hi": "२२ नवंबर २०२६ को गजानन वाटिका, सुखलिया, इंदौर में आयोजित भव्य दीवाली मिलन समारोह, सांस्कृतिक कार्यक्रम, वरिष्ठ सम्मान, वेबसाइट विमोचन एवं स्नेहभोज की संपूर्ण छायाचित्र।",
+          "description_en": "Complete official photo collection of Diwali Milan 2026 celebration held at Gajanan Vatika, Sukhlia, Indore.",
+          "photos": [
+            {
+              "url": "./src/samaj-group-photo.jpeg",
+              "caption_mr": "सोनार समाज दिवाळी मिलन स्नेहसंमेलन २०२६ - कौटुंबिक स्नेहभेट व सामूहिक छायाचित्र",
+              "caption_hi": "सोनार समाज दीपावली मिलन स्नेह सम्मेलन २०२६ - सामूहिक पारिवारिक छायाचित्र",
+              "caption_en": "Sonar Samaj Diwali Milan 2026 - Official Group Photo"
+            },
+            {
+              "url": "./src/swadesh-diwali-milan-2026.jpg",
+              "caption_mr": "स्वदेश समाचार वृत्त - प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे यांच्या हस्ते वेबसाइटचे विमोचन",
+              "caption_hi": "स्वदेश समाचार - प्रसिद्ध कार्टूनिस्ट रवींद्र बालापुरे ने किया वेबसाइट का विमोचन",
+              "caption_en": "Swadesh News Coverage - Website Launch by Cartoonist Ravindra Balapure"
+            },
+            {
+              "url": "./src/diwali-milan-2026.jpg",
+              "caption_mr": "दिवाळी मिलन समारंभ २०२६ अधिकृत स्नेह निमंत्रण पत्रिका - गजानन वाटिका, इंदूर",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ आधिकारिक स्नेह निमंत्रण पत्र - गजानन वाटिका, इंदौर",
+              "caption_en": "Official Diwali Milan Samaroh 2026 Invitation Flyer - Gajanan Vatika, Indore"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-001.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 1",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 1",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 1"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-002.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 2",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 2",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 2"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-003.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 3",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 3",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 3"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-004.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 4",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 4",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 4"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-005.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 5",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 5",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 5"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-006.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 6",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 6",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 6"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-007.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 7",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 7",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 7"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-008.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 8",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 8",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 8"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-009.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 9",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 9",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 9"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-010.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 10",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 10",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 10"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-011.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 11",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 11",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 11"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-012.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 12",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 12",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 12"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-013.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 13",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 13",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 13"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-014.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 14",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 14",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 14"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-015.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 15",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 15",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 15"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-016.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 16",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 16",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 16"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-017.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 17",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 17",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 17"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-018.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 18",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 18",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 18"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-019.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 19",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 19",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 19"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-020.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 20",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 20",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 20"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-021.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 21",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 21",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 21"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-022.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 22",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 22",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 22"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-023.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 23",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 23",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 23"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-024.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 24",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 24",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 24"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-025.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 25",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 25",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 25"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-026.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 26",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 26",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 26"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-027.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 27",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 27",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 27"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-028.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 28",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 28",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 28"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-029.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 29",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 29",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 29"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-030.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 30",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 30",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 30"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-031.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 31",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 31",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 31"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-032.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 32",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 32",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 32"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-033.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 33",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 33",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 33"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-034.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 34",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 34",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 34"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-035.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 35",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 35",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 35"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-036.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 36",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 36",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 36"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-037.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 37",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 37",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 37"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-038.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 38",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 38",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 38"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-039.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 39",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 39",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 39"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-040.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 40",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 40",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 40"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-041.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 41",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 41",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 41"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-042.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 42",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 42",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 42"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-043.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 43",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 43",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 43"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-044.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 44",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 44",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 44"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-045.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 45",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 45",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 45"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-046.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 46",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 46",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 46"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-047.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 47",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 47",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 47"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-048.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 48",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 48",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 48"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-049.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 49",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 49",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 49"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-050.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 50",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 50",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 50"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-051.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 51",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 51",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 51"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-052.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 52",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 52",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 52"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-053.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 53",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 53",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 53"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-054.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 54",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 54",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 54"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-055.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 55",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 55",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 55"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-056.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 56",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 56",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 56"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-057.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 57",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 57",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 57"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-058.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 58",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 58",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 58"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-059.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 59",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 59",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 59"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-060.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 60",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 60",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 60"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-061.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 61",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 61",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 61"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-062.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 62",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 62",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 62"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-063.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 63",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 63",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 63"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-064.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 64",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 64",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 64"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-065.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 65",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 65",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 65"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-066.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 66",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 66",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 66"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-067.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 67",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 67",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 67"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-068.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 68",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 68",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 68"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-069.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 69",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 69",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 69"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-070.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 70",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 70",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 70"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-071.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 71",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 71",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 71"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-072.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 72",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 72",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 72"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-073.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 73",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 73",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 73"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-074.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 74",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 74",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 74"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-075.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 75",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 75",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 75"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-076.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 76",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 76",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 76"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-077.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 77",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 77",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 77"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-078.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 78",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 78",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 78"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-079.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 79",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 79",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 79"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-080.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 80",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 80",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 80"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-081.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 81",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 81",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 81"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-082.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 82",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 82",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 82"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-083.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 83",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 83",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 83"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-084.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 84",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 84",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 84"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-085.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 85",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 85",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 85"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-086.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 86",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 86",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 86"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-087.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 87",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 87",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 87"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-088.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 88",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 88",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 88"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-089.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 89",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 89",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 89"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-090.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 90",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 90",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 90"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-091.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 91",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 91",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 91"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-092.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 92",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 92",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 92"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-093.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 93",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 93",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 93"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-094.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 94",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 94",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 94"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-095.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 95",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 95",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 95"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-096.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 96",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 96",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 96"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-097.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 97",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 97",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 97"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-098.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 98",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 98",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 98"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-099.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 99",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 99",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 99"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-100.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 100",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 100",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 100"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-101.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 101",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 101",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 101"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-102.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 102",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 102",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 102"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-103.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 103",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 103",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 103"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-104.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 104",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 104",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 104"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-105.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 105",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 105",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 105"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-106.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 106",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 106",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 106"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-107.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 107",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 107",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 107"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-108.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 108",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 108",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 108"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-109.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 109",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 109",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 109"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-110.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 110",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 110",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 110"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-111.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 111",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 111",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 111"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-112.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 112",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 112",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 112"
+            },
+            {
+              "url": "./src/gallery/diwali-2026/diwali-milan-photo-113.jpg",
+              "caption_mr": "दिवाळी मिलन समारोह २०२६ - क्षणचित्रे 113",
+              "caption_hi": "दीपावली मिलन समारोह २०२६ - क्षणचित्र 113",
+              "caption_en": "Diwali Milan Celebration 2026 - Moment 113"
+            }
+          ]
+        },
+        {
           "id": "2026-all-photos",
           "title_mr": "समाज स्नेहसंमेलन व सर्व छायाचित्रे २०२६ (११८ फोटो)",
           "title_hi": "समाज स्नेह सम्मेलन एवं समस्त छायाचित्र २०२६ (११८ फोटो)",
