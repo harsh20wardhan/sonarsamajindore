@@ -1,0 +1,20 @@
+{
+  "name": "सोनार समाज इंदौर | Sonar Samaj Indore",
+  "short_name": "Sonar Samaj",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdf9",
+  "theme_color": "#c2410c",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
