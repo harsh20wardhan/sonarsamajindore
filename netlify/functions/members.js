@@ -44,9 +44,9 @@ exports.handler = async function(event, context) {
         INSERT INTO public.member_registrations (
           name, father_or_husband, gotra, phone, whatsapp, email,
           address, city, state, occupation, business_name, education,
-          blood_group, family_members_count, notes, status, created_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, NOW())
-        RETURNING id, name, phone, created_at;
+          blood_group, family_members_count, notes, status, dob, date_of_birth, created_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, NOW())
+        RETURNING id, name, phone, blood_group, dob, created_at;
       `;
 
       const values = [
@@ -62,10 +62,12 @@ exports.handler = async function(event, context) {
         data.occupation || '',
         data.business_name || '',
         data.education || '',
-        data.blood_group || '',
+        data.blood_group || data.bloodgroup || '',
         parseInt(data.family_members_count) || 1,
         data.notes || data.message || '',
-        'new'
+        'new',
+        data.dob || data.date_of_birth || '',
+        data.dob || data.date_of_birth || ''
       ];
 
       const res = await pool.query(query, values);

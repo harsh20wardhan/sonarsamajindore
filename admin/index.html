@@ -770,18 +770,20 @@
           <table class="w-full text-left text-xs marathi">
             <thead class="bg-slate-50 text-slate-700 font-bold uppercase tracking-wider border-b border-slate-200">
               <tr>
-                <th class="py-3 px-4">तारीख</th>
-                <th class="py-3 px-4">पूर्ण नाव</th>
-                <th class="py-3 px-4">मोबाईल क्रमांक</th>
-                <th class="py-3 px-4">सदस्य प्रकार</th>
-                <th class="py-3 px-4">पत्ता / शहर</th>
-                <th class="py-3 px-4">संदेश / टीप</th>
-                <th class="py-3 px-4 text-center">क्रिया</th>
+                <th class="py-3 px-3">तारीख</th>
+                <th class="py-3 px-3">पूर्ण नाव</th>
+                <th class="py-3 px-3">मोबाईल</th>
+                <th class="py-3 px-3">जन्म तारीख (DOB)</th>
+                <th class="py-3 px-3 text-center">रक्तगट</th>
+                <th class="py-3 px-3">सदस्य प्रकार</th>
+                <th class="py-3 px-3">पत्ता / शहर</th>
+                <th class="py-3 px-3">संदेश / टीप</th>
+                <th class="py-3 px-3 text-center">क्रिया</th>
               </tr>
             </thead>
             <tbody id="admin-members-list" class="divide-y divide-slate-100">
               <tr>
-                <td colspan="7" class="py-8 text-center text-slate-400">माहिती लोड होत आहे...</td>
+                <td colspan="9" class="py-8 text-center text-slate-400">माहिती लोड होत आहे...</td>
               </tr>
             </tbody>
           </table>
@@ -1481,7 +1483,7 @@
       const listEl = document.getElementById('admin-members-list');
       const badge = document.getElementById('admin-members-badge');
       if (listEl) {
-        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">डेटाबेसमधून अर्ज लोड होत आहेत...</td></tr>';
+        listEl.innerHTML = '<tr><td colspan="9" class="py-8 text-center text-slate-400 marathi">डेटाबेसमधून अर्ज लोड होत आहेत...</td></tr>';
       }
 
       fetch('/.netlify/functions/members')
@@ -1493,7 +1495,7 @@
         })
         .catch(err => {
           if (listEl) {
-            listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-rose-500 marathi">डेटाबेस लोड करताना त्रुटी आली: ' + err.message + '</td></tr>';
+            listEl.innerHTML = '<tr><td colspan="9" class="py-8 text-center text-rose-500 marathi">डेटाबेस लोड करताना त्रुटी आली: ' + err.message + '</td></tr>';
           }
         });
     }
@@ -1503,22 +1505,34 @@
       if (!listEl) return;
 
       if (!list.length) {
-        listEl.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400 marathi">अद्याप कोणताही सदस्य नोंदणी अर्ज आलेला नाही.</td></tr>';
+        listEl.innerHTML = '<tr><td colspan="9" class="py-8 text-center text-slate-400 marathi">अद्याप कोणताही सदस्य नोंदणी अर्ज आलेला नाही.</td></tr>';
         return;
       }
 
       listEl.innerHTML = list.map((m) => {
         const dt = m.created_at ? new Date(m.created_at).toLocaleDateString('mr-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '-';
+        const dobFormatted = (m.dob || m.date_of_birth) ? (
+          (m.dob || m.date_of_birth).includes('-') ? (m.dob || m.date_of_birth).split('-').reverse().join('/') : (m.dob || m.date_of_birth)
+        ) : '-';
+        const bgPill = m.blood_group ? `
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-black text-[11px]">
+            🩸 ${m.blood_group}
+          </span>
+        ` : `<span class="text-slate-300">-</span>`;
         const waMsg = encodeURIComponent('नमस्कार ' + m.name + ', सोनार समाज ट्रस्ट इंदूरमध्ये आपला नोंदणी अर्ज प्राप्त झाला आहे.');
         return `
           <tr class="hover:bg-slate-50 transition-colors">
-            <td class="py-3 px-4 text-slate-500 font-mono text-[11px] whitespace-nowrap">${dt}</td>
-            <td class="py-3 px-4 font-bold text-slate-900">${m.name}</td>
-            <td class="py-3 px-4 font-mono font-semibold text-slate-700 whitespace-nowrap">${m.phone}</td>
-            <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold">${m.occupation || 'सामान्य सदस्य'}</span></td>
-            <td class="py-3 px-4 text-slate-600 max-w-xs truncate">${m.address || m.city || 'इंदूर'}</td>
-            <td class="py-3 px-4 text-slate-500 max-w-xs truncate">${m.notes || '-'}</td>
-            <td class="py-3 px-4 text-center whitespace-nowrap">
+            <td class="py-3 px-3 text-slate-500 font-mono text-[11px] whitespace-nowrap">${dt}</td>
+            <td class="py-3 px-3 font-bold text-slate-900">${m.name}</td>
+            <td class="py-3 px-3 font-mono font-semibold text-slate-700 whitespace-nowrap">${m.phone}</td>
+            <td class="py-3 px-3 text-slate-700 font-mono text-xs whitespace-nowrap">
+              ${dobFormatted !== '-' ? `<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-800 font-medium">🎂 ${dobFormatted}</span>` : '<span class="text-slate-300">-</span>'}
+            </td>
+            <td class="py-3 px-3 text-center whitespace-nowrap">${bgPill}</td>
+            <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold">${m.occupation || 'सामान्य सदस्य'}</span></td>
+            <td class="py-3 px-3 text-slate-600 max-w-xs truncate">${m.address || m.city || 'इंदूर'}</td>
+            <td class="py-3 px-3 text-slate-500 max-w-xs truncate">${m.notes || '-'}</td>
+            <td class="py-3 px-3 text-center whitespace-nowrap">
               <a href="https://wa.me/91${(m.phone || '').replace(/[^0-9]/g, '')}?text=${waMsg}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] shadow-xs">
                 <i class="fab fa-whatsapp"></i> संपर्क
               </a>
@@ -1535,7 +1549,11 @@
         return;
       }
       const filtered = allMemberRegistrations.filter(m => {
-        return (m.name || '').toLowerCase().includes(q) || (m.phone || '').includes(q) || (m.address || '').toLowerCase().includes(q);
+        return (m.name || '').toLowerCase().includes(q) || 
+               (m.phone || '').includes(q) || 
+               (m.address || '').toLowerCase().includes(q) ||
+               (m.blood_group || '').toLowerCase().includes(q) ||
+               (m.dob || '').includes(q);
       });
       renderMemberRegistrations(filtered);
     }
