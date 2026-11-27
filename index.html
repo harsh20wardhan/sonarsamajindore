@@ -338,10 +338,17 @@
                         <i class="fas fa-newspaper text-xs text-amber-600"></i>
                         <span data-i18n="nav_news">समाचार</span>
                     </button>
-                    <button onclick="openCitiesModal()" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 rounded-full">
-                        <i class="fas fa-city text-xs text-emerald-600"></i>
-                        <span data-i18n="nav_other_cities">इतर शहरे</span>
-                    </button>
+                    <!-- Other Cities Hover Dropdown -->
+                    <div class="relative group/cities py-1">
+                        <button type="button" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 rounded-full">
+                            <i class="fas fa-city text-xs text-emerald-600"></i>
+                            <span data-i18n="nav_other_cities">इतर शहरे</span>
+                            <i class="fas fa-chevron-down text-[10px] text-emerald-700 transition-transform group-hover/cities:rotate-180"></i>
+                        </button>
+                        <div id="cities-hover-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-emerald-200 py-2 opacity-0 invisible group-hover/cities:opacity-100 group-hover/cities:visible transition-all duration-200 z-50">
+                            <div class="px-4 py-2 text-xs text-slate-400 marathi">लोड होत आहे...</div>
+                        </div>
+                    </div>
 
                     <!-- More Dropdown Menu (Organized & Clutter-Free) -->
                     <div class="relative group/dropdown py-1">
@@ -418,10 +425,18 @@
                 <i class="fas fa-newspaper text-amber-600 w-5 text-center"></i>
                 <span data-i18n="nav_news_mob">📰 समाचार (News)</span>
             </button>
-            <button onclick="openCitiesModal(); closeMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition-colors border border-emerald-200 w-full text-left">
-                <i class="fas fa-city text-emerald-600 w-5 text-center"></i>
-                <span data-i18n="nav_other_cities">इतर शहरे</span>
-            </button>
+            <div class="rounded-xl border border-emerald-200 bg-emerald-50/70 overflow-hidden">
+                <button type="button" onclick="document.getElementById('mobile-cities-list').classList.toggle('hidden')" class="flex items-center justify-between gap-3 px-4 py-3 text-sm font-bold text-emerald-800 hover:bg-emerald-100 transition-colors w-full text-left">
+                    <span class="flex items-center gap-3">
+                        <i class="fas fa-city text-emerald-600 w-5 text-center"></i>
+                        <span data-i18n="nav_other_cities">इतर शहरे</span>
+                    </span>
+                    <i class="fas fa-chevron-down text-xs text-emerald-700"></i>
+                </button>
+                <div id="mobile-cities-list" class="hidden bg-white border-t border-emerald-100 py-1.5 px-2 space-y-1">
+                    <div class="px-3 py-2 text-xs text-slate-400 marathi">लोड होत आहे...</div>
+                </div>
+            </div>
             <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
                 <i class="fas fa-users text-brand-500 w-5 text-center"></i>
                 <span>आमची समिती (Leadership)</span>
@@ -7549,6 +7564,9 @@
             if (typeof renderGalleryDOM === 'function') {
                 renderGalleryDOM();
             }
+            if (typeof renderCitiesDropdowns === 'function') {
+                renderCitiesDropdowns();
+            }
 
             // Update text elements dynamically
             const dict = i18n[lang] || i18n.mr;
@@ -7809,6 +7827,60 @@
         function escapeCityHtml(str) {
             return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
+
+        function renderCitiesDropdowns() {
+            const desktopDrop = document.getElementById('cities-hover-dropdown');
+            const mobileDrop = document.getElementById('mobile-cities-list');
+            const list = Array.isArray(cachedCitiesList) ? cachedCitiesList : [];
+            const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'mr';
+
+            if (!list.length) {
+                const emptyMsg = '<div class="px-4 py-2.5 text-xs text-slate-500 marathi">लवकरच इतर शहरे जोडली जातील.</div>';
+                if (desktopDrop) desktopDrop.innerHTML = emptyMsg;
+                if (mobileDrop) mobileDrop.innerHTML = emptyMsg;
+                return;
+            }
+
+            const desktopHtml = list.map(c => {
+                const name = c['name_' + lang] || c.name_mr || c.name_en;
+                return `
+                    <a href="/city/${encodeURIComponent(c.slug)}" class="flex items-center justify-between gap-2 px-4 py-2.5 text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition-colors marathi">
+                        <span class="flex items-center gap-2 truncate">
+                            <i class="fas fa-location-dot text-emerald-600 text-[11px]"></i>
+                            <span class="truncate">${escapeCityHtml(name)}</span>
+                        </span>
+                        <i class="fas fa-arrow-right text-[10px] text-slate-400"></i>
+                    </a>
+                `;
+            }).join('');
+
+            const mobileHtml = list.map(c => {
+                const name = c['name_' + lang] || c.name_mr || c.name_en;
+                return `
+                    <a href="/city/${encodeURIComponent(c.slug)}" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition-colors marathi">
+                        <span>📍 ${escapeCityHtml(name)}</span>
+                        <i class="fas fa-arrow-right text-[10px] text-slate-400"></i>
+                    </a>
+                `;
+            }).join('');
+
+            if (desktopDrop) desktopDrop.innerHTML = desktopHtml;
+            if (mobileDrop) mobileDrop.innerHTML = mobileHtml;
+        }
+
+        async function loadCitiesDropdown() {
+            try {
+                const res = await fetch('/.netlify/functions/cities');
+                const data = await res.json();
+                cachedCitiesList = Array.isArray(data.cities) ? data.cities : [];
+                renderCitiesDropdowns();
+            } catch (e) {
+                cachedCitiesList = [];
+                renderCitiesDropdowns();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCitiesDropdown);
 
         function openCitiesModal() {
             document.getElementById('cities-modal').classList.add('active');
