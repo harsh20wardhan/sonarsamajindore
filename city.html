@@ -85,8 +85,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             <a href="#top" class="flex items-center gap-3 min-w-0">
                 <img src="/src/samaj-logo.png" alt="सोनार समाज" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain bg-white shadow-sm ring-2 ring-brand-gold/60 flex-shrink-0">
+                <img id="city-header-logo" src="" alt="City Logo" class="hidden w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain bg-white shadow-sm ring-2 ring-amber-400 flex-shrink-0">
                 <div class="min-w-0">
-                    <div id="city-header-title" class="font-extrabold text-lg sm:text-2xl text-slate-900 tracking-tight truncate marathi">सोनार समाज</div>
+                    <div id="city-header-title" class="font-extrabold text-base sm:text-xl text-slate-900 tracking-tight truncate marathi">सोनार समाज</div>
                     <div id="city-header-subtitle" class="text-xs font-bold text-brand-600 truncate marathi">अधिकृत शहर शाखा पोर्टल</div>
                 </div>
             </a>
@@ -126,8 +127,12 @@
     <!-- Main City Content (Events + Gallery) -->
     <main id="city-main" class="hidden flex-1">
         <!-- Hero Banner -->
-        <section id="top" class="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-amber-900 text-white py-14 sm:py-20">
+        <section id="top" class="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-amber-900 text-white py-12 sm:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+                <!-- Optional Official City Banner Image -->
+                <div id="city-hero-banner-wrap" class="hidden max-w-5xl mx-auto mb-6 rounded-3xl overflow-hidden border-2 border-amber-300/60 shadow-2xl bg-white">
+                    <img id="city-hero-banner-img" src="" alt="City Banner" class="w-full h-auto object-cover">
+                </div>
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-amber-300/30 text-amber-200 text-xs font-bold tracking-wider uppercase marathi">
                     <i class="fas fa-location-dot text-amber-400"></i>
                     <span data-i18n="hero_badge">सोनार समाज अधिकृत शाखा पोर्टल</span>

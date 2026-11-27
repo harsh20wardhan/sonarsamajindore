@@ -124,12 +124,36 @@
     if (!cityData) return;
     const name = pick(cityData, 'name');
     const tagline = pick(cityData, 'tagline');
+    const mods = cityData.modules || {};
     document.title = `${cityData.name_mr} | ${cityData.name_en}`;
     document.getElementById('city-header-title').textContent = name;
     document.getElementById('city-header-subtitle').textContent = (uiStrings[currentLang] || uiStrings.mr).hero_badge;
     document.getElementById('city-hero-name').textContent = name;
     document.getElementById('city-hero-tagline').textContent = tagline || `${name} — ${(uiStrings[currentLang] || uiStrings.mr).events_sub}`;
     document.getElementById('city-footer-name').textContent = name;
+
+    const cityLogoEl = document.getElementById('city-header-logo');
+    if (cityLogoEl) {
+      if (mods.logo_url) {
+        cityLogoEl.src = resolveUrl(mods.logo_url);
+        cityLogoEl.alt = name;
+        cityLogoEl.classList.remove('hidden');
+      } else {
+        cityLogoEl.classList.add('hidden');
+      }
+    }
+
+    const bannerWrap = document.getElementById('city-hero-banner-wrap');
+    const bannerImg = document.getElementById('city-hero-banner-img');
+    if (bannerWrap && bannerImg) {
+      if (mods.banner_url) {
+        bannerImg.src = resolveUrl(mods.banner_url);
+        bannerImg.alt = name;
+        bannerWrap.classList.remove('hidden');
+      } else {
+        bannerWrap.classList.add('hidden');
+      }
+    }
   }
 
   function renderEvents() {
