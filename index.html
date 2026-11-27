@@ -336,7 +336,7 @@
                     <a href="contact.html" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
                     <button onclick="openNewsModal()" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1 font-bold text-brand-700 bg-amber-50 border border-amber-200 px-3 rounded-full">
                         <i class="fas fa-newspaper text-xs text-amber-600"></i>
-                        <span>समाचार</span>
+                        <span data-i18n="nav_news">समाचार</span>
                     </button>
                     <button onclick="openCitiesModal()" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 rounded-full">
                         <i class="fas fa-city text-xs text-emerald-600"></i>
@@ -416,11 +416,11 @@
             </a>
             <button onclick="openNewsModal(); closeMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-brand-700 bg-amber-50 hover:bg-amber-100 transition-colors border border-amber-200 w-full text-left">
                 <i class="fas fa-newspaper text-amber-600 w-5 text-center"></i>
-                <span>📰 समाचार (News)</span>
+                <span data-i18n="nav_news_mob">📰 समाचार (News)</span>
             </button>
             <button onclick="openCitiesModal(); closeMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition-colors border border-emerald-200 w-full text-left">
                 <i class="fas fa-city text-emerald-600 w-5 text-center"></i>
-                <span>🏙️ इतर शहरे (Other Cities)</span>
+                <span data-i18n="nav_other_cities">इतर शहरे</span>
             </button>
             <a href="#committee" onclick="closeMobileMenu()" data-i18n="nav_committee" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600 transition-colors">
                 <i class="fas fa-users text-brand-500 w-5 text-center"></i>
@@ -970,7 +970,7 @@
                                         गजानन वाटिका, सुखलिया येथे आयोजित भव्य दीपावली मिलन सोहळा उत्साहात संपन्न झाला. याप्रसंगी 'sonarsamaj.com' अधिकृत समाज पोर्टलचे लोकार्पण व मान्यवरांचा सत्कार करण्यात आला.
                                     </p>
                                     <button onclick="openNewsModal()" class="inline-flex items-center gap-1.5 mt-2.5 text-xs font-bold text-brand-700 bg-amber-100/80 hover:bg-amber-200 px-3 py-1.5 rounded-xl transition-colors marathi border border-amber-200">
-                                        <i class="fas fa-newspaper text-amber-600"></i> बातमी व व्हिडिओ क्लिप पहा →
+                                        <i class="fas fa-newspaper text-amber-600"></i> <span data-i18n="btn_view_news_video">बातमी व व्हिडिओ क्लिप पहा →</span>
                                     </button>
                                 </div>
                             </div>
@@ -5829,8 +5829,14 @@
 
         // ── Comprehensive Multi-lingual Translation Engine ──
         const i18n = {
-        "mr": {
-        "nav_business": "व्यवसाय डिरेक्टरी",
+                "mr": {
+                "nav_news": "समाचार",
+                "nav_news_mob": "📰 समाचार (News)",
+                "nav_other_cities": "इतर शहरे",
+                "btn_view_news_video": "बातमी व व्हिडिओ क्लिप पहा →",
+                "cities_modal_title": "इतर शहरांतील सोनार समाज शाखा",
+                "cities_modal_sub": "तुमचे शहर निवडा व त्या शाखेचे कार्यक्रम व फोटो गॅलरी पहा",
+                "nav_business": "व्यवसाय डिरेक्टरी",
         "nav_more": "अधिक",
         "biz_pill": "सोनार व्यावसायिक मंच • Business Directory",
         "biz_title": "समाज बांधवांचे व्यवसाय व उद्योग",
@@ -6240,6 +6246,12 @@
                 "btn_submit_celeb": "नोंदणी पूर्ण करा • Save & Wish"
         },
         "hi": {
+        "nav_news": "समाचार",
+        "nav_news_mob": "📰 समाचार (News)",
+        "nav_other_cities": "अन्य शहर",
+        "btn_view_news_video": "समाचार व वीडियो क्लिप देखें →",
+        "cities_modal_title": "अन्य शहरों की सोनार समाज शाखाएँ",
+        "cities_modal_sub": "अपना शहर चुनें और उस शाखा के कार्यक्रम व फोटो गैलरी देखें",
         "nav_business": "व्यापार निर्देशिका",
         "nav_more": "अधिक",
         "biz_pill": "सोनार व्यापार मंच • Business Directory",
@@ -6650,6 +6662,12 @@
                 "btn_submit_celeb": "पंजीकरण पूर्ण करें • Save & Wish"
         },
         "en": {
+        "nav_news": "News",
+        "nav_news_mob": "📰 News & Press",
+        "nav_other_cities": "Other Cities",
+        "btn_view_news_video": "View News & Video Clip →",
+        "cities_modal_title": "Sonar Samaj Chapters in Other Cities",
+        "cities_modal_sub": "Select a city to view its official Events & Photo Gallery portal",
         "nav_business": "Business Directory",
         "nav_more": "More",
         "biz_pill": "Community Commerce • Business Directory",
@@ -6858,6 +6876,9 @@
                 "ph_phone": "10-digit mobile number",
                 "label_email": "Email Address (Optional)",
                 "ph_email": "name@example.com",
+                "label_dob": "Date of Birth",
+                "label_bloodgroup": "Blood Group",
+                "opt_select_bg": "-- Select Blood Group --",
                 "label_member_type": "Membership Type",
                 "opt_gen_member": "General Member",
                 "opt_life_member": "Life Member",
@@ -7768,8 +7789,8 @@
                         <i class="fas fa-city text-white"></i>
                     </div>
                     <div>
-                        <h2 class="font-extrabold text-xl text-slate-900 marathi">इतर शहरांतील सोनार समाज शाखा</h2>
-                        <p class="text-xs text-slate-500 marathi">तुमचे शहर निवडा व त्या शाखेचे कार्यक्रम व फोटो गॅलरी पहा</p>
+                        <h2 data-i18n="cities_modal_title" class="font-extrabold text-xl text-slate-900 marathi">इतर शहरांतील सोनार समाज शाखा</h2>
+                        <p data-i18n="cities_modal_sub" class="text-xs text-slate-500 marathi">तुमचे शहर निवडा व त्या शाखेचे कार्यक्रम व फोटो गॅलरी पहा</p>
                     </div>
                 </div>
                 <button onclick="closeCitiesModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-red-100 text-slate-500 hover:text-red-600 flex items-center justify-center transition-colors">
