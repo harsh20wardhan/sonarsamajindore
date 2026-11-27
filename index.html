@@ -323,36 +323,36 @@
                 </a>
 
                 <!-- Desktop Navigation Links (Clean & Streamlined) -->
-                <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-[14px] xl:text-[15px] font-bold text-slate-700 marathi">
-                    <a href="#home" data-i18n="nav_home" class="nav-link hover:text-brand-600 transition-colors py-1">मुख्यपृष्ठ</a>
-                    <a href="#about" data-i18n="nav_about" class="nav-link hover:text-brand-600 transition-colors py-1">परिचय</a>
-                    <a href="#good-deeds" data-i18n="nav_deeds" class="nav-link hover:text-brand-600 transition-colors py-1">सेवा कार्य</a>
-                    <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1">कार्यक्रम</a>
-                    <a href="#business-directory" data-i18n="nav_business" class="nav-link text-amber-800 hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-extrabold bg-amber-50/90 border border-amber-200/90 px-3 py-1 rounded-full shadow-xs">
+                <nav class="hidden lg:flex items-center gap-3 xl:gap-4 text-[13px] xl:text-[14px] font-bold text-slate-700 marathi whitespace-nowrap">
+                    <a href="#home" data-i18n="nav_home" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">मुख्यपृष्ठ</a>
+                    <a href="#about" data-i18n="nav_about" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">परिचय</a>
+                    <a href="#good-deeds" data-i18n="nav_deeds" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">सेवा कार्य</a>
+                    <a href="#events" data-i18n="nav_events" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">कार्यक्रम</a>
+                    <a href="#business-directory" class="nav-link inline-flex items-center gap-1.5 font-bold text-brand-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 px-3 py-1.5 rounded-full shadow-xs transition-colors whitespace-nowrap">
                         <i class="fas fa-briefcase text-xs text-amber-600"></i>
-                        <span>व्यवसाय डिरेक्टरी</span>
+                        <span data-i18n="nav_business">व्यवसाय डिरेक्टरी</span>
                     </a>
-                    <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1">गॅलरी</a>
-                    <a href="contact.html" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1">संपर्क</a>
-                    <button onclick="openNewsModal()" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1 font-bold text-brand-700 bg-amber-50 border border-amber-200 px-3 rounded-full">
+                    <a href="#gallery" data-i18n="nav_gallery" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">गॅलरी</a>
+                    <a href="contact.html" data-i18n="nav_contact" class="nav-link hover:text-brand-600 transition-colors py-1.5 whitespace-nowrap">संपर्क</a>
+                    <button onclick="openNewsModal()" class="nav-link inline-flex items-center gap-1.5 font-bold text-brand-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 px-3 py-1.5 rounded-full shadow-xs transition-colors whitespace-nowrap">
                         <i class="fas fa-newspaper text-xs text-amber-600"></i>
                         <span data-i18n="nav_news">समाचार</span>
                     </button>
                     <!-- Other Cities Hover Dropdown -->
                     <div class="relative group/cities py-1">
-                        <button type="button" class="nav-link hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 rounded-full">
-                            <i class="fas fa-city text-xs text-emerald-600"></i>
+                        <button type="button" class="nav-link inline-flex items-center gap-1.5 font-bold text-brand-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 px-3 py-1.5 rounded-full shadow-xs transition-colors whitespace-nowrap">
+                            <i class="fas fa-city text-xs text-amber-600"></i>
                             <span data-i18n="nav_other_cities">इतर शहरे</span>
-                            <i class="fas fa-chevron-down text-[10px] text-emerald-700 transition-transform group-hover/cities:rotate-180"></i>
+                            <i class="fas fa-chevron-down text-[10px] text-amber-700 transition-transform group-hover/cities:rotate-180"></i>
                         </button>
-                        <div id="cities-hover-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-emerald-200 py-2 opacity-0 invisible group-hover/cities:opacity-100 group-hover/cities:visible transition-all duration-200 z-50">
+                        <div id="cities-hover-dropdown" class="absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-amber-200 py-2 opacity-0 invisible group-hover/cities:opacity-100 group-hover/cities:visible transition-all duration-200 z-50 whitespace-normal">
                             <div class="px-4 py-2 text-xs text-slate-400 marathi">लोड होत आहे...</div>
                         </div>
                     </div>
 
                     <!-- More Dropdown Menu (Organized & Clutter-Free) -->
                     <div class="relative group/dropdown py-1">
-                        <button class="inline-flex items-center gap-1 text-slate-700 hover:text-brand-600 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-slate-50">
+                        <button class="inline-flex items-center gap-1 text-slate-700 hover:text-brand-600 font-bold transition-colors px-2 py-1.5 rounded-lg hover:bg-slate-50 whitespace-nowrap">
                             <span data-i18n="nav_more">अधिक</span>
                             <i class="fas fa-chevron-down text-[10px] transition-transform group-hover/dropdown:rotate-180"></i>
                         </button>
